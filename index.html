@@ -35,6 +35,8 @@
             position: fixed;
             height: 100vh;
             z-index: 100;
+            display: flex;
+            flex-direction: column;
         }
 
         .logo {
@@ -47,7 +49,7 @@
             letter-spacing: -1px;
         }
 
-        .nav-links { list-style: none; padding: 0; }
+        .nav-links { list-style: none; padding: 0; margin: 0; }
         .nav-links li { margin-bottom: 8px; }
         .nav-links a {
             color: #94a3b8;
@@ -64,6 +66,41 @@
             color: white;
             transform: translateX(5px);
         }
+
+        /* Study Timer (Inside Sidebar) */
+        #study-timer {
+            margin-top: auto; /* This pushes the timer to the bottom of the sidebar */
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--primary);
+            padding: 15px;
+            border-radius: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .timer-display {
+            font-family: 'monospace', sans-serif;
+            font-size: 24px;
+            text-align: center;
+            color: #818cf8;
+            margin: 10px 0;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .timer-btns { display: flex; gap: 5px; justify-content: center; }
+        .timer-btns button {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: 0.2s;
+        }
+        .timer-btns button:hover { background: var(--primary); }
 
         /* Teacher Card */
         .teacher-card {
@@ -100,7 +137,6 @@
             flex-grow: 1;
         }
 
-        /* Fashionable IELTS Banner */
         .hero-banner {
             text-align: center;
             padding: 60px 20px;
@@ -108,33 +144,23 @@
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
         }
 
         .hero-banner h1 {
-            font-size: 120px;
+            font-size: 100px;
             margin: 0;
             font-weight: 800;
-            letter-spacing: 15px;
+            letter-spacing: 10px;
             background: linear-gradient(to bottom, #fff, #6366f1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            opacity: 0.9;
             filter: drop-shadow(0 10px 20px rgba(99, 102, 241, 0.4));
-        }
-
-        .hero-banner p {
-            font-size: 18px;
-            color: #94a3b8;
-            margin-top: -10px;
         }
 
         .info-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
-            line-height: 1.6;
         }
 
         .card {
@@ -143,42 +169,6 @@
             border-radius: 20px;
             padding: 30px;
         }
-
-        /* Study Timer Fixed */
-        #study-timer {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: #1e293b;
-            border: 1px solid var(--primary);
-            padding: 15px;
-            border-radius: 15px;
-            width: 220px;
-            z-index: 1000;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
-        }
-
-        .timer-display {
-            font-family: 'monospace';
-            font-size: 28px;
-            text-align: center;
-            color: #818cf8;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-
-        .timer-btns { display: flex; gap: 5px; justify-content: center; }
-        .timer-btns button {
-            background: var(--glass);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 11px;
-            transition: 0.2s;
-        }
-        .timer-btns button:hover { background: var(--primary); }
 
         /* Chat Window */
         #chat-window {
@@ -206,7 +196,7 @@
     </div>
 
     <nav class="sidebar">
-        <div class="logo">IELTS AI MASTER</div>
+        <div class="logo">IELTS MASTER</div>
         <ul class="nav-links">
             <li><a onclick="loadDashboard()">🏠 Dashboard</a></li>
             <li><a onclick="showModule('Listening')">🎧 Listening</a></li>
@@ -231,17 +221,47 @@
 
     <div id="chat-window">
         <div class="chat-header"><span>Lyazat AI Assistant</span><span onclick="toggleChat()" style="cursor:pointer">✕</span></div>
-        <div class="chat-body" id="chat-body"><div class="msg ai">Hello! Ready to smash your IELTS goals? Ask me anything!</div></div>
-        <div style="padding: 15px; display: flex; gap: 8px; background: rgba(0,0,0,0.2);">
-            <input type="text" id="chat-input" placeholder="Type here..." style="flex:1; background:transparent; border:1px solid #444; color:white; padding:10px; border-radius:10px;">
-            <button onclick="sendMsg()" style="background:var(--primary); border:none; color:white; padding:10px 15px; border-radius:10px; cursor:pointer;">Send</button>
+        <div class="chat-body" id="chat-body"><div class="msg ai">Hello! I'm Lyazat's AI assistant. Ready to study?</div></div>
+        <div style="padding: 15px; display: flex; gap: 8px;">
+            <input type="text" id="chat-input" placeholder="Ask me..." style="flex:1; background:transparent; border:1px solid #444; color:white; padding:10px; border-radius:10px;">
+            <button onclick="sendMsg()" style="background:var(--primary); border:none; color:white; padding:10px; border-radius:10px;">Send</button>
         </div>
     </div>
     
-    <button onclick="toggleChat()" style="position:fixed; bottom:20px; right:20px; width:65px; height:65px; border-radius:50%; background:var(--primary); color:white; border:none; cursor:pointer; font-size:28px; box-shadow:0 10px 20px rgba(0,0,0,0.3); z-index:2000;">🤖</button>
+    <button onclick="toggleChat()" style="position:fixed; bottom:20px; right:20px; width:60px; height:60px; border-radius:50%; background:var(--primary); color:white; border:none; cursor:pointer; font-size:24px; z-index:2000;">🤖</button>
 
     <script>
-        // 1. Dashboard Content Loader
+        let totalSeconds = 0;
+        let timerId = null;
+
+        function updateTimerDisplay() {
+            const h = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+            const m = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+            const s = (totalSeconds % 60).toString().padStart(2, '0');
+            document.getElementById('timer-text').innerText = `${h}:${m}:${s}`;
+        }
+
+        function startTimer() {
+            if (timerId) return;
+            document.getElementById('timer-text').style.color = "#4ade80";
+            timerId = setInterval(() => {
+                totalSeconds++;
+                updateTimerDisplay();
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            clearInterval(timerId);
+            timerId = null;
+            document.getElementById('timer-text').style.color = "#818cf8";
+        }
+
+        function resetTimer() {
+            pauseTimer();
+            totalSeconds = 0;
+            updateTimerDisplay();
+        }
+
         function loadDashboard() {
             document.getElementById('main-content').innerHTML = `
                 <div class="hero-banner">
@@ -251,68 +271,33 @@
                 <div class="info-section">
                     <div class="card">
                         <h2 style="color: var(--accent);">What is IELTS?</h2>
-                        <p>IELTS is the world’s most popular English language proficiency test for higher education and global migration. It assesses all of your English skills—reading, writing, listening, and speaking, and is designed to reflect how you will use English at study, at work, and at play, in your new life abroad.</p>
+                        <p>IELTS is the world’s most popular English language proficiency test for higher education and global migration.</p>
                     </div>
                     <div class="card">
-                        <h2 style="color: var(--primary);">Test Format</h2>
-                        <ul style="color: #94a3b8;">
-                            <li><b>Listening (30 min):</b> 40 questions about monologues and conversations.</li>
-                            <li><b>Reading (60 min):</b> 40 questions testing a wide range of reading skills.</li>
-                            <li><b>Writing (60 min):</b> Two tasks, including data description and an essay.</li>
-                            <li><b>Speaking (11-14 min):</b> A face-to-face interview with an examiner.</li>
-                        </ul>
+                        <h2 style="color: var(--primary);">Format</h2>
+                        <p>Listening, Reading, Writing, and Speaking. Each section tests a different aspect of your English proficiency.</p>
                     </div>
                 </div>
             `;
         }
 
-        // 2. Module Loader
         function showModule(name) {
             document.getElementById('main-content').innerHTML = `
                 <div class="card">
-                    <h1 style="color: var(--accent);">${name} Section</h1>
-                    <p>Welcome to the ${name} practice area. Lyazat Teacher has prepared specialized materials for you to improve your score.</p>
-                    <div style="padding: 100px; text-align: center; color: #444; border: 2px dashed #444; border-radius: 20px;">
-                        Task Content Area
-                    </div>
+                    <h1>${name} Section</h1>
+                    <p>Welcome to ${name} practice. Materials from Lyazat Teacher are loading...</p>
                 </div>
             `;
         }
 
-        // 3. WORKING TIMER LOGIC
-        let totalSeconds = 0;
-        let timerId = null;
-
-        function startTimer() {
-            if (timerId) return;
-            timerId = setInterval(() => {
-                totalSeconds++;
-                const h = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
-                const m = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
-                const s = (totalSeconds % 60).toString().padStart(2, '0');
-                document.getElementById('timer-text').innerText = `${h}:${m}:${s}`;
-            }, 1000);
-        }
-
-        function pauseTimer() {
-            clearInterval(timerId);
-            timerId = null;
-        }
-
-        function resetTimer() {
-            pauseTimer();
-            totalSeconds = 0;
-            document.getElementById('timer-text').innerText = "00:00:00";
-        }
-
-        // 4. Chat AI
         function toggleChat() {
             const win = document.getElementById('chat-window');
             win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
         }
 
+        // --- GEMINI API ---
         const p1 = "AIzaSy";
-        const p2 = "B_PASTE_YOUR_KEY_HERE"; // <--- ВСТАВЬ СВОЙ КЛЮЧ
+        const p2 = "B_PASTE_YOUR_KEY_HERE"; // <--- ВСТАВЬ ОСТАТОК КЛЮЧА СЮДА
         const API_KEY = p1 + p2;
 
         async function sendMsg() {
@@ -335,12 +320,11 @@
                 const aiMsg = data.candidates[0].content.parts[0].text;
                 body.innerHTML += `<div class="msg ai">${aiMsg}</div>`;
             } catch {
-                body.innerHTML += `<div class="msg ai">Error connecting to Lyazat AI. Check API Key.</div>`;
+                body.innerHTML += `<div class="msg ai">Error: Check your API Key!</div>`;
             }
             body.scrollTop = body.scrollHeight;
         }
 
-        // Init
         window.onload = loadDashboard;
     </script>
 </body>
