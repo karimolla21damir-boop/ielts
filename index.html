@@ -250,14 +250,23 @@
         function resetTimer() { pauseTimer(); totalSeconds = 0; updateTimerDisplay(); }
 
         function loadDashboard() {
-            document.getElementById('main-content').innerHTML = `
-                <div class="hero-banner"><h1>IELTS</h1><p>International English Language Testing System</p></div>
-                <div class="card">
-                    <h2>Welcome to your Dashboard</h2>
-                    <p>IELTS is accepted by more than 12,000 organisations in over 140 countries. Use the sidebar to access Lyazat Teacher's materials for each section.</p>
-                </div>
-            `;
-        }
+    document.getElementById('main-content').innerHTML = `
+        <div class="hero-banner"><h1>IELTS</h1><p>International English Language Testing System</p></div>
+        
+        <div class="card" style="text-align: center;">
+            <h2 style="color: var(--accent); margin-top: 0;">Welcome Video</h2>
+            <p>Watch this introduction from Lyazat Teacher before you begin.</p>
+            
+            <div class="video-container">
+                <video width="100%" controls>
+                    <source src="materials/promo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        ...
+    `;
+}
 
         // ДИНАМИЧЕСКИЕ ПУТИ К PDF
         function showModule(name) {
