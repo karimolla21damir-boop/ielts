@@ -19,15 +19,13 @@
             margin: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--bg);
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
+            background-image: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
             color: #f1f5f9;
             display: flex;
             min-height: 100vh;
         }
 
-        /* Sidebar Navigation */
+        /* Sidebar */
         .sidebar {
             width: 280px;
             background: rgba(15, 23, 42, 0.9);
@@ -41,200 +39,62 @@
             z-index: 100;
         }
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 50px;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            color: white;
-            box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
-        }
-
-        .logo-text {
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .logo-area { display: flex; align-items: center; gap: 12px; margin-bottom: 50px; }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: white; }
+        .logo-text { font-size: 20px; font-weight: 800; color: white; }
 
         .nav-links { list-style: none; padding: 0; margin: 0; }
         .nav-links li { margin-bottom: 12px; }
-        .nav-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            padding: 14px 18px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-radius: 14px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            font-weight: 600;
-        }
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            transform: translateX(8px);
-        }
-        .nav-links a.active {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
-        }
+        .nav-links a { color: #94a3b8; text-decoration: none; padding: 14px 18px; display: flex; align-items: center; gap: 12px; border-radius: 14px; transition: 0.3s; cursor: pointer; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.05); color: white; }
+        .nav-links a.active { border-left: 4px solid var(--primary); background: rgba(99, 102, 241, 0.1); }
 
-        /* Timer Section */
-        #study-timer {
-            margin-top: auto;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
-            border: 1px solid var(--primary);
-            padding: 20px;
-            border-radius: 20px;
-            text-align: center;
-        }
-        .timer-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #818cf8; margin-bottom: 8px; }
-        .timer-display { font-size: 28px; font-weight: 800; color: white; margin-bottom: 15px; font-variant-numeric: tabular-nums; }
-        .timer-btns { display: flex; gap: 8px; justify-content: center; }
-        .timer-btns button {
-            padding: 8px 12px;
-            border-radius: 10px;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            cursor: pointer;
-            font-size: 12px;
-            transition: 0.2s;
-        }
-        .timer-btns button:hover { background: var(--primary); }
+        /* Timer */
+        #study-timer { margin-top: auto; background: rgba(99, 102, 241, 0.1); border: 1px solid var(--primary); padding: 20px; border-radius: 20px; text-align: center; }
+        .timer-display { font-size: 28px; font-weight: 800; color: white; margin-bottom: 15px; font-family: monospace; }
+        .timer-btns button { padding: 8px 12px; border-radius: 8px; border: none; background: rgba(255, 255, 255, 0.1); color: white; cursor: pointer; font-size: 11px; }
 
         /* Main Content */
-        .main-wrap { margin-left: 280px; padding: 40px; width: 100%; }
+        .main-wrap { margin-left: 280px; padding: 40px; width: calc(100% - 280px); }
+        .teacher-badge { display: flex; align-items: center; gap: 15px; background: var(--card-bg); padding: 10px 20px; border-radius: 100px; border: 1px solid var(--border); width: fit-content; margin-left: auto; backdrop-filter: blur(10px); }
 
-        .teacher-badge {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: var(--card-bg);
-            padding: 10px 20px;
-            border-radius: 100px;
-            border: 1px solid var(--border);
-            width: fit-content;
-            margin-left: auto;
-            backdrop-filter: blur(10px);
-        }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 32px; padding: 40px; margin-top: 30px; backdrop-filter: blur(20px); }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 32px;
-            padding: 40px;
-            margin-top: 30px;
-            backdrop-filter: blur(20px);
-            animation: slideUp 0.6s ease-out;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Video Lesson Player */
-        .video-wrapper {
-            width: 100%;
-            max-width: 850px;
-            margin: 30px auto;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            background: #000;
-            border: 1px solid var(--border);
-        }
+        /* Video Wrapper */
+        .video-wrapper { width: 100%; max-width: 850px; margin: 20px auto; border-radius: 24px; overflow: hidden; background: #000; border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         video { width: 100%; display: block; }
+        .youtube-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            text-decoration: none;
-            padding: 16px 32px;
-            border-radius: 16px;
-            font-weight: 700;
-            transition: all 0.3s;
-            margin-top: 20px;
-        }
-        .btn-download:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4); }
+        /* PDF Viewer Styling */
+        .pdf-wrapper { width: 100%; max-width: 850px; height: 600px; margin: 30px auto; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: #fff; }
+        .pdf-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .stat-item {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-        }
+        .btn-download { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; text-decoration: none; padding: 12px 24px; border-radius: 12px; font-weight: 700; transition: 0.3s; margin-top: 10px; font-size: 14px; }
+        .btn-download:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(99,102,241,0.3); }
 
         /* Chat Window */
-        #chat-window {
-            position: fixed; bottom: 100px; right: 30px;
-            width: 360px; height: 500px;
-            background: #1e293b; border-radius: 24px;
-            display: none; flex-direction: column;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 2000;
-            border: 1px solid var(--border);
-            overflow: hidden;
-        }
-        .chat-header { background: var(--primary); padding: 20px; font-weight: 700; display: flex; justify-content: space-between; }
-        .chat-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
-        .msg { padding: 12px 16px; border-radius: 16px; font-size: 14px; line-height: 1.5; max-width: 80%; }
-        .user { background: var(--primary); align-self: flex-end; color: white; }
+        #chat-window { position: fixed; bottom: 100px; right: 30px; width: 350px; height: 480px; background: #1e293b; border-radius: 24px; display: none; flex-direction: column; border: 1px solid var(--border); z-index: 2000; overflow: hidden; }
+        .chat-header { background: var(--primary); padding: 18px; font-weight: 700; display: flex; justify-content: space-between; }
+        .chat-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+        .msg { padding: 12px 16px; border-radius: 15px; font-size: 14px; max-width: 80%; }
+        .user { background: var(--primary); align-self: flex-end; }
         .ai { background: rgba(255,255,255,0.05); align-self: flex-start; }
-
-        .chat-toggle {
-            position: fixed; bottom: 30px; right: 30px;
-            width: 64px; height: 64px; border-radius: 20px;
-            background: var(--primary); border: none; cursor: pointer;
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
-            display: flex; align-items: center; justify-content: center; z-index: 2000;
-        }
     </style>
 </head>
 <body>
 
     <nav class="sidebar">
-        <div class="logo-area">
-            <div class="logo-icon">iM</div>
-            <div class="logo-text">IELTS MASTER</div>
-        </div>
-        
+        <div class="logo-area"><div class="logo-icon">iM</div><div class="logo-text">IELTS MASTER</div></div>
         <ul class="nav-links">
-            <li><a onclick="loadDashboard()" id="nav-dash" class="active">🏠 Dashboard</a></li>
+            <li><a onclick="loadDashboard()" id="btn-dash" class="active">🏠 Dashboard</a></li>
             <li><a onclick="showModule('Listening')">🎧 Listening</a></li>
             <li><a onclick="showModule('Reading')">📖 Reading</a></li>
             <li><a onclick="showModule('Writing')">✍️ Writing</a></li>
             <li><a onclick="showModule('Speaking')">🗣️ Speaking</a></li>
         </ul>
-
         <div id="study-timer">
-            <div class="timer-label">Session Progress</div>
+            <div style="font-size: 10px; text-transform: uppercase; color: #818cf8;">Study Time</div>
             <div class="timer-display" id="timer-text">00:00:00</div>
             <div class="timer-btns">
                 <button onclick="startTimer()">Start</button>
@@ -246,112 +106,84 @@
 
     <div class="main-wrap">
         <div class="teacher-badge">
-            <div style="text-align: right;">
-                <div style="font-weight: 700; font-size: 14px;">Lyazat Teacher</div>
-                <div style="font-size: 11px; color: #4ade80;">● Active Mentor</div>
-            </div>
-            <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">L</div>
+            <div style="text-align: right;"><div style="font-weight:700;">Lyazat Teacher</div><div style="font-size:10px; color:#4ade80;">● Online</div></div>
+            <div style="width:40px; height:40px; background:var(--accent); border-radius:50%; display:flex; align-items:center; justify-content:center;">L</div>
         </div>
-
-        <div id="main-content">
-            </div>
+        <div id="main-content"></div>
     </div>
 
     <div id="chat-window">
-        <div class="chat-header">Lyazat AI Assistant <span onclick="toggleChat()" style="cursor:pointer">×</span></div>
-        <div class="chat-body" id="chat-body">
-            <div class="msg ai">Welcome! I'm your AI tutor. How can I help you prepare for IELTS today?</div>
-        </div>
-        <div style="padding: 20px; display: flex; gap: 10px; background: rgba(0,0,0,0.2);">
-            <input type="text" id="chat-input" placeholder="Type a message..." style="flex:1; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; padding: 12px; border-radius: 12px; outline: none;">
-            <button onclick="sendMsg()" style="background: var(--primary); border: none; color: white; padding: 12px 20px; border-radius: 12px; cursor: pointer; font-weight: bold;">Send</button>
-        </div>
+        <div class="chat-header">Lyazat AI <span onclick="toggleChat()" style="cursor:pointer">×</span></div>
+        <div class="chat-body" id="chat-body"><div class="msg ai">Are you ready for the lesson?</div></div>
+        <div style="padding:15px; display:flex; gap:10px;"><input type="text" id="chat-input" placeholder="Ask something..." style="flex:1; background:none; border:1px solid var(--border); color:white; padding:10px; border-radius:10px;"><button onclick="sendMsg()" style="background:var(--primary); border:none; color:white; padding:10px 15px; border-radius:10px; cursor:pointer;">Send</button></div>
     </div>
-
-    <button class="chat-toggle" onclick="toggleChat()">🤖</button>
+    <button style="position:fixed; bottom:30px; right:30px; width:60px; height:60px; border-radius:18px; background:var(--primary); border:none; cursor:pointer; font-size:24px;" onclick="toggleChat()">🤖</button>
 
     <script>
+        const ytVideoIds = {
+            listening: "QhVrqQFUfY8",
+            reading: "I5XF50U8LG4",
+            writing: "aIqBxtrUodQ",
+            speaking: "cQ-kYU3uSP0"
+        };
+
         let totalSeconds = 0, timerId = null;
 
         function updateTimer() {
-            const h = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
-            const m = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
-            const s = (totalSeconds % 60).toString().padStart(2, '0');
+            const h = Math.floor(totalSeconds/3600).toString().padStart(2,'0'), m = Math.floor((totalSeconds%3600)/60).toString().padStart(2,'0'), s = (totalSeconds%60).toString().padStart(2,'0');
             document.getElementById('timer-text').innerText = `${h}:${m}:${s}`;
         }
-        function startTimer() { if (!timerId) timerId = setInterval(() => { totalSeconds++; updateTimer(); }, 1000); }
+        function startTimer() { if(!timerId) timerId = setInterval(()=>{totalSeconds++; updateTimer()}, 1000); }
         function pauseTimer() { clearInterval(timerId); timerId = null; }
         function resetTimer() { pauseTimer(); totalSeconds = 0; updateTimer(); }
 
         function loadDashboard() {
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+            document.getElementById('btn-dash').classList.add('active');
             document.getElementById('main-content').innerHTML = `
                 <div class="card">
-                    <h1 style="font-size: 48px; font-weight: 800; margin-bottom: 10px;">Welcome Back! 🇬🇧</h1>
-                    <p style="color: #94a3b8; font-size: 18px; margin-bottom: 30px;">Your journey to Band 8.0+ starts here.</p>
-                    
+                    <h1>Welcome Dashboard 🇬🇧</h1>
                     <div class="video-wrapper">
-                        <video controls poster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200">
-                            <source src="materials/promo.mp4" type="video/mp4">
-                        </video>
+                        <video controls><source src="materials/promo.mp4" type="video/mp4"></video>
                     </div>
-
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div style="color: var(--primary); font-weight: 800; font-size: 24px;">4 Modules</div>
-                            <div style="font-size: 12px; color: #94a3b8;">Comprehensive training</div>
-                        </div>
-                        <div class="stat-item">
-                            <div style="color: var(--accent); font-weight: 800; font-size: 24px;">Expert Tips</div>
-                            <div style="font-size: 12px; color: #94a3b8;">From Lyazat Teacher</div>
-                        </div>
-                        <div class="stat-item">
-                            <div style="color: #4ade80; font-weight: 800; font-size: 24px;">24/7 Support</div>
-                            <div style="font-size: 12px; color: #94a3b8;">AI Tutoring active</div>
-                        </div>
-                    </div>
+                    <p>Welcome! This is your introduction video. Select a section to start practicing.</p>
                 </div>
             `;
         }
 
         function showModule(name) {
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+            const id = ytVideoIds[name.toLowerCase()];
+            const pdfPath = `materials/${name.toLowerCase()}.pdf`;
+
             document.getElementById('main-content').innerHTML = `
                 <div class="card">
                     <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <h1 style="font-size: 36px; font-weight: 800;">${name} Training</h1>
-                        <span style="background: rgba(99, 102, 241, 0.2); color: var(--primary); padding: 8px 16px; border-radius: 10px; font-weight: bold;">Section 1.1</span>
+                        <h1>${name} Training</h1>
+                        <a href="${pdfPath}" target="_blank" class="btn-download">Fullscreen PDF</a>
                     </div>
                     
                     <div class="video-wrapper">
-                        <video controls>
-                            <source src="materials/${name.toLowerCase()}.mp4" type="video/mp4">
-                        </video>
+                        <div class="youtube-container">
+                            <iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe>
+                        </div>
                     </div>
 
-                    <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 24px; border: 1px solid var(--border); text-align: center;">
-                        <h3 style="margin-top:0;">Ready to practice?</h3>
-                        <p style="color: #94a3b8;">Download the specialized worksheets for this video lesson.</p>
-                        <a href="materials/${name.toLowerCase()}.pdf" target="_blank" class="btn-download">
-                            <span>Download Lesson Material (PDF)</span>
-                        </a>
+                    <h3 style="margin-top:40px;">Lesson Worksheet</h3>
+                    <div class="pdf-wrapper">
+                        <iframe src="${pdfPath}#toolbar=0" type="application/pdf"></iframe>
                     </div>
                 </div>
             `;
         }
 
-        function toggleChat() {
-            const win = document.getElementById('chat-window');
-            win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
-        }
-
-        async function sendMsg() {
+        function toggleChat() { const w = document.getElementById('chat-window'); w.style.display = w.style.display === 'flex' ? 'none' : 'flex'; }
+        function sendMsg() {
             const input = document.getElementById('chat-input'), body = document.getElementById('chat-body');
             if(!input.value) return;
             body.innerHTML += `<div class="msg user">${input.value}</div>`;
-            const userMsg = input.value;
             input.value = "";
             body.scrollTop = body.scrollHeight;
-            
-            // Здесь будет твой fetch для Gemini (уже настроенный ранее)
         }
 
         window.onload = loadDashboard;
