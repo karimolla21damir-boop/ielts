@@ -67,9 +67,9 @@
             transform: translateX(5px);
         }
 
-        /* Study Timer (Inside Sidebar) */
+        /* Study Timer */
         #study-timer {
-            margin-top: auto; /* This pushes the timer to the bottom of the sidebar */
+            margin-top: auto;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--primary);
             padding: 15px;
@@ -86,7 +86,6 @@
             color: #818cf8;
             margin: 10px 0;
             font-weight: bold;
-            transition: color 0.3s ease;
         }
 
         .timer-btns { display: flex; gap: 5px; justify-content: center; }
@@ -98,9 +97,7 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 11px;
-            transition: 0.2s;
         }
-        .timer-btns button:hover { background: var(--primary); }
 
         /* Teacher Card */
         .teacher-card {
@@ -116,7 +113,6 @@
             align-items: center;
             gap: 12px;
             z-index: 1000;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .teacher-avatar {
@@ -137,6 +133,28 @@
             flex-grow: 1;
         }
 
+        .card {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .btn-open {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-open:hover { background: var(--accent); transform: scale(1.05); }
+
+        /* Hero Banner */
         .hero-banner {
             text-align: center;
             padding: 60px 20px;
@@ -145,38 +163,19 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 40px;
         }
-
         .hero-banner h1 {
-            font-size: 100px;
-            margin: 0;
-            font-weight: 800;
-            letter-spacing: 10px;
+            font-size: 100px; margin: 0; font-weight: 800; letter-spacing: 10px;
             background: linear-gradient(to bottom, #fff, #6366f1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 10px 20px rgba(99, 102, 241, 0.4));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        .info-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--glass);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-        }
-
-        /* Chat Window */
+        /* Chat */
         #chat-window {
             position: fixed; bottom: 100px; right: 20px;
             width: 350px; height: 450px;
             background: #1e293b; border: 1px solid rgba(255,255,255,0.1);
             border-radius: 20px; display: none; flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 2000;
+            z-index: 2000;
         }
         .chat-header { background: var(--primary); padding: 15px; display: flex; justify-content: space-between; border-radius: 20px 20px 0 0;}
         .chat-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
@@ -220,11 +219,11 @@
         </main>
 
     <div id="chat-window">
-        <div class="chat-header"><span>Lyazat AI Assistant</span><span onclick="toggleChat()" style="cursor:pointer">✕</span></div>
+        <div class="chat-header"><span>AI Assistant</span><span onclick="toggleChat()" style="cursor:pointer">✕</span></div>
         <div class="chat-body" id="chat-body"><div class="msg ai">Hello! I'm Lyazat's AI assistant. Ready to study?</div></div>
         <div style="padding: 15px; display: flex; gap: 8px;">
             <input type="text" id="chat-input" placeholder="Ask me..." style="flex:1; background:transparent; border:1px solid #444; color:white; padding:10px; border-radius:10px;">
-            <button onclick="sendMsg()" style="background:var(--primary); border:none; color:white; padding:10px; border-radius:10px;">Send</button>
+            <button onclick="sendMsg()" style="background:var(--primary); border:none; color:white; padding:10px; border-radius:10px; cursor:pointer;">Send</button>
         </div>
     </div>
     
@@ -244,48 +243,35 @@
         function startTimer() {
             if (timerId) return;
             document.getElementById('timer-text').style.color = "#4ade80";
-            timerId = setInterval(() => {
-                totalSeconds++;
-                updateTimerDisplay();
-            }, 1000);
+            timerId = setInterval(() => { totalSeconds++; updateTimerDisplay(); }, 1000);
         }
 
-        function pauseTimer() {
-            clearInterval(timerId);
-            timerId = null;
-            document.getElementById('timer-text').style.color = "#818cf8";
-        }
-
-        function resetTimer() {
-            pauseTimer();
-            totalSeconds = 0;
-            updateTimerDisplay();
-        }
+        function pauseTimer() { clearInterval(timerId); timerId = null; document.getElementById('timer-text').style.color = "#818cf8"; }
+        function resetTimer() { pauseTimer(); totalSeconds = 0; updateTimerDisplay(); }
 
         function loadDashboard() {
             document.getElementById('main-content').innerHTML = `
-                <div class="hero-banner">
-                    <h1>IELTS</h1>
-                    <p>International English Language Testing System</p>
-                </div>
-                <div class="info-section">
-                    <div class="card">
-                        <h2 style="color: var(--accent);">What is IELTS?</h2>
-                        <p>IELTS is the world’s most popular English language proficiency test for higher education and global migration.</p>
-                    </div>
-                    <div class="card">
-                        <h2 style="color: var(--primary);">Format</h2>
-                        <p>Listening, Reading, Writing, and Speaking. Each section tests a different aspect of your English proficiency.</p>
-                    </div>
+                <div class="hero-banner"><h1>IELTS</h1><p>International English Language Testing System</p></div>
+                <div class="card">
+                    <h2>Welcome to your Dashboard</h2>
+                    <p>IELTS is accepted by more than 12,000 organisations in over 140 countries. Use the sidebar to access Lyazat Teacher's materials for each section.</p>
                 </div>
             `;
         }
 
+        // ДИНАМИЧЕСКИЕ ПУТИ К PDF
         function showModule(name) {
+            const fileName = name.toLowerCase() + ".pdf";
+            const filePath = "materials/" + fileName;
+
             document.getElementById('main-content').innerHTML = `
-                <div class="card">
-                    <h1>${name} Section</h1>
-                    <p>Welcome to ${name} practice. Materials from Lyazat Teacher are loading...</p>
+                <div class="card" style="animation: fadeIn 0.5s ease;">
+                    <h1 style="color: var(--accent);">${name} Section</h1>
+                    <p>Click the button below to open your ${name} practice materials (PDF).</p>
+                    <a href="${filePath}" target="_blank" class="btn-open">📖 Open ${name} Material</a>
+                    <p style="margin-top: 20px; font-size: 12px; color: #94a3b8;">
+                        Note: Make sure the file exists in <b>materials/${fileName}</b>
+                    </p>
                 </div>
             `;
         }
@@ -295,9 +281,9 @@
             win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
         }
 
-        // --- GEMINI API ---
+        // --- GEMINI API (Replace p2 with your key) ---
         const p1 = "AIzaSy";
-        const p2 = "B_PASTE_YOUR_KEY_HERE"; // <--- ВСТАВЬ ОСТАТОК КЛЮЧА СЮДА
+        const p2 = "B_YOUR_KEY_HERE"; 
         const API_KEY = p1 + p2;
 
         async function sendMsg() {
@@ -305,11 +291,9 @@
             const body = document.getElementById('chat-body');
             const val = input.value.trim();
             if(!val) return;
-
             body.innerHTML += `<div class="msg user">${val}</div>`;
             input.value = "";
             body.scrollTop = body.scrollHeight;
-
             try {
                 const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
                     method: 'POST',
@@ -317,8 +301,7 @@
                     body: JSON.stringify({ contents: [{ parts: [{ text: val }] }] })
                 });
                 const data = await res.json();
-                const aiMsg = data.candidates[0].content.parts[0].text;
-                body.innerHTML += `<div class="msg ai">${aiMsg}</div>`;
+                body.innerHTML += `<div class="msg ai">${data.candidates[0].content.parts[0].text}</div>`;
             } catch {
                 body.innerHTML += `<div class="msg ai">Error: Check your API Key!</div>`;
             }
