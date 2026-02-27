@@ -128,25 +128,37 @@
     <script>
         const ytVideoIds = { listening: "QhVrqQFUfY8", reading: "I5XF50U8LG4", writing: "aIqBxtrUodQ", speaking: "cQ-kYU3uSP0" };
         
-        const quizData = {
+       const quizData = {
             listening: [
                 { q: "How many sections are in the IELTS Listening test?", a: ["3", "4", "5"], correct: 1 },
-                { q: "Does the recording play twice?", a: ["Yes", "No"], correct: 1 }
+                { q: "Does the recording play twice?", a: ["Yes", "No"], correct: 1 },
+                { q: "What is the total duration of the Listening test?", a: ["30 min", "40 min", "60 min"], correct: 0 },
+                { q: "How much extra time is given to transfer answers to the sheet?", a: ["2 min", "5 min", "10 min"], correct: 2 },
+                { q: "Can you use a pen for the Listening answer sheet?", a: ["Yes", "No (Pencil only)"], correct: 1 }
             ],
             reading: [
                 { q: "How much time is given for the Reading test?", a: ["45 min", "60 min", "90 min"], correct: 1 },
-                { q: "Are there different modules for Academic and General?", a: ["Yes", "No"], correct: 0 }
+                { q: "Are there different modules for Academic and General?", a: ["Yes", "No"], correct: 0 },
+                { q: "How many reading passages are in the Academic module?", a: ["2", "3", "4"], correct: 1 },
+                { q: "What does 'Not Given' mean in T/F/NG questions?", a: ["The info is false", "The info is not mentioned", "The info is hidden"], correct: 1 },
+                { q: "Is there extra time to transfer answers in Reading?", a: ["Yes (10 min)", "No"], correct: 1 }
             ],
             writing: [
                 { q: "How many tasks are in the Writing test?", a: ["1", "2", "3"], correct: 1 },
-                { q: "What is the word count for Task 2?", a: ["150+", "250+", "500+"], correct: 1 }
+                { q: "What is the word count for Task 2?", a: ["150+", "250+", "500+"], correct: 1 },
+                { q: "Which criteria measures how well your ideas flow?", a: ["Grammar", "Vocabulary", "Cohesion & Coherence"], correct: 2 },
+                { q: "In Academic Task 1, you usually describe:", a: ["An essay", "A letter", "A chart/graph"], correct: 2 },
+                { q: "Which task is worth more marks?", a: ["Task 1", "Task 2"], correct: 1 }
             ],
             speaking: [
                 { q: "Is the Speaking test recorded?", a: ["Yes", "No"], correct: 0 },
-                { q: "How long does the interview last?", a: ["5 min", "11-14 min", "30 min"], correct: 1 }
+                { q: "How long does the interview last?", a: ["5 min", "11-14 min", "30 min"], correct: 1 },
+                { q: "How many parts are in the Speaking test?", a: ["2", "3", "4"], correct: 1 },
+                { q: "How much time do you have to prepare in Part 2?", a: ["30 sec", "1 min", "2 min"], correct: 1 },
+                { q: "Should you use formal or informal language?", a: ["Formal/Semi-formal", "Slang/Casual"], correct: 0 }
             ]
         };
-
+        
         let completed = new Set();
         let totalSeconds = 0, timerId = null;
 
