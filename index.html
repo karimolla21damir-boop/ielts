@@ -23,10 +23,9 @@
             color: #f1f5f9;
             display: flex;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
-        /* Fixed Sidebar */
+        /* Sidebar */
         .sidebar {
             width: 280px;
             background: rgba(15, 23, 42, 0.95);
@@ -54,9 +53,8 @@
             justify-content: center;
         }
         .progress-box { width: 90%; max-width: 800px; }
-        .progress-text { display: flex; justify-content: space-between; font-size: 11px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; color: #818cf8; }
-        .progress-bar-bg { background: rgba(255,255,255,0.05); height: 6px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
-        .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--primary), var(--accent)); width: 0%; transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .progress-bar-bg { background: rgba(255,255,255,0.05); height: 6px; border-radius: 10px; border: 1px solid var(--border); }
+        .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--primary), var(--accent)); width: 0%; transition: 0.8s; }
 
         /* Main Content Wrapper */
         .main-wrap { 
@@ -73,53 +71,44 @@
             background: var(--card-bg); 
             border: 1px solid var(--border); 
             border-radius: 40px; 
-            padding: 50px; 
+            padding: 40px; 
             backdrop-filter: blur(20px); 
-            text-align: center;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
-        .mega-banner { font-size: clamp(60px, 10vw, 100px); font-weight: 800; margin: 0; background: linear-gradient(to bottom, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 10px 20px rgba(99,102,241,0.2)); }
+        /* Quiz Styling */
+        .quiz-container { text-align: left; background: rgba(255,255,255,0.03); padding: 35px; border-radius: 28px; border: 1px solid var(--border); margin: 35px 0; }
+        .quiz-item { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .quiz-question { margin-bottom: 15px; font-weight: 600; font-size: 16px; color: #e2e8f0; }
+        .quiz-options button { 
+            display: block; width: 100%; text-align: left; padding: 14px; margin: 10px 0; 
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: #cbd5e1; 
+            border-radius: 12px; cursor: pointer; transition: 0.3s; font-size: 14px;
+        }
+        .quiz-options button:hover { background: rgba(99, 102, 241, 0.15); border-color: var(--primary); }
 
-        .video-wrapper { width: 100%; max-width: 800px; margin: 30px auto; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); }
+        /* PDF & Video Display */
+        .video-wrapper { width: 100%; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 30px; }
         .youtube-container { position: relative; padding-bottom: 56.25%; height: 0; }
         .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .nav-links { list-style: none; padding: 0; margin: 0; }
-        .nav-links li { margin-bottom: 10px; }
-        .nav-links a { color: #94a3b8; text-decoration: none; padding: 16px 20px; display: flex; align-items: center; gap: 15px; border-radius: 16px; transition: 0.3s; cursor: pointer; font-weight: 600; }
+        .pdf-wrapper { width: 100%; min-height: 850px; border-radius: 24px; overflow: hidden; background: #fff; margin: 25px 0; border: 1px solid var(--border); }
+        .pdf-wrapper iframe { width: 100%; height: 850px; border: none; display: block; }
+
+        /* Navigation */
+        .nav-links { list-style: none; padding: 0; margin-top: 30px; }
+        .nav-links a { color: #94a3b8; text-decoration: none; padding: 15px 20px; display: flex; align-items: center; gap: 12px; border-radius: 16px; transition: 0.3s; cursor: pointer; font-weight: 600; }
         .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.05); color: white; }
         .nav-links a.active { border-left: 4px solid var(--primary); background: rgba(99, 102, 241, 0.1); }
 
-        .quiz-container { max-width: 800px; margin: 40px auto; text-align: left; background: rgba(255,255,255,0.02); padding: 35px; border-radius: 28px; border: 1px solid var(--border); }
-        
-        /* Mock Test Button at the Bottom */
-        .mock-section { margin-top: 50px; padding-top: 40px; border-top: 1px solid var(--border); }
-        .mock-btn { background: linear-gradient(135deg, #f43f5e, #e11d48); color: white; border: none; padding: 18px 40px; border-radius: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; font-size: 16px; box-shadow: 0 10px 20px rgba(225, 29, 72, 0.2); }
-        .mock-btn:hover { transform: scale(1.02); box-shadow: 0 15px 30px rgba(225, 29, 72, 0.4); }
-
-        .pdf-wrapper { width: 100%; height: 750px; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); background: #f8fafc; margin-top: 25px; }
-        
-        #study-timer { margin-bottom: 35px; background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99,102,241,0.2); padding: 25px; border-radius: 24px; text-align: center; }
-        .timer-display { font-size: 26px; font-weight: 800; font-family: monospace; color: white; }
+        .mock-btn { background: linear-gradient(135deg, #f43f5e, #e11d48); color: white; border: none; padding: 18px 35px; border-radius: 18px; font-weight: 800; cursor: pointer; margin-top: 40px; font-size: 16px; box-shadow: 0 10px 20px rgba(225,29,72,0.2); }
     </style>
 </head>
 <body>
 
-    <div class="header-progress">
-        <div class="progress-box">
-            <div class="progress-text"><span>COURSE COMPLETION</span><span id="p-percent">0%</span></div>
-            <div class="progress-bar-bg"><div class="progress-bar-fill" id="p-fill"></div></div>
-        </div>
-    </div>
-
     <nav class="sidebar">
-        <div class="logo-area" style="cursor:pointer;" onclick="loadDashboard()"><div class="logo-icon">iM</div><div class="logo-text">IELTS MASTER</div></div>
-        <div id="study-timer">
-            <div style="font-size: 10px; color: #818cf8; font-weight: 800; margin-bottom: 8px;">SESSION TIMER</div>
-            <div class="timer-display" id="timer-text">00:00:00</div>
-            <div style="margin-top:10px;"><button onclick="startTimer()">Start</button> <button onclick="pauseTimer()">Pause</button></div>
-        </div>
+        <h2 style="color:white; padding-left: 15px;">IELTS Master</h2>
         <ul class="nav-links">
             <li><a onclick="loadDashboard()" id="btn-dash" class="active">🏠 Dashboard</a></li>
             <li><a onclick="showModule('Listening')">🎧 Listening</a></li>
@@ -129,6 +118,13 @@
         </ul>
     </nav>
 
+    <div class="header-progress">
+        <div class="progress-box">
+            <div style="display:flex; justify-content:space-between; font-size:11px; font-weight:800; margin-bottom:8px; color:#818cf8;"><span>COURSE PROGRESS</span><span id="p-percent">0%</span></div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" id="p-fill"></div></div>
+        </div>
+    </div>
+
     <div class="main-wrap">
         <div id="main-content" class="card"></div>
     </div>
@@ -136,84 +132,139 @@
     <script>
         const ytData = {
             lessons: { listening: "QhVrqQFUfY8", reading: "nLmDYfe2FGA", writing: "sIp55MoKmeg", speaking: "YRKxrDz4hzA" },
-            mocks: { listening: "WO9lCJiPt58", speaking: "IevmdO16GuE" } 
+            mocks: { listening: "WO9lCJiPt58", speaking: "IevmdO16GuE" }
+        };
+
+        const quizData = {
+            listening: [
+                { q: "How many sections are in the IELTS Listening test?", a: ["3 sections", "4 sections", "5 sections"], correct: 1 },
+                { q: "Does the recording play twice during the exam?", a: ["Yes, for difficult parts", "No, only once", "Twice in General Training"], correct: 1 },
+                { q: "Total duration of the Listening test (including transfer time)?", a: ["30 minutes", "40 minutes", "60 minutes"], correct: 1 },
+                { q: "What should you do while listening to the recording?", a: ["Wait until it finishes", "Write answers on the question paper", "Write directly on the answer sheet"], correct: 1 },
+                { q: "How many questions are in the Listening test?", a: ["30 questions", "40 questions", "50 questions"], correct: 1 },
+                { q: "Which part of the test is usually a conversation between two people?", a: ["Part 1", "Part 2", "Part 4"], correct: 0 },
+                { q: "In Part 4, the speaker is usually...", a: ["Giving a tour", "Giving an academic lecture", "Booking a hotel"], correct: 1 },
+                { q: "Are spelling mistakes penalized in the Listening test?", a: ["No, only meaning matters", "Yes, spelling must be correct", "Only in the Academic version"], correct: 1 }
+            ],
+            reading: [
+                { q: "Total time allowed for the Reading test?", a: ["45 minutes", "60 minutes", "90 minutes"], correct: 1 },
+                { q: "How many passages are in the Academic Reading test?", a: ["2 passages", "3 passages", "4 passages"], correct: 1 },
+                { q: "Is there extra transfer time at the end of Reading?", a: ["Yes, 10 minutes", "No extra time", "Yes, 5 minutes"], correct: 1 },
+                { q: "What is the total number of questions?", a: ["30", "40", "50"], correct: 1 },
+                { q: "If the answer is 'FALSE', it means the text says...", "The information is not there", "The opposite of the statement", "The statement is slightly wrong"], correct: 1 },
+                { q: "Should you read the whole passage in detail first?", a: ["Yes, always", "No, use skimming and scanning", "Only for Part 1"], correct: 1 },
+                { q: "A 'Matching Headings' task requires understanding of...", a: ["Specific dates", "Main idea of paragraphs", "Synonyms only"], correct: 1 },
+                { q: "The texts in Academic Reading are taken from...", a: ["Novels", "Magazines, journals, books", "Social media"], correct: 1 }
+            ],
+            writing: [
+                { q: "How many tasks are in the Writing test?", a: ["1 task", "2 tasks", "3 tasks"], correct: 1 },
+                { q: "Recommended time for Task 1?", a: ["15 minutes", "20 minutes", "30 minutes"], correct: 1 },
+                { q: "Minimum word count for Task 2?", a: ["150 words", "250 words", "300 words"], correct: 1 },
+                { q: "Which task carries more weight for your final score?", a: ["Task 1", "Task 2", "They are equal"], correct: 1 },
+                { q: "Academic Task 1 involves describing...", a: ["A personal experience", "A diagram, chart or table", "An opinion essay"], correct: 1 },
+                { q: "Coherence and Cohesion refers to...", a: ["Grammar accuracy", "Logical flow and use of linking words", "Range of vocabulary"], correct: 1 },
+                { q: "In an 'Agree/Disagree' essay, you must...", a: ["Only disagree", "State a clear position", "Avoid using 'I'"], correct: 1 },
+                { q: "Can you use bullet points in Task 2?", a: ["Yes, for clarity", "No, use full paragraphs", "Only in the conclusion"], correct: 1 }
+            ],
+            speaking: [
+                { q: "How many parts are in the Speaking test?", a: ["2 parts", "3 parts", "4 parts"], correct: 1 },
+                { q: "What is Part 2 often called?", a: ["The Interview", "The Long Turn (Cue Card)", "The Discussion"], correct: 1 },
+                { q: "How long do you have to prepare in Part 2?", a: ["30 seconds", "1 minute", "2 minutes"], correct: 1 },
+                { q: "The Speaking test duration is usually...", a: ["5-8 minutes", "11-14 minutes", "20-25 minutes"], correct: 1 },
+                { q: "In Part 3, the questions are...", a: ["About your hobbies", "Abstract and analytical", "The same as Part 1"], correct: 1 },
+                { q: "What is 'Fluency and Coherence'?", a: ["Using big words", "Speaking smoothly without long pauses", "Perfect pronunciation"], correct: 1 },
+                { q: "If you don't understand a question, can you ask for clarification?", a: ["No, marks will be lost", "Yes, it is allowed", "Only in Part 2"], correct: 1 },
+                { q: "Is the Speaking test recorded?", a: ["No, it's private", "Yes, for assessment monitoring", "Only if the student asks"], correct: 1 }
+            ]
         };
 
         let completed = new Set();
-        let totalSeconds = 0, timerId = null;
-
-        function startTimer() { if(!timerId) timerId = setInterval(()=>{totalSeconds++; updateTimer()}, 1000); }
-        function pauseTimer() { clearInterval(timerId); timerId = null; }
-        function updateTimer() {
-            const h = Math.floor(totalSeconds/3600).toString().padStart(2,'0'), m = Math.floor((totalSeconds%3600)/60).toString().padStart(2,'0'), s = (totalSeconds%60).toString().padStart(2,'0');
-            document.getElementById('timer-text').innerText = `${h}:${m}:${s}`;
-        }
 
         function loadDashboard() {
             document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
             document.getElementById('btn-dash').classList.add('active');
             document.getElementById('main-content').innerHTML = `
-                <h1 class="mega-banner">IELTS</h1>
-                <h2 style="font-weight: 800; margin-top: -10px;">Master Your Future</h2>
-                <div class="video-wrapper"><video controls style="width:100%"><source src="materials/promo.mp4" type="video/mp4"></video></div>
-                <p style="color: #94a3b8; max-width: 500px; margin: 20px auto;">Welcome to Lyazat Teacher's preparation zone. Complete all modules to achieve Band 8.0.</p>
+                <h1 style="font-size:48px;">Welcome to IELTS Master</h1>
+                <p style="color:#94a3b8; font-size:18px;">Select a module from the sidebar to start your preparation.</p>
+                <div class="video-wrapper" style="margin-top:40px;"><video controls style="width:100%; border-radius:20px;"><source src="materials/promo.mp4" type="video/mp4"></video></div>
             `;
+        }
+
+        function checkQuiz(btn, isCorrect) {
+            const options = btn.parentElement.querySelectorAll('button');
+            options.forEach(opt => opt.style.borderColor = "var(--border)");
+            btn.style.background = isCorrect ? "rgba(34, 197, 94, 0.2)" : "rgba(239, 68, 68, 0.2)";
+            btn.style.borderColor = isCorrect ? "#22c55e" : "#ef4444";
         }
 
         function showModule(name) {
             document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
             const key = name.toLowerCase();
             completed.add(key);
-            const percent = (completed.size / 4) * 100;
-            document.getElementById('p-fill').style.width = percent + "%";
-            document.getElementById('p-percent').innerText = percent + "%";
+            document.getElementById('p-fill').style.width = (completed.size / 4 * 100) + "%";
+            document.getElementById('p-percent').innerText = (completed.size / 4 * 100) + "%";
+
+            let quizHtml = quizData[key].map((item, idx) => `
+                <div class="quiz-item">
+                    <p class="quiz-question">${idx + 1}. ${item.q}</p>
+                    <div class="quiz-options">
+                        ${item.a.map((opt, i) => `<button onclick="checkQuiz(this, ${i === item.correct})">${opt}</button>`).join('')}
+                    </div>
+                </div>
+            `).join('');
 
             document.getElementById('main-content').innerHTML = `
-                <div style="text-align:left; margin-bottom:40px;">
-                    <h1 style="margin:0; font-size:36px;">${name} Module</h1>
-                    <p style="color:#818cf8; font-weight:600;">Full Lesson & Resources</p>
+                <div style="text-align:left; margin-bottom:35px;">
+                    <h1 style="margin:0; font-size:38px;">${name} Module</h1>
+                    <p style="color:#818cf8; font-weight:700;">Complete all sections to prepare for the Mock Test.</p>
                 </div>
-                <div id="module-body">
-                    <div class="video-wrapper"><div class="youtube-container"><iframe src="https://www.youtube.com/embed/${ytData.lessons[key]}" allowfullscreen></iframe></div></div>
-                    <div class="quiz-container">
-                        <h3 style="margin-top:0;">Self-Check Quiz</h3>
-                        <p style="color:#94a3b8;">Watch the video carefully to answer the knowledge check questions.</p>
-                    </div>
-                    <div class="resources-area">
-                        <h3 style="margin:bottom:20px;">Additional Resources</h3>
-                        <div class="pdf-wrapper"><iframe src="materials/${key}.pdf#toolbar=0"></iframe></div>
-                    </div>
-                    <div class="mock-section">
-                        <h3>Ready to Test Yourself?</h3>
-                        <p style="color:#94a3b8; margin-bottom:25px;">Take the Full Mock Test for ${name} to evaluate your current score.</p>
-                        <button class="mock-btn" onclick="loadMockTest('${name}')">🔥 START MOCK TEST</button>
-                    </div>
+
+                <div class="video-wrapper"><div class="youtube-container"><iframe src="https://www.youtube.com/embed/${ytData.lessons[key]}" allowfullscreen></iframe></div></div>
+                
+                <div class="quiz-container">
+                    <h2 style="margin-top:0; color:white; border-bottom: 2px solid var(--primary); display:inline-block; padding-bottom:5px;">Module Quiz</h2>
+                    <p style="color:#94a3b8; margin-top:10px; margin-bottom:30px;">Test your understanding of the ${name} format:</p>
+                    ${quizHtml}
+                </div>
+
+                <div style="text-align:left; margin:50px 0 20px 0;">
+                    <h2 style="margin:0;">Additional Resources</h2>
+                    <p style="color:#94a3b8;">Study the guide below before taking the Mock Test.</p>
+                </div>
+                <div class="pdf-wrapper">
+                    <iframe src="materials/${key}.pdf#view=FitH"></iframe>
+                </div>
+
+                <div style="margin-top:60px; padding:40px; background:rgba(99,102,241,0.05); border-radius:30px; border:1px solid rgba(99,102,241,0.2);">
+                    <h3>Final Step: Practice Test</h3>
+                    <p style="color:#94a3b8;">Once you have studied the video and guide, attempt the full mock exam.</p>
+                    <button class="mock-btn" onclick="loadMockTest('${name}')">🔥 START ${name.toUpperCase()} MOCK TEST</button>
                 </div>
             `;
+            window.scrollTo(0,0);
         }
 
         function loadMockTest(section) {
             const key = section.toLowerCase();
-            const content = document.getElementById('module-body');
-            let mockMedia = (section === 'Listening' || section === 'Speaking') ? 
+            const media = (section === 'Listening' || section === 'Speaking') ? 
                 `<div class="video-wrapper"><div class="youtube-container"><iframe src="https://www.youtube.com/embed/${ytData.mocks[key] || ytData.lessons[key]}" allowfullscreen></iframe></div></div>` : '';
 
-            content.innerHTML = `
-                <div style="padding:40px; background:rgba(255, 255, 255, 0.02); border-radius:32px; border: 2px dashed var(--accent);">
-                    <h2 style="color:var(--accent); margin-bottom:30px;">${section} Full Mock Exam</h2>
-                    ${mockMedia}
-                    <div class="resources-area">
-                        <h3>Mock Test Paper (PDF)</h3>
-                        <div class="pdf-wrapper"><iframe src="materials/${key}_mock.pdf#toolbar=0"></iframe></div>
-                        <div style="margin-top:40px;">
-                            <button onclick="showModule('${section}')" style="background:none; border:1px solid #475569; color:#94a3b8; padding:12px 25px; border-radius:12px; cursor:pointer;">Return to Module</button>
-                        </div>
-                    </div>
+            document.getElementById('main-content').innerHTML = `
+                <h1 style="color:var(--accent); text-align:left;">${section} Mock Exam</h1>
+                <p style="color:#94a3b8; text-align:left; margin-bottom:30px;">Follow the instructions in the PDF and use the media below if required.</p>
+                ${media}
+                <div class="pdf-wrapper">
+                    <iframe src="materials/${key}_mock.pdf#view=FitH"></iframe>
                 </div>
+                <button onclick="showModule('${section}')" style="margin-top:30px; background:none; border:1px solid #475569; color:#94a3b8; padding:12px 25px; cursor:pointer; border-radius:12px; font-weight:600;">Back to Lesson</button>
             `;
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo(0,0);
         }
 
+        window.onload = loadDashboard;
+    </script>
+</body>
+</html>
         window.onload = loadDashboard;
     </script>
 </body>
