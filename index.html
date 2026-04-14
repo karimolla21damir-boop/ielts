@@ -1730,13 +1730,15 @@ function openListeningExam(id) {
         `<div class="audio-tab ${i === 0 ? 'active' : ''}" onclick="switchAudioTab(${i})">${i === 0 ? '🎧' : '🔄'} ${v.label}</div>`
     ).join('');
 
-    let audioSourcesHtml = audio.videos.map((v, i) => `
+        let audioSourcesHtml = audio.videos.map((v, i) => `
         <div class="audio-source ${i === 0 ? 'active' : ''}" id="audio-src-${i}">
             <div class="yt-fallback">
                 <iframe 
-                    src="https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    src="https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1&autoplay=0&origin=${window.location.origin}" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
                     loading="lazy">
                 </iframe>
             </div>
