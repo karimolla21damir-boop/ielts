@@ -638,6 +638,157 @@
     border: 2px solid #e2e8f0;
     border-radius: 12px;
 }
+        /* ===== AUDIO PLAYER ENHANCED ===== */
+.audio-player-box {
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    border: 2px solid rgba(99,102,241,0.4);
+    border-radius: 24px;
+    padding: 35px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.audio-player-box h3 {
+    font-size: 24px;
+    color: #e2e8f0;
+    margin: 0 0 5px;
+}
+
+.audio-player-box .subtitle {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.audio-warning {
+    background: rgba(239,68,68,0.15);
+    border: 1px solid rgba(239,68,68,0.3);
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.audio-warning span {
+    color: #fca5a5;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.audio-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.audio-tab {
+    padding: 10px 22px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.audio-tab:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.audio-tab.active {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white;
+    border-color: transparent;
+}
+
+.audio-source {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.audio-source.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.custom-audio {
+    width: 100%;
+    max-width: 600px;
+    margin: 15px auto;
+    display: block;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.yt-fallback {
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid rgba(99,102,241,0.3);
+}
+
+.yt-fallback iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+}
+
+.audio-external-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.audio-ext-btn {
+    padding: 10px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08);
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.audio-ext-btn:hover {
+    background: var(--primary);
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+.section-audio-marker {
+    background: rgba(168,85,247,0.1);
+    border: 1px solid rgba(168,85,247,0.2);
+    border-radius: 10px;
+    padding: 10px 16px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #c4b5fd;
+    font-weight: 600;
+}
     </style>
 </head>
 <body>
@@ -1493,15 +1644,57 @@ function submitReading(idx) {
 function openListeningExam(id) {
     const exam = listeningExams[id] || listeningExams[1];
 
+    // Audio data for each test
+    const audioData = {
+        1: {
+            videos: [
+                { id: 'lh3Clih0YJo', label: 'Audio 1' },
+                { id: '1rJkNHTgJrE', label: 'Backup' }
+            ],
+            timestamps: ['0:00 — Section 1', '7:30 — Section 2', '14:00 — Section 3', '20:30 — Section 4']
+        },
+        2: {
+            videos: [
+                { id: 'oymjPFMMbcA', label: 'Audio 1' },
+                { id: 'e2FGKq0aFGo', label: 'Backup' }
+            ],
+            timestamps: ['0:00 — Section 1', '8:00 — Section 2', '15:00 — Section 3', '21:00 — Section 4']
+        },
+        3: {
+            videos: [
+                { id: 'iqJDR5gZ6Hk', label: 'Audio 1' },
+                { id: 'SmOZcIwOqhU', label: 'Backup' }
+            ],
+            timestamps: ['0:00 — Section 1', '7:00 — Section 2', '13:30 — Section 3', '20:00 — Section 4']
+        },
+        4: {
+            videos: [
+                { id: 'k09fy3G3DAY', label: 'Audio 1' },
+                { id: 'aUkPV9HJ1gg', label: 'Backup' }
+            ],
+            timestamps: ['0:00 — Section 1', '7:30 — Section 2', '14:00 — Section 3', '21:00 — Section 4']
+        },
+        5: {
+            videos: [
+                { id: 'Y5K6-u-8NRE', label: 'Audio 1' },
+                { id: 'RA9A8C8lrg4', label: 'Backup' }
+            ],
+            timestamps: ['0:00 — Section 1', '8:00 — Section 2', '15:00 — Section 3', '22:00 — Section 4']
+        }
+    };
+
+    const audio = audioData[id] || audioData[1];
+
+    // Build questions HTML
     let qCounter = 0;
     let sectionsHtml = '';
-    
+
     exam.sections.forEach((sec, si) => {
         let questionsHtml = '';
         sec.questions.forEach(q => {
             qCounter++;
-            const qNum = q.q.substring(0,3).trim();
-            if(q.type === 'fill') {
+            const qNum = q.q.substring(0, 3).trim();
+            if (q.type === 'fill') {
                 questionsHtml += `
                 <div class="listening-q-item">
                     <label class="listening-q-label">
@@ -1526,33 +1719,42 @@ function openListeningExam(id) {
 
         sectionsHtml += `
         <div class="listening-section">
-            <div class="listening-section-title">
-                📋 ${sec.title}
-            </div>
+            <div class="section-audio-marker">🔊 ${audio.timestamps[si] || 'Section ' + (si + 1)}</div>
+            <div class="listening-section-title">📋 ${sec.title}</div>
             ${questionsHtml}
         </div>`;
     });
-    
-    document.getElementById('main-content').innerHTML = `
-        <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
-        <h1>🎧 Listening Test ${id}</h1>
-        <div class="exam-timer">
-            <div><div style="color:#64748b;font-size:11px;text-transform:uppercase;">Time Remaining</div>
-            <div class="timer-clock" id="exam-clock">30:00</div></div>
-            <div class="timer-btns">
-                <button class="submit-btn" onclick="submitListening(${id})">✅ Submit</button>
-            </div>
-        </div>
-        <div class="exam-audio">
-            <h3>🎧 Listen carefully — audio plays once</h3>
-            <div class="youtube-container" style="max-width:800px;margin:0 auto;">
-                <iframe src="https://www.youtube.com/embed/${exam.video}" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="exam-panel" style="max-height:none;">${sectionsHtml}</div>`;
 
-    startTimer(exam.time, () => submitListening(id));
-    window.scrollTo(0,0);
+    // Audio tabs HTML
+    let audioTabsHtml = audio.videos.map((v, i) =>
+        `<div class="audio-tab ${i === 0 ? 'active' : ''}" onclick="switchAudioTab(${i})">${i === 0 ? '🎧' : '🔄'} ${v.label}</div>`
+    ).join('');
+
+    let audioSourcesHtml = audio.videos.map((v, i) => `
+        <div class="audio-source ${i === 0 ? 'active' : ''}" id="audio-src-${i}">
+            <div class="yt-fallback">
+                <iframe 
+                    src="https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    `).join('');
+
+    let timestampsHtml = audio.timestamps.map(t =>
+        `<span style="background:rgba(255,255,255,0.08);padding:4px 12px;border-radius:8px;font-size:12px;color:#c4b5fd;">${t}</span>`
+    ).join('');
+
+// Audio tab switcher
+function switchAudioTab(idx) {
+    document.querySelectorAll('.audio-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.audio-source').forEach(s => s.classList.remove('active'));
+
+    document.querySelectorAll('.audio-tab')[idx]?.classList.add('active');
+    const src = document.getElementById('audio-src-' + idx);
+    if (src) src.classList.add('active');
 }
 
 function submitListening(id) {
