@@ -1016,7 +1016,7 @@ for (let i = 2; i <= 5; i++) {
 // --- LISTENING EXAM DATA ---
 const listeningExams = {
     1: {
-        title: 'Listening Mock Test 1', time: 1800, video: 'LMSRmwSJNBM',
+        title: 'Listening Mock Test 1', time: 1800, video: 'oVgMcGFmEFI',
         sections: [
             { title: 'Section 1 — Everyday Conversation', questions: [
                 {q:'1. The woman wants to book for how many nights?', type:'fill', answer:'3'},
@@ -1069,7 +1069,7 @@ const listeningExams = {
         ]
     },
     2: {
-        title: 'Listening Mock Test 2', time: 1800, video: '4MRqFmmACpI',
+        title: 'Listening Mock Test 2', time: 1800, video: 'TjPFKTfOd_M',
         sections: [
             { title: 'Section 1 — Course Registration', questions: [
                 {q:'1. Register for ___ course', type:'fill', answer:'photography'},
@@ -1121,8 +1121,8 @@ const listeningExams = {
             ]}
         ]
     },
-        3: {
-        title: 'Listening Mock Test 3', time: 1800, video: 'wfBx5jHOzcY',
+    3: {
+        title: 'Listening Mock Test 3', time: 1800, video: 'QKj0l0YTEBU',
         sections: [
             { title: 'Section 1 — Renting Property', questions: [
                 {q:'1. Apartment on ___ Road', type:'fill', answer:'Victoria'},
@@ -1175,7 +1175,7 @@ const listeningExams = {
         ]
     },
     4: {
-        title: 'Listening Mock Test 4', time: 1800, video: 'kSMPMz6PVbM',
+        title: 'Listening Mock Test 4', time: 1800, video: 'n0wDCx2wEME',
         sections: [
             { title: 'Section 1 — Gym Membership', questions: [
                 {q:'1. Annual cost £___', type:'fill', answer:'450'},
@@ -1228,7 +1228,7 @@ const listeningExams = {
         ]
     },
     5: {
-        title: 'Listening Mock Test 5', time: 1800, video: 'xERmkRTBJHs',
+        title: 'Listening Mock Test 5', time: 1800, video: 'LJz55rJYDTk',
         sections: [
             { title: 'Section 1 — Travel Booking', questions: [
                 {q:'1. Destination: ___', type:'fill', answer:'Barcelona'},
@@ -1644,10 +1644,10 @@ function submitReading(idx) {
 function openListeningExam(id) {
     const exam = listeningExams[id] || listeningExams[1];
     const videoId = exam.video;
+    const timestamps = ['0:00 — Section 1','7:30 — Section 2','14:00 — Section 3','20:30 — Section 4'];
 
     let qCounter = 0;
     let sectionsHtml = '';
-    const timestamps = ['0:00 — Section 1', '7:30 — Section 2', '14:00 — Section 3', '20:30 — Section 4'];
 
     exam.sections.forEach((sec, si) => {
         let questionsHtml = '';
@@ -1657,29 +1657,22 @@ function openListeningExam(id) {
             if (q.type === 'fill') {
                 questionsHtml += `
                 <div class="listening-q-item">
-                    <label class="listening-q-label">
-                        <span class="listening-q-number">${qCounter}</span>
-                        ${q.q}
-                    </label>
+                    <label class="listening-q-label"><span class="listening-q-number">${qCounter}</span>${q.q}</label>
                     <input type="text" class="listening-input" id="linp-${qNum}" placeholder="Type your answer here...">
                 </div>`;
             } else {
                 questionsHtml += `
                 <div class="listening-q-item">
-                    <label class="listening-q-label">
-                        <span class="listening-q-number">${qCounter}</span>
-                        ${q.q}
-                    </label>
+                    <label class="listening-q-label"><span class="listening-q-number">${qCounter}</span>${q.q}</label>
                     <div class="listening-mcq">
                         ${q.opts.map(o => `<label><input type="radio" name="lq${qNum}" value="${o.charAt(0)}"> <span>${o}</span></label>`).join('')}
                     </div>
                 </div>`;
             }
         });
-
         sectionsHtml += `
         <div class="listening-section">
-            <div class="section-audio-marker">🔊 ${timestamps[si] || 'Section ' + (si + 1)}</div>
+            <div class="section-audio-marker">🔊 ${timestamps[si]}</div>
             <div class="listening-section-title">📋 ${sec.title}</div>
             ${questionsHtml}
         </div>`;
@@ -1688,7 +1681,6 @@ function openListeningExam(id) {
     document.getElementById('main-content').innerHTML = `
         <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
         <h1>🎧 Listening Test ${id}</h1>
-
         <div class="exam-timer">
             <div>
                 <div style="color:#64748b;font-size:11px;text-transform:uppercase;">Time Remaining</div>
@@ -1698,43 +1690,25 @@ function openListeningExam(id) {
                 <button class="submit-btn" onclick="submitListening(${id})">✅ Submit</button>
             </div>
         </div>
-
         <div class="audio-player-box">
             <h3>🎧 IELTS Listening Audio</h3>
             <p class="subtitle">Listen carefully — audio plays ONCE in real exam!</p>
-
             <div class="yt-fallback">
-                <iframe 
-                    src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen
-                    style="width:100%;aspect-ratio:16/9;border:none;">
-                </iframe>
+                <iframe src="https://www.youtube.com/embed/${videoId}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;"></iframe>
             </div>
-
-            <div style="margin-top:15px;padding:12px 20px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:12px;">
-                <p style="color:#34d399;font-weight:700;margin:0 0 8px;">🎧 If video doesn't play:</p>
-                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" style="color:#60a5fa;font-weight:600;font-size:16px;text-decoration:underline;">
-                    ▶ Open audio on YouTube →
-                </a>
-            </div>
-
+            <p style="margin-top:15px;"><a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" style="color:#60a5fa;font-weight:600;font-size:15px;">▶ Не загружается? Открыть на YouTube</a></p>
             <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:15px;">
                 ${timestamps.map(t => `<span style="background:rgba(255,255,255,0.08);padding:4px 12px;border-radius:8px;font-size:12px;color:#c4b5fd;">${t}</span>`).join('')}
             </div>
         </div>
-
         <div class="listening-instructions">
             <span style="font-size:24px;">💡</span>
             <span><b>Instructions:</b> Answer ALL 40 questions. Write NO MORE THAN THREE WORDS and/or a number.</span>
         </div>
-
         ${sectionsHtml}
-
         <div style="text-align:center;margin:30px 0;">
             <button class="submit-btn" onclick="submitListening(${id})" style="font-size:18px;padding:18px 50px;border-radius:16px;border:none;cursor:pointer;font-weight:800;">✅ Submit All Answers</button>
         </div>`;
-
     startTimer(exam.time, () => submitListening(id));
     window.scrollTo(0, 0);
 }
