@@ -33,6 +33,7 @@
             position: fixed;
             height: 100vh;
             z-index: 1000;
+            overflow-y: auto;
         }
 
         /* Instagram Link Style */
@@ -63,6 +64,17 @@
             display: block; border-radius: 10px; cursor: pointer; transition: 0.3s;
         }
         .nav-links a:hover, .nav-links a.active { background: var(--primary); color: white; }
+
+        .nav-section-label {
+            color: #475569;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 20px 15px 8px;
+            border-top: 1px solid var(--border);
+            margin-top: 10px;
+        }
 
         /* Progress Bar Top Center */
         .header-progress {
@@ -108,8 +120,9 @@
         .quiz-options button { 
             display: block; width: 100%; text-align: left; padding: 12px; margin: 8px 0; 
             background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; 
-            border-radius: 8px; cursor: pointer; 
+            border-radius: 8px; cursor: pointer; transition: 0.3s;
         }
+        .quiz-options button:hover { background: rgba(255,255,255,0.1); }
 
         /* PDF - FIXED */
         .pdf-section { width: 100%; margin-top: 30px; }
@@ -127,7 +140,194 @@
             background: linear-gradient(135deg, #f43f5e, #e11d48); color: white; 
             border: none; padding: 18px 35px; border-radius: 15px; font-weight: 800; 
             cursor: pointer; margin-top: 30px; width: 100%; font-size: 16px;
+            transition: 0.3s;
         }
+        .mock-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(244,63,94,0.4); }
+
+        /* ==================== MOCK TESTS HUB ==================== */
+        .mock-hub-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .mock-hub-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent), #f43f5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        .mock-hub-header p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+        .filter-tab {
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.03);
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .filter-tab:hover { background: rgba(255,255,255,0.08); color: white; }
+        .filter-tab.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.4);
+        }
+
+        .mock-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-3px); border-color: var(--primary); }
+        .stat-card .stat-num {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .stat-label { font-size: 12px; color: #64748b; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .mock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .mock-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 25px;
+            cursor: pointer;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .mock-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .mock-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(99,102,241,0.2);
+        }
+        .mock-card:hover::before { opacity: 1; }
+
+        .mock-card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .mock-card-icon.listening { background: rgba(99,102,241,0.15); }
+        .mock-card-icon.reading { background: rgba(16,185,129,0.15); }
+        .mock-card-icon.writing { background: rgba(245,158,11,0.15); }
+        .mock-card-icon.speaking { background: rgba(239,68,68,0.15); }
+        .mock-card-icon.full { background: rgba(168,85,247,0.15); }
+
+        .mock-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+        .mock-card-meta {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        .mock-card-meta span { margin-right: 12px; }
+
+        .mock-card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .mock-tag {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .mock-tag.listening { background: rgba(99,102,241,0.15); color: #818cf8; }
+        .mock-tag.reading { background: rgba(16,185,129,0.15); color: #34d399; }
+        .mock-tag.writing { background: rgba(245,158,11,0.15); color: #fbbf24; }
+        .mock-tag.speaking { background: rgba(239,68,68,0.15); color: #f87171; }
+        .mock-tag.full { background: rgba(168,85,247,0.15); color: #c084fc; }
+        .mock-tag.easy { background: rgba(16,185,129,0.15); color: #34d399; }
+        .mock-tag.medium { background: rgba(245,158,11,0.15); color: #fbbf24; }
+        .mock-tag.hard { background: rgba(239,68,68,0.15); color: #f87171; }
+
+        .mock-card-btn {
+            margin-top: 18px;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.03);
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .mock-card-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+            margin-bottom: 25px;
+        }
+        .back-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
     </style>
 </head>
 <body>
@@ -141,11 +341,14 @@
         </a>
 
         <ul class="nav-links">
-            <li><a onclick="location.reload()" class="active">🏠 Dashboard</a></li>
-            <li><a onclick="showModule('Listening')">🎧 Listening</a></li>
-            <li><a onclick="showModule('Reading')">📖 Reading</a></li>
-            <li><a onclick="showModule('Writing')">✍️ Writing</a></li>
-            <li><a onclick="showModule('Speaking')">🗣️ Speaking</a></li>
+            <li><a onclick="showDashboard()" id="nav-dashboard" class="active">🏠 Dashboard</a></li>
+            <div class="nav-section-label">Modules</div>
+            <li><a onclick="showModule('Listening')" id="nav-listening">🎧 Listening</a></li>
+            <li><a onclick="showModule('Reading')" id="nav-reading">📖 Reading</a></li>
+            <li><a onclick="showModule('Writing')" id="nav-writing">✍️ Writing</a></li>
+            <li><a onclick="showModule('Speaking')" id="nav-speaking">🗣️ Speaking</a></li>
+            <div class="nav-section-label">Practice</div>
+            <li><a onclick="showMockHub()" id="nav-mocks">📝 Mock Tests</a></li>
         </ul>
     </nav>
 
@@ -215,65 +418,49 @@
             ]
         };
 
+        // ==================== MOCK TESTS DATABASE ====================
+        const mockTests = [
+            // FULL TESTS
+            { id: 1,  title: "Cambridge 18 — Test 1", type: "full", difficulty: "Medium", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge18_test1.pdf", video: null, icon: "📋" },
+            { id: 2,  title: "Cambridge 18 — Test 2", type: "full", difficulty: "Medium", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge18_test2.pdf", video: null, icon: "📋" },
+            { id: 3,  title: "Cambridge 18 — Test 3", type: "full", difficulty: "Hard", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge18_test3.pdf", video: null, icon: "📋" },
+            { id: 4,  title: "Cambridge 17 — Test 1", type: "full", difficulty: "Medium", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge17_test1.pdf", video: null, icon: "📋" },
+            { id: 5,  title: "Cambridge 17 — Test 2", type: "full", difficulty: "Hard", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge17_test2.pdf", video: null, icon: "📋" },
+
+            // LISTENING
+            { id: 6,  title: "Listening Mock — Test 1", type: "listening", difficulty: "Easy", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock1.pdf", video: "WO9lCJiPt58", icon: "🎧" },
+            { id: 7,  title: "Listening Mock — Test 2", type: "listening", difficulty: "Medium", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock2.pdf", video: "QhVrqQFUfY8", icon: "🎧" },
+            { id: 8,  title: "Listening Mock — Test 3", type: "listening", difficulty: "Hard", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock3.pdf", video: null, icon: "🎧" },
+            { id: 9,  title: "Listening Mock — Test 4", type: "listening", difficulty: "Medium", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock4.pdf", video: null, icon: "🎧" },
+            { id: 10, title: "Listening Mock — Test 5", type: "listening", difficulty: "Hard", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock5.pdf", video: null, icon: "🎧" },
+
+            // READING
+            { id: 11, title: "Reading Mock — Test 1", type: "reading", difficulty: "Easy", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock1.pdf", video: null, icon: "📖" },
+            { id: 12, title: "Reading Mock — Test 2", type: "reading", difficulty: "Medium", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock2.pdf", video: null, icon: "📖" },
+            { id: 13, title: "Reading Mock — Test 3", type: "reading", difficulty: "Hard", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock3.pdf", video: null, icon: "📖" },
+            { id: 14, title: "Reading Mock — Test 4", type: "reading", difficulty: "Medium", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock4.pdf", video: null, icon: "📖" },
+            { id: 15, title: "Reading Mock — Test 5", type: "reading", difficulty: "Hard", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock5.pdf", video: null, icon: "📖" },
+
+            // WRITING
+            { id: 16, title: "Writing Mock — Test 1", type: "writing", difficulty: "Easy", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock1.pdf", video: null, icon: "✍️" },
+            { id: 17, title: "Writing Mock — Test 2", type: "writing", difficulty: "Medium", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock2.pdf", video: null, icon: "✍️" },
+            { id: 18, title: "Writing Mock — Test 3", type: "writing", difficulty: "Hard", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock3.pdf", video: null, icon: "✍️" },
+            { id: 19, title: "Writing Mock — Test 4", type: "writing", difficulty: "Medium", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock4.pdf", video: null, icon: "✍️" },
+            { id: 20, title: "Writing Mock — Test 5", type: "writing", difficulty: "Hard", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock5.pdf", video: null, icon: "✍️" },
+
+            // SPEAKING
+            { id: 21, title: "Speaking Mock — Test 1", type: "speaking", difficulty: "Easy", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock1.pdf", video: "IevmdO16GuE", icon: "🗣️" },
+            { id: 22, title: "Speaking Mock — Test 2", type: "speaking", difficulty: "Medium", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock2.pdf", video: "YRKxrDz4hzA", icon: "🗣️" },
+            { id: 23, title: "Speaking Mock — Test 3", type: "speaking", difficulty: "Hard", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock3.pdf", video: null, icon: "🗣️" },
+            { id: 24, title: "Speaking Mock — Test 4", type: "speaking", difficulty: "Medium", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock4.pdf", video: null, icon: "🗣️" },
+            { id: 25, title: "Speaking Mock — Test 5", type: "speaking", difficulty: "Hard", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock5.pdf", video: null, icon: "🗣️" },
+        ];
+
         let completed = new Set();
+        let currentMockFilter = 'all';
 
-        function checkQuiz(btn, isCorrect) {
-            btn.style.background = isCorrect ? "#16a34a" : "#dc2626";
-            btn.style.color = "white";
-        }
-
-        function showModule(name) {
-            const key = name.toLowerCase();
-            completed.add(key);
-            document.getElementById('p-fill').style.width = (completed.size / 4 * 100) + "%";
-            document.getElementById('p-percent').innerText = (completed.size / 4 * 100) + "%";
-
-            let quizHtml = quizData[key].map((item, idx) => `
-                <div class="quiz-item">
-                    <p><b>${idx+1}. ${item.q}</b></p>
-                    <div class="quiz-options">
-                        ${item.a.map((opt, i) => `<button onclick="checkQuiz(this, ${i === item.correct})">${opt}</button>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-
-            document.getElementById('main-content').innerHTML = `
-                <h1 style="text-align:left;">${name} Module</h1>
-                <div class="video-wrapper"><div class="youtube-container">
-                    <iframe src="https://www.youtube.com/embed/${ytData.lessons[key]}" allowfullscreen></iframe>
-                </div></div>
+        // ==================== NAV HIGHLIGHT ====================
+        function setActiveNav(id) {
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+            if (id) {
                 
-                <div class="quiz-container">
-                    <h2>Module Quiz</h2>
-                    ${quizHtml}
-                </div>
-
-                <div class="pdf-section">
-                    <h2 style="text-align:left;">Study Guide</h2>
-                    <div class="pdf-wrapper"><iframe src="materials/${key}.pdf"></iframe></div>
-                </div>
-
-                <button class="mock-btn" onclick="loadMockTest('${name}')">🔥 START FULL MOCK TEST</button>
-            `;
-            window.scrollTo(0,0);
-        }
-
-        function loadMockTest(section) {
-            const key = section.toLowerCase();
-            const media = (section === 'Listening' || section === 'Speaking') ? 
-                `<div class="video-wrapper"><div class="youtube-container"><iframe src="https://www.youtube.com/embed/${ytData.mocks[key] || ytData.lessons[key]}" allowfullscreen></iframe></div></div>` : '';
-
-            document.getElementById('main-content').innerHTML = `
-                <h1 style="color:var(--accent);">${section} Mock Test</h1>
-                ${media}
-                <div class="pdf-section">
-                    <h2>Mock Test Paper</h2>
-                    <div class="pdf-wrapper"><iframe src="materials/${key}_mock.pdf"></iframe></div>
-                </div>
-                <button onclick="showModule('${section}')" style="margin-top:20px; color:#94a3b8; background:none; border:none; cursor:pointer;">← Back to Lesson</button>
-            `;
-            window.scrollTo(0,0);
-        }
-    </script>
-</body>
-</html>
