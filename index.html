@@ -1747,11 +1747,62 @@ function openListeningExam(id) {
         `<span style="background:rgba(255,255,255,0.08);padding:4px 12px;border-radius:8px;font-size:12px;color:#c4b5fd;">${t}</span>`
     ).join('');
 
+    document.getElementById('main-content').innerHTML = `
+        <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
+        <h1>🎧 Listening Test ${id}</h1>
+
+        <div class="exam-timer">
+            <div>
+                <div style="color:#64748b;font-size:11px;text-transform:uppercase;">Time Remaining</div>
+                <div class="timer-clock" id="exam-clock">30:00</div>
+            </div>
+            <div class="timer-btns">
+                <button class="submit-btn" onclick="submitListening(${id})">✅ Submit</button>
+            </div>
+        </div>
+
+        <div class="audio-player-box">
+            <h3>🎧 IELTS Listening Audio</h3>
+            <p class="subtitle">Listen carefully — audio plays ONCE in real exam!</p>
+            
+            <div class="audio-warning">
+                <span>⚠️</span>
+                <span>If audio doesn't load, click "Backup" or "Open in YouTube"</span>
+            </div>
+
+            <div class="audio-tabs">
+                ${audioTabsHtml}
+                <a href="https://www.youtube.com/watch?v=${audio.videos[0].id}" target="_blank" class="audio-tab" style="text-decoration:none;">
+                    🔗 Open in YouTube
+                </a>
+            </div>
+
+            ${audioSourcesHtml}
+
+            <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:15px;">
+                ${timestampsHtml}
+            </div>
+        </div>
+
+        <div class="listening-instructions">
+            <span style="font-size:24px;">💡</span>
+            <span><b>Instructions:</b> Answer ALL 40 questions. Write NO MORE THAN THREE WORDS and/or a number.</span>
+        </div>
+
+        ${sectionsHtml}
+
+        <div style="text-align:center;margin:30px 0;">
+            <button class="submit-btn" onclick="submitListening(${id})" style="font-size:18px;padding:18px 50px;border-radius:16px;border:none;cursor:pointer;font-weight:800;">✅ Submit All Answers</button>
+        </div>`;
+
+    startTimer(exam.time, () => submitListening(id));
+    window.scrollTo(0, 0);
+}
+
 // Audio tab switcher
 function switchAudioTab(idx) {
     document.querySelectorAll('.audio-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.audio-source').forEach(s => s.classList.remove('active'));
-
     document.querySelectorAll('.audio-tab')[idx]?.classList.add('active');
     const src = document.getElementById('audio-src-' + idx);
     if (src) src.classList.add('active');
