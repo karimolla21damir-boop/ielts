@@ -621,290 +621,271 @@ for (let i = 2; i <= 5; i++) {
 // --- LISTENING EXAM DATA ---
 const listeningExams = {
     1: {
-        title: 'Listening Mock Test 1',
-        time: 1800,
-        video: 'lGiSJmSXigo',
+        title: 'Listening Mock Test 1', time: 1800, video: 'lGiSJmSXigo',
         sections: [
-            {
-                title: 'Section 1 — Social / Everyday Conversation',
-                questions: [
-                    {q:'1. The woman wants to book a room for how many nights?', type:'fill', answer:'3'},
-                    {q:'2. What type of room does she prefer?', type:'mcq', opts:['A) Single','B) Double','C) Suite','D) Twin'], answer:'B'},
-                    {q:'3. The total cost per night is £___', type:'fill', answer:'85'},
-                    {q:'4. What is included in the price?', type:'mcq', opts:['A) Breakfast only','B) Dinner only','C) Breakfast and dinner','D) No meals'], answer:'A'},
-                    {q:'5. Check-in time is at ___', type:'fill', answer:'2pm'},
-                    {q:'6. The hotel is located near the ___', type:'fill', answer:'train station'},
-                    {q:'7. She will pay by ___', type:'fill', answer:'credit card'},
-                    {q:'8. Her surname is spelled ___', type:'fill', answer:'Morrison'},
-                    {q:'9. The booking reference number is ___', type:'fill', answer:'HB4527'},
-                    {q:'10. She requests a room on the ___ floor', type:'fill', answer:'ground'}
-                ]
-            },
-            {
-                title: 'Section 2 — Monologue (Public Information)',
-                questions: [
-                    {q:'11. The museum opens at ___ on weekdays', type:'fill', answer:'9am'},
-                    {q:'12. Entry is free for children under ___', type:'fill', answer:'5'},
-                    {q:'13. The guided tour lasts approximately ___', type:'fill', answer:'45 minutes'},
-                    {q:'14. Which floor has the modern art exhibition?', type:'mcq', opts:['A) Ground floor','B) First floor','C) Second floor','D) Third floor'], answer:'C'},
-                    {q:'15. Visitors must not ___ in the gallery', type:'fill', answer:'take photographs'},
-                    {q:'16. The café is located ___', type:'fill', answer:'next to the gift shop'},
-                    {q:'17. Special events are held on ___', type:'fill', answer:'Saturdays'},
-                    {q:'18. The nearest car park is on ___ Street', type:'fill', answer:'Queen'},
-                    {q:'19. Group bookings require at least ___ people', type:'fill', answer:'10'},
-                    {q:'20. The museum is closed on ___', type:'fill', answer:'Mondays'}
-                ]
-            },
-            {
-                title: 'Section 3 — Academic Discussion',
-                questions: [
-                    {q:'21. The students are discussing their ___ project', type:'fill', answer:'research'},
-                    {q:'22. The deadline for the proposal is ___', type:'fill', answer:'Friday'},
-                    {q:'23. They need to collect data from at least ___ participants', type:'fill', answer:'30'},
-                    {q:'24. The preferred method of research is ___', type:'mcq', opts:['A) Interviews','B) Surveys','C) Observation','D) Experiments'], answer:'B'},
-                    {q:'25. The professor suggests they focus on ___', type:'fill', answer:'environmental factors'},
-                    {q:'26. The literature review should contain ___ sources minimum', type:'fill', answer:'15'},
-                    {q:'27. They will meet next in the ___', type:'fill', answer:'library'},
-                    {q:'28. Sarah is responsible for the ___ section', type:'fill', answer:'methodology'},
-                    {q:'29. The presentation will last ___ minutes', type:'fill', answer:'20'},
-                    {q:'30. They are most concerned about ___', type:'mcq', opts:['A) Time management','B) Finding sources','C) Data analysis','D) Formatting'], answer:'C'}
-                ]
-            },
-            {
-                title: 'Section 4 — Academic Lecture',
-                questions: [
-                    {q:'31. The lecture is about ___ in urban areas', type:'fill', answer:'biodiversity'},
-                    {q:'32. Urban green spaces help reduce ___', type:'fill', answer:'air pollution'},
-                    {q:'33. The study was conducted in ___ cities', type:'fill', answer:'12'},
-                    {q:'34. Trees can lower temperature by up to ___ degrees', type:'fill', answer:'3'},
-                    {q:'35. The most common species found was the ___', type:'fill', answer:'sparrow'},
-                    {q:'36. Parks larger than ___ hectares showed better results', type:'fill', answer:'5'},
-                    {q:'37. What percentage of cities now have green policies?', type:'mcq', opts:['A) 40%','B) 55%','C) 65%','D) 80%'], answer:'C'},
-                    {q:'38. The main challenge is ___', type:'fill', answer:'funding'},
-                    {q:'39. Community gardens increased by ___% since 2010', type:'fill', answer:'120'},
-                    {q:'40. The speaker concludes that green spaces are ___ for public health', type:'fill', answer:'essential'}
-                ]
-            }
+            { title: 'Section 1 — Everyday Conversation', questions: [
+                {q:'1. The woman wants to book for how many nights?', type:'fill', answer:'3'},
+                {q:'2. What type of room?', type:'mcq', opts:['A) Single','B) Double','C) Suite','D) Twin'], answer:'B'},
+                {q:'3. Cost per night is £___', type:'fill', answer:'85'},
+                {q:'4. What is included?', type:'mcq', opts:['A) Breakfast only','B) Dinner only','C) Both','D) None'], answer:'A'},
+                {q:'5. Check-in time is ___', type:'fill', answer:'2pm'},
+                {q:'6. Hotel is near the ___', type:'fill', answer:'train station'},
+                {q:'7. She pays by ___', type:'fill', answer:'credit card'},
+                {q:'8. Surname is ___', type:'fill', answer:'Morrison'},
+                {q:'9. Booking reference ___', type:'fill', answer:'HB4527'},
+                {q:'10. Room on ___ floor', type:'fill', answer:'ground'}
+            ]},
+            { title: 'Section 2 — Public Information', questions: [
+                {q:'11. Museum opens at ___', type:'fill', answer:'9am'},
+                {q:'12. Free for children under ___', type:'fill', answer:'5'},
+                {q:'13. Tour lasts ___', type:'fill', answer:'45 minutes'},
+                {q:'14. Modern art on which floor?', type:'mcq', opts:['A) Ground','B) First','C) Second','D) Third'], answer:'C'},
+                {q:'15. Visitors must not ___', type:'fill', answer:'take photographs'},
+                {q:'16. Café is ___', type:'fill', answer:'next to the gift shop'},
+                {q:'17. Events held on ___', type:'fill', answer:'Saturdays'},
+                {q:'18. Car park on ___ Street', type:'fill', answer:'Queen'},
+                {q:'19. Group bookings need ___ people', type:'fill', answer:'10'},
+                {q:'20. Closed on ___', type:'fill', answer:'Mondays'}
+            ]},
+            { title: 'Section 3 — Academic Discussion', questions: [
+                {q:'21. Discussing their ___ project', type:'fill', answer:'research'},
+                {q:'22. Deadline is ___', type:'fill', answer:'Friday'},
+                {q:'23. Need ___ participants', type:'fill', answer:'30'},
+                {q:'24. Research method?', type:'mcq', opts:['A) Interviews','B) Surveys','C) Observation','D) Experiments'], answer:'B'},
+                {q:'25. Focus on ___', type:'fill', answer:'environmental factors'},
+                {q:'26. Literature review: ___ sources', type:'fill', answer:'15'},
+                {q:'27. Meet in the ___', type:'fill', answer:'library'},
+                {q:'28. Sarah does ___ section', type:'fill', answer:'methodology'},
+                {q:'29. Presentation: ___ minutes', type:'fill', answer:'20'},
+                {q:'30. Concerned about?', type:'mcq', opts:['A) Time','B) Sources','C) Data analysis','D) Format'], answer:'C'}
+            ]},
+            { title: 'Section 4 — Academic Lecture', questions: [
+                {q:'31. Lecture about urban ___', type:'fill', answer:'biodiversity'},
+                {q:'32. Green spaces reduce ___', type:'fill', answer:'air pollution'},
+                {q:'33. Study in ___ cities', type:'fill', answer:'12'},
+                {q:'34. Trees lower temp by ___ degrees', type:'fill', answer:'3'},
+                {q:'35. Most common species: ___', type:'fill', answer:'sparrow'},
+                {q:'36. Parks larger than ___ hectares', type:'fill', answer:'5'},
+                {q:'37. Cities with green policies?', type:'mcq', opts:['A) 40%','B) 55%','C) 65%','D) 80%'], answer:'C'},
+                {q:'38. Main challenge: ___', type:'fill', answer:'funding'},
+                {q:'39. Gardens increased ___% since 2010', type:'fill', answer:'120'},
+                {q:'40. Green spaces are ___ for health', type:'fill', answer:'essential'}
+            ]}
         ]
     },
     2: {
-        title: 'Listening Mock Test 2',
-        time: 1800,
-        video: '5gMNJfFbXYQ',
+        title: 'Listening Mock Test 2', time: 1800, video: '5gMNJfFbXYQ',
         sections: [
-            {
-                title: 'Section 1 — Booking / Registration',
-                questions: [
-                    {q:'1. The caller wants to register for a ___ course', type:'fill', answer:'photography'},
-                    {q:'2. Classes are held on ___ evenings', type:'fill', answer:'Wednesday'},
-                    {q:'3. The course costs £___ per term', type:'fill', answer:'120'},
-                    {q:'4. Students need to bring their own ___', type:'fill', answer:'camera'},
-                    {q:'5. The course starts on ___ March', type:'fill', answer:'15th'},
-                    {q:'6. Maximum class size is ___ students', type:'fill', answer:'16'},
-                    {q:'7. The instructor\'s name is ___', type:'fill', answer:'David Clarke'},
-                    {q:'8. The venue is ___ Community Centre', type:'fill', answer:'Riverside'},
-                    {q:'9. Students get access to the ___ room', type:'fill', answer:'dark'},
-                    {q:'10. Contact number is ___', type:'fill', answer:'07845 329176'}
-                ]
-            },
-            {
-                title: 'Section 2 — Tour Guide Speech',
-                questions: [
-                    {q:'11. The castle was built in ___', type:'fill', answer:'1285'},
-                    {q:'12. It was originally used as a ___', type:'fill', answer:'fortress'},
-                    {q:'13. The castle has ___ towers', type:'fill', answer:'4'},
-                    {q:'14. The best view is from the ___ tower', type:'mcq', opts:['A) North','B) South','C) East','D) West'], answer:'A'},
-                    {q:'15. The gardens were designed by ___', type:'fill', answer:'a French architect'},
-                    {q:'16. Annual visitors number approximately ___', type:'fill', answer:'200000'},
-                    {q:'17. The ghost tour runs at ___ pm', type:'fill', answer:'8'},
-                    {q:'18. Photography is ___ in the main hall', type:'fill', answer:'prohibited'},
-                    {q:'19. The souvenir shop sells handmade ___', type:'fill', answer:'jewellery'},
-                    {q:'20. Parking costs £___ per hour', type:'fill', answer:'3'}
-                ]
-            },
-            {
-                title: 'Section 3 — Tutorial Discussion',
-                questions: [
-                    {q:'21. Emma chose the topic of ___ migration', type:'fill', answer:'bird'},
-                    {q:'22. Her hypothesis involves ___ patterns', type:'fill', answer:'climate change'},
-                    {q:'23. The tutor recommends using ___ data', type:'mcq', opts:['A) Historical','B) Current','C) Predicted','D) Satellite'], answer:'D'},
-                    {q:'24. She needs ___ more references', type:'fill', answer:'8'},
-                    {q:'25. The first draft is due ___', type:'fill', answer:'next Monday'},
-                    {q:'26. Emma struggled most with the ___ chapter', type:'fill', answer:'analysis'},
-                    {q:'27. The tutor suggests adding more ___', type:'fill', answer:'graphs'},
-                    {q:'28. Word count should be between ___ words', type:'fill', answer:'3000-4000'},
-                    {q:'29. They agree to meet again on ___', type:'fill', answer:'Thursday'},
-                    {q:'30. The final submission is worth ___% of the grade', type:'fill', answer:'60'}
-                ]
-            },
-            {
-                title: 'Section 4 — Lecture on Health',
-                questions: [
-                    {q:'31. The lecture focuses on ___ health', type:'fill', answer:'mental'},
-                    {q:'32. ___ % of students report stress', type:'fill', answer:'75'},
-                    {q:'33. The most effective solution mentioned is ___', type:'fill', answer:'exercise'},
-                    {q:'34. Sleep deprivation affects ___ performance', type:'fill', answer:'academic'},
-                    {q:'35. Students should sleep at least ___ hours', type:'fill', answer:'7'},
-                    {q:'36. Social media use correlates with ___', type:'mcq', opts:['A) Better grades','B) Anxiety','C) Improved sleep','D) Weight loss'], answer:'B'},
-                    {q:'37. The university offers ___ counselling sessions free', type:'fill', answer:'6'},
-                    {q:'38. Meditation was practiced by ___% of participants', type:'fill', answer:'35'},
-                    {q:'39. The study lasted ___ months', type:'fill', answer:'18'},
-                    {q:'40. The speaker recommends a ___ approach to wellbeing', type:'fill', answer:'holistic'}
-                ]
-            }
+            { title: 'Section 1 — Course Registration', questions: [
+                {q:'1. Register for ___ course', type:'fill', answer:'photography'},
+                {q:'2. Classes on ___ evenings', type:'fill', answer:'Wednesday'},
+                {q:'3. Costs £___ per term', type:'fill', answer:'120'},
+                {q:'4. Bring own ___', type:'fill', answer:'camera'},
+                {q:'5. Starts ___ March', type:'fill', answer:'15th'},
+                {q:'6. Max class size ___', type:'fill', answer:'16'},
+                {q:'7. Instructor: ___', type:'fill', answer:'David Clarke'},
+                {q:'8. Venue: ___ Community Centre', type:'fill', answer:'Riverside'},
+                {q:'9. Access to ___ room', type:'fill', answer:'dark'},
+                {q:'10. Contact: ___', type:'fill', answer:'07845 329176'}
+            ]},
+            { title: 'Section 2 — Tour Guide', questions: [
+                {q:'11. Castle built in ___', type:'fill', answer:'1285'},
+                {q:'12. Originally a ___', type:'fill', answer:'fortress'},
+                {q:'13. Has ___ towers', type:'fill', answer:'4'},
+                {q:'14. Best view from?', type:'mcq', opts:['A) North','B) South','C) East','D) West'], answer:'A'},
+                {q:'15. Gardens by ___', type:'fill', answer:'a French architect'},
+                {q:'16. Annual visitors ___', type:'fill', answer:'200000'},
+                {q:'17. Ghost tour at ___ pm', type:'fill', answer:'8'},
+                {q:'18. Photography ___ in main hall', type:'fill', answer:'prohibited'},
+                {q:'19. Shop sells handmade ___', type:'fill', answer:'jewellery'},
+                {q:'20. Parking £___ per hour', type:'fill', answer:'3'}
+            ]},
+            { title: 'Section 3 — Tutorial Discussion', questions: [
+                {q:'21. Topic: ___ migration', type:'fill', answer:'bird'},
+                {q:'22. Hypothesis: ___ patterns', type:'fill', answer:'climate change'},
+                {q:'23. Tutor recommends ___ data', type:'mcq', opts:['A) Historical','B) Current','C) Predicted','D) Satellite'], answer:'D'},
+                {q:'24. Needs ___ more references', type:'fill', answer:'8'},
+                {q:'25. Draft due ___', type:'fill', answer:'next Monday'},
+                {q:'26. Struggled with ___', type:'fill', answer:'analysis'},
+                {q:'27. Add more ___', type:'fill', answer:'graphs'},
+                {q:'28. Word count ___', type:'fill', answer:'3000-4000'},
+                {q:'29. Meet again ___', type:'fill', answer:'Thursday'},
+                {q:'30. Worth ___% of grade', type:'fill', answer:'60'}
+            ]},
+            { title: 'Section 4 — Health Lecture', questions: [
+                {q:'31. Focus on ___ health', type:'fill', answer:'mental'},
+                {q:'32. ___% report stress', type:'fill', answer:'75'},
+                {q:'33. Most effective: ___', type:'fill', answer:'exercise'},
+                {q:'34. Sleep affects ___ performance', type:'fill', answer:'academic'},
+                {q:'35. Sleep at least ___ hours', type:'fill', answer:'7'},
+                {q:'36. Social media correlates with?', type:'mcq', opts:['A) Better grades','B) Anxiety','C) Better sleep','D) Weight loss'], answer:'B'},
+                {q:'37. ___ free counselling sessions', type:'fill', answer:'6'},
+                {q:'38. Meditation: ___% participated', type:'fill', answer:'35'},
+                {q:'39. Study lasted ___ months', type:'fill', answer:'18'},
+                {q:'40. Recommends ___ approach', type:'fill', answer:'holistic'}
+            ]}
         ]
     },
-    3: {
-        title: 'Listening Mock Test 3',
-        time: 1800,
-        video: 'oVGqEhJaef4',
+        3: {
+        title: 'Listening Mock Test 3', time: 1800, video: 'oVGqEhJaef4',
         sections: [
-            {
-                title: 'Section 1 — Renting a Property',
-                questions: [
-                    {q:'1. The apartment is on ___ Road', type:'fill', answer:'Victoria'},
-                    {q:'2. Monthly rent is £___', type:'fill', answer:'950'},
-                    {q:'3. The deposit required is ___ month(s) rent', type:'fill', answer:'2'},
-                    {q:'4. Bills are ___', type:'mcq', opts:['A) Included','B) Not included','C) Partially included','D) Negotiable'], answer:'B'},
-                    {q:'5. The apartment has ___ bedrooms', type:'fill', answer:'2'},
-                    {q:'6. Pets are ___', type:'fill', answer:'not allowed'},
-                    {q:'7. The lease is for ___ months minimum', type:'fill', answer:'12'},
-                    {q:'8. Nearest tube station is ___', type:'fill', answer:'Oval'},
-                    {q:'9. Viewing is arranged for ___ afternoon', type:'fill', answer:'Saturday'},
-                    {q:'10. Contact the agent named ___', type:'fill', answer:'Karen'}
-                ]
-            },
-            {
-                title: 'Section 2 — Library Orientation',
-                questions: [
-                    {q:'11. The library has ___ floors', type:'fill', answer:'4'},
-                    {q:'12. Silent study area is on the ___ floor', type:'fill', answer:'3rd'},
-                    {q:'13. Students can borrow up to ___ books', type:'fill', answer:'8'},
-                    {q:'14. Loan period is ___ weeks', type:'fill', answer:'3'},
-                    {q:'15. Overdue fine is ___ pence per day', type:'fill', answer:'50'},
-                    {q:'16. Computers must be booked ___', type:'mcq', opts:['A) In advance online','B) At reception','C) By phone','D) No booking needed'], answer:'A'},
-                    {q:'17. Printing costs ___ per page', type:'fill', answer:'5p'},
-                    {q:'18. The library closes at ___ on Sundays', type:'fill', answer:'6pm'},
-                    {q:'19. Group study rooms hold up to ___ people', type:'fill', answer:'6'},
-                    {q:'20. Food is allowed only in the ___', type:'fill', answer:'ground floor café'}
-                ]
-            },
-            {
-                title: 'Section 3 — Student Project Planning',
-                questions: [
-                    {q:'21. The project is about sustainable ___', type:'fill', answer:'energy'},
-                    {q:'22. They will focus on ___ power specifically', type:'fill', answer:'solar'},
-                    {q:'23. The case study country is ___', type:'fill', answer:'Germany'},
-                    {q:'24. Data collection will take ___ weeks', type:'fill', answer:'4'},
-                    {q:'25. They plan to interview ___ experts', type:'fill', answer:'5'},
-                    {q:'26. The budget for the project is £___', type:'fill', answer:'200'},
-                    {q:'27. Who will handle the statistical analysis?', type:'mcq', opts:['A) Tom','B) Lisa','C) Both','D) The professor'], answer:'B'},
-                    {q:'28. Presentation slides should not exceed ___', type:'fill', answer:'15'},
-                    {q:'29. They need ethical approval from ___', type:'fill', answer:'the committee'},
-                    {q:'30. Final report format should be ___', type:'fill', answer:'APA style'}
-                ]
-            },
-            {
-                title: 'Section 4 — Lecture on Architecture',
-                questions: [
-                    {q:'31. The lecture covers ___ architecture', type:'fill', answer:'sustainable'},
-                    {q:'32. Green buildings use ___% less energy', type:'fill', answer:'40'},
-                    {q:'33. The first green building standard was created in ___', type:'fill', answer:'1990'},
-                    {q:'34. The most important material mentioned is ___', type:'fill', answer:'bamboo'},
-                    {q:'35. Living walls help with ___', type:'fill', answer:'insulation'},
-                    {q:'36. The example building is located in ___', type:'mcq', opts:['A) London','B) Singapore','C) Dubai','D) Tokyo'], answer:'B'},
-                    {q:'37. Rainwater harvesting saves ___ litres annually', type:'fill', answer:'50000'},
-                    {q:'38. Solar panels cover ___% of the roof', type:'fill', answer:'80'},
-                    {q:'39. The building cost ___ million to construct', type:'fill', answer:'25'},
-                    {q:'40. The architect argues buildings should be ___', type:'fill', answer:'carbon neutral'}
-                ]
-            }
+            { title: 'Section 1 — Renting Property', questions: [
+                {q:'1. Apartment on ___ Road', type:'fill', answer:'Victoria'},
+                {q:'2. Rent £___', type:'fill', answer:'950'},
+                {q:'3. Deposit: ___ months', type:'fill', answer:'2'},
+                {q:'4. Bills?', type:'mcq', opts:['A) Included','B) Not included','C) Partial','D) Negotiable'], answer:'B'},
+                {q:'5. Has ___ bedrooms', type:'fill', answer:'2'},
+                {q:'6. Pets ___', type:'fill', answer:'not allowed'},
+                {q:'7. Lease ___ months minimum', type:'fill', answer:'12'},
+                {q:'8. Nearest station ___', type:'fill', answer:'Oval'},
+                {q:'9. Viewing on ___', type:'fill', answer:'Saturday'},
+                {q:'10. Agent named ___', type:'fill', answer:'Karen'}
+            ]},
+            { title: 'Section 2 — Library Orientation', questions: [
+                {q:'11. Library has ___ floors', type:'fill', answer:'4'},
+                {q:'12. Silent study on ___', type:'fill', answer:'3rd'},
+                {q:'13. Borrow up to ___ books', type:'fill', answer:'8'},
+                {q:'14. Loan: ___ weeks', type:'fill', answer:'3'},
+                {q:'15. Fine ___ pence/day', type:'fill', answer:'50'},
+                {q:'16. Computers booked?', type:'mcq', opts:['A) Online','B) Reception','C) Phone','D) No booking'], answer:'A'},
+                {q:'17. Printing ___ per page', type:'fill', answer:'5p'},
+                {q:'18. Closes ___ Sundays', type:'fill', answer:'6pm'},
+                {q:'19. Study rooms hold ___', type:'fill', answer:'6'},
+                {q:'20. Food only in ___', type:'fill', answer:'ground floor café'}
+            ]},
+            { title: 'Section 3 — Project Planning', questions: [
+                {q:'21. About sustainable ___', type:'fill', answer:'energy'},
+                {q:'22. Focus on ___ power', type:'fill', answer:'solar'},
+                {q:'23. Case study: ___', type:'fill', answer:'Germany'},
+                {q:'24. Data collection ___ weeks', type:'fill', answer:'4'},
+                {q:'25. Interview ___ experts', type:'fill', answer:'5'},
+                {q:'26. Budget £___', type:'fill', answer:'200'},
+                {q:'27. Statistics by?', type:'mcq', opts:['A) Tom','B) Lisa','C) Both','D) Professor'], answer:'B'},
+                {q:'28. Max ___ slides', type:'fill', answer:'15'},
+                {q:'29. Approval from ___', type:'fill', answer:'the committee'},
+                {q:'30. Format: ___', type:'fill', answer:'APA style'}
+            ]},
+            { title: 'Section 4 — Architecture Lecture', questions: [
+                {q:'31. About ___ architecture', type:'fill', answer:'sustainable'},
+                {q:'32. Use ___% less energy', type:'fill', answer:'40'},
+                {q:'33. First standard in ___', type:'fill', answer:'1990'},
+                {q:'34. Key material: ___', type:'fill', answer:'bamboo'},
+                {q:'35. Living walls help ___', type:'fill', answer:'insulation'},
+                {q:'36. Example building in?', type:'mcq', opts:['A) London','B) Singapore','C) Dubai','D) Tokyo'], answer:'B'},
+                {q:'37. Saves ___ litres/year', type:'fill', answer:'50000'},
+                {q:'38. Solar covers ___% roof', type:'fill', answer:'80'},
+                {q:'39. Cost ___ million', type:'fill', answer:'25'},
+                {q:'40. Buildings should be ___', type:'fill', answer:'carbon neutral'}
+            ]}
         ]
     },
     4: {
-        title: 'Listening Mock Test 4',
-        time: 1800,
-        video: 'xJMEoFSsv_o',
+        title: 'Listening Mock Test 4', time: 1800, video: 'xJMEoFSsv_o',
         sections: [
-            {
-                title: 'Section 1 — Joining a Gym',
-                questions: [
-                    {q:'1. Annual membership costs £___', type:'fill', answer:'450'},
-                    {q:'2. The gym opens at ___ on weekdays', type:'fill', answer:'6am'},
-                    {q:'3. Free personal training sessions: ___', type:'fill', answer:'2'},
-                    {q:'4. Swimming pool length is ___ metres', type:'fill', answer:'25'},
-                    {q:'5. Towels are ___', type:'mcq', opts:['A) Provided free','B) Available to rent','C) Bring your own','D) Included in premium'], answer:'C'},
-                    {q:'6. Car parking spaces: ___', type:'fill', answer:'50'},
-                    {q:'7. Cancellation requires ___ weeks notice', type:'fill', answer:'4'},
-                    {q:'8. Sauna is on the ___ floor', type:'fill', answer:'lower ground'},
-                    {q:'9. Group classes start from ___', type:'fill', answer:'7am'},
-                    {q:'10. Student discount is ____%', type:'fill', answer:'15'}
-                ]
-            },
-            {
-                title: 'Section 2 — City Festival Information',
-                questions: [
-                    {q:'11. The festival runs for ___ days', type:'fill', answer:'10'},
-                    {q:'12. Main stage is in ___ Park', type:'fill', answer:'Central'},
-                    {q:'13. Entry tickets cost £___', type:'fill', answer:'25'},
-                    {q:'14. Children under ___ enter free', type:'fill', answer:'12'},
-                    {q:'15. Food stalls represent ___ different cuisines', type:'fill', answer:'30'},
-                    {q:'16. The fireworks display is on ___', type:'mcq', opts:['A) Opening night','B) Closing night','C) Every night','D) Weekends only'], answer:'B'},
-                    {q:'17. Volunteers receive a free ___', type:'fill', answer:'t-shirt'},
-                    {q:'18. Lost property is at the ___ tent', type:'fill', answer:'information'},
-                    {q:'19. Last entry is at ___ pm', type:'fill', answer:'9'},
-                    {q:'20. The headline act this year is ___', type:'fill', answer:'a jazz band'}
-                ]
-            },
-            {
-                title: 'Section 3 — Academic Feedback Session',
-                questions: [
-                    {q:'21. Mark received ___% on his essay', type:'fill', answer:'62'},
-                    {q:'22. His weakest area was ___', type:'fill', answer:'critical analysis'},
-                    {q:'23. The professor recommends reading ___ journals', type:'fill', answer:'peer-reviewed'},
-                    {q:'24. His referencing style had ___ errors', type:'fill', answer:'7'},
-                    {q:'25. The structure needed better ___', type:'fill', answer:'paragraphing'},
-                    {q:'26. He should attend the ___ workshop', type:'mcq', opts:['A) Writing skills','B) Research methods','C) Presentation','D) Statistics'], answer:'A'},
-                    {q:'27. Resubmission deadline is ___', type:'fill', answer:'March 10th'},
-                    {q:'28. Maximum word count is ___', type:'fill', answer:'2500'},
-                    {q:'29. He needs to add a ___ section', type:'fill', answer:'discussion'},
-                    {q:'30. Tutorial sessions are available on ___', type:'fill', answer:'Tuesdays'}
-                ]
-            },
-            {
-                title: 'Section 4 — Lecture on Ocean Conservation',
-                questions: [
-                    {q:'31. ___% of the ocean is currently protected', type:'fill', answer:'7'},
-                    {q:'32. Coral reefs support ___ species of fish', type:'fill', answer:'4000'},
-                    {q:'33. Ocean temperature has risen by ___ degrees', type:'fill', answer:'1.1'},
-                    {q:'34. The biggest threat to oceans is ___', type:'fill', answer:'plastic pollution'},
-                    {q:'35. ___ million tonnes of plastic enter oceans yearly', type:'fill', answer:'8'},
-                    {q:'36. Marine protected areas have increased by ___% since 2000', type:'mcq', opts:['A) 50%','B) 100%','C) 200%','D) 300%'], answer:'D'},
-                    {q:'37. The deepest ocean point is ___ km deep', type:'fill', answer:'11'},
-                    {q:'38. Whaling was banned internationally in ___', type:'fill', answer:'1986'},
-                    {q:'39. Sustainable fishing could feed ___ billion people', type:'fill', answer:'3'},
-                    {q:'40. The speaker calls for a ___% protection target by 2030', type:'fill', answer:'30'}
-                ]
-            }
+            { title: 'Section 1 — Gym Membership', questions: [
+                {q:'1. Annual cost £___', type:'fill', answer:'450'},
+                {q:'2. Opens ___ weekdays', type:'fill', answer:'6am'},
+                {q:'3. Free PT sessions: ___', type:'fill', answer:'2'},
+                {q:'4. Pool ___ metres', type:'fill', answer:'25'},
+                {q:'5. Towels?', type:'mcq', opts:['A) Free','B) Rent','C) Bring own','D) Premium only'], answer:'C'},
+                {q:'6. Parking spaces: ___', type:'fill', answer:'50'},
+                {q:'7. Cancel: ___ weeks notice', type:'fill', answer:'4'},
+                {q:'8. Sauna on ___ floor', type:'fill', answer:'lower ground'},
+                {q:'9. Classes from ___', type:'fill', answer:'7am'},
+                {q:'10. Student discount ____%', type:'fill', answer:'15'}
+            ]},
+            { title: 'Section 2 — City Festival', questions: [
+                {q:'11. Runs ___ days', type:'fill', answer:'10'},
+                {q:'12. Stage in ___ Park', type:'fill', answer:'Central'},
+                {q:'13. Tickets £___', type:'fill', answer:'25'},
+                {q:'14. Free under ___', type:'fill', answer:'12'},
+                {q:'15. ___ cuisines', type:'fill', answer:'30'},
+                {q:'16. Fireworks on?', type:'mcq', opts:['A) Opening','B) Closing','C) Every night','D) Weekends'], answer:'B'},
+                {q:'17. Volunteers get free ___', type:'fill', answer:'t-shirt'},
+                {q:'18. Lost property at ___', type:'fill', answer:'information'},
+                {q:'19. Last entry ___ pm', type:'fill', answer:'9'},
+                {q:'20. Headline: ___', type:'fill', answer:'a jazz band'}
+            ]},
+            { title: 'Section 3 — Academic Feedback', questions: [
+                {q:'21. Mark got ___% on essay', type:'fill', answer:'62'},
+                {q:'22. Weakest: ___', type:'fill', answer:'critical analysis'},
+                {q:'23. Read ___ journals', type:'fill', answer:'peer-reviewed'},
+                {q:'24. ___ referencing errors', type:'fill', answer:'7'},
+                {q:'25. Needs better ___', type:'fill', answer:'paragraphing'},
+                {q:'26. Attend which workshop?', type:'mcq', opts:['A) Writing','B) Research','C) Presentation','D) Stats'], answer:'A'},
+                {q:'27. Resubmit by ___', type:'fill', answer:'March 10th'},
+                {q:'28. Max ___ words', type:'fill', answer:'2500'},
+                {q:'29. Add ___ section', type:'fill', answer:'discussion'},
+                {q:'30. Tutorials on ___', type:'fill', answer:'Tuesdays'}
+            ]},
+            { title: 'Section 4 — Ocean Conservation', questions: [
+                {q:'31. ___% ocean protected', type:'fill', answer:'7'},
+                {q:'32. Reefs support ___ species', type:'fill', answer:'4000'},
+                {q:'33. Temp risen ___ degrees', type:'fill', answer:'1.1'},
+                {q:'34. Biggest threat: ___', type:'fill', answer:'plastic pollution'},
+                {q:'35. ___ million tonnes plastic/year', type:'fill', answer:'8'},
+                {q:'36. Protected areas increased?', type:'mcq', opts:['A) 50%','B) 100%','C) 200%','D) 300%'], answer:'D'},
+                {q:'37. Deepest point ___ km', type:'fill', answer:'11'},
+                {q:'38. Whaling banned ___', type:'fill', answer:'1986'},
+                {q:'39. Could feed ___ billion', type:'fill', answer:'3'},
+                {q:'40. Target ___% by 2030', type:'fill', answer:'30'}
+            ]}
         ]
     },
     5: {
-        title: 'Listening Mock Test 5',
-        time: 1800,
-        video: 'f3yBJFKl2Co',
+        title: 'Listening Mock Test 5', time: 1800, video: 'f3yBJFKl2Co',
         sections: [
-            {
-                title: 'Section 1 — Travel Agency Call',
-                questions: [
-                    {q:'1. Destination is ___', type:'fill', answer:'Barcelona'},
-                    {q:'2. Travel dates: ___ to 20th July', type:'fill', answer:'13th'},
-                    {q:'3. Number of travellers: ___', type:'fill', answer:'4'},
-                    {q:'4. Preferred airline is ___', type:'fill', answer:'British Airways'},
-                    {q:'5. Hotel must have a ___', type:'fill', answer:'swimming pool'},
-                    {q:'6. Budget per person is £___', type:'fill', answer:'600'},
-                    {q:'7. They want ___ board', type:'mcq', opts:['A) Full','B) Half','C) Bed & Breakfast','D) Self-catering'], answer:'B'},
-                    {q:'8. Special request: ___ room', type:'fill', answer:'sea view'},
-                    {q:'9. Travel insurance costs £___ per person', type:'fill', answer:'35
+            { title: 'Section 1 — Travel Booking', questions: [
+                {q:'1. Destination: ___', type:'fill', answer:'Barcelona'},
+                {q:'2. Dates: ___ to 20th July', type:'fill', answer:'13th'},
+                {q:'3. Travellers: ___', type:'fill', answer:'4'},
+                {q:'4. Airline: ___', type:'fill', answer:'British Airways'},
+                {q:'5. Hotel must have ___', type:'fill', answer:'swimming pool'},
+                {q:'6. Budget £___ per person', type:'fill', answer:'600'},
+                {q:'7. Board type?', type:'mcq', opts:['A) Full','B) Half','C) B&B','D) Self-catering'], answer:'B'},
+                {q:'8. Request: ___ room', type:'fill', answer:'sea view'},
+                {q:'9. Insurance £___ per person', type:'fill', answer:'35'},
+                {q:'10. Passport expires ___', type:'fill', answer:'September'}
+            ]},
+            { title: 'Section 2 — Campus Tour', questions: [
+                {q:'11. University founded ___', type:'fill', answer:'1965'},
+                {q:'12. Campus covers ___ acres', type:'fill', answer:'50'},
+                {q:'13. Student population ___', type:'fill', answer:'12000'},
+                {q:'14. Main library has ___ books', type:'fill', answer:'500000'},
+                {q:'15. Sports centre open until ___', type:'fill', answer:'10pm'},
+                {q:'16. Cafeteria on which floor?', type:'mcq', opts:['A) Ground','B) First','C) Second','D) Basement'], answer:'A'},
+                {q:'17. Health centre is near ___', type:'fill', answer:'the lake'},
+                {q:'18. Shuttle bus every ___ minutes', type:'fill', answer:'15'},
+                {q:'19. IT help desk in building ___', type:'fill', answer:'C'},
+                {q:'20. Accommodation office hours ___', type:'fill', answer:'9 to 5'}
+            ]},
+            { title: 'Section 3 — Research Discussion', questions: [
+                {q:'21. Research on ___ behaviour', type:'fill', answer:'consumer'},
+                {q:'22. Survey sample: ___', type:'fill', answer:'500'},
+                {q:'23. Age group ___ to 35', type:'fill', answer:'18'},
+                {q:'24. Main finding about ___', type:'fill', answer:'online shopping'},
+                {q:'25. ___% prefer mobile apps', type:'fill', answer:'68'},
+                {q:'26. Data analysed using ___', type:'mcq', opts:['A) Excel','B) SPSS','C) Python','D) Manual'], answer:'B'},
+                {q:'27. Limitation: small ___', type:'fill', answer:'sample size'},
+                {q:'28. Recommend further ___ research', type:'fill', answer:'qualitative'},
+                {q:'29. Publication target: ___ journal', type:'fill', answer:'marketing'},
+                {q:'30. Supervisor is Dr ___', type:'fill', answer:'Patel'}
+            ]},
+            { title: 'Section 4 — Technology Lecture', questions: [
+                {q:'31. Lecture on ___ intelligence', type:'fill', answer:'artificial'},
+                {q:'32. AI term coined in ___', type:'fill', answer:'1956'},
+                {q:'33. Machine learning needs large ___', type:'fill', answer:'datasets'},
+                {q:'34. Most AI used in ___ sector', type:'fill', answer:'healthcare'},
+                {q:'35. Accuracy rate ____%', type:'fill', answer:'95'},
+                {q:'36. Biggest ethical concern?', type:'mcq', opts:['A) Cost','B) Privacy','C) Speed','D) Design'], answer:'B'},
+                {q:'37. Jobs at risk: ___ million', type:'fill', answer:'85'},
+                {q:'38. New jobs created: ___ million', type:'fill', answer:'97'},
+                {q:'39. Regulation needed by ___', type:'fill', answer:'governments'},
+                {q:'40. AI should be ___ and transparent', type:'fill', answer:'ethical'}
+            ]}
+        ]
+    }
+};
 for(let i=2;i<=5;i++) listeningExams[i] = JSON.parse(JSON.stringify(listeningExams[1]));
 listeningExams[2].video = "XMIsgfHe3_g";
 listeningExams[3].video = "WO9lCJiPt58";
