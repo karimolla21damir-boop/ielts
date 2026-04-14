@@ -25,72 +25,46 @@
         }
 
         .sidebar {
-            width: 260px;
-            background: #111827;
-            border-right: 1px solid var(--border);
-            padding: 30px 20px;
-            position: fixed;
-            height: 100vh;
-            z-index: 1000;
+            width: 260px; background: #111827; border-right: 1px solid var(--border);
+            padding: 30px 20px; position: fixed; height: 100vh; z-index: 1000; overflow-y: auto;
         }
 
         .insta-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: #e2e8f0;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 15px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border: 1px solid var(--border);
-            transition: 0.3s;
+            display: flex; align-items: center; gap: 10px; text-decoration: none;
+            color: #e2e8f0; background: rgba(255,255,255,0.05); padding: 10px 15px;
+            border-radius: 12px; margin-bottom: 25px; border: 1px solid var(--border); transition: 0.3s;
         }
         .insta-link:hover {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            border-color: transparent;
-            transform: translateY(-2px);
+            border-color: transparent; transform: translateY(-2px);
         }
         .insta-link span { font-size: 13px; font-weight: 600; }
 
         .nav-links { list-style: none; padding: 0; margin-top: 20px; }
         .nav-links li { margin-bottom: 10px; }
-        .nav-links a { 
-            color: #94a3b8; text-decoration: none; padding: 12px 15px; 
+        .nav-links a {
+            color: #94a3b8; text-decoration: none; padding: 12px 15px;
             display: block; border-radius: 10px; cursor: pointer; transition: 0.3s;
         }
         .nav-links a:hover, .nav-links a.active { background: var(--primary); color: white; }
 
         .header-progress {
-            position: fixed;
-            top: 0;
-            left: 260px;
-            right: 0;
-            padding: 15px 40px;
-            background: rgba(15, 23, 42, 0.9);
-            z-index: 900;
-            border-bottom: 1px solid var(--border);
+            position: fixed; top: 0; left: 260px; right: 0;
+            padding: 15px 40px; background: rgba(15,23,42,0.9);
+            z-index: 900; border-bottom: 1px solid var(--border);
         }
         .progress-bar-bg { background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden; }
         .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--primary), var(--accent)); width: 0%; transition: 0.5s; }
 
-        .main-wrap { 
-            margin-left: 260px; 
-            padding: 100px 40px 40px; 
-            width: calc(100% - 260px);
-            display: flex;
-            justify-content: center;
+        .main-wrap {
+            margin-left: 260px; padding: 100px 40px 40px;
+            width: calc(100% - 260px); display: flex; justify-content: center;
         }
 
-        .card { 
-            width: 100%;
-            max-width: 900px;
-            background: var(--card-bg); 
-            border: 1px solid var(--border); 
-            border-radius: 30px; 
-            padding: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        .card {
+            width: 100%; max-width: 1100px; background: var(--card-bg);
+            border: 1px solid var(--border); border-radius: 30px;
+            padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
         .video-wrapper { width: 100%; margin: 20px 0; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); }
@@ -99,30 +73,26 @@
 
         .quiz-container { text-align: left; background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; margin: 30px 0; border: 1px solid var(--border); }
         .quiz-item { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
-        .quiz-options button { 
-            display: block; width: 100%; text-align: left; padding: 12px; margin: 8px 0; 
-            background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; 
-            border-radius: 8px; cursor: pointer; 
+        .quiz-options button {
+            display: block; width: 100%; text-align: left; padding: 12px; margin: 8px 0;
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white;
+            border-radius: 8px; cursor: pointer;
         }
 
         .pdf-section { width: 100%; margin-top: 30px; }
-        .pdf-wrapper { 
-            width: 100% !important; 
-            height: 800px !important; 
-            background: white; 
-            border-radius: 15px; 
-            overflow: hidden;
-            border: 2px solid var(--border);
+        .pdf-wrapper {
+            width: 100% !important; height: 800px !important; background: white;
+            border-radius: 15px; overflow: hidden; border: 2px solid var(--border);
         }
         .pdf-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-        .mock-btn { 
-            background: linear-gradient(135deg, #f43f5e, #e11d48); color: white; 
-            border: none; padding: 18px 35px; border-radius: 15px; font-weight: 800; 
+        .mock-btn {
+            background: linear-gradient(135deg, #f43f5e, #e11d48); color: white;
+            border: none; padding: 18px 35px; border-radius: 15px; font-weight: 800;
             cursor: pointer; margin-top: 30px; width: 100%; font-size: 16px;
         }
 
-        /* Mock Hub Styles */
+        /* Mock Hub */
         .mock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 25px; }
         .mock-card {
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
@@ -147,21 +117,117 @@
         }
         .filter-tab:hover { background: rgba(255,255,255,0.08); color: white; }
         .filter-tab.active { background: linear-gradient(135deg, #6366f1, #a855f7); color: white; border-color: transparent; }
-        .answer-section { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 25px; margin-top: 20px; }
-        .answer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; margin-top: 10px; }
-        .answer-item { padding: 6px 10px; background: rgba(255,255,255,0.03); border-radius: 6px; font-size: 13px; color: #94a3b8; }
+
+        /* EXAM STYLES */
+        .exam-timer {
+            position: sticky; top: 70px; z-index: 50;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid var(--border); border-radius: 16px;
+            padding: 15px 25px; margin-bottom: 25px;
+            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+        }
+        .timer-clock {
+            font-size: 28px; font-weight: 800; color: #f43f5e;
+            font-family: 'Courier New', monospace; letter-spacing: 2px;
+        }
+        .timer-btns { display: flex; gap: 10px; }
+        .timer-btns button {
+            padding: 8px 18px; border-radius: 10px; border: 1px solid var(--border);
+            background: rgba(255,255,255,0.05); color: white; cursor: pointer;
+            font-weight: 600; font-size: 13px; transition: 0.3s;
+        }
+        .timer-btns button:hover { background: var(--primary); }
+        .submit-btn { background: linear-gradient(135deg, #10b981, #059669) !important; border-color: transparent !important; }
+
+        .exam-split { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .exam-panel {
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            border-radius: 20px; padding: 30px; max-height: 70vh; overflow-y: auto;
+        }
+        .exam-panel h3 { margin-top: 0; }
+        .exam-panel p { color: #cbd5e1; line-height: 1.8; font-size: 14px; }
+
+        .eq-item { margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .eq-item label { display: block; color: #94a3b8; font-size: 13px; margin-bottom: 6px; font-weight: 600; }
+        .eq-input {
+            width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border); border-radius: 10px; color: white;
+            font-size: 14px; outline: none; transition: 0.3s; box-sizing: border-box;
+        }
+        .eq-input:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(99,102,241,0.3); }
+
+        .eq-mcq { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+        .eq-mcq label {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            border-radius: 8px; cursor: pointer; transition: 0.3s; font-weight: 400; color: #cbd5e1;
+        }
+        .eq-mcq label:hover { background: rgba(255,255,255,0.06); }
+        .eq-mcq input[type="radio"] { accent-color: var(--primary); }
+
+        .exam-audio {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid var(--border); border-radius: 16px;
+            padding: 20px 25px; margin-bottom: 20px; text-align: center;
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            font-size: 20px; font-weight: 800; margin: 30px 0 15px; padding-top: 15px;
+            border-top: 2px solid var(--border);
+        }
+
+        .writing-area {
+            width: 100%; min-height: 350px; padding: 20px;
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+            border-radius: 16px; color: white; font-size: 15px;
+            font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.8;
+            resize: vertical; outline: none; box-sizing: border-box;
+        }
+        .writing-area:focus { border-color: var(--primary); }
+        .word-count { text-align: right; color: #64748b; font-size: 13px; margin-top: 8px; }
+
+        .band-score {
+            font-size: 72px; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent), #f43f5e);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .results-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 8px; margin-top: 20px; text-align: left;
+        }
+        .res-correct { padding: 8px 12px; border-radius: 8px; font-size: 13px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #34d399; }
+        .res-wrong { padding: 8px 12px; border-radius: 8px; font-size: 13px; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: #f87171; }
+
+        .ai-feedback {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1));
+            border: 1px solid rgba(168,85,247,0.3); border-radius: 20px;
+            padding: 30px; margin-top: 25px;
+        }
+        .ai-feedback h3 { color: var(--accent); }
+        .ai-feedback p { color: #cbd5e1; line-height: 1.8; }
+
+        .speaking-card {
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            border-radius: 20px; padding: 25px; margin-bottom: 20px;
+        }
+        .speaking-card h3 { color: var(--accent); margin-top: 0; }
+
+        .exam-panel::-webkit-scrollbar { width: 6px; }
+        .exam-panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+        @media (max-width: 900px) { .exam-split { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <nav class="sidebar">
         <h2 style="color:white; margin-bottom: 20px;">IELTS Master</h2>
-        
         <a href="https://www.instagram.com/lyazzat_bekbolatovna" target="_blank" class="insta-link">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.058-1.69-.072-4.949-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             <span>@lyazzat_bekbolatovna</span>
         </a>
-
         <ul class="nav-links">
             <li><a onclick="location.reload()" class="active">🏠 Dashboard</a></li>
             <li><a onclick="showModule('Listening')">🎧 Listening</a></li>
@@ -189,233 +255,845 @@
         </div>
     </div>
 
-    <script>
-        const ytData = {
-            lessons: { listening: "QhVrqQFUfY8", reading: "nLmDYfe2FGA", writing: "sIp55MoKmeg", speaking: "YRKxrDz4hzA" },
-            mocks: { listening: "WO9lCJiPt58", speaking: "IevmdO16GuE" }
-        };
+<script>
+// ===== ORIGINAL CODE =====
+const ytData = {
+    lessons: { listening:"QhVrqQFUfY8", reading:"nLmDYfe2FGA", writing:"sIp55MoKmeg", speaking:"YRKxrDz4hzA" },
+    mocks: { listening:"WO9lCJiPt58", speaking:"IevmdO16GuE" }
+};
+const quizData = {
+    listening: [
+        {q:"How many sections in Listening?",a:["3","4","5"],correct:1},
+        {q:"Does recording play twice?",a:["Yes","No"],correct:1},
+        {q:"Total questions?",a:["30","40","50"],correct:1},
+        {q:"Extra time for transfer?",a:["2 min","10 min","No"],correct:1},
+        {q:"Pen or Pencil?",a:["Pen","Pencil only","Both"],correct:1},
+        {q:"Part 1 is usually...",a:["Lecture","Social conversation","Monologue"],correct:1},
+        {q:"Are spelling mistakes okay?",a:["Yes","No","Sometimes"],correct:1},
+        {q:"Part 4 is usually...",a:["A tour","Academic lecture","An ad"],correct:1}
+    ],
+    reading: [
+        {q:"Time for Reading?",a:["45m","60m","90m"],correct:1},
+        {q:"How many passages?",a:["2","3","4"],correct:1},
+        {q:"Extra transfer time?",a:["Yes","No"],correct:1},
+        {q:"Total questions?",a:["30","40","50"],correct:1},
+        {q:"True/False/Not Given is common?",a:["Yes","No"],correct:0},
+        {q:"Should you read word-by-word?",a:["Yes","No, use skimming","Only first page"],correct:1},
+        {q:"Are texts academic?",a:["Always","Never","Mostly"],correct:2},
+        {q:"Penalty for wrong answers?",a:["Yes","No"],correct:1}
+    ],
+    writing: [
+        {q:"How many tasks?",a:["1","2","3"],correct:1},
+        {q:"Min words for Task 2?",a:["150","250","300"],correct:1},
+        {q:"Time for Task 1?",a:["20m","40m","60m"],correct:0},
+        {q:"Task 2 weight?",a:["1/3","2/3","1/2"],correct:1},
+        {q:"Academic Task 1 is...",a:["Letter","Chart/Graph","Essay"],correct:1},
+        {q:"Can you use informal language?",a:["Yes","No","Sometimes"],correct:1},
+        {q:"Is conclusion necessary in Task 2?",a:["No","Yes","Optional"],correct:1},
+        {q:"Writing is paper or computer?",a:["Both available","Paper only","Computer only"],correct:0}
+    ],
+    speaking: [
+        {q:"How many parts?",a:["2","3","4"],correct:1},
+        {q:"Part 2 prep time?",a:["30s","1m","2m"],correct:1},
+        {q:"Is it recorded?",a:["Yes","No"],correct:0},
+        {q:"Total duration?",a:["5m","11-14m","30m"],correct:1},
+        {q:"Part 3 is...",a:["Personal","Abstract discussion","A game"],correct:1},
+        {q:"Can you ask to repeat?",a:["Yes","No"],correct:0},
+        {q:"Are big words required?",a:["Yes, always","No, focus on clarity","Only in Part 1"],correct:1},
+        {q:"Part 1 is about...",a:["History","Familiar topics","Science"],correct:1}
+    ]
+};
+let completed = new Set();
+function checkQuiz(btn, isCorrect) {
+    btn.style.background = isCorrect ? "#16a34a" : "#dc2626";
+    btn.style.color = "white";
+}
+function showModule(name) {
+    const key = name.toLowerCase();
+    completed.add(key);
+    document.getElementById('p-fill').style.width = (completed.size/4*100)+"%";
+    document.getElementById('p-percent').innerText = (completed.size/4*100)+"%";
+    let quizHtml = quizData[key].map((item,idx) => `
+        <div class="quiz-item"><p><b>${idx+1}. ${item.q}</b></p>
+        <div class="quiz-options">${item.a.map((opt,i) => `<button onclick="checkQuiz(this,${i===item.correct})">${opt}</button>`).join('')}</div></div>
+    `).join('');
+    document.getElementById('main-content').innerHTML = `
+        <h1 style="text-align:left;">${name} Module</h1>
+        <div class="video-wrapper"><div class="youtube-container">
+            <iframe src="https://www.youtube.com/embed/${ytData.lessons[key]}" allowfullscreen></iframe>
+        </div></div>
+        <div class="quiz-container"><h2>Module Quiz</h2>${quizHtml}</div>
+        <div class="pdf-section"><h2 style="text-align:left;">Study Guide</h2>
+            <div class="pdf-wrapper"><iframe src="materials/${key}.pdf"></iframe></div></div>
+        <button class="mock-btn" onclick="loadMockTest('${name}')">🔥 START FULL MOCK TEST</button>`;
+    window.scrollTo(0,0);
+}
+function loadMockTest(section) {
+    const key = section.toLowerCase();
+    const media = (section==='Listening'||section==='Speaking') ?
+        `<div class="video-wrapper"><div class="youtube-container"><iframe src="https://www.youtube.com/embed/${ytData.mocks[key]||ytData.lessons[key]}" allowfullscreen></iframe></div></div>` : '';
+    document.getElementById('main-content').innerHTML = `
+        <h1 style="color:var(--accent);">${section} Mock Test</h1>${media}
+        <div class="pdf-section"><h2>Mock Test Paper</h2>
+            <div class="pdf-wrapper"><iframe src="materials/${key}_mock.pdf"></iframe></div></div>
+        <button onclick="showModule('${section}')" style="margin-top:20px;color:#94a3b8;background:none;border:none;cursor:pointer;">← Back to Lesson</button>`;
+    window.scrollTo(0,0);
+}
+    // ===== EXAM DATA =====
+let examTimer = null;
+let examSeconds = 0;
 
-        const quizData = {
-            listening: [
-                { q: "How many sections in Listening?", a: ["3", "4", "5"], correct: 1 },
-                { q: "Does recording play twice?", a: ["Yes", "No"], correct: 1 },
-                { q: "Total questions?", a: ["30", "40", "50"], correct: 1 },
-                { q: "Extra time for transfer?", a: ["2 min", "10 min", "No"], correct: 1 },
-                { q: "Pen or Pencil?", a: ["Pen", "Pencil only", "Both"], correct: 1 },
-                { q: "Part 1 is usually...", a: ["Lecture", "Social conversation", "Monologue"], correct: 1 },
-                { q: "Are spelling mistakes okay?", a: ["Yes", "No", "Sometimes"], correct: 1 },
-                { q: "Part 4 is usually...", a: ["A tour", "Academic lecture", "An ad"], correct: 1 }
-            ],
-            reading: [
-                { q: "Time for Reading?", a: ["45m", "60m", "90m"], correct: 1 },
-                { q: "How many passages?", a: ["2", "3", "4"], correct: 1 },
-                { q: "Extra transfer time?", a: ["Yes", "No"], correct: 1 },
-                { q: "Total questions?", a: ["30", "40", "50"], correct: 1 },
-                { q: "True/False/Not Given is common?", a: ["Yes", "No"], correct: 0 },
-                { q: "Should you read word-by-word?", a: ["Yes", "No, use skimming", "Only first page"], correct: 1 },
-                { q: "Are texts academic?", a: ["Always", "Never", "Mostly"], correct: 2 },
-                { q: "Penalty for wrong answers?", a: ["Yes", "No"], correct: 1 }
-            ],
-            writing: [
-                { q: "How many tasks?", a: ["1", "2", "3"], correct: 1 },
-                { q: "Min words for Task 2?", a: ["150", "250", "300"], correct: 1 },
-                { q: "Time for Task 1?", a: ["20m", "40m", "60m"], correct: 0 },
-                { q: "Task 2 weight?", a: ["1/3", "2/3", "1/2"], correct: 1 },
-                { q: "Academic Task 1 is...", a: ["Letter", "Chart/Graph", "Essay"], correct: 1 },
-                { q: "Can you use informal language?", a: ["Yes", "No", "Sometimes"], correct: 1 },
-                { q: "Is conclusion necessary in Task 2?", a: ["No", "Yes", "Optional"], correct: 1 },
-                { q: "Writing is paper or computer?", a: ["Both available", "Paper only", "Computer only"], correct: 0 }
-            ],
-            speaking: [
-                { q: "How many parts?", a: ["2", "3", "4"], correct: 1 },
-                { q: "Part 2 prep time?", a: ["30s", "1m", "2m"], correct: 1 },
-                { q: "Is it recorded?", a: ["Yes", "No"], correct: 0 },
-                { q: "Total duration?", a: ["5m", "11-14m", "30m"], correct: 1 },
-                { q: "Part 3 is...", a: ["Personal", "Abstract discussion", "A game"], correct: 1 },
-                { q: "Can you ask to repeat?", a: ["Yes", "No"], correct: 0 },
-                { q: "Are big words required?", a: ["Yes, always", "No, focus on clarity", "Only in Part 1"], correct: 1 },
-                { q: "Part 1 is about...", a: ["History", "Familiar topics", "Science"], correct: 1 }
-            ]
-        };
+// --- READING FULL PASSAGES ---
+const readingExams = {
+    1: {
+        time: 3600,
+        passages: [
+            {
+                title: "The Impact of Climate Change on Coral Reefs",
+                text: `Coral reefs are among the most biologically diverse ecosystems on Earth, supporting approximately 25% of all marine species despite covering less than 1% of the ocean floor. These underwater structures are built by colonies of tiny animals called coral polyps, which secrete calcium carbonate to form hard, protective skeletons.
 
-        let completed = new Set();
+Over the past three decades, scientists have observed a dramatic decline in coral reef health worldwide. Rising ocean temperatures, primarily caused by increased greenhouse gas emissions, have led to a phenomenon known as coral bleaching. When water temperatures rise even 1-2°C above the normal summer maximum, corals expel the symbiotic algae living in their tissues, causing them to turn white.
 
-        function checkQuiz(btn, isCorrect) {
-            btn.style.background = isCorrect ? "#16a34a" : "#dc2626";
-            btn.style.color = "white";
-        }
+The Great Barrier Reef in Australia, the world's largest coral reef system, has experienced mass bleaching events in 2016, 2017, and 2020. Research conducted by the Australian Institute of Marine Science found that approximately 50% of the reef's coral cover has been lost since 1995. Professor James Cook from the University of Queensland stated that the frequency of bleaching events has increased fivefold since the 1980s.
 
-        function showModule(name) {
-            const key = name.toLowerCase();
-            completed.add(key);
-            document.getElementById('p-fill').style.width = (completed.size / 4 * 100) + "%";
-            document.getElementById('p-percent').innerText = (completed.size / 4 * 100) + "%";
+Ocean acidification presents another significant threat. As the ocean absorbs CO2 from the atmosphere, its pH decreases, making it more difficult for corals to build their calcium carbonate skeletons. Studies indicate that ocean acidity has increased by 26% since the Industrial Revolution.
 
-            let quizHtml = quizData[key].map((item, idx) => `
-                <div class="quiz-item">
-                    <p><b>${idx+1}. ${item.q}</b></p>
-                    <div class="quiz-options">
-                        ${item.a.map((opt, i) => `<button onclick="checkQuiz(this, ${i === item.correct})">${opt}</button>`).join('')}
-                    </div>
-                </div>
-            `).join('');
+However, recent research has revealed that some coral species demonstrate remarkable resilience. Scientists at the Hawaii Institute of Marine Biology discovered that certain corals can adapt to higher temperatures through changes in their symbiotic algae communities.`,
+                questions: [
+                    {type:"tf", q:"1. Coral reefs support about 25% of marine species.", answer:"TRUE"},
+                    {type:"tf", q:"2. Coral reefs cover more than 5% of the ocean floor.", answer:"FALSE"},
+                    {type:"tf", q:"3. Coral bleaching occurs when water temperature drops significantly.", answer:"FALSE"},
+                    {type:"tf", q:"4. The Great Barrier Reef lost about 50% of coral cover since 1995.", answer:"TRUE"},
+                    {type:"tf", q:"5. Professor Cook works at the University of Sydney.", answer:"NOT GIVEN"},
+                    {type:"mcq", q:"6. What causes coral bleaching?", opts:["A. Cold water","B. Rising ocean temperatures","C. Fishing","D. Pollution"], answer:"B"},
+                    {type:"mcq", q:"7. Ocean acidity has increased by how much?", opts:["A. 10%","B. 15%","C. 20%","D. 26%"], answer:"D"},
+                    {type:"fill", q:"8. Coral polyps secrete ___ to form skeletons.", answer:"calcium carbonate"},
+                    {type:"fill", q:"9. Corals expel symbiotic ___ during bleaching.", answer:"algae"},
+                    {type:"mcq", q:"10. Which institution found coral adaptation?", opts:["A. University of Queensland","B. Hawaii Institute of Marine Biology","C. Oxford University","D. MIT"], answer:"B"},
+                    {type:"tf", q:"11. Some corals can adapt to higher temperatures.", answer:"TRUE"},
+                    {type:"tf", q:"12. All coral species are equally affected by climate change.", answer:"NOT GIVEN"},
+                    {type:"fill", q:"13. The ocean absorbs ___ from the atmosphere.", answer:"CO2"}
+                ]
+            },
+            {
+                title: "The History of Urban Planning",
+                text: `Urban planning as a formal discipline emerged in the late 19th century as a response to the squalid conditions in rapidly industrializing cities. Before this period, cities grew organically, with little regard for public health, transportation, or aesthetics. The Industrial Revolution brought millions of workers into cities, creating overcrowded slums where disease spread rapidly.
 
-            document.getElementById('main-content').innerHTML = `
-                <h1 style="text-align:left;">${name} Module</h1>
-                <div class="video-wrapper"><div class="youtube-container">
-                    <iframe src="https://www.youtube.com/embed/${ytData.lessons[key]}" allowfullscreen></iframe>
-                </div></div>
-                
-                <div class="quiz-container">
-                    <h2>Module Quiz</h2>
-                    ${quizHtml}
-                </div>
+In 1898, Ebenezer Howard published "To-Morrow: A Peaceful Path to Real Reform," in which he proposed the concept of Garden Cities — planned communities surrounded by greenbelts that would combine the best of urban and rural living. His ideas led to the creation of Letchworth Garden City in 1903 and Welwyn Garden City in 1920, both in England.
 
-                <div class="pdf-section">
-                    <h2 style="text-align:left;">Study Guide</h2>
-                    <div class="pdf-wrapper"><iframe src="materials/${key}.pdf"></iframe></div>
-                </div>
+The modernist movement of the early 20th century brought radical new approaches. Le Corbusier envisioned cities of tall towers set in parkland, connected by elevated highways. His "Radiant City" concept influenced urban planning worldwide, particularly in the construction of Brasilia, the capital of Brazil, which was built from scratch in the 1950s.
 
-                <button class="mock-btn" onclick="loadMockTest('${name}')">🔥 START FULL MOCK TEST</button>
-            `;
-            window.scrollTo(0,0);
-        }
+However, by the 1960s, critics began questioning modernist planning. Jane Jacobs, in her influential 1961 book "The Death and Life of Great American Cities," argued that modernist planning destroyed the social fabric of neighborhoods. She advocated for mixed-use development, walkable streets, and community participation in planning decisions.
 
-        function loadMockTest(section) {
-            const key = section.toLowerCase();
-            const media = (section === 'Listening' || section === 'Speaking') ? 
-                `<div class="video-wrapper"><div class="youtube-container"><iframe src="https://www.youtube.com/embed/${ytData.mocks[key] || ytData.lessons[key]}" allowfullscreen></iframe></div></div>` : '';
+Today, urban planning focuses on sustainability, public transit, green spaces, and creating livable communities. The concept of the "15-minute city" — where all daily necessities are within a 15-minute walk or bike ride — has gained popularity in cities like Paris and Melbourne.`,
+                questions: [
+                    {type:"fill", q:"14. Urban planning emerged in the late ___ century.", answer:"19th"},
+                    {type:"fill", q:"15. Ebenezer Howard published his book in ___.", answer:"1898"},
+                    {type:"mcq", q:"16. Which was the first Garden City?", opts:["A. Welwyn","B. Letchworth","C. Brasilia","D. Paris"], answer:"B"},
+                    {type:"tf", q:"17. Le Corbusier proposed low-rise buildings surrounded by farmland.", answer:"FALSE"},
+                    {type:"tf", q:"18. Brasilia was built from scratch.", answer:"TRUE"},
+                    {type:"mcq", q:"19. Who wrote 'The Death and Life of Great American Cities'?", opts:["A. Le Corbusier","B. Ebenezer Howard","C. Jane Jacobs","D. Frank Lloyd Wright"], answer:"C"},
+                    {type:"tf", q:"20. Jane Jacobs supported modernist planning principles.", answer:"FALSE"},
+                    {type:"fill", q:"21. Jacobs advocated for ___-use development.", answer:"mixed"},
+                    {type:"mcq", q:"22. The '15-minute city' means all necessities within:", opts:["A. 5-minute drive","B. 15-minute walk or bike ride","C. 30-minute commute","D. 1-hour transit"], answer:"B"},
+                    {type:"tf", q:"23. Welwyn Garden City was created in 1920.", answer:"TRUE"},
+                    {type:"fill", q:"24. The Industrial Revolution brought workers into ___.", answer:"cities"},
+                    {type:"tf", q:"25. Melbourne has adopted the 15-minute city concept.", answer:"TRUE"},
+                    {type:"fill", q:"26. Modernist planning was criticized for destroying the social ___.", answer:"fabric"}
+                ]
+            },
+            {
+                title: "Artificial Intelligence and the Future of Work",
+                text: `The rapid advancement of artificial intelligence has sparked intense debate about the future of employment. A widely cited 2013 study by Oxford University researchers Carl Frey and Michael Osborne estimated that 47% of US jobs were at high risk of automation within the next two decades. This alarming figure generated headlines worldwide and fueled anxiety about technological unemployment.
 
-            document.getElementById('main-content').innerHTML = `
-                <h1 style="color:var(--accent);">${section} Mock Test</h1>
-                ${media}
-                <div class="pdf-section">
-                    <h2>Mock Test Paper</h2>
-                    <div class="pdf-wrapper"><iframe src="materials/${key}_mock.pdf"></iframe></div>
-                </div>
-                <button onclick="showModule('${section}')" style="margin-top:20px; color:#94a3b8; background:none; border:none; cursor:pointer;">← Back to Lesson</button>
-            `;
-            window.scrollTo(0,0);
-        }
+However, more recent analyses have offered a more nuanced view. The OECD published a 2019 report suggesting that only 14% of jobs in member countries face a high risk of automation, while an additional 32% could see significant changes in how they are performed. The key difference lies in methodology: while Frey and Osborne assessed entire occupations, the OECD analysis examined individual tasks within occupations.
 
-        /* ========== MOCK TESTS HUB ========== */
+History suggests that technological revolutions create more jobs than they destroy, though the transition period can be painful. The mechanization of agriculture eliminated millions of farming jobs but created new opportunities in manufacturing and services. Similarly, the rise of the internet destroyed jobs in retail and media but generated entirely new industries in e-commerce, social media, and app development.
 
-        const mockTestsData = [
-            { id:1, title:"Listening Test 1", type:"listening", diff:"easy", time:"30 min", qs:40, video:"lGGgHOIBj1c",
-              answers:{"Part 1 (Q1-10)":["Marshall","Friday","7.30","dentist","garden","museum","market","primary","library","park"],"Part 2 (Q11-20)":["B","C","A","B","C","A","solar panels","car park","recycling","300"],"Part 3 (Q21-30)":["A","C","B","A","D","C","B","A","C","B"],"Part 4 (Q31-40)":["migration","habitat","breeding","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
-            { id:2, title:"Listening Test 2", type:"listening", diff:"medium", time:"30 min", qs:40, video:"XMIsgfHe3_g",
-              answers:{"Part 1 (Q1-10)":["Peterson","Monday","9.00","hospital","pool","gallery","station","college","theatre","bridge"],"Part 2 (Q11-20)":["A","B","C","A","B","C","heating","entrance","garden","150"],"Part 3 (Q21-30)":["B","A","C","D","B","A","C","B","A","D"],"Part 4 (Q31-40)":["environment","pollution","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
-            { id:3, title:"Listening Test 3", type:"listening", diff:"hard", time:"30 min", qs:40, video:"WO9lCJiPt58",
-              answers:{"Part 1 (Q1-10)":["Gordon","Tuesday","8.15","pharmacy","beach","cathedral","airport","university","cinema","tower"],"Part 2 (Q11-20)":["C","A","B","C","A","B","windows","basement","parking","200"],"Part 3 (Q21-30)":["C","B","A","C","A","D","B","C","D","A"],"Part 4 (Q31-40)":["population","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
-            { id:4, title:"Listening Test 4", type:"listening", diff:"medium", time:"30 min", qs:40, video:"QhVrqQFUfY8",
-              answers:{"Part 1 (Q1-10)":["Taylor","Wednesday","10.00","clinic","forest","palace","harbour","academy","opera","castle"],"Part 2 (Q11-20)":["B","C","A","B","A","C","insulation","roof","courtyard","500"],"Part 3 (Q21-30)":["A","D","C","B","C","A","D","B","A","C"],"Part 4 (Q31-40)":["technology","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
-            { id:5, title:"Listening Test 5", type:"listening", diff:"hard", time:"30 min", qs:40, video:"nLmDYfe2FGA",
-              answers:{"Part 1 (Q1-10)":["Henderson","Thursday","11.30","surgery","lake","monument","terminal","institute","concert","fountain"],"Part 2 (Q11-20)":["A","B","C","A","C","B","ventilation","lobby","terrace","450"],"Part 3 (Q21-30)":["D","A","B","C","A","B","C","D","B","A"],"Part 4 (Q31-40)":["agriculture","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
+AI is particularly effective at tasks involving pattern recognition, data analysis, and routine decision-making. Jobs most at risk include data entry clerks, telemarketers, and bookkeepers. Conversely, jobs requiring creativity, emotional intelligence, and complex problem-solving — such as therapists, nurses, artists, and strategic managers — are considered relatively safe.
 
-            { id:6, title:"Reading Test 1", type:"reading", diff:"easy", time:"60 min", qs:40, video:null,
-              answers:{"Passage 1 (Q1-13)":["TRUE","FALSE","NOT GIVEN","TRUE","FALSE","B","D","A","C","coral","temperature","oxygen","__(read)"],"Passage 2 (Q14-26)":["vi","ii","iv","i","viii","iii","YES","NO","NOT GIVEN","YES","NO","__(read)","__(read)"],"Passage 3 (Q27-40)":["B","D","A","C","B","D","A","memory","cognitive","neural","research","__(read)","__(read)","__(read)"]}},
-            { id:7, title:"Reading Test 2", type:"reading", diff:"medium", time:"60 min", qs:40, video:null,
-              answers:{"Passage 1 (Q1-13)":["FALSE","TRUE","NOT GIVEN","FALSE","TRUE","C","A","D","B","glacier","erosion","sediment","__(read)"],"Passage 2 (Q14-26)":["iii","v","i","vii","ii","iv","NO","YES","NOT GIVEN","NO","YES","__(read)","__(read)"],"Passage 3 (Q27-40)":["C","A","D","B","C","A","D","perception","stimulus","response","analysis","__(read)","__(read)","__(read)"]}},
-            { id:8, title:"Reading Test 3", type:"reading", diff:"hard", time:"60 min", qs:40, video:null,
-              answers:{"Passage 1 (Q1-13)":["TRUE","TRUE","FALSE","NOT GIVEN","FALSE","A","C","B","D","habitat","species","ecosystem","__(read)"],"Passage 2 (Q14-26)":["iv","i","vi","ii","v","iii","YES","YES","NO","NOT GIVEN","NO","__(read)","__(read)"],"Passage 3 (Q27-40)":["D","B","C","A","D","B","A","theory","hypothesis","variable","method","__(read)","__(read)","__(read)"]}},
-            { id:9, title:"Reading Test 4", type:"reading", diff:"medium", time:"60 min", qs:40, video:null,
-              answers:{"Passage 1 (Q1-13)":["NOT GIVEN","TRUE","FALSE","TRUE","NOT GIVEN","D","B","C","A","carbon","atmosphere","fossil","__(read)"],"Passage 2 (Q14-26)":["ii","v","i","iv","vi","iii","NO","YES","YES","NOT GIVEN","NO","__(read)","__(read)"],"Passage 3 (Q27-40)":["A","C","B","D","A","C","B","experiment","data","conclusion","evidence","__(read)","__(read)","__(read)"]}},
-            { id:10, title:"Reading Test 5", type:"reading", diff:"hard", time:"60 min", qs:40, video:null,
-              answers:{"Passage 1 (Q1-13)":["FALSE","NOT GIVEN","TRUE","FALSE","TRUE","B","A","D","C","protein","cell","enzyme","__(read)"],"Passage 2 (Q14-26)":["v","iii","i","vi","iv","ii","YES","NO","NOT GIVEN","YES","YES","__(read)","__(read)"],"Passage 3 (Q27-40)":["B","D","A","C","B","D","C","genetics","mutation","chromosome","DNA","__(read)","__(read)","__(read)"]}},
+Many experts advocate for a focus on education and retraining. The World Economic Forum estimates that by 2025, 85 million jobs may be displaced by automation, but 97 million new roles may emerge. The challenge lies in ensuring workers have the skills needed for these new positions.`,
+                questions: [
+                    {type:"mcq", q:"27. Frey and Osborne estimated what percentage of US jobs at risk?", opts:["A. 14%","B. 32%","C. 47%","D. 85 million"], answer:"C"},
+                    {type:"mcq", q:"28. The OECD report was published in:", opts:["A. 2013","B. 2015","C. 2019","D. 2025"], answer:"C"},
+                    {type:"tf", q:"29. The OECD and Frey/Osborne used the same methodology.", answer:"FALSE"},
+                    {type:"fill", q:"30. The OECD examined individual ___ within occupations.", answer:"tasks"},
+                    {type:"tf", q:"31. Mechanization of agriculture created jobs in manufacturing.", answer:"TRUE"},
+                    {type:"mcq", q:"32. Which job is considered safe from AI?", opts:["A. Data entry clerk","B. Telemarketer","C. Bookkeeper","D. Therapist"], answer:"D"},
+                    {type:"fill", q:"33. AI is effective at ___ recognition.", answer:"pattern"},
+                    {type:"tf", q:"34. The internet created no new industries.", answer:"FALSE"},
+                    {type:"mcq", q:"35. According to WEF, how many new roles may emerge by 2025?", opts:["A. 47 million","B. 85 million","C. 97 million","D. 14 million"], answer:"C"},
+                    {type:"fill", q:"36. Jobs requiring ___ intelligence are considered safe.", answer:"emotional"},
+                    {type:"tf", q:"37. The OECD found 14% of jobs at high risk.", answer:"TRUE"},
+                    {type:"tf", q:"38. The transition period during tech revolutions is always painless.", answer:"FALSE"},
+                    {type:"fill", q:"39. Experts advocate for education and ___.", answer:"retraining"},
+                    {type:"mcq", q:"40. The main challenge is ensuring workers have:", opts:["A. Higher salaries","B. More vacation","C. Needed skills","D. Better offices"], answer:"C"}
+                ]
+            }
+        ]
+    }
+};
 
-            { id:11, title:"Writing Test 1", type:"writing", diff:"easy", time:"60 min", qs:2, video:null,
-              answers:{"Task 1":["Describe the bar chart showing internet usage across 5 countries in 2010 and 2020. Include an overview and key comparisons. (min 150 words)"],"Task 2":["Some people think that the best way to reduce crime is to give longer prison sentences. Others believe there are better ways. Discuss both views and give your opinion. (min 250 words)"]}},
-            { id:12, title:"Writing Test 2", type:"writing", diff:"medium", time:"60 min", qs:2, video:null,
-              answers:{"Task 1":["The pie charts show the main reasons for migration to and from the UK in 2007. Summarize the information and make comparisons. (min 150 words)"],"Task 2":["In many countries, the gap between the rich and the poor is increasing. What problems does this cause? What solutions can you suggest? (min 250 words)"]}},
-            { id:13, title:"Writing Test 3", type:"writing", diff:"hard", time:"60 min", qs:2, video:null,
-              answers:{"Task 1":["The line graph shows CO2 emissions from transport in four European countries from 1980 to 2020. Summarize and compare. (min 150 words)"],"Task 2":["Some experts believe children should begin learning a foreign language at primary school. Others believe they should begin in secondary school. Discuss both sides. (min 250 words)"]}},
-            { id:14, title:"Writing Test 4", type:"writing", diff:"medium", time:"60 min", qs:2, video:null,
-              answers:{"Task 1":["The table shows the percentage of people using different forms of transport in three cities. Summarize and compare. (min 150 words)"],"Task 2":["Many people believe that social networking sites have had a huge negative impact on individuals and society. To what extent do you agree or disagree? (min 250 words)"]}},
-            { id:15, title:"Writing Test 5", type:"writing", diff:"hard", time:"60 min", qs:2, video:null,
-              answers:{"Task 1":["The maps show changes to a town centre between 1990 and 2020. Summarize the main changes. (min 150 words)"],"Task 2":["Some people think governments should spend money on faster public transport. Others think money should be spent on other priorities. Discuss both views. (min 250 words)"]}},
+// Copy exam 1 as template for exams 2-5 (in real app you'd have unique passages)
+for (let i = 2; i <= 5; i++) {
+    readingExams[i] = JSON.parse(JSON.stringify(readingExams[1]));
+    readingExams[i].passages[0].title = `Reading ${i} — Passage 1: Modern Agriculture`;
+    readingExams[i].passages[1].title = `Reading ${i} — Passage 2: Space Exploration`;
+    readingExams[i].passages[2].title = `Reading ${i} — Passage 3: Psychology of Learning`;
+}
 
-            { id:16, title:"Speaking Test 1", type:"speaking", diff:"easy", time:"14 min", qs:3, video:"IevmdO16GuE",
-              answers:{"Part 1":["Topic: Home, Work/Study, Hobbies — speak 4-5 min"],"Part 2":["Describe a book you recently read. Say: what it was about, why you read it, what you learned, why you recommend it. (2 min)"],"Part 3":["Discussion: Reading habits, digital vs paper books, importance of literacy (4-5 min)"]}},
-            { id:17, title:"Speaking Test 2", type:"speaking", diff:"medium", time:"14 min", qs:3, video:"YRKxrDz4hzA",
-              answers:{"Part 1":["Topic: Neighbourhood, Daily routine, Weather — speak 4-5 min"],"Part 2":["Describe a place you visited that impressed you. Say: where it was, when you went, what you did, why it impressed you. (2 min)"],"Part 3":["Discussion: Tourism impact, cultural preservation, travel and education (4-5 min)"]}},
-            { id:18, title:"Speaking Test 3", type:"speaking", diff:"hard", time:"14 min", qs:3, video:null,
-              answers:{"Part 1":["Topic: Technology, Friends, Food — speak 4-5 min"],"Part 2":["Describe a time you made a difficult decision. Say: what the decision was, what options you had, what you decided, how you felt. (2 min)"],"Part 3":["Discussion: Decision-making skills, pressure from society, role of experience (4-5 min)"]}},
-            { id:19, title:"Speaking Test 4", type:"speaking", diff:"medium", time:"14 min", qs:3, video:null,
-              answers:{"Part 1":["Topic: Music, Shopping, Holidays — speak 4-5 min"],"Part 2":["Describe a person who has influenced you. Say: who they are, how you know them, what they did, why they influenced you. (2 min)"],"Part 3":["Discussion: Role models, influence of media on young people, leadership qualities (4-5 min)"]}},
-            { id:20, title:"Speaking Test 5", type:"speaking", diff:"hard", time:"14 min", qs:3, video:null,
-              answers:{"Part 1":["Topic: Sports, Childhood, Transport — speak 4-5 min"],"Part 2":["Describe an achievement you are proud of. Say: what it was, when it happened, how you achieved it, why you are proud. (2 min)"],"Part 3":["Discussion: Motivation, success vs failure, competition in society (4-5 min)"]}}
-        ];
+// --- LISTENING EXAM DATA ---
+const listeningExams = {
+    1: { video:"lGGgHOIBj1c", time:1800, sections:[
+        {title:"Section 1 (Q1-10)", questions:[
+            {type:"fill",q:"1. Name: ___",answer:"Marshall"},
+            {type:"fill",q:"2. Day: ___",answer:"Friday"},
+            {type:"fill",q:"3. Time: ___",answer:"7.30"},
+            {type:"fill",q:"4. Reason for visit: ___",answer:"dentist"},
+            {type:"fill",q:"5. Location: near the ___",answer:"garden"},
+            {type:"fill",q:"6. They will visit the ___",answer:"museum"},
+            {type:"fill",q:"7. Meet at the ___",answer:"market"},
+            {type:"fill",q:"8. Type of school: ___",answer:"primary"},
+            {type:"fill",q:"9. Nearest building: ___",answer:"library"},
+            {type:"fill",q:"10. Children play in the ___",answer:"park"}
+        ]},
+        {title:"Section 2 (Q11-20)", questions:[
+            {type:"mcq",q:"11. The main topic is about:",opts:["A. Tourism","B. Energy saving","C. Transport"],answer:"B"},
+            {type:"mcq",q:"12. The speaker recommends:",opts:["A. Walking","B. Driving","C. Cycling"],answer:"C"},
+            {type:"mcq",q:"13. The event is held in:",opts:["A. Spring","B. Summer","C. Autumn"],answer:"A"},
+            {type:"mcq",q:"14. Tickets cost:",opts:["A. $10","B. $15","C. $20"],answer:"B"},
+            {type:"mcq",q:"15. The venue is:",opts:["A. A school","B. A hotel","C. A community centre"],answer:"C"},
+            {type:"mcq",q:"16. Registration closes on:",opts:["A. Monday","B. Wednesday","C. Friday"],answer:"A"},
+            {type:"fill",q:"17. They installed ___ on the roof.",answer:"solar panels"},
+            {type:"fill",q:"18. Cars should use the ___.",answer:"car park"},
+            {type:"fill",q:"19. The new programme focuses on ___.",answer:"recycling"},
+            {type:"fill",q:"20. The budget is ___.",answer:"300"}
+        ]},
+        {title:"Section 3 (Q21-30)", questions:[
+            {type:"mcq",q:"21. The students discuss:",opts:["A. Their project","B. A lecture","C. An exam","D. A trip"],answer:"A"},
+            {type:"mcq",q:"22. The deadline is:",opts:["A. Next week","B. Tomorrow","C. In 3 days","D. In a month"],answer:"C"},
+            {type:"mcq",q:"23. They need more:",opts:["A. Time","B. Data","C. Money","D. Help"],answer:"B"},
+            {type:"mcq",q:"24. The professor suggested:",opts:["A. A new topic","B. More research","C. A break","D. Extra reading"],answer:"A"},
+            {type:"mcq",q:"25. They will meet at:",opts:["A. 2pm","B. 3pm","C. 4pm","D. 5pm"],answer:"D"},
+            {type:"mcq",q:"26. The library closes at:",opts:["A. 6pm","B. 8pm","C. 9pm","D. 10pm"],answer:"C"},
+            {type:"mcq",q:"27. The main challenge is:",opts:["A. Funding","B. Time management","C. Communication","D. Technology"],answer:"B"},
+            {type:"mcq",q:"28. They agree to:",opts:["A. Split the work","B. Restart","C. Ask for extension","D. Use AI"],answer:"A"},
+            {type:"mcq",q:"29. Presentation is on:",opts:["A. Monday","B. Tuesday","C. Wednesday","D. Thursday"],answer:"C"},
+            {type:"mcq",q:"30. The format is:",opts:["A. Slides only","B. Poster","C. Live demo","D. Video"],answer:"B"}
+        ]},
+        {title:"Section 4 (Q31-40)", questions:[
+            {type:"fill",q:"31. The lecture is about animal ___.",answer:"migration"},
+            {type:"fill",q:"32. Birds lose their natural ___.",answer:"habitat"},
+            {type:"fill",q:"33. The season affects ___.",answer:"breeding"},
+            {type:"fill",q:"34. Scientists use ___ to track movement.",answer:"satellites"},
+            {type:"fill",q:"35. The population declined by ___ percent.",answer:"30"},
+            {type:"fill",q:"36. Climate affects food ___.",answer:"supply"},
+            {type:"fill",q:"37. Conservation efforts focus on ___.",answer:"protection"},
+            {type:"fill",q:"38. The study lasted ___ years.",answer:"five"},
+            {type:"fill",q:"39. Data was collected from ___ countries.",answer:"twelve"},
+            {type:"fill",q:"40. The conclusion emphasises international ___.",answer:"cooperation"}
+        ]}
+    ]},
+};
+for(let i=2;i<=5;i++) listeningExams[i] = JSON.parse(JSON.stringify(listeningExams[1]));
+listeningExams[2].video = "XMIsgfHe3_g";
+listeningExams[3].video = "WO9lCJiPt58";
+listeningExams[4].video = "QhVrqQFUfY8";
+listeningExams[5].video = "nLmDYfe2FGA";
 
-        let mockFilter = 'all';
+// --- WRITING EXAM DATA ---
+const writingExams = {
+    1: {
+        time: 3600,
+        task1: { prompt: "The bar chart below shows internet usage in five countries in 2010 and 2020.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.", min: 150 },
+        task2: { prompt: "Some people think that the best way to reduce crime is to give longer prison sentences. Others believe there are better alternative ways of reducing crime.\n\nDiscuss both views and give your own opinion.\n\nWrite at least 250 words.", min: 250 }
+    },
+    2: { time:3600, task1:{prompt:"The pie charts show the main reasons for migration to and from the UK in 2007.\n\nSummarise the information by selecting and reporting the main features.\n\nWrite at least 150 words.",min:150}, task2:{prompt:"In many countries the gap between the rich and the poor is increasing. What problems does this cause? What solutions can you suggest?\n\nWrite at least 250 words.",min:250}},
+    3: { time:3600, task1:{prompt:"The line graph shows CO2 emissions from transport in four European countries from 1980 to 2020.\n\nSummarise the information and make comparisons.\n\nWrite at least 150 words.",min:150}, task2:{prompt:"Some experts believe children should begin learning a foreign language at primary school. Others believe they should start in secondary school.\n\nDiscuss both sides and give your opinion.\n\nWrite at least 250 words.",min:250}},
+    4: { time:3600, task1:{prompt:"The table shows the percentage of people using different forms of transport in three cities.\n\nSummarise the information and make comparisons.\n\nWrite at least 150 words.",min:150}, task2:{prompt:"Many people believe that social networking sites have had a huge negative impact on individuals and society. To what extent do you agree or disagree?\n\nWrite at least 250 words.",min:250}},
+    5: { time:3600, task1:{prompt:"The maps show changes to a town centre between 1990 and 2020.\n\nSummarise the main changes.\n\nWrite at least 150 words.",min:150}, task2:{prompt:"Some people think governments should spend money on faster public transport. Others think money should be spent on other priorities.\n\nDiscuss both views and give your opinion.\n\nWrite at least 250 words.",min:250}}
+};
 
-        function showMockHub() {
-            mockFilter = 'all';
-            renderMockHub();
-        }
+// --- SPEAKING EXAM DATA ---
+const speakingExams = {
+    1: { video:"IevmdO16GuE", parts:[
+        {title:"Part 1 — Introduction (4-5 min)", prompts:["What is your full name?","Where are you from?","Do you work or study?","What do you enjoy doing in your free time?","How often do you read books?","Do you prefer reading paper books or e-books?"]},
+        {title:"Part 2 — Long Turn (1 min prep + 2 min speak)", prompts:["Describe a book you recently read.\n\nYou should say:\n• what the book was about\n• why you decided to read it\n• what you learned from it\n• and explain why you would recommend it to others."]},
+        {title:"Part 3 — Discussion (4-5 min)", prompts:["Do young people read less than older generations?","How has technology changed reading habits?","Is reading important for children's development?","Will physical books disappear in the future?","Should governments promote reading more?"]}
+    ]},
+    2: { video:"YRKxrDz4hzA", parts:[
+        {title:"Part 1 — Introduction (4-5 min)", prompts:["Where do you live?","What do you like about your neighbourhood?","How is the weather in your city?","What is your daily routine?","Do you prefer mornings or evenings?"]},
+        {title:"Part 2 — Long Turn (1 min prep + 2 min speak)", prompts:["Describe a place you visited that impressed you.\n\nYou should say:\n• where it was\n• when you went there\n• what you did there\n• and explain why it impressed you."]},
+        {title:"Part 3 — Discussion (4-5 min)", prompts:["How does tourism affect local communities?","Should historical sites be preserved or modernized?","Is travel important for education?","How has travel changed in the last 20 years?"]}
+    ]},
+    3: { video:null, parts:[{title:"Part 1",prompts:["Tell me about your hometown.","Do you use technology a lot?","What kind of food do you enjoy?"]},{title:"Part 2",prompts:["Describe a time you made a difficult decision.\n\n• What was the decision?\n• What options did you have?\n• What did you decide?\n• How did you feel?"]},{title:"Part 3",prompts:["How do people make important decisions?","Does society put too much pressure on young people?","Is experience the best teacher?"]}]},
+    4: { video:null, parts:[{title:"Part 1",prompts:["Do you like music?","How often do you go shopping?","What do you do on holidays?"]},{title:"Part 2",prompts:["Describe a person who has influenced you.\n\n• Who are they?\n• How do you know them?\n• What did they do?\n• Why did they influence you?"]},{title:"Part 3",prompts:["Who are better role models — parents or celebrities?","How does media influence young people?","What qualities make a good leader?"]}]},
+    5: { video:null, parts:[{title:"Part 1",prompts:["Do you play any sports?","Tell me about your childhood.","How do you travel to work/school?"]},{title:"Part 2",prompts:["Describe an achievement you are proud of.\n\n• What was it?\n• When did it happen?\n• How did you achieve it?\n• Why are you proud?"]},{title:"Part 3",prompts:["What motivates people to succeed?","Is failure important for success?","Is modern society too competitive?"]}]}
+};
 
-        function renderMockHub() {
-            const filters = ['all','listening','reading','writing','speaking'];
-            const labels = ['🌐 All','🎧 Listening','📖 Reading','✍️ Writing','🗣️ Speaking'];
-            const filtered = mockFilter === 'all' ? mockTestsData : mockTestsData.filter(t => t.type === mockFilter);
+// ===== MOCK TESTS LIST =====
+const mockTestsData = [
+    {id:1,title:"Listening Test 1",type:"listening",diff:"easy",time:"30 min",qs:40},
+    {id:2,title:"Listening Test 2",type:"listening",diff:"medium",time:"30 min",qs:40},
+    {id:3,title:"Listening Test 3",type:"listening",diff:"hard",time:"30 min",qs:40},
+    {id:4,title:"Listening Test 4",type:"listening",diff:"medium",time:"30 min",qs:40},
+    {id:5,title:"Listening Test 5",type:"listening",diff:"hard",time:"30 min",qs:40},
+    {id:6,title:"Reading Test 1",type:"reading",diff:"easy",time:"60 min",qs:40},
+    {id:7,title:"Reading Test 2",type:"reading",diff:"medium",time:"60 min",qs:40},
+    {id:8,title:"Reading Test 3",type:"reading",diff:"hard",time:"60 min",qs:40},
+    {id:9,title:"Reading Test 4",type:"reading",diff:"medium",time:"60 min",qs:40},
+    {id:10,title:"Reading Test 5",type:"reading",diff:"hard",time:"60 min",qs:40},
+    {id:11,title:"Writing Test 1",type:"writing",diff:"easy",time:"60 min",qs:2},
+    {id:12,title:"Writing Test 2",type:"writing",diff:"medium",time:"60 min",qs:2},
+    {id:13,title:"Writing Test 3",type:"writing",diff:"hard",time:"60 min",qs:2},
+    {id:14,title:"Writing Test 4",type:"writing",diff:"medium",time:"60 min",qs:2},
+    {id:15,title:"Writing Test 5",type:"writing",diff:"hard",time:"60 min",qs:2},
+    {id:16,title:"Speaking Test 1",type:"speaking",diff:"easy",time:"14 min",qs:3},
+    {id:17,title:"Speaking Test 2",type:"speaking",diff:"medium",time:"14 min",qs:3},
+    {id:18,title:"Speaking Test 3",type:"speaking",diff:"hard",time:"14 min",qs:3},
+    {id:19,title:"Speaking Test 4",type:"speaking",diff:"medium",time:"14 min",qs:3},
+    {id:20,title:"Speaking Test 5",type:"speaking",diff:"hard",time:"14 min",qs:3}
+];
 
-            let tabsHtml = filters.map((f,i) =>
-                `<div class="filter-tab ${f===mockFilter?'active':''}" onclick="mockFilter='${f}';renderMockHub()">${labels[i]}</div>`
-            ).join('');
+let mockFilter = 'all';
 
-            let cardsHtml = filtered.map(t => `
-                <div class="mock-card" onclick="openMock(${t.id})">
-                    <h3>${t.title}</h3>
-                    <p>⏱ ${t.time} &nbsp; ❓ ${t.qs} questions</p>
-                    <span class="mock-tag ${t.type}">${t.type}</span>
-                    <span class="mock-tag ${t.diff}">${t.diff}</span>
-                    ${t.video ? '<span class="mock-tag listening">🎬 Video</span>' : ''}
-                </div>
-            `).join('');
+function showMockHub() { mockFilter='all'; renderMockHub(); }
 
-            document.getElementById('main-content').innerHTML = `
-                <h1 style="background:linear-gradient(135deg,#6366f1,#a855f7,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;">📝 Mock Tests Hub</h1>
-                <p style="text-align:center;color:#94a3b8;">Practice with real IELTS-style tests — ${mockTestsData.length} tests available</p>
-                <div class="filter-tabs">${tabsHtml}</div>
-                <div class="mock-grid">${cardsHtml}</div>
-            `;
-            window.scrollTo(0,0);
-        }
+function renderMockHub() {
+    const filters = ['all','listening','reading','writing','speaking'];
+    const labels = ['🌐 All','🎧 Listening','📖 Reading','✍️ Writing','🗣️ Speaking'];
+    const filtered = mockFilter==='all' ? mockTestsData : mockTestsData.filter(t=>t.type===mockFilter);
+    let tabsHtml = filters.map((f,i)=>`<div class="filter-tab ${f===mockFilter?'active':''}" onclick="mockFilter='${f}';renderMockHub()">${labels[i]}</div>`).join('');
+    let cardsHtml = filtered.map(t=>`
+        <div class="mock-card" onclick="openExam(${t.id})">
+            <h3>${t.title}</h3><p>⏱ ${t.time} · ❓ ${t.qs} questions</p>
+            <span class="mock-tag ${t.type}">${t.type}</span>
+            <span class="mock-tag ${t.diff}">${t.diff}</span>
+        </div>`).join('');
+    document.getElementById('main-content').innerHTML = `
+        <h1 style="background:linear-gradient(135deg,#6366f1,#a855f7,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;">📝 Mock Tests Hub</h1>
+        <p style="text-align:center;color:#94a3b8;">${mockTestsData.length} tests available — Real exam interface</p>
+        <div class="filter-tabs">${tabsHtml}</div>
+        <div class="mock-grid">${cardsHtml}</div>`;
+    window.scrollTo(0,0);
+}
 
-        function openMock(id) {
-            const t = mockTestsData.find(m => m.id === id);
-            if (!t) return;
+// ===== ROUTER =====
+function openExam(id) {
+    const t = mockTestsData.find(m=>m.id===id);
+    if(t.type==='reading') openReadingExam(id);
+    else if(t.type==='listening') openListeningExam(id);
+    else if(t.type==='writing') openWritingExam(id);
+    else if(t.type==='speaking') openSpeakingExam(id);
+}
 
-            let videoHtml = '';
-            if (t.video) {
-                videoHtml = `
-                    <h2 style="text-align:left;">🎬 Audio / Video</h2>
-                    <div class="video-wrapper"><div class="youtube-container">
-                        <iframe src="https://www.youtube.com/embed/${t.video}" allowfullscreen></iframe>
+// ===== TIMER =====
+function startTimer(seconds, onEnd) {
+    clearInterval(examTimer);
+    examSeconds = seconds;
+    updateTimerDisplay();
+    examTimer = setInterval(()=>{
+        examSeconds--;
+        updateTimerDisplay();
+        if(examSeconds <= 0) { clearInterval(examTimer); if(onEnd) onEnd(); }
+    },1000);
+}
+function updateTimerDisplay() {
+    const el = document.getElementById('exam-clock');
+    if(!el) return;
+    const m = Math.floor(examSeconds/60);
+    const s = examSeconds%60;
+    el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    el.style.color = examSeconds < 300 ? '#f43f5e' : examSeconds < 600 ? '#fbbf24' : '#10b981';
+}
+
+// ===== BAND SCORE CALC =====
+function getBand(correct, total) {
+    const pct = correct/total*100;
+    if(pct>=90) return 9; if(pct>=80) return 8.5; if(pct>=70) return 8;
+    if(pct>=60) return 7.5; if(pct>=53) return 7; if(pct>=47) return 6.5;
+    if(pct>=40) return 6; if(pct>=33) return 5.5; if(pct>=27) return 5;
+    if(pct>=20) return 4.5; if(pct>=13) return 4; return 3.5;
+}
+    // ===== READING EXAM =====
+function openReadingExam(id) {
+    const idx = id - 5; // reading IDs 6-10 → index 1-5
+    const exam = readingExams[idx] || readingExams[1];
+
+    let passagesTabs = exam.passages.map((p,i) => 
+        `<div class="filter-tab ${i===0?'active':''}" onclick="switchPassage(${i})" id="ptab-${i}">Passage ${i+1}</div>`
+    ).join('');
+
+    let passagesHtml = exam.passages.map((p,i) => `
+        <div id="passage-${i}" style="display:${i===0?'block':'none'}">
+            <h3 style="color:#a855f7;">${p.title}</h3>
+            ${p.text.split('\n').map(para => `<p>${para}</p>`).join('')}
+        </div>
+    `).join('');
+
+    let allQuestions = '';
+    exam.passages.forEach((p,pi) => {
+        allQuestions += `<div id="qs-${pi}" style="display:${pi===0?'block':'none'}">
+            <h3 style="color:#6366f1;">Passage ${pi+1} Questions</h3>`;
+        p.questions.forEach(q => {
+            if(q.type === 'tf') {
+                allQuestions += `<div class="eq-item">
+                    <label>${q.q}</label>
+                    <div class="eq-mcq">
+                        <label><input type="radio" name="q${q.q.substring(0,2).trim()}" value="TRUE"> TRUE</label>
+                        <label><input type="radio" name="q${q.q.substring(0,2).trim()}" value="FALSE"> FALSE</label>
+                        <label><input type="radio" name="q${q.q.substring(0,2).trim()}" value="NOT GIVEN"> NOT GIVEN</label>
                     </div></div>`;
+            } else if(q.type === 'mcq') {
+                allQuestions += `<div class="eq-item"><label>${q.q}</label><div class="eq-mcq">
+                    ${q.opts.map(o => `<label><input type="radio" name="q${q.q.substring(0,3).trim()}" value="${o.charAt(0)}"> ${o}</label>`).join('')}
+                </div></div>`;
+            } else {
+                allQuestions += `<div class="eq-item">
+                    <label>${q.q}</label>
+                    <input type="text" class="eq-input" id="inp-${q.q.substring(0,3).trim()}" placeholder="Type your answer...">
+                </div>`;
+            }
+        });
+        allQuestions += '</div>';
+    });
+
+    document.getElementById('main-content').innerHTML = `
+        <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
+        <h1>📖 Reading Test ${idx}</h1>
+        <div class="exam-timer">
+            <div><div style="color:#64748b;font-size:11px;text-transform:uppercase;">Time Remaining</div>
+            <div class="timer-clock" id="exam-clock">60:00</div></div>
+            <div class="timer-btns">
+                <div class="filter-tabs" style="margin:0;">${passagesTabs}</div>
+                <button class="submit-btn" onclick="submitReading(${idx})">✅ Submit</button>
+            </div>
+        </div>
+        <div class="exam-split">
+            <div class="exam-panel" id="passage-panel">${passagesHtml}</div>
+            <div class="exam-panel" id="question-panel">${allQuestions}</div>
+        </div>`;
+
+    startTimer(exam.time, () => submitReading(idx));
+    window.scrollTo(0,0);
+}
+
+function switchPassage(idx) {
+    document.querySelectorAll('[id^="passage-"]').forEach(el => {
+        if(el.id.startsWith('passage-')) el.style.display = 'none';
+    });
+    document.querySelectorAll('[id^="qs-"]').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('[id^="ptab-"]').forEach(el => el.classList.remove('active'));
+    
+    const p = document.getElementById('passage-'+idx);
+    const q = document.getElementById('qs-'+idx);
+    const t = document.getElementById('ptab-'+idx);
+    if(p) p.style.display = 'block';
+    if(q) q.style.display = 'block';
+    if(t) t.classList.add('active');
+}
+
+function submitReading(idx) {
+    clearInterval(examTimer);
+    const exam = readingExams[idx] || readingExams[1];
+    let correct = 0;
+    let total = 0;
+    let details = [];
+
+    exam.passages.forEach(p => {
+        p.questions.forEach(q => {
+            total++;
+            const qNum = q.q.substring(0,3).trim();
+            let userAnswer = '';
+
+            if(q.type === 'tf' || q.type === 'mcq') {
+                const radios = document.querySelectorAll(`input[name="q${qNum}"]`);
+                radios.forEach(r => { if(r.checked) userAnswer = r.value; });
+            } else {
+                const inp = document.getElementById('inp-'+qNum);
+                if(inp) userAnswer = inp.value.trim();
             }
 
-            let answersHtml = '';
-            if (t.answers) {
-                answersHtml = '<div style="margin-top:30px;"><h2>📋 Answers / Tasks</h2>';
-                for (const section in t.answers) {
-                    answersHtml += `<div class="answer-section"><h3 style="color:#a855f7;margin:0 0 10px;">${section}</h3><div class="answer-grid">`;
-                    t.answers[section].forEach((ans, i) => {
-                        answersHtml += `<div class="answer-item"><b style="color:#6366f1;">${i+1}.</b> ${ans}</div>`;
-                    });
-                    answersHtml += '</div></div>';
+            const isCorrect = userAnswer.toLowerCase() === q.answer.toLowerCase();
+            if(isCorrect) correct++;
+            details.push({q: q.q, user: userAnswer || '(empty)', correct: q.answer, ok: isCorrect});
+        });
+    });
+
+    const band = getBand(correct, total);
+    showResults('Reading', correct, total, band, details);
+}
+
+// ===== LISTENING EXAM =====
+function openListeningExam(id) {
+    const exam = listeningExams[id] || listeningExams[1];
+
+    let sectionsHtml = '';
+    exam.sections.forEach(sec => {
+        sectionsHtml += `<div class="section-title">${sec.title}</div>`;
+        sec.questions.forEach(q => {
+            const qNum = q.q.substring(0,3).trim();
+            if(q.type === 'fill') {
+                sectionsHtml += `<div class="eq-item"><label>${q.q}</label>
+                    <input type="text" class="eq-input" id="linp-${qNum}" placeholder="Type your answer..."></div>`;
+            } else {
+                sectionsHtml += `<div class="eq-item"><label>${q.q}</label><div class="eq-mcq">
+                    ${q.opts.map(o => `<label><input type="radio" name="lq${qNum}" value="${o.charAt(0)}"> ${o}</label>`).join('')}
+                </div></div>`;
+            }
+        });
+    });
+
+    document.getElementById('main-content').innerHTML = `
+        <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
+        <h1>🎧 Listening Test ${id}</h1>
+        <div class="exam-timer">
+            <div><div style="color:#64748b;font-size:11px;text-transform:uppercase;">Time Remaining</div>
+            <div class="timer-clock" id="exam-clock">30:00</div></div>
+            <div class="timer-btns">
+                <button class="submit-btn" onclick="submitListening(${id})">✅ Submit</button>
+            </div>
+        </div>
+        <div class="exam-audio">
+            <h3>🎧 Listen carefully — audio plays once</h3>
+            <div class="youtube-container" style="max-width:800px;margin:0 auto;">
+                <iframe src="https://www.youtube.com/embed/${exam.video}" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="exam-panel" style="max-height:none;">${sectionsHtml}</div>`;
+
+    startTimer(exam.time, () => submitListening(id));
+    window.scrollTo(0,0);
+}
+
+function submitListening(id) {
+    clearInterval(examTimer);
+    const exam = listeningExams[id] || listeningExams[1];
+    let correct = 0, total = 0, details = [];
+
+    exam.sections.forEach(sec => {
+        sec.questions.forEach(q => {
+            total++;
+            const qNum = q.q.substring(0,3).trim();
+            let userAnswer = '';
+            if(q.type === 'fill') {
+                const inp = document.getElementById('linp-'+qNum);
+                if(inp) userAnswer = inp.value.trim();
+            } else {
+                document.querySelectorAll(`input[name="lq${qNum}"]`).forEach(r => { if(r.checked) userAnswer = r.value; });
+            }
+            const isCorrect = userAnswer.toLowerCase() === q.answer.toLowerCase();
+            if(isCorrect) correct++;
+            details.push({q:q.q, user:userAnswer||'(empty)', correct:q.answer, ok:isCorrect});
+        });
+    });
+
+    const band = getBand(correct, total);
+    showResults('Listening', correct, total, band, details);
+}
+
+// ===== WRITING EXAM =====
+function openWritingExam(id) {
+    const idx = id - 10; // writing IDs 11-15 → index 1-5
+    const exam = writingExams[idx] || writingExams[1];
+
+    document.getElementById('main-content').innerHTML = `
+        <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
+        <h1>✍️ Writing Test ${idx}</h1>
+        <div class="exam-timer">
+            <div><div style="color:#64748b;font-size:11px;text-transform:uppercase;">Time Remaining</div>
+            <div class="timer-clock" id="exam-clock">60:00</div></div>
+            <div class="timer-btns">
+                <button class="submit-btn" onclick="submitWriting(${idx})">✅ Submit for AI Review</button>
+            </div>
+        </div>
+
+        <div class="section-title">Task 1 — Minimum ${exam.task1.min} words</div>
+        <div class="exam-panel" style="max-height:none;margin-bottom:20px;">
+            <p style="white-space:pre-line;color:#e2e8f0;font-size:15px;line-height:1.8;">${exam.task1.prompt}</p>
+            <textarea class="writing-area" id="w-task1" placeholder="Write your Task 1 response here..." oninput="updateWordCount('w-task1','wc1')"></textarea>
+            <div class="word-count">Words: <span id="wc1">0</span> / ${exam.task1.min} minimum</div>
+        </div>
+
+        <div class="section-title">Task 2 — Minimum ${exam.task2.min} words</div>
+        <div class="exam-panel" style="max-height:none;">
+            <p style="white-space:pre-line;color:#e2e8f0;font-size:15px;line-height:1.8;">${exam.task2.prompt}</p>
+            <textarea class="writing-area" id="w-task2" placeholder="Write your Task 2 response here..." style="min-height:450px;" oninput="updateWordCount('w-task2','wc2')"></textarea>
+            <div class="word-count">Words: <span id="wc2">0</span> / ${exam.task2.min} minimum</div>
+        </div>`;
+
+    startTimer(exam.time, () => submitWriting(idx));
+    window.scrollTo(0,0);
+}
+
+function updateWordCount(textareaId, countId) {
+    const ta = document.getElementById(textareaId);
+    const counter = document.getElementById(countId);
+    if(!ta || !counter) return;
+    const words = ta.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+    counter.textContent = words;
+    counter.style.color = words >= parseInt(counter.parentElement.textContent.match(/\d+/g)?.[1] || 150) ? '#10b981' : '#f43f5e';
+}
+
+function submitWriting(idx) {
+    clearInterval(examTimer);
+    const exam = writingExams[idx] || writingExams[1];
+    const t1 = document.getElementById('w-task1')?.value?.trim() || '';
+    const t2 = document.getElementById('w-task2')?.value?.trim() || '';
+    const wc1 = t1.split(/\s+/).filter(w=>w.length>0).length;
+    const wc2 = t2.split(/\s+/).filter(w=>w.length>0).length;
+
+    // AI-style scoring
+    let t1band = 5, t2band = 5;
+
+    // Task 1 scoring
+    if(wc1 >= exam.task1.min) t1band += 1;
+    if(wc1 >= exam.task1.min + 30) t1band += 0.5;
+    if(t1.includes(',') && t1.includes('.')) t1band += 0.5;
+    if(t1.split('.').length > 4) t1band += 0.5;
+    if(/however|moreover|furthermore|in addition|consequently|therefore|whereas|while/i.test(t1)) t1band += 0.5;
+    if(/significant|considerable|dramatic|substantial|approximately|respectively/i.test(t1)) t1band += 0.5;
+    t1band = Math.min(t1band, 9);
+
+    // Task 2 scoring
+    if(wc2 >= exam.task2.min) t2band += 1;
+    if(wc2 >= exam.task2.min + 50) t2band += 0.5;
+    if(t2.split('.').length > 8) t2band += 0.5;
+    if(/however|moreover|furthermore|in addition|on the other hand|nevertheless/i.test(t2)) t2band += 0.5;
+    if(/in conclusion|to conclude|to sum up|in summary|overall/i.test(t2)) t2band += 0.5;
+    if(/i believe|in my opinion|from my perspective|i think/i.test(t2)) t2band += 0.5;
+    if(t2.split('\n').length > 3) t2band += 0.5;
+    t2band = Math.min(t2band, 9);
+
+    const overall = Math.round((t1band/3 + t2band*2/3) * 2) / 2;
+
+    // Generate feedback
+    let t1feedback = [], t2feedback = [];
+
+    if(wc1 < exam.task1.min) t1feedback.push(`⚠️ Word count too low: ${wc1}/${exam.task1.min}. You will lose marks.`);
+    else t1feedback.push(`✅ Word count met: ${wc1} words.`);
+    if(!/overview|overall|general trend/i.test(t1)) t1feedback.push('⚠️ Missing overview statement. Always include a general overview.');
+    else t1feedback.push('✅ Overview statement detected.');
+    if(/increased|decreased|rose|fell|declined|grew|remained/i.test(t1)) t1feedback.push('✅ Good use of trend language.');
+    else t1feedback.push('💡 Try using trend vocabulary: increased, decreased, rose, remained stable.');
+
+    if(wc2 < exam.task2.min) t2feedback.push(`⚠️ Word count too low: ${wc2}/${exam.task2.min}.`);
+    else t2feedback.push(`✅ Word count met: ${wc2} words.`);
+    if(/in conclusion|to conclude|to sum up/i.test(t2)) t2feedback.push('✅ Conclusion detected.');
+    else t2feedback.push('⚠️ No clear conclusion found. Always end with a conclusion.');
+    if(/on the other hand|however|conversely|while some/i.test(t2)) t2feedback.push('✅ Both views discussed.');
+    else t2feedback.push('💡 Make sure to discuss BOTH sides of the argument.');
+    if(/i believe|in my opinion|i think/i.test(t2)) t2feedback.push('✅ Personal opinion included.');
+    else t2feedback.push('⚠️ Include your personal opinion clearly.');
+    if(/for example|for instance|such as/i.test(t2)) t2feedback.push('✅ Good use of examples.');
+    else t2feedback.push('💡 Add specific examples to support your arguments.');
+
+    document.getElementById('main-content').innerHTML = `
+        <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back to Tests</button>
+        <h1 style="text-align:center;">✍️ Writing Results</h1>
+        <div style="text-align:center;margin:30px 0;">
+            <div style="color:#64748b;font-size:14px;">Estimated Band Score</div>
+            <div class="band-score">${overall}</div>
+        </div>
+
+        <div class="ai-feedback">
+            <h3>📊 Task 1 — Band ${t1band} (${wc1} words)</h3>
+            ${t1feedback.map(f => `<p>${f}</p>`).join('')}
+        </div>
+
+        <div class="ai-feedback" style="margin-top:15px;">
+            <h3>📊 Task 2 — Band ${t2band} (${wc2} words)</h3>
+            ${t2feedback.map(f => `<p>${f}</p>`).join('')}
+        </div>
+
+        <div class="ai-feedback" style="margin-top:15px;">
+            <h3>💡 General Tips</h3>
+            <p>• Task 2 is worth twice as much as Task 1 — spend 40 minutes on it.</p>
+            <p>• Always plan before writing: 2-3 minutes planning saves time.</p>
+            <p>• Use paragraphs: Introduction → Body 1 → Body 2 → Conclusion.</p>
+            <p>• Use linking words: However, Moreover, Furthermore, In addition.</p>
+            <p>• Proofread in the last 2-3 minutes for grammar and spelling.</p>
+        </div>`;
+    window.scrollTo(0,0);
+}
+
+// ===== SPEAKING EXAM =====
+function openSpeakingExam(id) {
+    const idx = id - 15; // speaking IDs 16-20 → index 1-5
+    const exam = speakingExams[idx] || speakingExams[1];
+
+    let videoHtml = '';
+    if(exam.video) {
+        videoHtml = `<div class="exam-audio">
+            <h3>🎬 Example Speaking Test Video</h3>
+            <div class="youtube-container" style="max-width:800px;margin:0 auto;">
+                <iframe src="https://www.youtube.com/embed/${exam.video}" allowfullscreen></iframe>
+            </div></div>`;
+    }
+
+    let partsHtml = exam.parts.map((part,pi) => `
+        <div class="speaking-card">
+            <h3>${part.title}</h3>
+            ${part.prompts.map(p => `<p style="white-space:pre-line;margin:10px 0;padding:10px;background:rgba(255,255,255,0.03);border-radius:10px;border-left:3px solid #a855f7;">🎤 ${p}</p>`).join('')}
+            ${pi === 1 ? `
+                <div style="margin-top:15px;padding:15px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:12px;">
+                    <p style="color:#fbbf24;font-weight:600;margin:0;">⏱ You have 1 minute to prepare, then speak for 1-2 minutes.</p>
+                    <button onclick="startSpeakingTimer(this)" style="margin-top:10px;padding:8px 20px;background:linear-gradient(135deg,#f59e0b,#d97706);border:none;border-radius:8px;color:white;font-weight:600;cursor:pointer;">▶ Start 1-min Prep Timer</button>
+                    <span id="speak-timer-${pi}" style="margin-left:15px;font-family:monospace;font-size:20px;color:#fbbf24;"></span>
+                </div>` : ''}
+        </div>
+    `).join('');
+
+    document.getElementById('main-content').innerHTML = `
+        <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
+        <h1>🗣️ Speaking Test ${idx}</h1>
+        <p style="color:#64748b;">Practice speaking aloud. Record yourself and compare with model answers.</p>
+        ${videoHtml}
+
+        <div class="exam-timer">
+            <div><div style="color:#64748b;font-size:11px;text-transform:uppercase;">Total Time</div>
+            <div class="timer-clock" id="exam-clock">14:00</div></div>
+            <div class="timer-btns">
+                <button onclick="finishSpeaking()" class="submit-btn">✅ Finish</button>
+            </div>
+        </div>
+
+        ${partsHtml}
+
+        <div class="section-title">📝 Self-Assessment</div>
+        <div class="exam-panel" style="max-height:none;">
+            <p style="color:#94a3b8;">Rate your performance honestly:</p>
+            <div class="eq-item">
+                <label>Fluency & Coherence (1-9)</label>
+                <input type="range" id="self-fluency" min="1" max="9" value="5" style="width:100%;" oninput="document.getElementById('sf-val').textContent=this.value">
+                <span id="sf-val" style="color:#a855f7;font-weight:800;">5</span>
+            </div>
+            <div class="eq-item">
+                <label>Lexical Resource (1-9)</label>
+                <input type="range" id="self-lexical" min="1" max="9" value="5" style="width:100%;" oninput="document.getElementById('sl-val').textContent=this.value">
+                <span id="sl-val" style="color:#a855f7;font-weight:800;">5</span>
+            </div>
+            <div class="eq-item">
+                <label>Grammar Range & Accuracy (1-9)</label>
+                <input type="range" id="self-grammar" min="1" max="9" value="5" style="width:100%;" oninput="document.getElementById('sg-val').textContent=this.value">
+                <span id="sg-val" style="color:#a855f7;font-weight:800;">5</span>
+            </div>
+            <div class="eq-item">
+                <label>Pronunciation (1-9)</label>
+                <input type="range" id="self-pron" min="1" max="9" value="5" style="width:100%;" oninput="document.getElementById('sp-val').textContent=this.value">
+                <span id="sp-val" style="color:#a855f7;font-weight:800;">5</span>
+            </div>
+            <button onclick="calcSpeakingScore()" style="width:100%;padding:15px;background:linear-gradient(135deg,#6366f1,#a855f7);border:none;border-radius:12px;color:white;font-weight:800;font-size:16px;cursor:pointer;margin-top:15px;">📊 Calculate My Score</button>
+        </div>`;
+
+    startTimer(840, () => {}); // 14 minutes
+    window.scrollTo(0,0);
+}
+
+let speakingPrepTimer = null;
+function startSpeakingTimer(btn) {
+    btn.disabled = true;
+    btn.textContent = '⏱ Preparing...';
+    let sec = 60;
+    const span = btn.nextElementSibling;
+    speakingPrepTimer = setInterval(() => {
+        sec--;
+        span.textContent = `00:${String(sec).padStart(2,'0')}`;
+        if(sec <= 0) {
+            clearInterval(speakingPrepTimer);
+            span.textContent = '🎤 START SPEAKING!';
+            span.style.color = '#10b981';
+            span.style.fontSize = '22px';
+            btn.textContent = '✅ Done';
+
+            // Now start 2-min speaking timer
+            let speak = 120;
+            speakingPrepTimer = setInterval(() => {
+                speak--;
+                span.textContent = `Speaking: ${Math.floor(speak/60)}:${String(speak%60).padStart(2,'0')}`;
+                if(speak <= 0) {
+                    clearInterval(speakingPrepTimer);
+                    span.textContent = '⏰ Time is up!';
+                    span.style.color = '#f43f5e';
                 }
-                answersHtml += '</div>';
-            }
-
-            document.getElementById('main-content').innerHTML = `
-                <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:20px;">← Back to Mock Tests</button>
-                <h1 style="text-align:left;">${t.title}</h1>
-                <p style="color:#64748b;">⏱ ${t.time} &nbsp; ❓ ${t.qs} questions &nbsp; 📊 ${t.diff}</p>
-                ${videoHtml}
-                ${answersHtml}
-            `;
-            window.scrollTo(0,0);
+            }, 1000);
         }
-    </script>
+    }, 1000);
+}
+
+function calcSpeakingScore() {
+    const f = parseInt(document.getElementById('self-fluency').value);
+    const l = parseInt(document.getElementById('self-lexical').value);
+    const g = parseInt(document.getElementById('self-grammar').value);
+    const p = parseInt(document.getElementById('self-pron').value);
+    const avg = Math.round((f+l+g+p)/4 * 2) / 2;
+
+    let tips = [];
+    if(f < 6) tips.push('💡 <b>Fluency:</b> Practice speaking without long pauses. Use fillers like "well", "actually" instead of silence.');
+    if(l < 6) tips.push('💡 <b>Vocabulary:</b> Learn topic-specific vocabulary. Use synonyms instead of repeating words.');
+    if(g < 6) tips.push('💡 <b>Grammar:</b> Practice using a mix of simple and complex sentences. Use conditionals and passive voice.');
+    if(p < 6) tips.push('💡 <b>Pronunciation:</b> Listen to native speakers. Practice word stress and intonation patterns.');
+    if(avg >= 7) tips.push('🌟 Great job! Focus on maintaining consistency and natural delivery.');
+
+    document.getElementById('main-content').innerHTML += `
+        <div class="ai-feedback" style="margin-top:25px;text-align:center;">
+            <h3>🗣️ Your Speaking Estimate</h3>
+            <div class="band-score">${avg}</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;text-align:left;">
+                <div class="res-correct">Fluency: ${f}/9</div>
+                <div class="res-correct">Vocabulary: ${l}/9</div>
+                <div class="res-correct">Grammar: ${g}/9</div>
+                <div class="res-correct">Pronunciation: ${p}/9</div>
+            </div>
+            <div style="text-align:left;margin-top:20px;">
+                ${tips.map(t => `<p>${t}</p>`).join('')}
+            </div>
+        </div>`;
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+function finishSpeaking() {
+    clearInterval(examTimer);
+    clearInterval(speakingPrepTimer);
+    alert('Speaking test finished! Scroll down to self-assess your performance.');
+}
+
+// ===== RESULTS DISPLAY (Reading + Listening) =====
+function showResults(type, correct, total, band, details) {
+    let detailsHtml = details.map(d => `
+        <div class="${d.ok ? 'res-correct' : 'res-wrong'}">
+            <b>${d.q.substring(0,30)}...</b><br>
+            Your: ${d.user}<br>
+            ${d.ok ? '✅' : '❌ Correct: '+d.correct}
+        </div>
+    `).join('');
+
+    document.getElementById('main-content').innerHTML = `
+        <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back to Tests</button>
+        <h1 style="text-align:center;">${type === 'Reading' ? '📖' : '🎧'} ${type} Results</h1>
+        <div style="text-align:center;margin:30px 0;">
+            <div style="color:#64748b;font-size:14px;">Your Band Score</div>
+            <div class="band-score">${band}</div>
+            <p style="color:#94a3b8;margin-top:10px;">${correct} / ${total} correct (${Math.round(correct/total*100)}%)</p>
+        </div>
+        <div class="section-title">📋 Detailed Answers</div>
+        <div class="results-grid">${detailsHtml}</div>
+
+        <div class="ai-feedback" style="margin-top:25px;">
+            <h3>💡 Tips to Improve</h3>
+            ${band < 6 ? '<p>⚠️ Focus on understanding question types. Practice skimming and scanning techniques.</p>' : ''}
+            ${band >= 6 && band < 7.5 ? '<p>📈 Good progress! Work on time management and tricky question types like T/F/NG.</p>' : ''}
+            ${band >= 7.5 ? '<p>🌟 Excellent! Fine-tune your skills by practicing with harder passages and strict timing.</p>' : ''}
+            <p>• Review all incorrect answers and learn the patterns.</p>
+            <p>• Practice under timed conditions regularly.</p>
+            <p>• For ${type}, aim to spend no more than ${type==='Reading'?'20 minutes per passage':'5 minutes per section reviewing'}.</p>
+        </div>
+
+        <button onclick="renderMockHub()" class="mock-btn" style="background:linear-gradient(135deg,#6366f1,#a855f7);">🔄 Try Another Test</button>`;
+    window.scrollTo(0,0);
+}
+
+</script>
 </body>
 </html>
+            
