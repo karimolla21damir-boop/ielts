@@ -1643,51 +1643,11 @@ function submitReading(idx) {
 // ===== LISTENING EXAM =====
 function openListeningExam(id) {
     const exam = listeningExams[id] || listeningExams[1];
+    const videoId = exam.video;
 
-    // Audio data for each test
-            const audioData = {
-        1: {
-            videos: [
-                { id: 'LMSRmwSJNBM', label: 'Audio 1' },
-                { id: '4MRqFmmACpI', label: 'Backup' }
-            ],
-            timestamps: ['0:00 — Section 1', '7:30 — Section 2', '14:00 — Section 3', '20:30 — Section 4']
-        },
-        2: {
-            videos: [
-                { id: '4MRqFmmACpI', label: 'Audio 1' },
-                { id: 'wfBx5jHOzcY', label: 'Backup' }
-            ],
-            timestamps: ['0:00 — Section 1', '8:00 — Section 2', '15:00 — Section 3', '21:00 — Section 4']
-        },
-        3: {
-            videos: [
-                { id: 'wfBx5jHOzcY', label: 'Audio 1' },
-                { id: 'kSMPMz6PVbM', label: 'Backup' }
-            ],
-            timestamps: ['0:00 — Section 1', '7:00 — Section 2', '13:30 — Section 3', '20:00 — Section 4']
-        },
-        4: {
-            videos: [
-                { id: 'kSMPMz6PVbM', label: 'Audio 1' },
-                { id: 'xERmkRTBJHs', label: 'Backup' }
-            ],
-            timestamps: ['0:00 — Section 1', '7:30 — Section 2', '14:00 — Section 3', '21:00 — Section 4']
-        },
-        5: {
-            videos: [
-                { id: 'xERmkRTBJHs', label: 'Audio 1' },
-                { id: 'LMSRmwSJNBM', label: 'Backup' }
-            ],
-            timestamps: ['0:00 — Section 1', '8:00 — Section 2', '15:00 — Section 3', '22:00 — Section 4']
-        }
-    };
-
-    const audio = audioData[id] || audioData[1];
-
-    // Build questions HTML
     let qCounter = 0;
     let sectionsHtml = '';
+    const timestamps = ['0:00 — Section 1', '7:30 — Section 2', '14:00 — Section 3', '20:30 — Section 4'];
 
     exam.sections.forEach((sec, si) => {
         let questionsHtml = '';
@@ -1719,35 +1679,11 @@ function openListeningExam(id) {
 
         sectionsHtml += `
         <div class="listening-section">
-            <div class="section-audio-marker">🔊 ${audio.timestamps[si] || 'Section ' + (si + 1)}</div>
+            <div class="section-audio-marker">🔊 ${timestamps[si] || 'Section ' + (si + 1)}</div>
             <div class="listening-section-title">📋 ${sec.title}</div>
             ${questionsHtml}
         </div>`;
     });
-
-    // Audio tabs HTML
-    let audioTabsHtml = audio.videos.map((v, i) =>
-        `<div class="audio-tab ${i === 0 ? 'active' : ''}" onclick="switchAudioTab(${i})">${i === 0 ? '🎧' : '🔄'} ${v.label}</div>`
-    ).join('');
-
-        let audioSourcesHtml = audio.videos.map((v, i) => `
-        <div class="audio-source ${i === 0 ? 'active' : ''}" id="audio-src-${i}">
-            <div class="yt-fallback">
-                <iframe 
-                    src="https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1&autoplay=0&origin=${window.location.origin}" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    referrerpolicy="no-referrer-when-downgrade"
-                    sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
-                    loading="lazy">
-                </iframe>
-            </div>
-        </div>
-    `).join('');
-
-    let timestampsHtml = audio.timestamps.map(t =>
-        `<span style="background:rgba(255,255,255,0.08);padding:4px 12px;border-radius:8px;font-size:12px;color:#c4b5fd;">${t}</span>`
-    ).join('');
 
     document.getElementById('main-content').innerHTML = `
         <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
@@ -1766,23 +1702,25 @@ function openListeningExam(id) {
         <div class="audio-player-box">
             <h3>🎧 IELTS Listening Audio</h3>
             <p class="subtitle">Listen carefully — audio plays ONCE in real exam!</p>
-            
-            <div class="audio-warning">
-                <span>⚠️</span>
-                <span>If audio doesn't load, click "Backup" or "Open in YouTube"</span>
+
+            <div class="yt-fallback">
+                <iframe 
+                    src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    style="width:100%;aspect-ratio:16/9;border:none;">
+                </iframe>
             </div>
 
-            <div class="audio-tabs">
-                ${audioTabsHtml}
-                <a href="https://www.youtube.com/watch?v=${audio.videos[0].id}" target="_blank" class="audio-tab" style="text-decoration:none;">
-                    🔗 Open in YouTube
+            <div style="margin-top:15px;padding:12px 20px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:12px;">
+                <p style="color:#34d399;font-weight:700;margin:0 0 8px;">🎧 If video doesn't play:</p>
+                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" style="color:#60a5fa;font-weight:600;font-size:16px;text-decoration:underline;">
+                    ▶ Open audio on YouTube →
                 </a>
             </div>
 
-            ${audioSourcesHtml}
-
             <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:15px;">
-                ${timestampsHtml}
+                ${timestamps.map(t => `<span style="background:rgba(255,255,255,0.08);padding:4px 12px;border-radius:8px;font-size:12px;color:#c4b5fd;">${t}</span>`).join('')}
             </div>
         </div>
 
