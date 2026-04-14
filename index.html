@@ -24,7 +24,6 @@
             min-height: 100vh;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 260px;
             background: #111827;
@@ -36,7 +35,6 @@
             overflow-y: auto;
         }
 
-        /* Instagram Link Style */
         .insta-link {
             display: flex;
             align-items: center;
@@ -59,8 +57,8 @@
 
         .nav-links { list-style: none; padding: 0; margin-top: 20px; }
         .nav-links li { margin-bottom: 10px; }
-        .nav-links a { 
-            color: #94a3b8; text-decoration: none; padding: 12px 15px; 
+        .nav-links a {
+            color: #94a3b8; text-decoration: none; padding: 12px 15px;
             display: block; border-radius: 10px; cursor: pointer; transition: 0.3s;
         }
         .nav-links a:hover, .nav-links a.active { background: var(--primary); color: white; }
@@ -76,7 +74,6 @@
             margin-top: 10px;
         }
 
-        /* Progress Bar Top Center */
         .header-progress {
             position: fixed;
             top: 0;
@@ -90,171 +87,114 @@
         .progress-bar-bg { background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden; }
         .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--primary), var(--accent)); width: 0%; transition: 0.5s; }
 
-        /* Main Content */
-        .main-wrap { 
-            margin-left: 260px; 
-            padding: 100px 40px 40px; 
+        .main-wrap {
+            margin-left: 260px;
+            padding: 100px 40px 40px;
             width: calc(100% - 260px);
             display: flex;
             justify-content: center;
         }
 
-        .card { 
+        .card {
             width: 100%;
-            max-width: 900px;
-            background: var(--card-bg); 
-            border: 1px solid var(--border); 
-            border-radius: 30px; 
+            max-width: 1000px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 30px;
             padding: 40px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        /* Video */
         .video-wrapper { width: 100%; margin: 20px 0; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); }
         .youtube-container { position: relative; padding-bottom: 56.25%; height: 0; }
         .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* Quiz */
         .quiz-container { text-align: left; background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; margin: 30px 0; border: 1px solid var(--border); }
         .quiz-item { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
-        .quiz-options button { 
-            display: block; width: 100%; text-align: left; padding: 12px; margin: 8px 0; 
-            background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; 
+        .quiz-options button {
+            display: block; width: 100%; text-align: left; padding: 12px; margin: 8px 0;
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white;
             border-radius: 8px; cursor: pointer; transition: 0.3s;
         }
         .quiz-options button:hover { background: rgba(255,255,255,0.1); }
 
-        /* PDF - FIXED */
         .pdf-section { width: 100%; margin-top: 30px; }
-        .pdf-wrapper { 
-            width: 100% !important; 
-            height: 800px !important; 
-            background: white; 
-            border-radius: 15px; 
+        .pdf-wrapper {
+            width: 100% !important;
+            height: 800px !important;
+            background: white;
+            border-radius: 15px;
             overflow: hidden;
             border: 2px solid var(--border);
         }
         .pdf-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-        .mock-btn { 
-            background: linear-gradient(135deg, #f43f5e, #e11d48); color: white; 
-            border: none; padding: 18px 35px; border-radius: 15px; font-weight: 800; 
+        .mock-btn {
+            background: linear-gradient(135deg, #f43f5e, #e11d48); color: white;
+            border: none; padding: 18px 35px; border-radius: 15px; font-weight: 800;
             cursor: pointer; margin-top: 30px; width: 100%; font-size: 16px;
             transition: 0.3s;
         }
         .mock-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(244,63,94,0.4); }
 
-        /* ==================== MOCK TESTS HUB ==================== */
-        .mock-hub-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+        /* ==================== MOCK HUB STYLES ==================== */
+        .mock-hub-header { text-align: center; margin-bottom: 40px; }
         .mock-hub-header h1 {
-            font-size: 36px;
-            font-weight: 800;
+            font-size: 36px; font-weight: 800;
             background: linear-gradient(135deg, var(--primary), var(--accent), #f43f5e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
             margin-bottom: 10px;
         }
-        .mock-hub-header p {
-            color: #94a3b8;
-            font-size: 16px;
-        }
+        .mock-hub-header p { color: #94a3b8; font-size: 16px; }
 
-        .filter-tabs {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 35px;
-        }
+        .filter-tabs { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 35px; }
         .filter-tab {
-            padding: 10px 22px;
-            border-radius: 50px;
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,0.03);
-            color: #94a3b8;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.3s;
+            padding: 10px 22px; border-radius: 50px; border: 1px solid var(--border);
+            background: rgba(255,255,255,0.03); color: #94a3b8; font-weight: 600;
+            font-size: 14px; cursor: pointer; transition: 0.3s;
         }
         .filter-tab:hover { background: rgba(255,255,255,0.08); color: white; }
         .filter-tab.active {
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            border-color: transparent;
+            color: white; border-color: transparent;
             box-shadow: 0 4px 15px rgba(99,102,241,0.4);
         }
 
-        .mock-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 35px;
-        }
+        .mock-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 35px; }
         .stat-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            transition: 0.3s;
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            border-radius: 16px; padding: 20px; text-align: center; transition: 0.3s;
         }
         .stat-card:hover { transform: translateY(-3px); border-color: var(--primary); }
         .stat-card .stat-num {
-            font-size: 28px;
-            font-weight: 800;
+            font-size: 28px; font-weight: 800;
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
         .stat-card .stat-label { font-size: 12px; color: #64748b; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
 
-        .mock-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
+        .mock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 
         .mock-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 25px;
-            cursor: pointer;
-            transition: 0.4s;
-            position: relative;
-            overflow: hidden;
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            border-radius: 20px; padding: 25px; transition: 0.4s; position: relative; overflow: hidden;
         }
         .mock-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
+            content: ''; position: absolute; top: 0; left: 0;
             width: 100%; height: 3px;
             background: linear-gradient(90deg, var(--primary), var(--accent));
-            opacity: 0;
-            transition: 0.3s;
+            opacity: 0; transition: 0.3s;
         }
         .mock-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
+            transform: translateY(-5px); border-color: var(--primary);
             box-shadow: 0 15px 40px rgba(99,102,241,0.2);
         }
         .mock-card:hover::before { opacity: 1; }
 
         .mock-card-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 15px;
+            width: 50px; height: 50px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; margin-bottom: 15px;
         }
         .mock-card-icon.listening { background: rgba(99,102,241,0.15); }
         .mock-card-icon.reading { background: rgba(16,185,129,0.15); }
@@ -262,27 +202,14 @@
         .mock-card-icon.speaking { background: rgba(239,68,68,0.15); }
         .mock-card-icon.full { background: rgba(168,85,247,0.15); }
 
-        .mock-card-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #e2e8f0;
-            margin-bottom: 8px;
-        }
-        .mock-card-meta {
-            font-size: 12px;
-            color: #64748b;
-            margin-bottom: 15px;
-        }
+        .mock-card-title { font-size: 16px; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; }
+        .mock-card-meta { font-size: 12px; color: #64748b; margin-bottom: 15px; }
         .mock-card-meta span { margin-right: 12px; }
 
         .mock-card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
         .mock-tag {
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            padding: 4px 10px; border-radius: 6px; font-size: 11px;
+            font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
         }
         .mock-tag.listening { background: rgba(99,102,241,0.15); color: #818cf8; }
         .mock-tag.reading { background: rgba(16,185,129,0.15); color: #34d399; }
@@ -294,38 +221,19 @@
         .mock-tag.hard { background: rgba(239,68,68,0.15); color: #f87171; }
 
         .mock-card-btn {
-            margin-top: 18px;
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            background: rgba(255,255,255,0.03);
-            color: #94a3b8;
-            font-weight: 600;
-            font-size: 13px;
-            cursor: pointer;
-            transition: 0.3s;
+            margin-top: 18px; width: 100%; padding: 12px;
+            border: 1px solid var(--border); border-radius: 12px;
+            background: rgba(255,255,255,0.03); color: #94a3b8;
+            font-weight: 600; font-size: 13px; cursor: pointer; transition: 0.3s;
         }
-        .mock-card-btn:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
+        .mock-card-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
         .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #94a3b8;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            padding: 10px 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            transition: 0.3s;
-            margin-bottom: 25px;
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #94a3b8; background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border); padding: 10px 20px;
+            border-radius: 12px; cursor: pointer; font-weight: 600;
+            font-size: 14px; transition: 0.3s; margin-bottom: 25px;
         }
         .back-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
     </style>
@@ -334,7 +242,7 @@
 
     <nav class="sidebar">
         <h2 style="color:white; margin-bottom: 20px;">IELTS Master</h2>
-        
+
         <a href="https://www.instagram.com/lyazzat_bekbolatovna" target="_blank" class="insta-link">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.058-1.69-.072-4.949-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             <span>@lyazzat_bekbolatovna</span>
@@ -369,98 +277,104 @@
         </div>
     </div>
 
-    <script>
-        const ytData = {
-            lessons: { listening: "QhVrqQFUfY8", reading: "nLmDYfe2FGA", writing: "sIp55MoKmeg", speaking: "YRKxrDz4hzA" },
-            mocks: { listening: "WO9lCJiPt58", speaking: "IevmdO16GuE" }
-        };
+<script>
+    /* ============ ORIGINAL DATA ============ */
+    const ytData = {
+        lessons: { listening: "QhVrqQFUfY8", reading: "nLmDYfe2FGA", writing: "sIp55MoKmeg", speaking: "YRKxrDz4hzA" },
+        mocks: { listening: "WO9lCJiPt58", speaking: "IevmdO16GuE" }
+    };
 
-        const quizData = {
-            listening: [
-                { q: "How many sections in Listening?", a: ["3", "4", "5"], correct: 1 },
-                { q: "Does recording play twice?", a: ["Yes", "No"], correct: 1 },
-                { q: "Total questions?", a: ["30", "40", "50"], correct: 1 },
-                { q: "Extra time for transfer?", a: ["2 min", "10 min", "No"], correct: 1 },
-                { q: "Pen or Pencil?", a: ["Pen", "Pencil only", "Both"], correct: 1 },
-                { q: "Part 1 is usually...", a: ["Lecture", "Social conversation", "Monologue"], correct: 1 },
-                { q: "Are spelling mistakes okay?", a: ["Yes", "No", "Sometimes"], correct: 1 },
-                { q: "Part 4 is usually...", a: ["A tour", "Academic lecture", "An ad"], correct: 1 }
-            ],
-            reading: [
-                { q: "Time for Reading?", a: ["45m", "60m", "90m"], correct: 1 },
-                { q: "How many passages?", a: ["2", "3", "4"], correct: 1 },
-                { q: "Extra transfer time?", a: ["Yes", "No"], correct: 1 },
-                { q: "Total questions?", a: ["30", "40", "50"], correct: 1 },
-                { q: "True/False/Not Given is common?", a: ["Yes", "No"], correct: 0 },
-                { q: "Should you read word-by-word?", a: ["Yes", "No, use skimming", "Only first page"], correct: 1 },
-                { q: "Are texts academic?", a: ["Always", "Never", "Mostly"], correct: 2 },
-                { q: "Penalty for wrong answers?", a: ["Yes", "No"], correct: 1 }
-            ],
-            writing: [
-                { q: "How many tasks?", a: ["1", "2", "3"], correct: 1 },
-                { q: "Min words for Task 2?", a: ["150", "250", "300"], correct: 1 },
-                { q: "Time for Task 1?", a: ["20m", "40m", "60m"], correct: 0 },
-                { q: "Task 2 weight?", a: ["1/3", "2/3", "1/2"], correct: 1 },
-                { q: "Academic Task 1 is...", a: ["Letter", "Chart/Graph", "Essay"], correct: 1 },
-                { q: "Can you use informal language?", a: ["Yes", "No", "Sometimes"], correct: 1 },
-                { q: "Is conclusion necessary in Task 2?", a: ["No", "Yes", "Optional"], correct: 1 },
-                { q: "Writing is paper or computer?", a: ["Both available", "Paper only", "Computer only"], correct: 0 }
-            ],
-            speaking: [
-                { q: "How many parts?", a: ["2", "3", "4"], correct: 1 },
-                { q: "Part 2 prep time?", a: ["30s", "1m", "2m"], correct: 1 },
-                { q: "Is it recorded?", a: ["Yes", "No"], correct: 0 },
-                { q: "Total duration?", a: ["5m", "11-14m", "30m"], correct: 1 },
-                { q: "Part 3 is...", a: ["Personal", "Abstract discussion", "A game"], correct: 1 },
-                { q: "Can you ask to repeat?", a: ["Yes", "No"], correct: 0 },
-                { q: "Are big words required?", a: ["Yes, always", "No, focus on clarity", "Only in Part 1"], correct: 1 },
-                { q: "Part 1 is about...", a: ["History", "Familiar topics", "Science"], correct: 1 }
-            ]
-        };
+    const quizData = {
+        listening: [
+            { q: "How many sections in Listening?", a: ["3", "4", "5"], correct: 1 },
+            { q: "Does recording play twice?", a: ["Yes", "No"], correct: 1 },
+            { q: "Total questions?", a: ["30", "40", "50"], correct: 1 },
+            { q: "Extra time for transfer?", a: ["2 min", "10 min", "No"], correct: 1 },
+            { q: "Pen or Pencil?", a: ["Pen", "Pencil only", "Both"], correct: 1 },
+            { q: "Part 1 is usually...", a: ["Lecture", "Social conversation", "Monologue"], correct: 1 },
+            { q: "Are spelling mistakes okay?", a: ["Yes", "No", "Sometimes"], correct: 1 },
+            { q: "Part 4 is usually...", a: ["A tour", "Academic lecture", "An ad"], correct: 1 }
+        ],
+        reading: [
+            { q: "Time for Reading?", a: ["45m", "60m", "90m"], correct: 1 },
+            { q: "How many passages?", a: ["2", "3", "4"], correct: 1 },
+            { q: "Extra transfer time?", a: ["Yes", "No"], correct: 1 },
+            { q: "Total questions?", a: ["30", "40", "50"], correct: 1 },
+            { q: "True/False/Not Given is common?", a: ["Yes", "No"], correct: 0 },
+            { q: "Should you read word-by-word?", a: ["Yes", "No, use skimming", "Only first page"], correct: 1 },
+            { q: "Are texts academic?", a: ["Always", "Never", "Mostly"], correct: 2 },
+            { q: "Penalty for wrong answers?", a: ["Yes", "No"], correct: 1 }
+        ],
+        writing: [
+            { q: "How many tasks?", a: ["1", "2", "3"], correct: 1 },
+            { q: "Min words for Task 2?", a: ["150", "250", "300"], correct: 1 },
+            { q: "Time for Task 1?", a: ["20m", "40m", "60m"], correct: 0 },
+            { q: "Task 2 weight?", a: ["1/3", "2/3", "1/2"], correct: 1 },
+            { q: "Academic Task 1 is...", a: ["Letter", "Chart/Graph", "Essay"], correct: 1 },
+            { q: "Can you use informal language?", a: ["Yes", "No", "Sometimes"], correct: 1 },
+            { q: "Is conclusion necessary in Task 2?", a: ["No", "Yes", "Optional"], correct: 1 },
+            { q: "Writing is paper or computer?", a: ["Both available", "Paper only", "Computer only"], correct: 0 }
+        ],
+        speaking: [
+            { q: "How many parts?", a: ["2", "3", "4"], correct: 1 },
+            { q: "Part 2 prep time?", a: ["30s", "1m", "2m"], correct: 1 },
+            { q: "Is it recorded?", a: ["Yes", "No"], correct: 0 },
+            { q: "Total duration?", a: ["5m", "11-14m", "30m"], correct: 1 },
+            { q: "Part 3 is...", a: ["Personal", "Abstract discussion", "A game"], correct: 1 },
+            { q: "Can you ask to repeat?", a: ["Yes", "No"], correct: 0 },
+            { q: "Are big words required?", a: ["Yes, always", "No, focus on clarity", "Only in Part 1"], correct: 1 },
+            { q: "Part 1 is about...", a: ["History", "Familiar topics", "Science"], correct: 1 }
+        ]
+    };
 
-        // ==================== MOCK TESTS DATABASE ====================
-        const mockTests = [
-            // FULL TESTS
-            { id: 1,  title: "Cambridge 18 — Test 1", type: "full", difficulty: "Medium", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge18_test1.pdf", video: null, icon: "📋" },
-            { id: 2,  title: "Cambridge 18 — Test 2", type: "full", difficulty: "Medium", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge18_test2.pdf", video: null, icon: "📋" },
-            { id: 3,  title: "Cambridge 18 — Test 3", type: "full", difficulty: "Hard", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge18_test3.pdf", video: null, icon: "📋" },
-            { id: 4,  title: "Cambridge 17 — Test 1", type: "full", difficulty: "Medium", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge17_test1.pdf", video: null, icon: "📋" },
-            { id: 5,  title: "Cambridge 17 — Test 2", type: "full", difficulty: "Hard", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge17_test2.pdf", video: null, icon: "📋" },
+    /* ============ MOCK TESTS DATABASE ============ */
+    const mockTests = [
+        { id: 1,  title: "Cambridge 18 — Test 1", type: "full",      difficulty: "Medium", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge18_test1.pdf", video: null, icon: "📋" },
+        { id: 2,  title: "Cambridge 18 — Test 2", type: "full",      difficulty: "Medium", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge18_test2.pdf", video: null, icon: "📋" },
+        { id: 3,  title: "Cambridge 18 — Test 3", type: "full",      difficulty: "Hard",   duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge18_test3.pdf", video: null, icon: "📋" },
+        { id: 4,  title: "Cambridge 17 — Test 1", type: "full",      difficulty: "Medium", duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge17_test1.pdf", video: null, icon: "📋" },
+        { id: 5,  title: "Cambridge 17 — Test 2", type: "full",      difficulty: "Hard",   duration: "2h 45m", questions: 160, pdf: "materials/mocks/cambridge17_test2.pdf", video: null, icon: "📋" },
+        { id: 6,  title: "Listening Mock — Test 1", type: "listening", difficulty: "Easy",   duration: "30 min", questions: 40,  pdf: "materials/mocks/listening_mock1.pdf", video: "WO9lCJiPt58", icon: "🎧" },
+        { id: 7,  title: "Listening Mock — Test 2", type: "listening", difficulty: "Medium", duration: "30 min", questions: 40,  pdf: "materials/mocks/listening_mock2.pdf", video: "QhVrqQFUfY8", icon: "🎧" },
+        { id: 8,  title: "Listening Mock — Test 3", type: "listening", difficulty: "Hard",   duration: "30 min", questions: 40,  pdf: "materials/mocks/listening_mock3.pdf", video: null, icon: "🎧" },
+        { id: 9,  title: "Listening Mock — Test 4", type: "listening", difficulty: "Medium", duration: "30 min", questions: 40,  pdf: "materials/mocks/listening_mock4.pdf", video: null, icon: "🎧" },
+        { id: 10, title: "Listening Mock — Test 5", type: "listening", difficulty: "Hard",   duration: "30 min", questions: 40,  pdf: "materials/mocks/listening_mock5.pdf", video: null, icon: "🎧" },
+        { id: 11, title: "Reading Mock — Test 1",   type: "reading",   difficulty: "Easy",   duration: "60 min", questions: 40,  pdf: "materials/mocks/reading_mock1.pdf", video: null, icon: "📖" },
+        { id: 12, title: "Reading Mock — Test 2",   type: "reading",   difficulty: "Medium", duration: "60 min", questions: 40,  pdf: "materials/mocks/reading_mock2.pdf", video: null, icon: "📖" },
+        { id: 13, title: "Reading Mock — Test 3",   type: "reading",   difficulty: "Hard",   duration: "60 min", questions: 40,  pdf: "materials/mocks/reading_mock3.pdf", video: null, icon: "📖" },
+        { id: 14, title: "Reading Mock — Test 4",   type: "reading",   difficulty: "Medium", duration: "60 min", questions: 40,  pdf: "materials/mocks/reading_mock4.pdf", video: null, icon: "📖" },
+        { id: 15, title: "Reading Mock — Test 5",   type: "reading",   difficulty: "Hard",   duration: "60 min", questions: 40,  pdf: "materials/mocks/reading_mock5.pdf", video: null, icon: "📖" },
+        { id: 16, title: "Writing Mock — Test 1",   type: "writing",   difficulty: "Easy",   duration: "60 min", questions: 2,   pdf: "materials/mocks/writing_mock1.pdf", video: null, icon: "✍️" },
+        { id: 17, title: "Writing Mock — Test 2",   type: "writing",   difficulty: "Medium", duration: "60 min", questions: 2,   pdf: "materials/mocks/writing_mock2.pdf", video: null, icon: "✍️" },
+        { id: 18, title: "Writing Mock — Test 3",   type: "writing",   difficulty: "Hard",   duration: "60 min", questions: 2,   pdf: "materials/mocks/writing_mock3.pdf", video: null, icon: "✍️" },
+        { id: 19, title: "Writing Mock — Test 4",   type: "writing",   difficulty: "Medium", duration: "60 min", questions: 2,   pdf: "materials/mocks/writing_mock4.pdf", video: null, icon: "✍️" },
+        { id: 20, title: "Writing Mock — Test 5",   type: "writing",   difficulty: "Hard",   duration: "60 min", questions: 2,   pdf: "materials/mocks/writing_mock5.pdf", video: null, icon: "✍️" },
+        { id: 21, title: "Speaking Mock — Test 1",   type: "speaking",  difficulty: "Easy",   duration: "14 min", questions: 3,   pdf: "materials/mocks/speaking_mock1.pdf", video: "IevmdO16GuE", icon: "🗣️" },
+        { id: 22, title: "Speaking Mock — Test 2",   type: "speaking",  difficulty: "Medium", duration: "14 min", questions: 3,   pdf: "materials/mocks/speaking_mock2.pdf", video: "YRKxrDz4hzA", icon: "🗣️" },
+        { id: 23, title: "Speaking Mock — Test 3",   type: "speaking",  difficulty: "Hard",   duration: "14 min", questions: 3,   pdf: "materials/mocks/speaking_mock3.pdf", video: null, icon: "🗣️" },
+        { id: 24, title: "Speaking Mock — Test 4",   type: "speaking",  difficulty: "Medium", duration: "14 min", questions: 3,   pdf: "materials/mocks/speaking_mock4.pdf", video: null, icon: "🗣️" },
+        { id: 25, title: "Speaking Mock — Test 5",   type: "speaking",  difficulty: "Hard",   duration: "14 min", questions: 3,   pdf: "materials/mocks/speaking_mock5.pdf", video: null, icon: "🗣️" }
+    ];
 
-            // LISTENING
-            { id: 6,  title: "Listening Mock — Test 1", type: "listening", difficulty: "Easy", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock1.pdf", video: "WO9lCJiPt58", icon: "🎧" },
-            { id: 7,  title: "Listening Mock — Test 2", type: "listening", difficulty: "Medium", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock2.pdf", video: "QhVrqQFUfY8", icon: "🎧" },
-            { id: 8,  title: "Listening Mock — Test 3", type: "listening", difficulty: "Hard", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock3.pdf", video: null, icon: "🎧" },
-            { id: 9,  title: "Listening Mock — Test 4", type: "listening", difficulty: "Medium", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock4.pdf", video: null, icon: "🎧" },
-            { id: 10, title: "Listening Mock — Test 5", type: "listening", difficulty: "Hard", duration: "30 min", questions: 40, pdf: "materials/mocks/listening_mock5.pdf", video: null, icon: "🎧" },
+    let completed = new Set();
+    let currentMockFilter = 'all';
 
-            // READING
-            { id: 11, title: "Reading Mock — Test 1", type: "reading", difficulty: "Easy", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock1.pdf", video: null, icon: "📖" },
-            { id: 12, title: "Reading Mock — Test 2", type: "reading", difficulty: "Medium", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock2.pdf", video: null, icon: "📖" },
-            { id: 13, title: "Reading Mock — Test 3", type: "reading", difficulty: "Hard", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock3.pdf", video: null, icon: "📖" },
-            { id: 14, title: "Reading Mock — Test 4", type: "reading", difficulty: "Medium", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock4.pdf", video: null, icon: "📖" },
-            { id: 15, title: "Reading Mock — Test 5", type: "reading", difficulty: "Hard", duration: "60 min", questions: 40, pdf: "materials/mocks/reading_mock5.pdf", video: null, icon: "📖" },
+    /* ============ NAV HELPER ============ */
+    function setActiveNav(id) {
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+        const el = document.getElementById(id);
+        if (el) el.classList.add('active');
+    }
 
-            // WRITING
-            { id: 16, title: "Writing Mock — Test 1", type: "writing", difficulty: "Easy", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock1.pdf", video: null, icon: "✍️" },
-            { id: 17, title: "Writing Mock — Test 2", type: "writing", difficulty: "Medium", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock2.pdf", video: null, icon: "✍️" },
-            { id: 18, title: "Writing Mock — Test 3", type: "writing", difficulty: "Hard", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock3.pdf", video: null, icon: "✍️" },
-            { id: 19, title: "Writing Mock — Test 4", type: "writing", difficulty: "Medium", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock4.pdf", video: null, icon: "✍️" },
-            { id: 20, title: "Writing Mock — Test 5", type: "writing", difficulty: "Hard", duration: "60 min", questions: 2, pdf: "materials/mocks/writing_mock5.pdf", video: null, icon: "✍️" },
+    /* ============ ORIGINAL: checkQuiz ============ */
+    function checkQuiz(btn, isCorrect) {
+        btn.style.background = isCorrect ? "#16a34a" : "#dc2626";
+        btn.style.color = "white";
+    }
 
-            // SPEAKING
-            { id: 21, title: "Speaking Mock — Test 1", type: "speaking", difficulty: "Easy", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock1.pdf", video: "IevmdO16GuE", icon: "🗣️" },
-            { id: 22, title: "Speaking Mock — Test 2", type: "speaking", difficulty: "Medium", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock2.pdf", video: "YRKxrDz4hzA", icon: "🗣️" },
-            { id: 23, title: "Speaking Mock — Test 3", type: "speaking", difficulty: "Hard", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock3.pdf", video: null, icon: "🗣️" },
-            { id: 24, title: "Speaking Mock — Test 4", type: "speaking", difficulty: "Medium", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock4.pdf", video: null, icon: "🗣️" },
-            { id: 25, title: "Speaking Mock — Test 5", type: "speaking", difficulty: "Hard", duration: "14 min", questions: 3, pdf: "materials/mocks/speaking_mock5.pdf", video: null, icon: "🗣️" },
-        ];
-
-        let completed = new Set();
-        let currentMockFilter = 'all';
-
-        // ==================== NAV HIGHLIGHT ====================
-        function setActiveNav(id) {
-            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-            if (id) {
-                
+    /* ============ ORIGINAL: showDashboard ============ */
+    function showDashboard() {
+        setActiveNav('nav-dashboard');
+        document.getElementById('main-content').innerHTML = `
+            <h1>Welcome!</h1>
+            <p>Select a module to continue your IELTS preparation
