@@ -789,6 +789,78 @@
     color: #c4b5fd;
     font-weight: 600;
 }
+        /* AI Chatbot */
+.chat-toggle {
+    position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+    width: 65px; height: 65px; border-radius: 50%; border: none;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white; font-size: 28px; cursor: pointer;
+    box-shadow: 0 8px 30px rgba(99,102,241,0.5);
+    transition: 0.3s; display: flex; align-items: center; justify-content: center;
+}
+.chat-toggle:hover { transform: scale(1.1); }
+
+.chatbox {
+    position: fixed; bottom: 110px; right: 30px; z-index: 9999;
+    width: 380px; max-height: 520px; border-radius: 24px;
+    background: #1e293b; border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    display: none; flex-direction: column; overflow: hidden;
+}
+.chatbox.open { display: flex; }
+
+.chat-header {
+    padding: 18px 20px; background: linear-gradient(135deg, #6366f1, #a855f7);
+    display: flex; align-items: center; justify-content: space-between;
+}
+.chat-header h3 { margin: 0; font-size: 16px; color: white; }
+.chat-close {
+    background: none; border: none; color: white; font-size: 22px;
+    cursor: pointer; padding: 0; line-height: 1;
+}
+
+.chat-messages {
+    flex: 1; padding: 20px; overflow-y: auto; max-height: 350px;
+    display: flex; flex-direction: column; gap: 12px;
+}
+.chat-messages::-webkit-scrollbar { width: 4px; }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+.msg {
+    max-width: 85%; padding: 12px 16px; border-radius: 16px;
+    font-size: 14px; line-height: 1.6; word-wrap: break-word;
+}
+.msg.bot {
+    background: rgba(99,102,241,0.15); color: #e2e8f0;
+    align-self: flex-start; border-bottom-left-radius: 4px;
+}
+.msg.user {
+    background: #6366f1; color: white;
+    align-self: flex-end; border-bottom-right-radius: 4px;
+}
+.msg.typing { color: #94a3b8; font-style: italic; }
+
+.chat-input-row {
+    padding: 15px; border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex; gap: 10px;
+}
+.chat-input {
+    flex: 1; padding: 12px 16px; border-radius: 12px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    color: white; font-size: 14px; outline: none; font-family: inherit;
+}
+.chat-input:focus { border-color: #6366f1; }
+.chat-input::placeholder { color: #64748b; }
+.chat-send {
+    padding: 12px 18px; border-radius: 12px; border: none;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white; font-weight: 700; cursor: pointer; font-size: 14px;
+}
+.chat-send:hover { opacity: 0.9; }
+
+@media (max-width: 500px) {
+    .chatbox { width: calc(100% - 20px); right: 10px; bottom: 100px; }
+}
     </style>
 </head>
 <body>
@@ -2237,8 +2309,210 @@ function showResults(type, correct, total, band, details) {
         <button onclick="renderMockHub()" class="mock-btn" style="background:linear-gradient(135deg,#6366f1,#a855f7);">🔄 Try Another Test</button>`;
     window.scrollTo(0,0);
 }
+// ===== AI CHATBOT =====
+function toggleChat() {
+    const box = document.getElementById('chatbox');
+    box.classList.toggle('open');
+}
 
+function sendChat() {
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if (!msg) return;
+    input.value = '';
+
+    addMsg(msg, 'user');
+    addMsg('Thinking...', 'bot typing');
+
+    setTimeout(() => {
+        document.querySelector('.msg.typing')?.remove();
+        const reply = getAIReply(msg);
+        addMsg(reply, 'bot');
+    }, 800);
+}
+
+function addMsg(text, cls) {
+    const div = document.createElement('div');
+    div.className = 'msg ' + cls;
+    div.innerHTML = text;
+    const container = document.getElementById('chatMessages');
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+}
+
+function getAIReply(msg) {
+    const m = msg.toLowerCase();
+
+    // Band score
+    if (m.includes('band') && (m.includes('score') || m.includes('7') || m.includes('8') || m.includes('9'))) {
+        return `🎯 <b>Band Score Tips:</b><br>
+        • Band 6: Good user — some errors but communicates well<br>
+        • Band 7: Good command — occasional inaccuracies<br>
+        • Band 8: Very good — rare errors, handles complex language<br>
+        • Band 9: Expert — full command of English<br><br>
+        Focus on: consistency across all 4 sections. Your weakest skill pulls down your overall score!`;
+    }
+
+    // Listening
+    if (m.includes('listening') || m.includes('listen')) {
+        return `🎧 <b>Listening Tips:</b><br>
+        • Audio plays ONCE only — focus hard!<br>
+        • Read questions BEFORE audio starts<br>
+        • Watch for spelling — it matters!<br>
+        • Practice with BBC podcasts and TED talks<br>
+        • Section 1 & 2 are easier — don't lose marks there<br>
+        • Transfer answers carefully in paper test (10 min extra time)`;
+    }
+
+    // Reading
+    if (m.includes('reading') || m.includes('read') || m.includes('passage')) {
+        return `📖 <b>Reading Tips:</b><br>
+        • 60 minutes for 3 passages, 40 questions<br>
+        • DON'T read every word — use skimming & scanning<br>
+        • Spend ~20 min per passage<br>
+        • For T/F/NG: stick to what the TEXT says, not your opinion<br>
+        • Underline keywords in questions first<br>
+        • If stuck, move on and come back later`;
+    }
+
+    // Writing Task 1
+    if (m.includes('task 1') || m.includes('graph') || m.includes('chart') || m.includes('diagram')) {
+        return `📊 <b>Writing Task 1 Tips:</b><br>
+        • Minimum 150 words, spend ~20 minutes<br>
+        • Structure: Introduction → Overview → Details (2 paragraphs)<br>
+        • ALWAYS include an overview (main trends)<br>
+        • Don't give opinions — just describe data<br>
+        • Use: increased, decreased, remained stable, fluctuated<br>
+        • Compare data: "while X rose, Y declined"`;
+    }
+
+    // Writing Task 2
+    if (m.includes('task 2') || m.includes('essay')) {
+        return `✍️ <b>Writing Task 2 Tips:</b><br>
+        • Minimum 250 words, spend ~40 minutes<br>
+        • Structure: Intro → Body 1 → Body 2 → Conclusion<br>
+        • State your opinion clearly in intro AND conclusion<br>
+        • Use examples to support each argument<br>
+        • Linking words: However, Moreover, Furthermore, In addition<br>
+        • Plan for 3-5 minutes before writing!`;
+    }
+
+    // Writing general
+    if (m.includes('writing') || m.includes('write')) {
+        return `✍️ <b>Writing Tips:</b><br>
+        • Task 1: 150+ words (20 min) — describe data/process<br>
+        • Task 2: 250+ words (40 min) — argue your opinion<br>
+        • Task 2 is worth TWICE as much as Task 1<br>
+        • Use varied sentence structures (simple + complex)<br>
+        • Avoid repeating vocabulary — use synonyms<br>
+        • Always proofread in last 2-3 minutes`;
+    }
+
+    // Speaking
+    if (m.includes('speaking') || m.includes('speak') || m.includes('pronunciation')) {
+        return `🗣️ <b>Speaking Tips:</b><br>
+        • 3 parts: Intro (4-5 min), Long turn (3-4 min), Discussion (4-5 min)<br>
+        • Part 2: You get 1 min to prepare — USE IT! Make notes<br>
+        • Don't memorize answers — examiners can tell<br>
+        • It's OK to self-correct: "I mean..." "What I'm trying to say..."<br>
+        • Use fillers naturally: "Well...", "Actually...", "To be honest..."<br>
+        • Record yourself and listen back — it helps a lot!`;
+    }
+
+    // Vocabulary
+    if (m.includes('vocab') || m.includes('word') || m.includes('synonym')) {
+        return `📚 <b>Vocabulary Tips:</b><br>
+        • Learn words in CONTEXT, not just lists<br>
+        • Key synonyms: important=crucial/vital, good=beneficial, bad=detrimental<br>
+        • increase=surge/soar/climb, decrease=decline/plummet/drop<br>
+        • Use collocations: "make progress", "take measures", "pose a threat"<br>
+        • Learn 10 new words daily from IELTS topics<br>
+        • Topics: environment, education, technology, health, crime`;
+    }
+
+    // Grammar
+    if (m.includes('grammar') || m.includes('tense') || m.includes('sentence')) {
+        return `📝 <b>Grammar Tips:</b><br>
+        • Mix simple and complex sentences<br>
+        • Use conditionals: "If governments invested more..."<br>
+        • Passive voice: "It is widely believed that..."<br>
+        • Relative clauses: "...which leads to problems"<br>
+        • Common errors: subject-verb agreement, articles (a/the), prepositions<br>
+        • Practice: write one paragraph daily and check grammar`;
+    }
+
+    // Time / strategy
+    if (m.includes('time') || m.includes('strategy') || m.includes('manage') || m.includes('plan')) {
+        return `⏱️ <b>Time Management:</b><br>
+        • Listening: 30 min + 10 min transfer (paper only)<br>
+        • Reading: 20 min per passage (strict!)<br>
+        • Writing: 20 min Task 1 + 40 min Task 2<br>
+        • Speaking: 11-14 min (examiner controls time)<br><br>
+        🎯 <b>Strategy:</b> Never spend too long on one question. Skip and return. Easy marks first!`;
+    }
+
+    // Greetings
+    if (m.includes('hello') || m.includes('hi') || m.includes('hey') || m.includes('привет') || m.includes('салем')) {
+        return `👋 Hello! I'm your IELTS assistant. Ask me about:<br>
+        • 🎧 Listening / 📖 Reading / ✍️ Writing / 🗣️ Speaking<br>
+        • 📊 Band scores<br>
+        • 📚 Vocabulary & Grammar<br>
+        • ⏱️ Time management<br>
+        • 💡 Any IELTS question!`;
+    }
+
+    // Thanks
+    if (m.includes('thank') || m.includes('спасибо') || m.includes('рахмет')) {
+        return `😊 You're welcome! Keep practicing — consistency is the key to a high band score. You've got this! 💪`;
+    }
+
+    // Check my essay / writing
+    if (m.includes('check') || m.includes('correct') || m.includes('review')) {
+        return `📝 To check your writing, try the <b>Writing Mock Tests</b> — they have built-in AI scoring!<br><br>
+        Quick self-check:<br>
+        ✅ Did I answer the question?<br>
+        ✅ 150+ words (Task 1) / 250+ words (Task 2)?<br>
+        ✅ Clear paragraphs?<br>
+        ✅ Overview/conclusion present?<br>
+        ✅ Varied vocabulary?<br>
+        ✅ Mix of simple + complex sentences?`;
+    }
+
+    // IELTS general
+    if (m.includes('ielts') || m.includes('exam') || m.includes('test')) {
+        return `📋 <b>IELTS Overview:</b><br>
+        • 4 sections: Listening, Reading, Writing, Speaking<br>
+        • Total time: ~2 hours 45 minutes<br>
+        • Band scale: 1 (lowest) to 9 (highest)<br>
+        • Academic vs General Training (Reading & Writing differ)<br>
+        • Results in 13 days (paper) or 3-5 days (computer)<br><br>
+        What section would you like tips for?`;
+    }
+
+    // Default
+    return `🤔 Great question! Here are some general IELTS tips:<br><br>
+    • Practice all 4 skills equally<br>
+    • Take full mock tests under timed conditions<br>
+    • Learn from your mistakes — review every wrong answer<br>
+    • Immerse yourself in English daily (podcasts, reading, movies)<br><br>
+    Try asking about: <b>listening, reading, writing, speaking, vocabulary, grammar, band scores, or time management</b>!`;
+}
 </script>
+<!-- AI CHATBOT -->
+<button class="chat-toggle" onclick="toggleChat()" id="chatToggleBtn">💬</button>
+<div class="chatbox" id="chatbox">
+    <div class="chat-header">
+        <h3>🤖 IELTS AI Assistant</h3>
+        <button class="chat-close" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <div class="msg bot">Hi! I'm your IELTS AI assistant 🎓 Ask me anything about IELTS — tips, band scores, grammar, vocabulary, essay checking, speaking advice!</div>
+    </div>
+    <div class="chat-input-row">
+        <input class="chat-input" id="chatInput" placeholder="Ask about IELTS..." onkeydown="if(event.key==='Enter')sendChat()">
+        <button class="chat-send" onclick="sendChat()">Send</button>
+    </div>
+</div>
 </body>
 </html>
             
