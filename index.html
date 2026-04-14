@@ -1797,7 +1797,12 @@ function openWritingExam(id) {
         <div class="exam-panel" style="max-height:none;">
             <p style="white-space:pre-line;color:#e2e8f0;font-size:15px;line-height:1.8;">${exam.task2.prompt}</p>
             <textarea class="writing-area" id="w-task2" placeholder="Write your Task 2 response here..." style="min-height:450px;" oninput="updateWordCount('w-task2','wc2')"></textarea>
-            <div class="word-count
+            <div class="word-count">Words: <span id="wc2">0</span> / ${exam.task2.min} minimum</div>
+        </div>`;
+
+    startTimer(exam.time, () => submitWriting(idx));
+    window.scrollTo(0,0);
+}
 
 function updateWordCount(textareaId, countId) {
     const ta = document.getElementById(textareaId);
