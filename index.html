@@ -293,74 +293,419 @@ var mockTests = [
     { id:3, title:"Cambridge 18 — Test 3", type:"full", difficulty:"Hard", duration:"2h 45m", questions:160, pdf:"materials/mocks/cambridge18_test3.pdf", video:null, icon:"📋" },
     { id:4, title:"Cambridge 17 — Test 1", type:"full", difficulty:"Medium", duration:"2h 45m", questions:160, pdf:"materials/mocks/cambridge17_test1.pdf", video:null, icon:"📋" },
     { id:5, title:"Cambridge 17 — Test 2", type:"full", difficulty:"Hard", duration:"2h 45m", questions:160, pdf:"materials/mocks/cambridge17_test2.pdf", video:null, icon:"📋" },
-    { id:6, title:"Listening Mock — Test 1", type:"listening", difficulty:"Easy", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock1.pdf", video:"WO9lCJiPt58", icon:"🎧" },
-    { id:7, title:"Listening Mock — Test 2", type:"listening", difficulty:"Medium", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock2.pdf", video:"QhVrqQFUfY8", icon:"🎧" },
-    { id:8, title:"Listening Mock — Test 3", type:"listening", difficulty:"Hard", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock3.pdf", video:null, icon:"🎧" },
-    { id:9, title:"Listening Mock — Test 4", type:"listening", difficulty:"Medium", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock4.pdf", video:null, icon:"🎧" },
-    { id:10, title:"Listening Mock — Test 5", type:"listening", difficulty:"Hard", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock5.pdf", video:null, icon:"🎧" },
-    { id:11, title:"Reading Mock — Test 1", type:"reading", difficulty:"Easy", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock1.pdf", video:null, icon:"📖" },
-    { id:12, title:"Reading Mock — Test 2", type:"reading", difficulty:"Medium", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock2.pdf", video:null, icon:"📖" },
-    { id:13, title:"Reading Mock — Test 3", type:"reading", difficulty:"Hard", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock3.pdf", video:null, icon:"📖" },
-    { id:14, title:"Reading Mock — Test 4", type:"reading", difficulty:"Medium", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock4.pdf", video:null, icon:"📖" },
-    { id:15, title:"Reading Mock — Test 5", type:"reading", difficulty:"Hard", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock5.pdf", video:null, icon:"📖" },
-    { id:16, title:"Writing Mock — Test 1", type:"writing", difficulty:"Easy", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock1.pdf", video:null, icon:"✍️" },
-    { id:17, title:"Writing Mock — Test 2", type:"writing", difficulty:"Medium", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock2.pdf", video:null, icon:"✍️" },
-    { id:18, title:"Writing Mock — Test 3", type:"writing", difficulty:"Hard", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock3.pdf", video:null, icon:"✍️" },
-    { id:19, title:"Writing Mock — Test 4", type:"writing", difficulty:"Medium", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock4.pdf", video:null, icon:"✍️" },
-    { id:20, title:"Writing Mock — Test 5", type:"writing", difficulty:"Hard", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock5.pdf", video:null, icon:"✍️" },
-    { id:21, title:"Speaking Mock — Test 1", type:"speaking", difficulty:"Easy", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock1.pdf", video:"IevmdO16GuE", icon:"🗣️" },
-    { id:22, title:"Speaking Mock — Test 2", type:"speaking", difficulty:"Medium", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock2.pdf", video:"YRKxrDz4hzA", icon:"🗣️" },
-    { id:23, title:"Speaking Mock — Test 3", type:"speaking", difficulty:"Hard", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock3.pdf", video:null, icon:"🗣️" },
-    { id:24, title:"Speaking Mock — Test 4", type:"speaking", difficulty:"Medium", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock4.pdf", video:null, icon:"🗣️" },
-    { id:25, title:"Speaking Mock — Test 5", type:"speaking", difficulty:"Hard", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock5.pdf", video:null, icon:"🗣️" }
+    { id:6, title:"Listening Mock 1", type:"listening", difficulty:"Easy", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock1.pdf", video:"WO9lCJiPt58", icon:"🎧" },
+    { id:7, title:"Listening Mock 2", type:"listening", difficulty:"Medium", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock2.pdf", video:"QhVrqQFUfY8", icon:"🎧" },
+    { id:8, title:"Listening Mock 3", type:"listening", difficulty:"Hard", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock3.pdf", video:null, icon:"🎧" },
+    { id:9, title:"Listening Mock 4", type:"listening", difficulty:"Medium", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock4.pdf", video:null, icon:"🎧" },
+    { id:10, title:"Listening Mock 5", type:"listening", difficulty:"Hard", duration:"30 min", questions:40, pdf:"materials/mocks/listening_mock5.pdf", video:null, icon:"🎧" },
+    { id:11, title:"Reading Mock 1", type:"reading", difficulty:"Easy", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock1.pdf", video:null, icon:"📖" },
+    { id:12, title:"Reading Mock 2", type:"reading", difficulty:"Medium", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock2.pdf", video:null, icon:"📖" },
+    { id:13, title:"Reading Mock 3", type:"reading", difficulty:"Hard", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock3.pdf", video:null, icon:"📖" },
+    { id:14, title:"Reading Mock 4", type:"reading", difficulty:"Medium", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock4.pdf", video:null, icon:"📖" },
+    { id:15, title:"Reading Mock 5", type:"reading", difficulty:"Hard", duration:"60 min", questions:40, pdf:"materials/mocks/reading_mock5.pdf", video:null, icon:"📖" },
+    { id:16, title:"Writing Mock 1", type:"writing", difficulty:"Easy", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock1.pdf", video:null, icon:"✍️" },
+    { id:17, title:"Writing Mock 2", type:"writing", difficulty:"Medium", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock2.pdf", video:null, icon:"✍️" },
+    { id:18, title:"Writing Mock 3", type:"writing", difficulty:"Hard", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock3.pdf", video:null, icon:"✍️" },
+    { id:19, title:"Writing Mock 4", type:"writing", difficulty:"Medium", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock4.pdf", video:null, icon:"✍️" },
+    { id:20, title:"Writing Mock 5", type:"writing", difficulty:"Hard", duration:"60 min", questions:2, pdf:"materials/mocks/writing_mock5.pdf", video:null, icon:"✍️" },
+    { id:21, title:"Speaking Mock 1", type:"speaking", difficulty:"Easy", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock1.pdf", video:"IevmdO16GuE", icon:"🗣️" },
+    { id:22, title:"Speaking Mock 2", type:"speaking", difficulty:"Medium", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock2.pdf", video:"YRKxrDz4hzA", icon:"🗣️" },
+    { id:23, title:"Speaking Mock 3", type:"speaking", difficulty:"Hard", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock3.pdf", video:null, icon:"🗣️" },
+    { id:24, title:"Speaking Mock 4", type:"speaking", difficulty:"Medium", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock4.pdf", video:null, icon:"🗣️" },
+    { id:25, title:"Speaking Mock 5", type:"speaking", difficulty:"Hard", duration:"14 min", questions:3, pdf:"materials/mocks/speaking_mock5.pdf", video:null, icon:"🗣️" }
 ];
 
 var completed = new Set();
-var currentMockFilter = 'all';
+var currentMockFilter = "all";
 
 function setActiveNav(id) {
-    document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+    var links = document.querySelectorAll(".nav-links a");
+    for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+    }
     var el = document.getElementById(id);
-    if (el) el.classList.add('active');
+    if (el) el.classList.add("active");
+}
+
+function updateProgress() {
+    var pct = Math.round(completed.size / 4 * 100);
+    document.getElementById("p-fill").style.width = pct + "%";
+    document.getElementById("p-percent").innerText = pct + "%";
 }
 
 function checkQuiz(btn, isCorrect) {
     btn.style.background = isCorrect ? "#16a34a" : "#dc2626";
     btn.style.color = "white";
+    btn.style.borderColor = isCorrect ? "#16a34a" : "#dc2626";
 }
 
 function showDashboard() {
-    setActiveNav('nav-dashboard');
-    document.getElementById('main-content').innerHTML =
-        '<h1>Welcome!</h1>' +
-        '<p>Select a module to continue your IELTS preparation with Lyazzat Teacher.</p>' +
-        '<div class="video-wrapper">' +
-        '<video controls style="width:100%"><source src="materials/promo.mp4" type="video/mp4"></video>' +
-        '</div>';
+    setActiveNav("nav-dashboard");
+    var mc = document.getElementById("main-content");
+    mc.innerHTML = "";
+
+    var h = document.createElement("h1");
+    h.textContent = "Welcome!";
+    mc.appendChild(h);
+
+    var p = document.createElement("p");
+    p.textContent = "Select a module to continue your IELTS preparation with Lyazzat Teacher.";
+    mc.appendChild(p);
+
+    var vw = document.createElement("div");
+    vw.className = "video-wrapper";
+    var vid = document.createElement("video");
+    vid.controls = true;
+    vid.style.width = "100%";
+    var src = document.createElement("source");
+    src.src = "materials/promo.mp4";
+    src.type = "video/mp4";
+    vid.appendChild(src);
+    vw.appendChild(vid);
+    mc.appendChild(vw);
+
     window.scrollTo(0, 0);
 }
 
 function showModule(name) {
     var key = name.toLowerCase();
-    setActiveNav('nav-' + key);
+    setActiveNav("nav-" + key);
     completed.add(key);
-    document.getElementById('p-fill').style.width = (completed.size / 4 * 100) + "%";
-    document.getElementById('p-percent').innerText = Math.round(completed.size / 4 * 100) + "%";
+    updateProgress();
 
-    var quizHtml = '';
-    quizData[key].forEach(function(item, idx) {
-        quizHtml += '<div class="quiz-item"><p><b>' + (idx + 1) + '. ' + item.q + '</b></p><div class="quiz-options">';
-        item.a.forEach(function(opt, i) {
-            quizHtml += '<button onclick="checkQuiz(this, ' + (i === item.correct) + ')">' + opt + '</button>';
-        });
-        quizHtml += '</div></div>';
-    });
+    var mc = document.getElementById("main-content");
+    mc.innerHTML = "";
 
-    document.getElementById('main-content').innerHTML =
-        '<h1 style="text-align:left;">' + name + ' Module</h1>' +
-        '<div class="video-wrapper"><div class="youtube-container">' +
-        '<iframe src="https://www.youtube.com/embed/' + ytData.lessons[key] + '" allowfullscreen></iframe>' +
-        '</div></div>' +
-        '<div class="quiz-container"><h2>Module Quiz</h2>' + quizHtml + '</div>' +
+    // Title
+    var h = document.createElement("h1");
+    h.style.textAlign = "left";
+    h.textContent = name + " Module";
+    mc.appendChild(h);
+
+    // YouTube Video
+    var vw = document.createElement("div");
+    vw.className = "video-wrapper";
+    var yc = document.createElement("div");
+    yc.className = "youtube-container";
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube.com/embed/" + ytData.lessons[key];
+    iframe.allowFullscreen = true;
+    yc.appendChild(iframe);
+    vw.appendChild(yc);
+    mc.appendChild(vw);
+
+    // Quiz
+    var qc = document.createElement("div");
+    qc.className = "quiz-container";
+    var qh = document.createElement("h2");
+    qh.textContent = "Module Quiz";
+    qc.appendChild(qh);
+
+    var questions = quizData[key];
+    for (var i = 0; i < questions.length; i++) {
+        var item = questions[i];
+        var qi = document.createElement("div");
+        qi.className = "quiz-item";
+
+        var qp = document.createElement("p");
+        var qb = document.createElement("b");
+        qb.textContent = (i + 1) + ". " + item.q;
+        qp.appendChild(qb);
+        qi.appendChild(qp);
+
+        var opts = document.createElement("div");
+        opts.className = "quiz-options";
+        for (var j = 0; j < item.a.length; j++) {
+            var btn = document.createElement("button");
+            btn.textContent = item.a[j];
+            btn.setAttribute("data-correct", j === item.correct ? "true" : "false");
+            btn.onclick = function() {
+                checkQuiz(this, this.getAttribute("data-correct") === "true");
+            };
+            opts.appendChild(btn);
+        }
+        qi.appendChild(opts);
+        qc.appendChild(qi);
+    }
+    mc.appendChild(qc);
+
+    // PDF
+    var ps = document.createElement("div");
+    ps.className = "pdf-section";
+    var ph = document.createElement("h2");
+    ph.style.textAlign = "left";
+    ph.textContent = "Study Guide";
+    ps.appendChild(ph);
+
+    var pw = document.createElement("div");
+    pw.className = "pdf-wrapper";
+    var pf = document.createElement("iframe");
+    pf.src = "materials/" + key + ".pdf";
+    pw.appendChild(pf);
+    ps.appendChild(pw);
+    mc.appendChild(ps);
+
+    // Mock Test Button
+    var mb = document.createElement("button");
+    mb.className = "mock-btn";
+    mb.textContent = "Take " + name + " Mock Test";
+    mb.onclick = function() { showMockTest(key); };
+    mc.appendChild(mb);
+
+    window.scrollTo(0, 0);
+}
+
+function showMockTest(key) {
+    var mc = document.getElementById("main-content");
+    mc.innerHTML = "";
+
+    var h = document.createElement("h1");
+    h.textContent = key.charAt(0).toUpperCase() + key.slice(1) + " — Mock Test";
+    mc.appendChild(h);
+
+    // Video if exists
+    if (ytData.mocks[key]) {
+        var vw = document.createElement("div");
+        vw.className = "video-wrapper";
+        var yc = document.createElement("div");
+        yc.className = "youtube-container";
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube.com/embed/" + ytData.mocks[key];
+        iframe.allowFullscreen = true;
+        yc.appendChild(iframe);
+        vw.appendChild(yc);
+        mc.appendChild(vw);
+    }
+
+    // PDF
+    var ps = document.createElement("div");
+    ps.className = "pdf-section";
+    var ph = document.createElement("h2");
+    ph.textContent = "Mock Test Paper";
+    ps.appendChild(ph);
+
+    var pw = document.createElement("div");
+    pw.className = "pdf-wrapper";
+    var pf = document.createElement("iframe");
+    pf.src = "materials/" + key + "_mock.pdf";
+    pw.appendChild(pf);
+    ps.appendChild(pw);
+    mc.appendChild(ps);
+
+    window.scrollTo(0, 0);
+}
+
+/* ============ MOCK HUB ============ */
+
+function showMockHub() {
+    setActiveNav("nav-mocks");
+    var mc = document.getElementById("main-content");
+    mc.innerHTML = "";
+
+    // Header
+    var header = document.createElement("div");
+    header.className = "mock-hub-header";
+    var h1 = document.createElement("h1");
+    h1.textContent = "Mock Tests Hub";
+    header.appendChild(h1);
+    var p = document.createElement("p");
+    p.textContent = "Practice with real IELTS-style tests. Choose a category and start!";
+    header.appendChild(p);
+    mc.appendChild(header);
+
+    // Stats
+    var stats = document.createElement("div");
+    stats.className = "mock-stats";
+
+    var types = [
+        { label: "Full Tests", count: mockTests.filter(function(t){ return t.type==="full"; }).length },
+        { label: "Listening", count: mockTests.filter(function(t){ return t.type==="listening"; }).length },
+        { label: "Reading", count: mockTests.filter(function(t){ return t.type==="reading"; }).length },
+        { label: "Writing + Speaking", count: mockTests.filter(function(t){ return t.type==="writing"||t.type==="speaking"; }).length }
+    ];
+    for (var s = 0; s < types.length; s++) {
+        var sc = document.createElement("div");
+        sc.className = "stat-card";
+        var sn = document.createElement("div");
+        sn.className = "stat-num";
+        sn.textContent = types[s].count;
+        sc.appendChild(sn);
+        var sl = document.createElement("div");
+        sl.className = "stat-label";
+        sl.textContent = types[s].label;
+        sc.appendChild(sl);
+        stats.appendChild(sc);
+    }
+    mc.appendChild(stats);
+
+    // Filter tabs
+    var tabs = document.createElement("div");
+    tabs.className = "filter-tabs";
+    tabs.id = "mock-filter-tabs";
+
+    var filters = ["all", "full", "listening", "reading", "writing", "speaking"];
+    var filterLabels = ["🌐 All", "📋 Full Test", "🎧 Listening", "📖 Reading", "✍️ Writing", "🗣️ Speaking"];
+    for (var f = 0; f < filters.length; f++) {
+        var tab = document.createElement("div");
+        tab.className = "filter-tab" + (filters[f] === currentMockFilter ? " active" : "");
+        tab.textContent = filterLabels[f];
+        tab.setAttribute("data-filter", filters[f]);
+        tab.onclick = function() {
+            currentMockFilter = this.getAttribute("data-filter");
+            showMockHub();
+        };
+        tabs.appendChild(tab);
+    }
+    mc.appendChild(tabs);
+
+    // Grid
+    var grid = document.createElement("div");
+    grid.className = "mock-grid";
+
+    var filtered = mockTests;
+    if (currentMockFilter !== "all") {
+        filtered = mockTests.filter(function(t) { return t.type === currentMockFilter; });
+    }
+
+    for (var m = 0; m < filtered.length; m++) {
+        var test = filtered[m];
+        var card = document.createElement("div");
+        card.className = "mock-card";
+
+        // Icon
+        var icon = document.createElement("div");
+        icon.className = "mock-card-icon " + test.type;
+        icon.textContent = test.icon;
+        card.appendChild(icon);
+
+        // Title
+        var title = document.createElement("div");
+        title.className = "mock-card-title";
+        title.textContent = test.title;
+        card.appendChild(title);
+
+        // Meta
+        var meta = document.createElement("div");
+        meta.className = "mock-card-meta";
+        var spanTime = document.createElement("span");
+        spanTime.textContent = "⏱ " + test.duration;
+        meta.appendChild(spanTime);
+        var spanQ = document.createElement("span");
+        spanQ.textContent = "❓ " + test.questions + " questions";
+        meta.appendChild(spanQ);
+        card.appendChild(meta);
+
+        // Tags
+        var tags = document.createElement("div");
+        tags.className = "mock-card-tags";
+
+        var tagType = document.createElement("span");
+        tagType.className = "mock-tag " + test.type;
+        tagType.textContent = test.type;
+        tags.appendChild(tagType);
+
+        var tagDiff = document.createElement("span");
+        tagDiff.className = "mock-tag " + test.difficulty.toLowerCase();
+        tagDiff.textContent = test.difficulty;
+        tags.appendChild(tagDiff);
+
+        if (test.video) {
+            var tagVid = document.createElement("span");
+            tagVid.className = "mock-tag listening";
+            tagVid.textContent = "🎬 Video";
+            tags.appendChild(tagVid);
+        }
+
+        card.appendChild(tags);
+
+        // Button
+        var btn = document.createElement("button");
+        btn.className = "mock-card-btn";
+        btn.textContent = "Start Test →";
+        btn.setAttribute("data-id", test.id);
+        btn.onclick = function() {
+            var id = parseInt(this.getAttribute("data-id"));
+            openMockTest(id);
+        };
+        card.appendChild(btn);
+
+        grid.appendChild(card);
+    }
+    mc.appendChild(grid);
+
+    window.scrollTo(0, 0);
+}
+
+function openMockTest(id) {
+    var test = null;
+    for (var i = 0; i < mockTests.length; i++) {
+        if (mockTests[i].id === id) { test = mockTests[i]; break; }
+    }
+    if (!test) return;
+
+    var mc = document.getElementById("main-content");
+    mc.innerHTML = "";
+
+    // Back button
+    var back = document.createElement("button");
+    back.className = "back-btn";
+    back.textContent = "← Back to Mock Tests";
+    back.onclick = function() { showMockHub(); };
+    mc.appendChild(back);
+
+    // Title
+    var h = document.createElement("h1");
+    h.style.textAlign = "left";
+    h.textContent = test.icon + " " + test.title;
+    mc.appendChild(h);
+
+    // Info
+    var info = document.createElement("div");
+    info.className = "mock-card-meta";
+    info.style.fontSize = "14px";
+    info.style.marginBottom = "25px";
+    info.innerHTML = "<span>⏱ " + test.duration + "</span>" +
+                     "<span>❓ " + test.questions + " questions</span>" +
+                     "<span>📊 " + test.difficulty + "</span>";
+    mc.appendChild(info);
+
+    // Video if exists
+    if (test.video) {
+        var vh = document.createElement("h2");
+        vh.style.textAlign = "left";
+        vh.textContent = "🎬 Audio / Video";
+        mc.appendChild(vh);
+
+        var vw = document.createElement("div");
+        vw.className = "video-wrapper";
+        var yc = document.createElement("div");
+        yc.className = "youtube-container";
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube.com/embed/" + test.video;
+        iframe.allowFullscreen = true;
+        yc.appendChild(iframe);
+        vw.appendChild(yc);
+        mc.appendChild(vw);
+    }
+
+    // PDF
+    var ph = document.createElement("h2");
+    ph.style.textAlign = "left";
+    ph.style.marginTop = "30px";
+    ph.textContent = "📄 Test Paper";
+    mc.appendChild(ph);
+
+    var pw = document.createElement("div");
+    pw.className = "pdf-wrapper";
+    var pf = document.createElement("iframe");
+    pf.src = test.pdf;
+    pw.appendChild(pf);
+    mc.appendChild(pw);
+
+    window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
         '<div class="pdf-section"><h2 style="text-align:left;">Study Guide</h2>' +
         '<div class="pdf-wrapper"><iframe src="materials/' + key + '.pdf"></iframe
