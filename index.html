@@ -679,10 +679,17 @@ function openReadingExam(id) {
 }
 
 function switchPassage(idx) {
-    document.querySelectorAll('[id^="passage-"]').forEach(el => {
-        if(el.id.startsWith('passage-')) el.style.display = 'none';
-    });
-    document.querySelectorAll('[id^="qs-"]').forEach(el => el.style.display = 'none');
+    // Скрываем только пассажи внутри панели
+    const passagePanel = document.getElementById('passage-panel');
+    const questionPanel = document.getElementById('question-panel');
+    
+    if(passagePanel) {
+        passagePanel.querySelectorAll('[id^="passage-"]').forEach(el => el.style.display = 'none');
+    }
+    if(questionPanel) {
+        questionPanel.querySelectorAll('[id^="qs-"]').forEach(el => el.style.display = 'none');
+    }
+    
     document.querySelectorAll('[id^="ptab-"]').forEach(el => el.classList.remove('active'));
     
     const p = document.getElementById('passage-'+idx);
@@ -691,6 +698,7 @@ function switchPassage(idx) {
     if(p) p.style.display = 'block';
     if(q) q.style.display = 'block';
     if(t) t.classList.add('active');
+}
 }
 
 function submitReading(idx) {
