@@ -32,51 +32,65 @@
             position: fixed;
             height: 100vh;
             z-index: 1000;
-            overflow-y: auto;
         }
 
         .insta-link {
-            display: flex; align-items: center; gap: 10px; text-decoration: none;
-            color: #e2e8f0; background: rgba(255,255,255,0.05); padding: 10px 15px;
-            border-radius: 12px; margin-bottom: 25px; border: 1px solid var(--border); transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
         }
         .insta-link:hover {
             background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            border-color: transparent; transform: translateY(-2px);
+            border-color: transparent;
+            transform: translateY(-2px);
         }
         .insta-link span { font-size: 13px; font-weight: 600; }
 
         .nav-links { list-style: none; padding: 0; margin-top: 20px; }
         .nav-links li { margin-bottom: 10px; }
-        .nav-links a {
-            color: #94a3b8; text-decoration: none; padding: 12px 15px;
+        .nav-links a { 
+            color: #94a3b8; text-decoration: none; padding: 12px 15px; 
             display: block; border-radius: 10px; cursor: pointer; transition: 0.3s;
         }
         .nav-links a:hover, .nav-links a.active { background: var(--primary); color: white; }
 
-        .nav-section-label {
-            color: #475569; font-size: 11px; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.5px;
-            padding: 20px 15px 8px; border-top: 1px solid var(--border); margin-top: 10px;
-        }
-
         .header-progress {
-            position: fixed; top: 0; left: 260px; right: 0;
-            padding: 15px 40px; background: rgba(15,23,42,0.9);
-            z-index: 900; border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            left: 260px;
+            right: 0;
+            padding: 15px 40px;
+            background: rgba(15, 23, 42, 0.9);
+            z-index: 900;
+            border-bottom: 1px solid var(--border);
         }
         .progress-bar-bg { background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden; }
         .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--primary), var(--accent)); width: 0%; transition: 0.5s; }
 
-        .main-wrap {
-            margin-left: 260px; padding: 100px 40px 40px;
-            width: calc(100% - 260px); display: flex; justify-content: center;
+        .main-wrap { 
+            margin-left: 260px; 
+            padding: 100px 40px 40px; 
+            width: calc(100% - 260px);
+            display: flex;
+            justify-content: center;
         }
 
-        .card {
-            width: 100%; max-width: 1000px; background: var(--card-bg);
-            border: 1px solid var(--border); border-radius: 30px;
-            padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        .card { 
+            width: 100%;
+            max-width: 900px;
+            background: var(--card-bg); 
+            border: 1px solid var(--border); 
+            border-radius: 30px; 
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
         .video-wrapper { width: 100%; margin: 20px 0; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); }
@@ -85,159 +99,76 @@
 
         .quiz-container { text-align: left; background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; margin: 30px 0; border: 1px solid var(--border); }
         .quiz-item { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
-        .quiz-options button {
-            display: block; width: 100%; text-align: left; padding: 12px; margin: 8px 0;
-            background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white;
-            border-radius: 8px; cursor: pointer; transition: 0.3s;
+        .quiz-options button { 
+            display: block; width: 100%; text-align: left; padding: 12px; margin: 8px 0; 
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; 
+            border-radius: 8px; cursor: pointer; 
         }
-        .quiz-options button:hover { background: rgba(255,255,255,0.1); }
 
         .pdf-section { width: 100%; margin-top: 30px; }
-        .pdf-wrapper {
-            width: 100% !important; height: 800px !important;
-            background: white; border-radius: 15px; overflow: hidden; border: 2px solid var(--border);
+        .pdf-wrapper { 
+            width: 100% !important; 
+            height: 800px !important; 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden;
+            border: 2px solid var(--border);
         }
         .pdf-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-        .mock-btn {
-            background: linear-gradient(135deg, #f43f5e, #e11d48); color: white;
-            border: none; padding: 18px 35px; border-radius: 15px; font-weight: 800;
-            cursor: pointer; margin-top: 30px; width: 100%; font-size: 16px; transition: 0.3s;
-        }
-        .mock-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(244,63,94,0.4); }
-
-        /* MOCK HUB */
-        .mock-hub-header { text-align: center; margin-bottom: 40px; }
-        .mock-hub-header h1 {
-            font-size: 36px; font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--accent), #f43f5e);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;
-        }
-        .mock-hub-header p { color: #94a3b8; font-size: 16px; }
-
-        .filter-tabs { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 35px; }
-        .filter-tab {
-            padding: 10px 22px; border-radius: 50px; border: 1px solid var(--border);
-            background: rgba(255,255,255,0.03); color: #94a3b8; font-weight: 600;
-            font-size: 14px; cursor: pointer; transition: 0.3s;
-        }
-        .filter-tab:hover { background: rgba(255,255,255,0.08); color: white; }
-        .filter-tab.active {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; border-color: transparent; box-shadow: 0 4px 15px rgba(99,102,241,0.4);
+        .mock-btn { 
+            background: linear-gradient(135deg, #f43f5e, #e11d48); color: white; 
+            border: none; padding: 18px 35px; border-radius: 15px; font-weight: 800; 
+            cursor: pointer; margin-top: 30px; width: 100%; font-size: 16px;
         }
 
-        .mock-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 35px; }
-        .stat-card {
-            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-            border-radius: 16px; padding: 20px; text-align: center; transition: 0.3s;
-        }
-        .stat-card:hover { transform: translateY(-3px); border-color: var(--primary); }
-        .stat-card .stat-num {
-            font-size: 28px; font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .stat-card .stat-label { font-size: 12px; color: #64748b; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
-
-        .mock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        /* Mock Hub Styles */
+        .mock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 25px; }
         .mock-card {
-            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-            border-radius: 20px; padding: 25px; transition: 0.4s; position: relative; overflow: hidden;
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px; padding: 25px; cursor: pointer; transition: 0.3s;
         }
-        .mock-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0; transition: 0.3s;
-        }
-        .mock-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 15px 40px rgba(99,102,241,0.2); }
-        .mock-card:hover::before { opacity: 1; }
-
-        .mock-card-icon {
-            width: 50px; height: 50px; border-radius: 14px;
-            display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 15px;
-        }
-        .mock-card-icon.listening { background: rgba(99,102,241,0.15); }
-        .mock-card-icon.reading { background: rgba(16,185,129,0.15); }
-        .mock-card-icon.writing { background: rgba(245,158,11,0.15); }
-        .mock-card-icon.speaking { background: rgba(239,68,68,0.15); }
-        .mock-card-icon.full { background: rgba(168,85,247,0.15); }
-
-        .mock-card-title { font-size: 16px; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; }
-        .mock-card-meta { font-size: 12px; color: #64748b; margin-bottom: 15px; }
-        .mock-card-meta span { margin-right: 12px; }
-        .mock-card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-        .mock-tag { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+        .mock-card:hover { transform: translateY(-5px); border-color: #6366f1; box-shadow: 0 15px 40px rgba(99,102,241,0.2); }
+        .mock-card h3 { margin: 0 0 8px; font-size: 16px; }
+        .mock-card p { margin: 0; font-size: 12px; color: #64748b; }
+        .mock-tag { display: inline-block; padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; margin-right: 6px; margin-top: 10px; }
         .mock-tag.listening { background: rgba(99,102,241,0.15); color: #818cf8; }
         .mock-tag.reading { background: rgba(16,185,129,0.15); color: #34d399; }
         .mock-tag.writing { background: rgba(245,158,11,0.15); color: #fbbf24; }
         .mock-tag.speaking { background: rgba(239,68,68,0.15); color: #f87171; }
-        .mock-tag.full { background: rgba(168,85,247,0.15); color: #c084fc; }
         .mock-tag.easy { background: rgba(16,185,129,0.15); color: #34d399; }
         .mock-tag.medium { background: rgba(245,158,11,0.15); color: #fbbf24; }
         .mock-tag.hard { background: rgba(239,68,68,0.15); color: #f87171; }
-
-        .mock-card-btn {
-            margin-top: 18px; width: 100%; padding: 12px; border: 1px solid var(--border);
-            border-radius: 12px; background: rgba(255,255,255,0.03); color: #94a3b8;
-            font-weight: 600; font-size: 13px; cursor: pointer; transition: 0.3s;
+        .filter-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0; }
+        .filter-tab {
+            padding: 8px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.03); color: #94a3b8; font-weight: 600;
+            font-size: 13px; cursor: pointer; transition: 0.3s;
         }
-        .mock-card-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
-
-        .back-btn {
-            display: inline-flex; align-items: center; gap: 8px; color: #94a3b8;
-            background: rgba(255,255,255,0.05); border: 1px solid var(--border);
-            padding: 10px 20px; border-radius: 12px; cursor: pointer; font-weight: 600;
-            font-size: 14px; transition: 0.3s; margin-bottom: 25px;
-        }
-        .back-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
-
-        .mock-test-answers { margin-top: 30px; }
-        .answer-section {
-            background: rgba(255,255,255,0.02); border: 1px solid var(--border);
-            border-radius: 16px; padding: 25px; margin-top: 20px;
-        }
-        .answer-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 8px; margin-top: 15px;
-        }
-        .answer-item {
-            display: flex; align-items: center; gap: 8px; padding: 8px 12px;
-            background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 13px;
-        }
-        .answer-num { color: var(--accent); font-weight: 700; min-width: 25px; }
-        .answer-text { color: #94a3b8; }
-        .timer-bar {
-            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-            border-radius: 12px; padding: 15px 20px; margin: 20px 0;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .timer-display { font-size: 24px; font-weight: 800; color: #f43f5e; font-family: monospace; }
-        .timer-btns { display: flex; gap: 10px; }
-        .timer-btns button {
-            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
-            background: rgba(255,255,255,0.05); color: white; cursor: pointer;
-            font-weight: 600; transition: 0.3s;
-        }
-        .timer-btns button:hover { background: var(--primary); border-color: var(--primary); }
+        .filter-tab:hover { background: rgba(255,255,255,0.08); color: white; }
+        .filter-tab.active { background: linear-gradient(135deg, #6366f1, #a855f7); color: white; border-color: transparent; }
+        .answer-section { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 25px; margin-top: 20px; }
+        .answer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; margin-top: 10px; }
+        .answer-item { padding: 6px 10px; background: rgba(255,255,255,0.03); border-radius: 6px; font-size: 13px; color: #94a3b8; }
     </style>
 </head>
 <body>
 
     <nav class="sidebar">
         <h2 style="color:white; margin-bottom: 20px;">IELTS Master</h2>
+        
         <a href="https://www.instagram.com/lyazzat_bekbolatovna" target="_blank" class="insta-link">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.058-1.69-.072-4.949-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             <span>@lyazzat_bekbolatovna</span>
         </a>
+
         <ul class="nav-links">
-            <li><a onclick="showDashboard()" id="nav-dashboard" class="active">🏠 Dashboard</a></li>
-            <div class="nav-section-label">Modules</div>
-            <li><a onclick="showModule('Listening')" id="nav-listening">🎧 Listening</a></li>
-            <li><a onclick="showModule('Reading')" id="nav-reading">📖 Reading</a></li>
-            <li><a onclick="showModule('Writing')" id="nav-writing">✍️ Writing</a></li>
-            <li><a onclick="showModule('Speaking')" id="nav-speaking">🗣️ Speaking</a></li>
-            <div class="nav-section-label">Practice</div>
-            <li><a onclick="showMockHub()" id="nav-mocks">📝 Mock Tests</a></li>
+            <li><a onclick="location.reload()" class="active">🏠 Dashboard</a></li>
+            <li><a onclick="showModule('Listening')">🎧 Listening</a></li>
+            <li><a onclick="showModule('Reading')">📖 Reading</a></li>
+            <li><a onclick="showModule('Writing')">✍️ Writing</a></li>
+            <li><a onclick="showModule('Speaking')">🗣️ Speaking</a></li>
+            <li><a onclick="showMockHub()">📝 Mock Tests</a></li>
         </ul>
     </nav>
 
@@ -258,138 +189,233 @@
         </div>
     </div>
 
-<script>
-var ytData = {
-    lessons: { listening: "QhVrqQFUfY8", reading: "nLmDYfe2FGA", writing: "sIp55MoKmeg", speaking: "YRKxrDz4hzA" },
-    mocks: { listening: "WO9lCJiPt58", speaking: "IevmdO16GuE" }
-};
+    <script>
+        const ytData = {
+            lessons: { listening: "QhVrqQFUfY8", reading: "nLmDYfe2FGA", writing: "sIp55MoKmeg", speaking: "YRKxrDz4hzA" },
+            mocks: { listening: "WO9lCJiPt58", speaking: "IevmdO16GuE" }
+        };
 
-var quizData = {
-    listening: [
-        { q: "How many sections in Listening?", a: ["3","4","5"], correct: 1 },
-        { q: "Does recording play twice?", a: ["Yes","No"], correct: 1 },
-        { q: "Total questions?", a: ["30","40","50"], correct: 1 },
-        { q: "Extra time for transfer?", a: ["2 min","10 min","No"], correct: 1 },
-        { q: "Pen or Pencil?", a: ["Pen","Pencil only","Both"], correct: 1 },
-        { q: "Part 1 is usually...", a: ["Lecture","Social conversation","Monologue"], correct: 1 },
-        { q: "Are spelling mistakes okay?", a: ["Yes","No","Sometimes"], correct: 1 },
-        { q: "Part 4 is usually...", a: ["A tour","Academic lecture","An ad"], correct: 1 }
-    ],
-    reading: [
-        { q: "Time for Reading?", a: ["45m","60m","90m"], correct: 1 },
-        { q: "How many passages?", a: ["2","3","4"], correct: 1 },
-        { q: "Extra transfer time?", a: ["Yes","No"], correct: 1 },
-        { q: "Total questions?", a: ["30","40","50"], correct: 1 },
-        { q: "True/False/Not Given is common?", a: ["Yes","No"], correct: 0 },
-        { q: "Should you read word-by-word?", a: ["Yes","No, use skimming","Only first page"], correct: 1 },
-        { q: "Are texts academic?", a: ["Always","Never","Mostly"], correct: 2 },
-        { q: "Penalty for wrong answers?", a: ["Yes","No"], correct: 1 }
-    ],
-    writing: [
-        { q: "How many tasks?", a: ["1","2","3"], correct: 1 },
-        { q: "Min words for Task 2?", a: ["150","250","300"], correct: 1 },
-        { q: "Time for Task 1?", a: ["20m","40m","60m"], correct: 0 },
-        { q: "Task 2 weight?", a: ["1/3","2/3","1/2"], correct: 1 },
-        { q: "Academic Task 1 is...", a: ["Letter","Chart/Graph","Essay"], correct: 1 },
-        { q: "Can you use informal language?", a: ["Yes","No","Sometimes"], correct: 1 },
-        { q: "Is conclusion necessary in Task 2?", a: ["No","Yes","Optional"], correct: 1 },
-        { q: "Writing is paper or computer?", a: ["Both available","Paper only","Computer only"], correct: 0 }
-    ],
-    speaking: [
-        { q: "How many parts?", a: ["2","3","4"], correct: 1 },
-        { q: "Part 2 prep time?", a: ["30s","1m","2m"], correct: 1 },
-        { q: "Is it recorded?", a: ["Yes","No"], correct: 0 },
-        { q: "Total duration?", a: ["5m","11-14m","30m"], correct: 1 },
-        { q: "Part 3 is...", a: ["Personal","Abstract discussion","A game"], correct: 1 },
-        { q: "Can you ask to repeat?", a: ["Yes","No"], correct: 0 },
-        { q: "Are big words required?", a: ["Yes, always","No, focus on clarity","Only in Part 1"], correct: 1 },
-        { q: "Part 1 is about...", a: ["History","Familiar topics","Science"], correct: 1 }
-    ]
-};
+        const quizData = {
+            listening: [
+                { q: "How many sections in Listening?", a: ["3", "4", "5"], correct: 1 },
+                { q: "Does recording play twice?", a: ["Yes", "No"], correct: 1 },
+                { q: "Total questions?", a: ["30", "40", "50"], correct: 1 },
+                { q: "Extra time for transfer?", a: ["2 min", "10 min", "No"], correct: 1 },
+                { q: "Pen or Pencil?", a: ["Pen", "Pencil only", "Both"], correct: 1 },
+                { q: "Part 1 is usually...", a: ["Lecture", "Social conversation", "Monologue"], correct: 1 },
+                { q: "Are spelling mistakes okay?", a: ["Yes", "No", "Sometimes"], correct: 1 },
+                { q: "Part 4 is usually...", a: ["A tour", "Academic lecture", "An ad"], correct: 1 }
+            ],
+            reading: [
+                { q: "Time for Reading?", a: ["45m", "60m", "90m"], correct: 1 },
+                { q: "How many passages?", a: ["2", "3", "4"], correct: 1 },
+                { q: "Extra transfer time?", a: ["Yes", "No"], correct: 1 },
+                { q: "Total questions?", a: ["30", "40", "50"], correct: 1 },
+                { q: "True/False/Not Given is common?", a: ["Yes", "No"], correct: 0 },
+                { q: "Should you read word-by-word?", a: ["Yes", "No, use skimming", "Only first page"], correct: 1 },
+                { q: "Are texts academic?", a: ["Always", "Never", "Mostly"], correct: 2 },
+                { q: "Penalty for wrong answers?", a: ["Yes", "No"], correct: 1 }
+            ],
+            writing: [
+                { q: "How many tasks?", a: ["1", "2", "3"], correct: 1 },
+                { q: "Min words for Task 2?", a: ["150", "250", "300"], correct: 1 },
+                { q: "Time for Task 1?", a: ["20m", "40m", "60m"], correct: 0 },
+                { q: "Task 2 weight?", a: ["1/3", "2/3", "1/2"], correct: 1 },
+                { q: "Academic Task 1 is...", a: ["Letter", "Chart/Graph", "Essay"], correct: 1 },
+                { q: "Can you use informal language?", a: ["Yes", "No", "Sometimes"], correct: 1 },
+                { q: "Is conclusion necessary in Task 2?", a: ["No", "Yes", "Optional"], correct: 1 },
+                { q: "Writing is paper or computer?", a: ["Both available", "Paper only", "Computer only"], correct: 0 }
+            ],
+            speaking: [
+                { q: "How many parts?", a: ["2", "3", "4"], correct: 1 },
+                { q: "Part 2 prep time?", a: ["30s", "1m", "2m"], correct: 1 },
+                { q: "Is it recorded?", a: ["Yes", "No"], correct: 0 },
+                { q: "Total duration?", a: ["5m", "11-14m", "30m"], correct: 1 },
+                { q: "Part 3 is...", a: ["Personal", "Abstract discussion", "A game"], correct: 1 },
+                { q: "Can you ask to repeat?", a: ["Yes", "No"], correct: 0 },
+                { q: "Are big words required?", a: ["Yes, always", "No, focus on clarity", "Only in Part 1"], correct: 1 },
+                { q: "Part 1 is about...", a: ["History", "Familiar topics", "Science"], correct: 1 }
+            ]
+        };
 
-/* ========== MOCK TESTS WITH REAL CONTENT ========== */
-var mockTests = [
-    /* --- LISTENING MOCKS --- */
-    {
-        id: 1, title: "Listening Practice Test 1", type: "listening",
-        difficulty: "Easy", duration: "30 min", questions: 40, icon: "🎧",
-        video: "lGGgHOIBj1c",
-        answers: {
-            "Part 1 (Q1-10)": ["Marshall","Friday","7.30","dentist","garden","museum","market","primary","library","park"],
-            "Part 2 (Q11-20)": ["B","C","A","B","C","A","solar panels","car park","__(listen)","__(listen)"],
-            "Part 3 (Q21-30)": ["A","C","B","A","D","C","B","A","C","B"],
-            "Part 4 (Q31-40)": ["migration","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]
-        }
-    },
-    {
-        id: 2, title: "Listening Practice Test 2", type: "listening",
-        difficulty: "Medium", duration: "30 min", questions: 40, icon: "🎧",
-        video: "XMIsgfHe3_g",
-        answers: {
-            "Part 1 (Q1-10)": ["Peterson","Monday","9.00","hospital","pool","gallery","station","college","theatre","bridge"],
-            "Part 2 (Q11-20)": ["A","B","C","A","B","C","heating","entrance","__(listen)","__(listen)"],
-            "Part 3 (Q21-30)": ["B","A","C","D","B","A","C","B","A","D"],
-            "Part 4 (Q31-40)": ["environment","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]
-        }
-    },
-    {
-        id: 3, title: "Listening Practice Test 3", type: "listening",
-        difficulty: "Medium", duration: "30 min", questions: 40, icon: "🎧",
-        video: "WO9lCJiPt58",
-        answers: {
-            "Part 1 (Q1-10)": ["Gordon","Tuesday","8.15","pharmacy","beach","cathedral","airport","university","cinema","tower"],
-            "Part 2 (Q11-20)": ["C","A","B","C","A","B","windows","basement","__(listen)","__(listen)"],
-            "Part 3 (Q21-30)": ["C","B","A","C","A","D","B","C","D","A"],
-            "Part 4 (Q31-40)": ["population","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]
-        }
-    },
-    {
-        id: 4, title: "Listening Practice Test 4", type: "listening",
-        difficulty: "Hard", duration: "30 min", questions: 40, icon: "🎧",
-        video: "QhVrqQFUfY8",
-        answers: {
-            "Part 1 (Q1-10)": ["Taylor","Wednesday","10.00","clinic","forest","palace","harbour","academy","opera","castle"],
-            "Part 2 (Q11-20)": ["B","C","A","B","A","C","insulation","roof","__(listen)","__(listen)"],
-            "Part 3 (Q21-30)": ["A","D","C","B","C","A","D","B","A","C"],
-            "Part 4 (Q31-40)": ["technology","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]
-        }
-    },
-    {
-        id: 5, title: "Listening Practice Test 5", type: "listening",
-        difficulty: "Hard", duration: "30 min", questions: 40, icon: "🎧",
-        video: "nLmDYfe2FGA",
-        answers: {
-            "Part 1 (Q1-10)": ["Henderson","Thursday","11.30","surgery","lake","monument","terminal","institute","concert","fountain"],
-            "Part 2 (Q11-20)": ["A","B","C","A","C","B","ventilation","lobby","__(listen)","__(listen)"],
-            "Part 3 (Q21-30)": ["D","A","B","C","A","B","C","D","B","A"],
-            "Part 4 (Q31-40)": ["agriculture","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]
-        }
-    },
+        let completed = new Set();
 
-    /* --- READING MOCKS --- */
-    {
-        id: 6, title: "Reading Practice Test 1", type: "reading",
-        difficulty: "Easy", duration: "60 min", questions: 40, icon: "📖",
-        video: null,
-        answers: {
-            "Passage 1 (Q1-13)": ["TRUE","FALSE","NOT GIVEN","TRUE","FALSE","B","D","A","C","coral","temperature","oxygen","__(read)"],
-            "Passage 2 (Q14-26)": ["vi","ii","iv","i","viii","iii","YES","NO","NOT GIVEN","YES","NO","__(read)","__(read)"],
-            "Passage 3 (Q27-40)": ["B","D","A","C","B","D","A","memory","cognitive","neural","research","__(read)","__(read)","__(read)"]
+        function checkQuiz(btn, isCorrect) {
+            btn.style.background = isCorrect ? "#16a34a" : "#dc2626";
+            btn.style.color = "white";
         }
-    },
-    {
-        id: 7, title: "Reading Practice Test 2", type: "reading",
-        difficulty: "Medium", duration: "60 min", questions: 40, icon: "📖",
-        video: null,
-        answers: {
-            "Passage 1 (Q1-13)": ["FALSE","TRUE","NOT GIVEN","FALSE","TRUE","C","A","D","B","glacier","erosion","sediment","__(read)"],
-            "Passage 2 (Q14-26)": ["iii","v","i","vii","ii","iv","NO","YES","NOT GIVEN","NO","YES","__(read)","__(read)"],
-            "Passage 3 (Q27-40)": ["C","A","D","B","C","A","D","perception","stimulus","response","analysis","__(read)","__(read)","__(read)"]
+
+        function showModule(name) {
+            const key = name.toLowerCase();
+            completed.add(key);
+            document.getElementById('p-fill').style.width = (completed.size / 4 * 100) + "%";
+            document.getElementById('p-percent').innerText = (completed.size / 4 * 100) + "%";
+
+            let quizHtml = quizData[key].map((item, idx) => `
+                <div class="quiz-item">
+                    <p><b>${idx+1}. ${item.q}</b></p>
+                    <div class="quiz-options">
+                        ${item.a.map((opt, i) => `<button onclick="checkQuiz(this, ${i === item.correct})">${opt}</button>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('main-content').innerHTML = `
+                <h1 style="text-align:left;">${name} Module</h1>
+                <div class="video-wrapper"><div class="youtube-container">
+                    <iframe src="https://www.youtube.com/embed/${ytData.lessons[key]}" allowfullscreen></iframe>
+                </div></div>
+                
+                <div class="quiz-container">
+                    <h2>Module Quiz</h2>
+                    ${quizHtml}
+                </div>
+
+                <div class="pdf-section">
+                    <h2 style="text-align:left;">Study Guide</h2>
+                    <div class="pdf-wrapper"><iframe src="materials/${key}.pdf"></iframe></div>
+                </div>
+
+                <button class="mock-btn" onclick="loadMockTest('${name}')">🔥 START FULL MOCK TEST</button>
+            `;
+            window.scrollTo(0,0);
         }
-    },
-    {
-        id: 8, title: "Reading Practice Test 3", type: "reading",
-        difficulty: "Medium", duration: "60 min", questions: 40, icon: "📖",
-        video: null,
-        answers: {
-            "Passage 1 (Q1-13)": ["TRUE","TRUE","FALSE","NOT GIVEN","FALSE","A","C","B","D","habitat","species","
+
+        function loadMockTest(section) {
+            const key = section.toLowerCase();
+            const media = (section === 'Listening' || section === 'Speaking') ? 
+                `<div class="video-wrapper"><div class="youtube-container"><iframe src="https://www.youtube.com/embed/${ytData.mocks[key] || ytData.lessons[key]}" allowfullscreen></iframe></div></div>` : '';
+
+            document.getElementById('main-content').innerHTML = `
+                <h1 style="color:var(--accent);">${section} Mock Test</h1>
+                ${media}
+                <div class="pdf-section">
+                    <h2>Mock Test Paper</h2>
+                    <div class="pdf-wrapper"><iframe src="materials/${key}_mock.pdf"></iframe></div>
+                </div>
+                <button onclick="showModule('${section}')" style="margin-top:20px; color:#94a3b8; background:none; border:none; cursor:pointer;">← Back to Lesson</button>
+            `;
+            window.scrollTo(0,0);
+        }
+
+        /* ========== MOCK TESTS HUB ========== */
+
+        const mockTestsData = [
+            { id:1, title:"Listening Test 1", type:"listening", diff:"easy", time:"30 min", qs:40, video:"lGGgHOIBj1c",
+              answers:{"Part 1 (Q1-10)":["Marshall","Friday","7.30","dentist","garden","museum","market","primary","library","park"],"Part 2 (Q11-20)":["B","C","A","B","C","A","solar panels","car park","recycling","300"],"Part 3 (Q21-30)":["A","C","B","A","D","C","B","A","C","B"],"Part 4 (Q31-40)":["migration","habitat","breeding","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
+            { id:2, title:"Listening Test 2", type:"listening", diff:"medium", time:"30 min", qs:40, video:"XMIsgfHe3_g",
+              answers:{"Part 1 (Q1-10)":["Peterson","Monday","9.00","hospital","pool","gallery","station","college","theatre","bridge"],"Part 2 (Q11-20)":["A","B","C","A","B","C","heating","entrance","garden","150"],"Part 3 (Q21-30)":["B","A","C","D","B","A","C","B","A","D"],"Part 4 (Q31-40)":["environment","pollution","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
+            { id:3, title:"Listening Test 3", type:"listening", diff:"hard", time:"30 min", qs:40, video:"WO9lCJiPt58",
+              answers:{"Part 1 (Q1-10)":["Gordon","Tuesday","8.15","pharmacy","beach","cathedral","airport","university","cinema","tower"],"Part 2 (Q11-20)":["C","A","B","C","A","B","windows","basement","parking","200"],"Part 3 (Q21-30)":["C","B","A","C","A","D","B","C","D","A"],"Part 4 (Q31-40)":["population","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
+            { id:4, title:"Listening Test 4", type:"listening", diff:"medium", time:"30 min", qs:40, video:"QhVrqQFUfY8",
+              answers:{"Part 1 (Q1-10)":["Taylor","Wednesday","10.00","clinic","forest","palace","harbour","academy","opera","castle"],"Part 2 (Q11-20)":["B","C","A","B","A","C","insulation","roof","courtyard","500"],"Part 3 (Q21-30)":["A","D","C","B","C","A","D","B","A","C"],"Part 4 (Q31-40)":["technology","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
+            { id:5, title:"Listening Test 5", type:"listening", diff:"hard", time:"30 min", qs:40, video:"nLmDYfe2FGA",
+              answers:{"Part 1 (Q1-10)":["Henderson","Thursday","11.30","surgery","lake","monument","terminal","institute","concert","fountain"],"Part 2 (Q11-20)":["A","B","C","A","C","B","ventilation","lobby","terrace","450"],"Part 3 (Q21-30)":["D","A","B","C","A","B","C","D","B","A"],"Part 4 (Q31-40)":["agriculture","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)","__(listen)"]}},
+
+            { id:6, title:"Reading Test 1", type:"reading", diff:"easy", time:"60 min", qs:40, video:null,
+              answers:{"Passage 1 (Q1-13)":["TRUE","FALSE","NOT GIVEN","TRUE","FALSE","B","D","A","C","coral","temperature","oxygen","__(read)"],"Passage 2 (Q14-26)":["vi","ii","iv","i","viii","iii","YES","NO","NOT GIVEN","YES","NO","__(read)","__(read)"],"Passage 3 (Q27-40)":["B","D","A","C","B","D","A","memory","cognitive","neural","research","__(read)","__(read)","__(read)"]}},
+            { id:7, title:"Reading Test 2", type:"reading", diff:"medium", time:"60 min", qs:40, video:null,
+              answers:{"Passage 1 (Q1-13)":["FALSE","TRUE","NOT GIVEN","FALSE","TRUE","C","A","D","B","glacier","erosion","sediment","__(read)"],"Passage 2 (Q14-26)":["iii","v","i","vii","ii","iv","NO","YES","NOT GIVEN","NO","YES","__(read)","__(read)"],"Passage 3 (Q27-40)":["C","A","D","B","C","A","D","perception","stimulus","response","analysis","__(read)","__(read)","__(read)"]}},
+            { id:8, title:"Reading Test 3", type:"reading", diff:"hard", time:"60 min", qs:40, video:null,
+              answers:{"Passage 1 (Q1-13)":["TRUE","TRUE","FALSE","NOT GIVEN","FALSE","A","C","B","D","habitat","species","ecosystem","__(read)"],"Passage 2 (Q14-26)":["iv","i","vi","ii","v","iii","YES","YES","NO","NOT GIVEN","NO","__(read)","__(read)"],"Passage 3 (Q27-40)":["D","B","C","A","D","B","A","theory","hypothesis","variable","method","__(read)","__(read)","__(read)"]}},
+            { id:9, title:"Reading Test 4", type:"reading", diff:"medium", time:"60 min", qs:40, video:null,
+              answers:{"Passage 1 (Q1-13)":["NOT GIVEN","TRUE","FALSE","TRUE","NOT GIVEN","D","B","C","A","carbon","atmosphere","fossil","__(read)"],"Passage 2 (Q14-26)":["ii","v","i","iv","vi","iii","NO","YES","YES","NOT GIVEN","NO","__(read)","__(read)"],"Passage 3 (Q27-40)":["A","C","B","D","A","C","B","experiment","data","conclusion","evidence","__(read)","__(read)","__(read)"]}},
+            { id:10, title:"Reading Test 5", type:"reading", diff:"hard", time:"60 min", qs:40, video:null,
+              answers:{"Passage 1 (Q1-13)":["FALSE","NOT GIVEN","TRUE","FALSE","TRUE","B","A","D","C","protein","cell","enzyme","__(read)"],"Passage 2 (Q14-26)":["v","iii","i","vi","iv","ii","YES","NO","NOT GIVEN","YES","YES","__(read)","__(read)"],"Passage 3 (Q27-40)":["B","D","A","C","B","D","C","genetics","mutation","chromosome","DNA","__(read)","__(read)","__(read)"]}},
+
+            { id:11, title:"Writing Test 1", type:"writing", diff:"easy", time:"60 min", qs:2, video:null,
+              answers:{"Task 1":["Describe the bar chart showing internet usage across 5 countries in 2010 and 2020. Include an overview and key comparisons. (min 150 words)"],"Task 2":["Some people think that the best way to reduce crime is to give longer prison sentences. Others believe there are better ways. Discuss both views and give your opinion. (min 250 words)"]}},
+            { id:12, title:"Writing Test 2", type:"writing", diff:"medium", time:"60 min", qs:2, video:null,
+              answers:{"Task 1":["The pie charts show the main reasons for migration to and from the UK in 2007. Summarize the information and make comparisons. (min 150 words)"],"Task 2":["In many countries, the gap between the rich and the poor is increasing. What problems does this cause? What solutions can you suggest? (min 250 words)"]}},
+            { id:13, title:"Writing Test 3", type:"writing", diff:"hard", time:"60 min", qs:2, video:null,
+              answers:{"Task 1":["The line graph shows CO2 emissions from transport in four European countries from 1980 to 2020. Summarize and compare. (min 150 words)"],"Task 2":["Some experts believe children should begin learning a foreign language at primary school. Others believe they should begin in secondary school. Discuss both sides. (min 250 words)"]}},
+            { id:14, title:"Writing Test 4", type:"writing", diff:"medium", time:"60 min", qs:2, video:null,
+              answers:{"Task 1":["The table shows the percentage of people using different forms of transport in three cities. Summarize and compare. (min 150 words)"],"Task 2":["Many people believe that social networking sites have had a huge negative impact on individuals and society. To what extent do you agree or disagree? (min 250 words)"]}},
+            { id:15, title:"Writing Test 5", type:"writing", diff:"hard", time:"60 min", qs:2, video:null,
+              answers:{"Task 1":["The maps show changes to a town centre between 1990 and 2020. Summarize the main changes. (min 150 words)"],"Task 2":["Some people think governments should spend money on faster public transport. Others think money should be spent on other priorities. Discuss both views. (min 250 words)"]}},
+
+            { id:16, title:"Speaking Test 1", type:"speaking", diff:"easy", time:"14 min", qs:3, video:"IevmdO16GuE",
+              answers:{"Part 1":["Topic: Home, Work/Study, Hobbies — speak 4-5 min"],"Part 2":["Describe a book you recently read. Say: what it was about, why you read it, what you learned, why you recommend it. (2 min)"],"Part 3":["Discussion: Reading habits, digital vs paper books, importance of literacy (4-5 min)"]}},
+            { id:17, title:"Speaking Test 2", type:"speaking", diff:"medium", time:"14 min", qs:3, video:"YRKxrDz4hzA",
+              answers:{"Part 1":["Topic: Neighbourhood, Daily routine, Weather — speak 4-5 min"],"Part 2":["Describe a place you visited that impressed you. Say: where it was, when you went, what you did, why it impressed you. (2 min)"],"Part 3":["Discussion: Tourism impact, cultural preservation, travel and education (4-5 min)"]}},
+            { id:18, title:"Speaking Test 3", type:"speaking", diff:"hard", time:"14 min", qs:3, video:null,
+              answers:{"Part 1":["Topic: Technology, Friends, Food — speak 4-5 min"],"Part 2":["Describe a time you made a difficult decision. Say: what the decision was, what options you had, what you decided, how you felt. (2 min)"],"Part 3":["Discussion: Decision-making skills, pressure from society, role of experience (4-5 min)"]}},
+            { id:19, title:"Speaking Test 4", type:"speaking", diff:"medium", time:"14 min", qs:3, video:null,
+              answers:{"Part 1":["Topic: Music, Shopping, Holidays — speak 4-5 min"],"Part 2":["Describe a person who has influenced you. Say: who they are, how you know them, what they did, why they influenced you. (2 min)"],"Part 3":["Discussion: Role models, influence of media on young people, leadership qualities (4-5 min)"]}},
+            { id:20, title:"Speaking Test 5", type:"speaking", diff:"hard", time:"14 min", qs:3, video:null,
+              answers:{"Part 1":["Topic: Sports, Childhood, Transport — speak 4-5 min"],"Part 2":["Describe an achievement you are proud of. Say: what it was, when it happened, how you achieved it, why you are proud. (2 min)"],"Part 3":["Discussion: Motivation, success vs failure, competition in society (4-5 min)"]}}
+        ];
+
+        let mockFilter = 'all';
+
+        function showMockHub() {
+            mockFilter = 'all';
+            renderMockHub();
+        }
+
+        function renderMockHub() {
+            const filters = ['all','listening','reading','writing','speaking'];
+            const labels = ['🌐 All','🎧 Listening','📖 Reading','✍️ Writing','🗣️ Speaking'];
+            const filtered = mockFilter === 'all' ? mockTestsData : mockTestsData.filter(t => t.type === mockFilter);
+
+            let tabsHtml = filters.map((f,i) =>
+                `<div class="filter-tab ${f===mockFilter?'active':''}" onclick="mockFilter='${f}';renderMockHub()">${labels[i]}</div>`
+            ).join('');
+
+            let cardsHtml = filtered.map(t => `
+                <div class="mock-card" onclick="openMock(${t.id})">
+                    <h3>${t.title}</h3>
+                    <p>⏱ ${t.time} &nbsp; ❓ ${t.qs} questions</p>
+                    <span class="mock-tag ${t.type}">${t.type}</span>
+                    <span class="mock-tag ${t.diff}">${t.diff}</span>
+                    ${t.video ? '<span class="mock-tag listening">🎬 Video</span>' : ''}
+                </div>
+            `).join('');
+
+            document.getElementById('main-content').innerHTML = `
+                <h1 style="background:linear-gradient(135deg,#6366f1,#a855f7,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;">📝 Mock Tests Hub</h1>
+                <p style="text-align:center;color:#94a3b8;">Practice with real IELTS-style tests — ${mockTestsData.length} tests available</p>
+                <div class="filter-tabs">${tabsHtml}</div>
+                <div class="mock-grid">${cardsHtml}</div>
+            `;
+            window.scrollTo(0,0);
+        }
+
+        function openMock(id) {
+            const t = mockTestsData.find(m => m.id === id);
+            if (!t) return;
+
+            let videoHtml = '';
+            if (t.video) {
+                videoHtml = `
+                    <h2 style="text-align:left;">🎬 Audio / Video</h2>
+                    <div class="video-wrapper"><div class="youtube-container">
+                        <iframe src="https://www.youtube.com/embed/${t.video}" allowfullscreen></iframe>
+                    </div></div>`;
+            }
+
+            let answersHtml = '';
+            if (t.answers) {
+                answersHtml = '<div style="margin-top:30px;"><h2>📋 Answers / Tasks</h2>';
+                for (const section in t.answers) {
+                    answersHtml += `<div class="answer-section"><h3 style="color:#a855f7;margin:0 0 10px;">${section}</h3><div class="answer-grid">`;
+                    t.answers[section].forEach((ans, i) => {
+                        answersHtml += `<div class="answer-item"><b style="color:#6366f1;">${i+1}.</b> ${ans}</div>`;
+                    });
+                    answersHtml += '</div></div>';
+                }
+                answersHtml += '</div>';
+            }
+
+            document.getElementById('main-content').innerHTML = `
+                <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:20px;">← Back to Mock Tests</button>
+                <h1 style="text-align:left;">${t.title}</h1>
+                <p style="color:#64748b;">⏱ ${t.time} &nbsp; ❓ ${t.qs} questions &nbsp; 📊 ${t.diff}</p>
+                ${videoHtml}
+                ${answersHtml}
+            `;
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
