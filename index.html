@@ -886,11 +886,6 @@ const listeningExams = {
         ]
     }
 };
-for(let i=2;i<=5;i++) listeningExams[i] = JSON.parse(JSON.stringify(listeningExams[1]));
-listeningExams[2].video = "XMIsgfHe3_g";
-listeningExams[3].video = "WO9lCJiPt58";
-listeningExams[4].video = "QhVrqQFUfY8";
-listeningExams[5].video = "nLmDYfe2FGA";
 
 // --- WRITING EXAM DATA ---
 const writingExams = {
@@ -1166,44 +1161,7 @@ function openListeningExam(id) {
             ${questionsHtml}
         </div>`;
     });
-
-    document.getElementById('main-content').innerHTML = `
-        <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
-        <h1>🎧 Listening Test ${id}</h1>
-        
-        <div class="exam-timer">
-            <div>
-                <div style="color:#64748b;font-size:11px;text-transform:uppercase;">Time Remaining</div>
-                <div class="timer-clock" id="exam-clock">30:00</div>
-            </div>
-            <div class="timer-btns">
-                <button class="submit-btn" onclick="submitListening(${id})">✅ Submit</button>
-            </div>
-        </div>
-
-        <div class="listening-audio-box">
-            <h3>🎧 Listening Audio</h3>
-            <p>Listen carefully — in the real exam, audio plays only once!</p>
-            <div class="listening-video-wrapper">
-                <iframe src="https://www.youtube.com/embed/${exam.video}?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="listening-instructions">
-            <span style="font-size:24px;">💡</span>
-            <span><b>Instructions:</b> Answer ALL questions. Write NO MORE than THREE WORDS and/or a number for each answer. Spelling must be correct.</span>
-        </div>
-
-        ${sectionsHtml}
-        
-        <div style="text-align:center;margin:30px 0;">
-            <button class="submit-btn" onclick="submitListening(${id})" style="font-size:18px;padding:18px 50px;">✅ Submit All Answers</button>
-        </div>`;
-
-    startTimer(exam.time, () => submitListening(id));
-    window.scrollTo(0,0);
-}
-
+    
     document.getElementById('main-content').innerHTML = `
         <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
         <h1>🎧 Listening Test ${id}</h1>
