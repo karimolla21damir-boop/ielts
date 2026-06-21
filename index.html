@@ -2108,11 +2108,10 @@ function simpleMap(title, letters) {
 }
 
 function renderListeningPaper(id) {
-    if (id === 1) return renderListeningPaper1();
-    if (id === 2) return renderListeningPaper2();
-    if (id === 3) return renderListeningPaper3();
-    if (id === 4) return renderListeningPaper4();
-    if (id === 5) return renderListeningPaper5();
+    if (id === 4) {
+        return renderListeningPaper4();
+    }
+
     return renderGenericListeningPaper(id);
 }
     function renderListeningPaper4() {
