@@ -861,6 +861,308 @@
 @media (max-width: 500px) {
     .chatbox { width: calc(100% - 20px); right: 10px; bottom: 100px; }
 }
+        ```css
+/* ===== IELTS PAPER STYLE LISTENING ===== */
+.ielts-paper {
+    background: #f8fafc;
+    color: #1f2937;
+    border-radius: 18px;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: inset 0 0 0 1px rgba(15,23,42,0.08);
+}
+
+.ielts-paper h2,
+.ielts-paper h3,
+.ielts-paper h4,
+.ielts-paper p,
+.ielts-paper li,
+.ielts-paper td,
+.ielts-paper th,
+.ielts-paper label {
+    color: #1f2937;
+}
+
+.ielts-test-title {
+    font-size: 34px;
+    font-weight: 400;
+    margin: 0 0 20px;
+    color: #374151;
+}
+
+.ielts-listening-badge {
+    display: inline-block;
+    background: #4b5563;
+    color: #ffffff;
+    letter-spacing: 5px;
+    font-weight: 800;
+    padding: 7px 16px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.ielts-part {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 22px;
+    margin-bottom: 28px;
+}
+
+.ielts-part-header {
+    display: flex;
+    gap: 35px;
+    align-items: baseline;
+    margin-bottom: 18px;
+}
+
+.ielts-part-header strong {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.ielts-part-header em {
+    font-size: 15px;
+    font-weight: 700;
+    color: #4b5563;
+}
+
+.ielts-instruction {
+    font-style: italic;
+    font-size: 14px;
+    margin: 8px 0 14px;
+    color: #374151;
+}
+
+.ielts-word-limit {
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 8px 0 18px;
+    color: #374151;
+}
+
+.ielts-box {
+    border: 2px solid #6b7280;
+    padding: 16px;
+    margin-top: 14px;
+}
+
+.ielts-box-title {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 800;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.ielts-subtitle {
+    font-weight: 800;
+    color: #4b5563;
+    margin: 18px 0 8px;
+}
+
+.ielts-list {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.ielts-list li {
+    margin: 8px 0;
+    line-height: 1.55;
+}
+
+.ielts-blank {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px dotted #6b7280;
+    min-width: 170px;
+    vertical-align: baseline;
+}
+
+.ielts-blank .qno {
+    font-weight: 800;
+    color: #374151;
+}
+
+.ielts-blank input {
+    width: 145px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #111827;
+    font: inherit;
+    padding: 2px 4px;
+}
+
+.ielts-blank.small {
+    min-width: 95px;
+}
+
+.ielts-blank.small input {
+    width: 70px;
+}
+
+.ielts-blank.medium {
+    min-width: 135px;
+}
+
+.ielts-blank.medium input {
+    width: 105px;
+}
+
+.ielts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    background: #ffffff;
+}
+
+.ielts-table th,
+.ielts-table td {
+    border: 1px solid #6b7280;
+    padding: 10px;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.ielts-table th {
+    font-weight: 800;
+    text-align: center;
+    color: #374151;
+}
+
+.ielts-mcq-block {
+    margin: 16px 0 22px;
+}
+
+.ielts-question-row {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.ielts-question-number {
+    font-weight: 800;
+    color: #4b5563;
+}
+
+.ielts-options {
+    margin-top: 8px;
+}
+
+.ielts-option {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    align-items: start;
+    gap: 8px;
+    margin: 4px 0;
+    cursor: pointer;
+    color: #1f2937;
+}
+
+.ielts-option input {
+    margin-top: 3px;
+    accent-color: #6366f1;
+}
+
+.ielts-letter-input-row {
+    display: grid;
+    grid-template-columns: 34px 1fr 150px;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.ielts-letter-input-row input,
+.ielts-answer-line {
+    border: none;
+    border-bottom: 1px dotted #6b7280;
+    background: transparent;
+    color: #111827;
+    outline: none;
+    padding: 4px;
+    font: inherit;
+}
+
+.ielts-choice-box {
+    width: fit-content;
+    min-width: 260px;
+    border: 1px solid #9ca3af;
+    padding: 14px 22px;
+    margin: 16px auto;
+    background: #ffffff;
+}
+
+.ielts-choice-box-title {
+    text-align: center;
+    font-weight: 800;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.ielts-map-placeholder {
+    background: #f1f5f9;
+    border: 2px solid #9ca3af;
+    border-radius: 6px;
+    padding: 18px;
+    margin: 18px auto;
+    max-width: 620px;
+    text-align: center;
+}
+
+.ielts-map-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 18px auto;
+    max-width: 420px;
+}
+
+.ielts-map-cell {
+    min-height: 58px;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #475569;
+    background: #ffffff;
+}
+
+.ielts-map-note {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.ielts-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+@media (max-width: 800px) {
+    .ielts-paper {
+        padding: 16px;
+    }
+
+    .ielts-two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .ielts-letter-input-row {
+        grid-template-columns: 30px 1fr;
+    }
+
+    .ielts-letter-input-row input {
+        grid-column: 2;
+    }
+}
     </style>
 </head>
 <body>
@@ -1716,43 +2018,12 @@ function submitReading(idx) {
 function openListeningExam(id) {
     const exam = listeningExams[id] || listeningExams[1];
     const videoId = exam.video;
-    const timestamps = ['0:00 — Section 1','7:30 — Section 2','14:00 — Section 3','20:30 — Section 4'];
-
-    let qCounter = 0;
-    let sectionsHtml = '';
-
-    exam.sections.forEach((sec, si) => {
-        let questionsHtml = '';
-        sec.questions.forEach(q => {
-            qCounter++;
-            const qNum = q.q.substring(0, 3).trim();
-            if (q.type === 'fill') {
-                questionsHtml += `
-                <div class="listening-q-item">
-                    <label class="listening-q-label"><span class="listening-q-number">${qCounter}</span>${q.q}</label>
-                    <input type="text" class="listening-input" id="linp-${qNum}" placeholder="Type your answer here...">
-                </div>`;
-            } else {
-                questionsHtml += `
-                <div class="listening-q-item">
-                    <label class="listening-q-label"><span class="listening-q-number">${qCounter}</span>${q.q}</label>
-                    <div class="listening-mcq">
-                        ${q.opts.map(o => `<label><input type="radio" name="lq${qNum}" value="${o.charAt(0)}"> <span>${o}</span></label>`).join('')}
-                    </div>
-                </div>`;
-            }
-        });
-        sectionsHtml += `
-        <div class="listening-section">
-            <div class="section-audio-marker">🔊 ${timestamps[si]}</div>
-            <div class="listening-section-title">📋 ${sec.title}</div>
-            ${questionsHtml}
-        </div>`;
-    });
 
     document.getElementById('main-content').innerHTML = `
         <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
+
         <h1>🎧 Listening Test ${id}</h1>
+
         <div class="exam-timer">
             <div>
                 <div style="color:#64748b;font-size:11px;text-transform:uppercase;">Time Remaining</div>
@@ -1762,29 +2033,299 @@ function openListeningExam(id) {
                 <button class="submit-btn" onclick="submitListening(${id})">✅ Submit</button>
             </div>
         </div>
+
         <div class="audio-player-box">
             <h3>🎧 IELTS Listening Audio</h3>
             <p class="subtitle">Listen carefully — audio plays ONCE in real exam!</p>
             <div class="yt-fallback">
-                <iframe src="https://www.youtube.com/embed/${videoId}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;"></iframe>
+                <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;"></iframe>
             </div>
-            <p style="margin-top:15px;"><a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" style="color:#60a5fa;font-weight:600;font-size:15px;">▶ Не загружается? Открыть на YouTube</a></p>
-            <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:15px;">
-                ${timestamps.map(t => `<span style="background:rgba(255,255,255,0.08);padding:4px 12px;border-radius:8px;font-size:12px;color:#c4b5fd;">${t}</span>`).join('')}
-            </div>
+            <p style="margin-top:15px;">
+                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" style="color:#60a5fa;font-weight:600;font-size:15px;">▶ Не загружается? Открыть на YouTube</a>
+            </p>
         </div>
-        <div class="listening-instructions">
-            <span style="font-size:24px;">💡</span>
-            <span><b>Instructions:</b> Answer ALL 40 questions. Write NO MORE THAN THREE WORDS and/or a number.</span>
+
+        <div class="ielts-paper">
+            ${renderListeningPaper(id)}
         </div>
-        ${sectionsHtml}
+
         <div style="text-align:center;margin:30px 0;">
             <button class="submit-btn" onclick="submitListening(${id})" style="font-size:18px;padding:18px 50px;border-radius:16px;border:none;cursor:pointer;font-weight:800;">✅ Submit All Answers</button>
-        </div>`;
+        </div>
+    `;
+
     startTimer(exam.time, () => submitListening(id));
     window.scrollTo(0, 0);
 }
+    function blank(num, size = '') {
+    return `<span class="ielts-blank ${size}">
+        <span class="qno">${num}</span>
+        <input type="text" id="linp-${num}" autocomplete="off">
+    </span>`;
+}
 
+function letterInput(num, label) {
+    return `<div class="ielts-letter-input-row">
+        <strong>${num}</strong>
+        <span>${label}</span>
+        <input type="text" id="linp-${num}" autocomplete="off">
+    </div>`;
+}
+
+function mcqQuestion(num, question, options) {
+    return `<div class="ielts-question-row">
+        <div class="ielts-question-number">${num}</div>
+        <div>
+            <div>${question}</div>
+            <div class="ielts-options">
+                ${options.map(opt => {
+                    const letter = opt.trim().charAt(0);
+                    return `<label class="ielts-option">
+                        <input type="radio" name="lq${num}" value="${letter}">
+                        <span>${opt}</span>
+                    </label>`;
+                }).join('')}
+            </div>
+        </div>
+    </div>`;
+}
+
+function choiceBox(title, items) {
+    return `<div class="ielts-choice-box">
+        <div class="ielts-choice-box-title">${title}</div>
+        ${items.map(item => `<div style="display:grid;grid-template-columns:35px 1fr;margin:6px 0;"><strong>${item[0]}</strong><span>${item[1]}</span></div>`).join('')}
+    </div>`;
+}
+
+function simpleMap(title, letters) {
+    return `<div class="ielts-map-placeholder">
+        <h3 style="margin-top:0;color:#6b7280;">${title}</h3>
+        <div class="ielts-map-grid">
+            ${letters.map(l => `<div class="ielts-map-cell">${l}</div>`).join('')}
+        </div>
+        <div class="ielts-map-note">Map diagram recreated for online answer entry. Write the correct letter in each answer line.</div>
+    </div>`;
+}
+
+function renderListeningPaper(id) {
+    if (id === 1) return renderListeningPaper1();
+    if (id === 2) return renderListeningPaper2();
+    if (id === 3) return renderListeningPaper3();
+    if (id === 4) return renderListeningPaper4();
+    if (id === 5) return renderListeningPaper5();
+    return renderGenericListeningPaper(id);
+}
+    function renderListeningPaper4() {
+    return `
+        <div class="ielts-test-title">Test 4</div>
+        <div style="text-align:center;"><div class="ielts-listening-badge">LISTENING</div></div>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 1</strong><em>Questions 1–10</em></div>
+            <p class="ielts-instruction">Complete the form below.</p>
+            <p class="ielts-word-limit">Write ONE WORD AND/OR A NUMBER for each answer.</p>
+
+            <div class="ielts-box">
+                <div class="ielts-box-title">Customer Satisfaction Survey</div>
+
+                <div class="ielts-subtitle">Customer details</div>
+                <p>Name: Sophie Bird</p>
+                <p>Occupation: ${blank(1)}</p>
+                <p>Reason for travel today: ${blank(2)}</p>
+
+                <div class="ielts-subtitle">Journey information</div>
+                <p>Name of station returning to: ${blank(3)}</p>
+                <p>Type of ticket purchased: standard ${blank(4, 'medium')} ticket</p>
+                <p>Cost of ticket: £ ${blank(5, 'small')}</p>
+                <p>When ticket was purchased: yesterday</p>
+                <p>Where ticket was bought: ${blank(6)}</p>
+
+                <div class="ielts-subtitle">Satisfaction with journey</div>
+                <p>Most satisfied with: the wifi</p>
+                <p>Least satisfied with: the ${blank(7)} this morning</p>
+
+                <div class="ielts-subtitle">Satisfaction with station facilities</div>
+                <p>Most satisfied with: how much ${blank(8)} was provided</p>
+                <p>Least satisfied with: lack of seats, particularly on the ${blank(9)}</p>
+                <p>Neither satisfied nor dissatisfied with: the ${blank(10)} available</p>
+            </div>
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 2</strong><em>Questions 11–20</em></div>
+
+            <p class="ielts-instruction">Questions 11–16</p>
+            <p class="ielts-instruction">Label the map below.</p>
+            <p class="ielts-word-limit">Write the correct letter, A–H, next to Questions 11–16.</p>
+
+            ${simpleMap('Croft Valley Park', ['A', 'B', 'Adventure playground', 'C', 'Old museum', 'D', 'E', 'F', 'Glass houses', 'G', 'H', 'South gate'])}
+
+            ${letterInput(11, 'café')}
+            ${letterInput(12, 'toilets')}
+            ${letterInput(13, 'formal gardens')}
+            ${letterInput(14, 'outdoor gym')}
+            ${letterInput(15, 'skateboard ramp')}
+            ${letterInput(16, 'wild flowers')}
+
+            <p class="ielts-instruction" style="margin-top:26px;">Questions 17 and 18</p>
+            <p class="ielts-word-limit">Choose TWO letters, A–E.</p>
+            <p>What does the speaker say about the adventure playground?</p>
+            ${mcqQuestion(17, '', [
+                'A Children must be supervised.',
+                'B It costs more in winter.',
+                'C Some activities are only for younger children.',
+                'D No payment is required.',
+                'E It was recently expanded.'
+            ])}
+            <input type="text" id="linp-18" class="ielts-answer-line" placeholder="Question 18 answer">
+
+            <p class="ielts-instruction" style="margin-top:26px;">Questions 19 and 20</p>
+            <p class="ielts-word-limit">Choose TWO letters, A–E.</p>
+            <p>What does the speaker say about the glass houses?</p>
+            ${mcqQuestion(19, '', [
+                'A They are closed at weekends.',
+                'B Volunteers are needed to work there.',
+                'C They were badly damaged by fire.',
+                'D More money is needed to repair some of the glass.',
+                'E Visitors can see palm trees from tropical regions.'
+            ])}
+            <input type="text" id="linp-20" class="ielts-answer-line" placeholder="Question 20 answer">
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 3</strong><em>Questions 21–30</em></div>
+
+            <p class="ielts-instruction">Questions 21–24</p>
+            <p class="ielts-word-limit">Choose the correct letter, A, B or C.</p>
+            <h3 style="text-align:center;color:#6b7280;">Presentation about refrigeration</h3>
+
+            ${mcqQuestion(21, 'What did Annie discover from reading about icehouses?', [
+                'A why they were first created',
+                'B how the ice was kept frozen',
+                'C where they were located'
+            ])}
+
+            ${mcqQuestion(22, 'What point does Annie make about refrigeration in ancient Rome?', [
+                'A It became a commercial business.',
+                'B It used snow from nearby.',
+                'C It took a long time to become popular.'
+            ])}
+
+            ${mcqQuestion(23, 'In connection with modern refrigerators, both Annie and Jack are worried about', [
+                'A the complexity of the technology.',
+                'B the fact that some are disposed of irresponsibly.',
+                'C the large number that quickly break down.'
+            ])}
+
+            ${mcqQuestion(24, 'What do Jack and Annie agree regarding domestic fridges?', [
+                'A They are generally good value for money.',
+                'B There are plenty of useful variations.',
+                'C They are more useful than other domestic appliances.'
+            ])}
+
+            <p class="ielts-instruction" style="margin-top:26px;">Questions 25–30</p>
+            <p>Who is going to do research into each topic?</p>
+            <p class="ielts-word-limit">Write the correct letter, A, B or C, next to Questions 25–30.</p>
+
+            ${choiceBox('People', [
+                ['A', 'Annie'],
+                ['B', 'Jack'],
+                ['C', 'both Annie and Jack']
+            ])}
+
+            ${letterInput(25, 'the goods that are refrigerated')}
+            ${letterInput(26, 'the effects on health')}
+            ${letterInput(27, 'the impact on food producers')}
+            ${letterInput(28, 'the impact on cities')}
+            ${letterInput(29, 'refrigerated transport')}
+            ${letterInput(30, 'domestic fridges')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 4</strong><em>Questions 31–40</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD ONLY for each answer.</p>
+
+            <div class="ielts-box">
+                <div class="ielts-box-title">How the Industrial Revolution affected life in Britain</div>
+
+                <div class="ielts-subtitle">19th century</div>
+                <ul class="ielts-list">
+                    <li>For the first time, people's possessions were used to measure Britain's ${blank(31)}.</li>
+                    <li>Developments in production of goods and in ${blank(32)} greatly changed lives.</li>
+                </ul>
+
+                <div class="ielts-subtitle">MAIN AREAS OF CHANGE</div>
+                <p><strong>Manufacturing</strong></p>
+                <ul class="ielts-list">
+                    <li>The Industrial Revolution would not have happened without the new types of ${blank(33)} that were used then.</li>
+                    <li>The leading industry was ${blank(34)}; its products became widely available.</li>
+                    <li>New ${blank(35)} made factories necessary and so more people moved into towns.</li>
+                </ul>
+
+                <p><strong>Transport</strong></p>
+                <ul class="ielts-list">
+                    <li>The railways took the place of canals.</li>
+                    <li>Because of the new transport, greater access to ${blank(36)} made people more aware of what they could buy in shops.</li>
+                    <li>When shopping, people were not limited to buying ${blank(37)} goods.</li>
+                </ul>
+
+                <p><strong>Retailing</strong></p>
+                <ul class="ielts-list">
+                    <li>The first department stores were opened.</li>
+                    <li>The displays of goods were more visible inside stores because of better ${blank(38)}.</li>
+                    <li>Outside stores, because ${blank(39)} were bigger.</li>
+                    <li>${blank(40)} that was persuasive became much more common.</li>
+                </ul>
+            </div>
+        </section>
+    `;
+}
+    function renderGenericListeningPaper(id) {
+    const exam = listeningExams[id] || listeningExams[1];
+
+    let html = `
+        <div class="ielts-test-title">Test ${id}</div>
+        <div style="text-align:center;"><div class="ielts-listening-badge">LISTENING</div></div>
+    `;
+
+    exam.sections.forEach((sec, si) => {
+        html += `
+            <section class="ielts-part">
+                <div class="ielts-part-header">
+                    <strong>PART ${si + 1}</strong>
+                    <em>Questions ${si * 10 + 1}–${si * 10 + 10}</em>
+                </div>
+                <p class="ielts-instruction">Complete the questions below.</p>
+                <p class="ielts-word-limit">Write ONE WORD AND/OR A NUMBER, or choose the correct letter.</p>
+                <div class="ielts-box">
+                    <div class="ielts-box-title">${sec.title.replace(/^Section \d+ — /, '')}</div>
+        `;
+
+        sec.questions.forEach(q => {
+            const qNum = parseInt(q.q.match(/^\d+/)?.[0], 10);
+
+            if (q.type === 'fill') {
+                const cleanQuestion = q.q.replace(/^\d+\.\s*/, '');
+                html += `<p>${qNum}. ${cleanQuestion.replace('___', blank(qNum))}</p>`;
+
+                if (!cleanQuestion.includes('___')) {
+                    html += `<p>${blank(qNum)}</p>`;
+                }
+            } else {
+                const cleanQuestion = q.q.replace(/^\d+\.\s*/, '');
+                html += mcqQuestion(qNum, cleanQuestion, q.opts || []);
+            }
+        });
+
+        html += `
+                </div>
+            </section>
+        `;
+    });
+
+    return html;
+}
 // Audio tab switcher
 function switchAudioTab(idx) {
     document.querySelectorAll('.audio-tab').forEach(t => t.classList.remove('active'));
@@ -1793,26 +2334,70 @@ function switchAudioTab(idx) {
     const src = document.getElementById('audio-src-' + idx);
     if (src) src.classList.add('active');
 }
+function normalizeAnswer(value) {
+    return String(value || '')
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, ' ')
+        .replace(/[.,;:!?]/g, '');
+}
+
+function isAnswerCorrect(userAnswer, correctAnswer) {
+    const user = normalizeAnswer(userAnswer);
+
+    if (Array.isArray(correctAnswer)) {
+        return correctAnswer.map(normalizeAnswer).includes(user);
+    }
+
+    const correct = normalizeAnswer(correctAnswer);
+
+    if (correct.includes('/')) {
+        return correct.split('/').map(normalizeAnswer).includes(user);
+    }
+
+    return user === correct;
+}
 
 function submitListening(id) {
     clearInterval(examTimer);
+
     const exam = listeningExams[id] || listeningExams[1];
-    let correct = 0, total = 0, details = [];
+    let correct = 0;
+    let total = 0;
+    let details = [];
 
     exam.sections.forEach(sec => {
         sec.questions.forEach(q => {
             total++;
-            const qNum = q.q.substring(0,3).trim();
+
+            const qNum = parseInt(q.q.match(/^\d+/)?.[0], 10);
             let userAnswer = '';
-            if(q.type === 'fill') {
-                const inp = document.getElementById('linp-'+qNum);
-                if(inp) userAnswer = inp.value.trim();
-            } else {
-                document.querySelectorAll(`input[name="lq${qNum}"]`).forEach(r => { if(r.checked) userAnswer = r.value; });
+
+            const textInput = document.getElementById('linp-' + qNum);
+            if (textInput) {
+                userAnswer = textInput.value.trim();
             }
-            const isCorrect = userAnswer.toLowerCase() === q.answer.toLowerCase();
-            if(isCorrect) correct++;
-            details.push({q:q.q, user:userAnswer||'(empty)', correct:q.answer, ok:isCorrect});
+
+            if (!userAnswer) {
+                document.querySelectorAll(`input[name="lq${qNum}"]`).forEach(radio => {
+                    if (radio.checked) {
+                        userAnswer = radio.value;
+                    }
+                });
+            }
+
+            const isCorrect = isAnswerCorrect(userAnswer, q.answer);
+
+            if (isCorrect) {
+                correct++;
+            }
+
+            details.push({
+                q: q.q,
+                user: userAnswer || '(empty)',
+                correct: Array.isArray(q.answer) ? q.answer.join(' / ') : q.answer,
+                ok: isCorrect
+            });
         });
     });
 
