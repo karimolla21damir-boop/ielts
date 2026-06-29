@@ -92,7 +92,6 @@
             cursor: pointer; margin-top: 30px; width: 100%; font-size: 16px;
         }
 
-        /* Mock Hub */
         .mock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 25px; }
         .mock-card {
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
@@ -118,7 +117,6 @@
         .filter-tab:hover { background: rgba(255,255,255,0.08); color: white; }
         .filter-tab.active { background: linear-gradient(135deg, #6366f1, #a855f7); color: white; border-color: transparent; }
 
-        /* EXAM STYLES */
         .exam-timer {
             position: sticky; top: 70px; z-index: 50;
             background: linear-gradient(135deg, #1e293b, #0f172a);
@@ -218,951 +216,945 @@
         .exam-panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
 
         @media (max-width: 900px) { .exam-split { grid-template-columns: 1fr; } }
-        /* ===== LISTENING EXAM ENHANCED ===== */
-.listening-section {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 25px;
-    margin-bottom: 25px;
-}
-
-.listening-section-title {
-    font-size: 20px;
-    font-weight: 800;
-    color: #a855f7;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(168,85,247,0.3);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.listening-q-item {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 20px 25px;
-    margin-bottom: 18px;
-    transition: all 0.3s;
-}
-
-.listening-q-item:hover {
-    border-color: rgba(168,85,247,0.3);
-    background: rgba(168,85,247,0.05);
-}
-
-.listening-q-label {
-    font-size: 17px;
-    font-weight: 600;
-    color: #e2e8f0;
-    line-height: 1.7;
-    margin-bottom: 14px;
-    display: block;
-}
-
-.listening-q-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    border-radius: 50%;
-    color: white;
-    font-weight: 800;
-    font-size: 14px;
-    margin-right: 12px;
-    flex-shrink: 0;
-}
-
-.listening-input {
-    width: 100%;
-    padding: 16px 20px;
-    font-size: 17px;
-    background: rgba(255,255,255,0.06);
-    border: 2px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    color: #f1f5f9;
-    font-family: inherit;
-    transition: all 0.3s;
-}
-
-.listening-input:focus {
-    outline: none;
-    border-color: #a855f7;
-    background: rgba(168,85,247,0.08);
-    box-shadow: 0 0 0 4px rgba(168,85,247,0.15);
-}
-
-.listening-input::placeholder {
-    color: #64748b;
-    font-size: 15px;
-}
-
-.listening-mcq {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.listening-mcq label {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 20px;
-    background: rgba(255,255,255,0.04);
-    border: 2px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #cbd5e1;
-    transition: all 0.3s;
-    font-weight: 500;
-}
-
-.listening-mcq label:hover {
-    border-color: rgba(168,85,247,0.4);
-    background: rgba(168,85,247,0.08);
-    color: #f1f5f9;
-}
-
-.listening-mcq input[type="radio"] {
-    width: 20px;
-    height: 20px;
-    accent-color: #a855f7;
-    flex-shrink: 0;
-}
-
-.listening-mcq input[type="radio"]:checked + span,
-.listening-mcq label:has(input:checked) {
-    color: #a855f7;
-    border-color: #a855f7;
-    background: rgba(168,85,247,0.12);
-    font-weight: 700;
-}
-
-.listening-audio-box {
-    background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1));
-    border: 2px solid rgba(168,85,247,0.2);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.listening-audio-box h3 {
-    font-size: 22px;
-    color: #e2e8f0;
-    margin-bottom: 8px;
-}
-
-.listening-audio-box p {
-    color: #94a3b8;
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-
-.listening-video-wrapper {
-    max-width: 850px;
-    margin: 0 auto;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 2px solid rgba(168,85,247,0.2);
-}
-
-.listening-video-wrapper iframe {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border: none;
-}
-
-.listening-instructions {
-    background: rgba(245,158,11,0.08);
-    border: 1px solid rgba(245,158,11,0.2);
-    border-radius: 14px;
-    padding: 18px 24px;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.listening-instructions span {
-    color: #fbbf24;
-    font-size: 15px;
-    line-height: 1.6;
-}
-   /* ===== WRITING TASK 1 CHARTS ===== */
-.chart-container {
-    background: rgba(255,255,255,0.95);
-    border-radius: 16px;
-    padding: 30px;
-    margin: 20px 0;
-    border: 2px solid rgba(168,85,247,0.3);
-}
-
-.chart-title {
-    text-align: center;
-    color: #1e293b;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    line-height: 1.5;
-}
-
-/* Bar Chart */
-.bar-chart {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 8px;
-    height: 280px;
-    padding: 0 20px 40px;
-    position: relative;
-    border-left: 2px solid #334155;
-    border-bottom: 2px solid #334155;
-    margin: 0 30px;
-}
-
-.bar-group {
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-    flex: 1;
-    max-width: 100px;
-    position: relative;
-}
-
-.bar {
-    flex: 1;
-    border-radius: 4px 4px 0 0;
-    position: relative;
-    min-width: 20px;
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-
-.bar:hover {
-    opacity: 0.85;
-    transform: scaleY(1.02);
-    transform-origin: bottom;
-}
-
-.bar-value {
-    position: absolute;
-    top: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 11px;
-    font-weight: 700;
-    color: #1e293b;
-    white-space: nowrap;
-}
-
-.bar-group-label {
-    position: absolute;
-    bottom: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 11px;
-    color: #475569;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.chart-legend {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 45px;
-    flex-wrap: wrap;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: #475569;
-    font-weight: 600;
-}
-
-.legend-color {
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-}
-
-.y-axis-labels {
-    position: absolute;
-    left: -45px;
-    top: 0;
-    bottom: 40px;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-}
-
-.y-axis-labels span {
-    font-size: 11px;
-    color: #64748b;
-    font-weight: 600;
-}
-
-/* Pie Chart */
-.pie-chart-row {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.pie-wrapper {
-    text-align: center;
-}
-
-.pie-wrapper h4 {
-    color: #1e293b;
-    margin-bottom: 15px;
-    font-size: 15px;
-}
-
-.pie-svg {
-    width: 200px;
-    height: 200px;
-    transform: rotate(-90deg);
-}
-
-.pie-legend {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    align-items: flex-start;
-    padding-left: 20px;
-}
-
-.pie-legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    color: #475569;
-    font-weight: 500;
-}
-
-.pie-legend-color {
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-    flex-shrink: 0;
-}
-
-/* Line Chart */
-.line-chart-wrapper {
-    position: relative;
-    margin: 0 30px;
-    padding-bottom: 40px;
-}
-
-.line-chart-svg {
-    width: 100%;
-    height: 280px;
-}
-
-.line-chart-svg text {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-/* Table */
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 10px 0;
-}
-
-.data-table th {
-    background: #6366f1;
-    color: white;
-    padding: 12px 16px;
-    font-size: 13px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.data-table td {
-    padding: 10px 16px;
-    text-align: center;
-    font-size: 13px;
-    color: #1e293b;
-    border-bottom: 1px solid #e2e8f0;
-    font-weight: 500;
-}
-
-.data-table tr:nth-child(even) {
-    background: #f8fafc;
-}
-
-.data-table tr:hover {
-    background: #ede9fe;
-}
-
-/* Map styles */
-.map-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.map-box {
-    text-align: center;
-    flex: 1;
-    min-width: 280px;
-}
-
-.map-box h4 {
-    color: #1e293b;
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
-.map-svg {
-    width: 100%;
-    max-width: 380px;
-    height: 300px;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-}
-        /* ===== AUDIO PLAYER ENHANCED ===== */
-.audio-player-box {
-    background: linear-gradient(135deg, #1e1b4b, #312e81);
-    border: 2px solid rgba(99,102,241,0.4);
-    border-radius: 24px;
-    padding: 35px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.audio-player-box h3 {
-    font-size: 24px;
-    color: #e2e8f0;
-    margin: 0 0 5px;
-}
-
-.audio-player-box .subtitle {
-    color: #94a3b8;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.audio-warning {
-    background: rgba(239,68,68,0.15);
-    border: 1px solid rgba(239,68,68,0.3);
-    border-radius: 12px;
-    padding: 12px 20px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-}
-
-.audio-warning span {
-    color: #fca5a5;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.audio-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
-.audio-tab {
-    padding: 10px 22px;
-    border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.05);
-    color: #94a3b8;
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.audio-tab:hover {
-    background: rgba(255,255,255,0.1);
-    color: white;
-}
-
-.audio-tab.active {
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    color: white;
-    border-color: transparent;
-}
-
-.audio-source {
-    display: none;
-    animation: fadeIn 0.3s ease;
-}
-
-.audio-source.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.custom-audio {
-    width: 100%;
-    max-width: 600px;
-    margin: 15px auto;
-    display: block;
-    height: 50px;
-    border-radius: 25px;
-}
-
-.yt-fallback {
-    max-width: 700px;
-    margin: 0 auto;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 2px solid rgba(99,102,241,0.3);
-}
-
-.yt-fallback iframe {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border: none;
-}
-
-.audio-external-links {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 15px;
-    flex-wrap: wrap;
-}
-
-.audio-ext-btn {
-    padding: 10px 24px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.08);
-    color: #e2e8f0;
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.audio-ext-btn:hover {
-    background: var(--primary);
-    border-color: transparent;
-    transform: translateY(-2px);
-}
-
-.section-audio-marker {
-    background: rgba(168,85,247,0.1);
-    border: 1px solid rgba(168,85,247,0.2);
-    border-radius: 10px;
-    padding: 10px 16px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    color: #c4b5fd;
-    font-weight: 600;
-}
-        /* AI Chatbot */
-.chat-toggle {
-    position: fixed; bottom: 30px; right: 30px; z-index: 9999;
-    width: 65px; height: 65px; border-radius: 50%; border: none;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    color: white; font-size: 28px; cursor: pointer;
-    box-shadow: 0 8px 30px rgba(99,102,241,0.5);
-    transition: 0.3s; display: flex; align-items: center; justify-content: center;
-}
-.chat-toggle:hover { transform: scale(1.1); }
-
-.chatbox {
-    position: fixed; bottom: 110px; right: 30px; z-index: 9999;
-    width: 380px; max-height: 520px; border-radius: 24px;
-    background: #1e293b; border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-    display: none; flex-direction: column; overflow: hidden;
-}
-.chatbox.open { display: flex; }
-
-.chat-header {
-    padding: 18px 20px; background: linear-gradient(135deg, #6366f1, #a855f7);
-    display: flex; align-items: center; justify-content: space-between;
-}
-.chat-header h3 { margin: 0; font-size: 16px; color: white; }
-.chat-close {
-    background: none; border: none; color: white; font-size: 22px;
-    cursor: pointer; padding: 0; line-height: 1;
-}
-
-.chat-messages {
-    flex: 1; padding: 20px; overflow-y: auto; max-height: 350px;
-    display: flex; flex-direction: column; gap: 12px;
-}
-.chat-messages::-webkit-scrollbar { width: 4px; }
-.chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
-
-.msg {
-    max-width: 85%; padding: 12px 16px; border-radius: 16px;
-    font-size: 14px; line-height: 1.6; word-wrap: break-word;
-}
-.msg.bot {
-    background: rgba(99,102,241,0.15); color: #e2e8f0;
-    align-self: flex-start; border-bottom-left-radius: 4px;
-}
-.msg.user {
-    background: #6366f1; color: white;
-    align-self: flex-end; border-bottom-right-radius: 4px;
-}
-.msg.typing { color: #94a3b8; font-style: italic; }
-
-.chat-input-row {
-    padding: 15px; border-top: 1px solid rgba(255,255,255,0.1);
-    display: flex; gap: 10px;
-}
-.chat-input {
-    flex: 1; padding: 12px 16px; border-radius: 12px;
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-    color: white; font-size: 14px; outline: none; font-family: inherit;
-}
-.chat-input:focus { border-color: #6366f1; }
-.chat-input::placeholder { color: #64748b; }
-.chat-send {
-    padding: 12px 18px; border-radius: 12px; border: none;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    color: white; font-weight: 700; cursor: pointer; font-size: 14px;
-}
-.chat-send:hover { opacity: 0.9; }
-
-@media (max-width: 500px) {
-    .chatbox { width: calc(100% - 20px); right: 10px; bottom: 100px; }
-}
-        ```css
-/* ===== IELTS PAPER STYLE LISTENING ===== */
-.ielts-paper {
-    background: #f8fafc;
-    color: #1f2937;
-    border-radius: 18px;
-    padding: 28px;
-    border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: inset 0 0 0 1px rgba(15,23,42,0.08);
-}
-
-.ielts-paper h2,
-.ielts-paper h3,
-.ielts-paper h4,
-.ielts-paper p,
-.ielts-paper li,
-.ielts-paper td,
-.ielts-paper th,
-.ielts-paper label {
-    color: #1f2937;
-}
-
-.ielts-test-title {
-    font-size: 34px;
-    font-weight: 400;
-    margin: 0 0 20px;
-    color: #374151;
-}
-
-.ielts-listening-badge {
-    display: inline-block;
-    background: #4b5563;
-    color: #ffffff;
-    letter-spacing: 5px;
-    font-weight: 800;
-    padding: 7px 16px;
-    margin: 0 auto 28px;
-    text-align: center;
-}
-
-.ielts-part {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    padding: 22px;
-    margin-bottom: 28px;
-}
-
-.ielts-part-header {
-    display: flex;
-    gap: 35px;
-    align-items: baseline;
-    margin-bottom: 18px;
-}
-
-.ielts-part-header strong {
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-
-.ielts-part-header em {
-    font-size: 15px;
-    font-weight: 700;
-    color: #4b5563;
-}
-
-.ielts-instruction {
-    font-style: italic;
-    font-size: 14px;
-    margin: 8px 0 14px;
-    color: #374151;
-}
-
-.ielts-word-limit {
-    font-style: italic;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 8px 0 18px;
-    color: #374151;
-}
-
-.ielts-box {
-    border: 2px solid #6b7280;
-    padding: 16px;
-    margin-top: 14px;
-}
-
-.ielts-box-title {
-    text-align: center;
-    font-size: 21px;
-    font-weight: 800;
-    color: #6b7280;
-    margin-bottom: 16px;
-}
-
-.ielts-subtitle {
-    font-weight: 800;
-    color: #4b5563;
-    margin: 18px 0 8px;
-}
-
-.ielts-list {
-    margin: 0;
-    padding-left: 22px;
-}
-
-.ielts-list li {
-    margin: 8px 0;
-    line-height: 1.55;
-}
-
-.ielts-blank {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    border-bottom: 1px dotted #6b7280;
-    min-width: 170px;
-    vertical-align: baseline;
-}
-
-.ielts-blank .qno {
-    font-weight: 800;
-    color: #374151;
-}
-
-.ielts-blank input {
-    width: 145px;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #111827;
-    font: inherit;
-    padding: 2px 4px;
-}
-
-.ielts-blank.small {
-    min-width: 95px;
-}
-
-.ielts-blank.small input {
-    width: 70px;
-}
-
-.ielts-blank.medium {
-    min-width: 135px;
-}
-
-.ielts-blank.medium input {
-    width: 105px;
-}
-
-.ielts-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 14px;
-    background: #ffffff;
-}
-
-.ielts-table th,
-.ielts-table td {
-    border: 1px solid #6b7280;
-    padding: 10px;
-    vertical-align: top;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.ielts-table th {
-    font-weight: 800;
-    text-align: center;
-    color: #374151;
-}
-
-.ielts-mcq-block {
-    margin: 16px 0 22px;
-}
-
-.ielts-question-row {
-    display: grid;
-    grid-template-columns: 34px 1fr;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-.ielts-question-number {
-    font-weight: 800;
-    color: #4b5563;
-}
-
-.ielts-options {
-    margin-top: 8px;
-}
-
-.ielts-option {
-    display: grid;
-    grid-template-columns: 28px 1fr;
-    align-items: start;
-    gap: 8px;
-    margin: 4px 0;
-    cursor: pointer;
-    color: #1f2937;
-}
-
-.ielts-option input {
-    margin-top: 3px;
-    accent-color: #6366f1;
-}
-
-.ielts-letter-input-row {
-    display: grid;
-    grid-template-columns: 34px 1fr 150px;
-    align-items: center;
-    gap: 12px;
-    margin: 8px 0;
-}
-
-.ielts-letter-input-row input,
-.ielts-answer-line {
-    border: none;
-    border-bottom: 1px dotted #6b7280;
-    background: transparent;
-    color: #111827;
-    outline: none;
-    padding: 4px;
-    font: inherit;
-}
-
-.ielts-choice-box {
-    width: fit-content;
-    min-width: 260px;
-    border: 1px solid #9ca3af;
-    padding: 14px 22px;
-    margin: 16px auto;
-    background: #ffffff;
-}
-
-.ielts-choice-box-title {
-    text-align: center;
-    font-weight: 800;
-    color: #6b7280;
-    margin-bottom: 10px;
-}
-
-.ielts-map-placeholder {
-    background: #f1f5f9;
-    border: 2px solid #9ca3af;
-    border-radius: 6px;
-    padding: 18px;
-    margin: 18px auto;
-    max-width: 620px;
-    text-align: center;
-}
-
-.ielts-map-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 18px auto;
-    max-width: 420px;
-}
-
-.ielts-map-cell {
-    min-height: 58px;
-    border: 1px solid #94a3b8;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    color: #475569;
-    background: #ffffff;
-}
-
-.ielts-map-note {
-    color: #64748b;
-    font-size: 13px;
-    margin-top: 10px;
-}
-
-.ielts-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-}
-
-@media (max-width: 800px) {
-    .ielts-paper {
-        padding: 16px;
-    }
-
-    .ielts-two-col {
-        grid-template-columns: 1fr;
-    }
-
-    .ielts-letter-input-row {
-        grid-template-columns: 30px 1fr;
-    }
-
-    .ielts-letter-input-row input {
-        grid-column: 2;
-    }
-}
+
+        .listening-section {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .listening-section-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #a855f7;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(168,85,247,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .listening-q-item {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 20px 25px;
+            margin-bottom: 18px;
+            transition: all 0.3s;
+        }
+
+        .listening-q-item:hover {
+            border-color: rgba(168,85,247,0.3);
+            background: rgba(168,85,247,0.05);
+        }
+
+        .listening-q-label {
+            font-size: 17px;
+            font-weight: 600;
+            color: #e2e8f0;
+            line-height: 1.7;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .listening-q-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            border-radius: 50%;
+            color: white;
+            font-weight: 800;
+            font-size: 14px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .listening-input {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 17px;
+            background: rgba(255,255,255,0.06);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: #f1f5f9;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .listening-input:focus {
+            outline: none;
+            border-color: #a855f7;
+            background: rgba(168,85,247,0.08);
+            box-shadow: 0 0 0 4px rgba(168,85,247,0.15);
+        }
+
+        .listening-input::placeholder {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        .listening-mcq {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .listening-mcq label {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 20px;
+            background: rgba(255,255,255,0.04);
+            border: 2px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #cbd5e1;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .listening-mcq label:hover {
+            border-color: rgba(168,85,247,0.4);
+            background: rgba(168,85,247,0.08);
+            color: #f1f5f9;
+        }
+
+        .listening-mcq input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #a855f7;
+            flex-shrink: 0;
+        }
+
+        .listening-mcq input[type="radio"]:checked + span,
+        .listening-mcq label:has(input:checked) {
+            color: #a855f7;
+            border-color: #a855f7;
+            background: rgba(168,85,247,0.12);
+            font-weight: 700;
+        }
+
+        .listening-audio-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1));
+            border: 2px solid rgba(168,85,247,0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .listening-audio-box h3 {
+            font-size: 22px;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+
+        .listening-audio-box p {
+            color: #94a3b8;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .listening-video-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(168,85,247,0.2);
+        }
+
+        .listening-video-wrapper iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+        }
+
+        .listening-instructions {
+            background: rgba(245,158,11,0.08);
+            border: 1px solid rgba(245,158,11,0.2);
+            border-radius: 14px;
+            padding: 18px 24px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .listening-instructions span {
+            color: #fbbf24;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .chart-container {
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 2px solid rgba(168,85,247,0.3);
+        }
+
+        .chart-title {
+            text-align: center;
+            color: #1e293b;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 8px;
+            height: 280px;
+            padding: 0 20px 40px;
+            position: relative;
+            border-left: 2px solid #334155;
+            border-bottom: 2px solid #334155;
+            margin: 0 30px;
+        }
+
+        .bar-group {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            flex: 1;
+            max-width: 100px;
+            position: relative;
+        }
+
+        .bar {
+            flex: 1;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            min-width: 20px;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .bar:hover {
+            opacity: 0.85;
+            transform: scaleY(1.02);
+            transform-origin: bottom;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            font-weight: 700;
+            color: #1e293b;
+            white-space: nowrap;
+        }
+
+        .bar-group-label {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            color: #475569;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 45px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+
+        .y-axis-labels {
+            position: absolute;
+            left: -45px;
+            top: 0;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+        }
+
+        .y-axis-labels span {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .pie-chart-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .pie-wrapper {
+            text-align: center;
+        }
+
+        .pie-wrapper h4 {
+            color: #1e293b;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .pie-svg {
+            width: 200px;
+            height: 200px;
+            transform: rotate(-90deg);
+        }
+
+        .pie-legend {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-start;
+            padding-left: 20px;
+        }
+
+        .pie-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .pie-legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .line-chart-wrapper {
+            position: relative;
+            margin: 0 30px;
+            padding-bottom: 40px;
+        }
+
+        .line-chart-svg {
+            width: 100%;
+            height: 280px;
+        }
+
+        .line-chart-svg text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        .data-table th {
+            background: #6366f1;
+            color: white;
+            padding: 12px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .data-table td {
+            padding: 10px 16px;
+            text-align: center;
+            font-size: 13px;
+            color: #1e293b;
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: 500;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .data-table tr:hover {
+            background: #ede9fe;
+        }
+
+        .map-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .map-box {
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .map-box h4 {
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .map-svg {
+            width: 100%;
+            max-width: 380px;
+            height: 300px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .audio-player-box {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            border: 2px solid rgba(99,102,241,0.4);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .audio-player-box h3 {
+            font-size: 24px;
+            color: #e2e8f0;
+            margin: 0 0 5px;
+        }
+
+        .audio-player-box .subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .audio-warning {
+            background: rgba(239,68,68,0.15);
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 12px;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .audio-warning span {
+            color: #fca5a5;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .audio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .audio-tab {
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .audio-tab:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .audio-tab.active {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            border-color: transparent;
+        }
+
+        .audio-source {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .audio-source.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .custom-audio {
+            width: 100%;
+            max-width: 600px;
+            margin: 15px auto;
+            display: block;
+            height: 50px;
+            border-radius: 25px;
+        }
+
+        .yt-fallback {
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(99,102,241,0.3);
+        }
+
+        .yt-fallback iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+        }
+
+        .audio-external-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .audio-ext-btn {
+            padding: 10px 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08);
+            color: #e2e8f0;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .audio-ext-btn:hover {
+            background: var(--primary);
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .section-audio-marker {
+            background: rgba(168,85,247,0.1);
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: 10px;
+            padding: 10px 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #c4b5fd;
+            font-weight: 600;
+        }
+
+        .chat-toggle {
+            position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+            width: 65px; height: 65px; border-radius: 50%; border: none;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white; font-size: 28px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(99,102,241,0.5);
+            transition: 0.3s; display: flex; align-items: center; justify-content: center;
+        }
+        .chat-toggle:hover { transform: scale(1.1); }
+
+        .chatbox {
+            position: fixed; bottom: 110px; right: 30px; z-index: 9999;
+            width: 380px; max-height: 520px; border-radius: 24px;
+            background: #1e293b; border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            display: none; flex-direction: column; overflow: hidden;
+        }
+        .chatbox.open { display: flex; }
+
+        .chat-header {
+            padding: 18px 20px; background: linear-gradient(135deg, #6366f1, #a855f7);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .chat-header h3 { margin: 0; font-size: 16px; color: white; }
+        .chat-close {
+            background: none; border: none; color: white; font-size: 22px;
+            cursor: pointer; padding: 0; line-height: 1;
+        }
+
+        .chat-messages {
+            flex: 1; padding: 20px; overflow-y: auto; max-height: 350px;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+        .chat-messages::-webkit-scrollbar { width: 4px; }
+        .chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+        .msg {
+            max-width: 85%; padding: 12px 16px; border-radius: 16px;
+            font-size: 14px; line-height: 1.6; word-wrap: break-word;
+        }
+        .msg.bot {
+            background: rgba(99,102,241,0.15); color: #e2e8f0;
+            align-self: flex-start; border-bottom-left-radius: 4px;
+        }
+        .msg.user {
+            background: #6366f1; color: white;
+            align-self: flex-end; border-bottom-right-radius: 4px;
+        }
+        .msg.typing { color: #94a3b8; font-style: italic; }
+
+        .chat-input-row {
+            padding: 15px; border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex; gap: 10px;
+        }
+        .chat-input {
+            flex: 1; padding: 12px 16px; border-radius: 12px;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            color: white; font-size: 14px; outline: none; font-family: inherit;
+        }
+        .chat-input:focus { border-color: #6366f1; }
+        .chat-input::placeholder { color: #64748b; }
+        .chat-send {
+            padding: 12px 18px; border-radius: 12px; border: none;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white; font-weight: 700; cursor: pointer; font-size: 14px;
+        }
+        .chat-send:hover { opacity: 0.9; }
+
+        @media (max-width: 500px) {
+            .chatbox { width: calc(100% - 20px); right: 10px; bottom: 100px; }
+        }
+
+        .ielts-paper {
+            background: #f8fafc;
+            color: #1f2937;
+            border-radius: 18px;
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: inset 0 0 0 1px rgba(15,23,42,0.08);
+        }
+
+        .ielts-paper h2,
+        .ielts-paper h3,
+        .ielts-paper h4,
+        .ielts-paper p,
+        .ielts-paper li,
+        .ielts-paper td,
+        .ielts-paper th,
+        .ielts-paper label {
+            color: #1f2937;
+        }
+
+        .ielts-test-title {
+            font-size: 34px;
+            font-weight: 400;
+            margin: 0 0 20px;
+            color: #374151;
+        }
+
+        .ielts-listening-badge {
+            display: inline-block;
+            background: #4b5563;
+            color: #ffffff;
+            letter-spacing: 5px;
+            font-weight: 800;
+            padding: 7px 16px;
+            margin: 0 auto 28px;
+            text-align: center;
+        }
+
+        .ielts-part {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 22px;
+            margin-bottom: 28px;
+        }
+
+        .ielts-part-header {
+            display: flex;
+            gap: 35px;
+            align-items: baseline;
+            margin-bottom: 18px;
+        }
+
+        .ielts-part-header strong {
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .ielts-part-header em {
+            font-size: 15px;
+            font-weight: 700;
+            color: #4b5563;
+        }
+
+        .ielts-instruction {
+            font-style: italic;
+            font-size: 14px;
+            margin: 8px 0 14px;
+            color: #374151;
+        }
+
+        .ielts-word-limit {
+            font-style: italic;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 8px 0 18px;
+            color: #374151;
+        }
+
+        .ielts-box {
+            border: 2px solid #6b7280;
+            padding: 16px;
+            margin-top: 14px;
+        }
+
+        .ielts-box-title {
+            text-align: center;
+            font-size: 21px;
+            font-weight: 800;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+        .ielts-subtitle {
+            font-weight: 800;
+            color: #4b5563;
+            margin: 18px 0 8px;
+        }
+
+        .ielts-list {
+            margin: 0;
+            padding-left: 22px;
+        }
+
+        .ielts-list li {
+            margin: 8px 0;
+            line-height: 1.55;
+        }
+
+        .ielts-blank {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px dotted #6b7280;
+            min-width: 170px;
+            vertical-align: baseline;
+        }
+
+        .ielts-blank .qno {
+            font-weight: 800;
+            color: #374151;
+        }
+
+        .ielts-blank input {
+            width: 145px;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #111827;
+            font: inherit;
+            padding: 2px 4px;
+        }
+
+        .ielts-blank.small {
+            min-width: 95px;
+        }
+
+        .ielts-blank.small input {
+            width: 70px;
+        }
+
+        .ielts-blank.medium {
+            min-width: 135px;
+        }
+
+        .ielts-blank.medium input {
+            width: 105px;
+        }
+
+        .ielts-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            background: #ffffff;
+        }
+
+        .ielts-table th,
+        .ielts-table td {
+            border: 1px solid #6b7280;
+            padding: 10px;
+            vertical-align: top;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .ielts-table th {
+            font-weight: 800;
+            text-align: center;
+            color: #374151;
+        }
+
+        .ielts-mcq-block {
+            margin: 16px 0 22px;
+        }
+
+        .ielts-question-row {
+            display: grid;
+            grid-template-columns: 34px 1fr;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .ielts-question-number {
+            font-weight: 800;
+            color: #4b5563;
+        }
+
+        .ielts-options {
+            margin-top: 8px;
+        }
+
+        .ielts-option {
+            display: grid;
+            grid-template-columns: 28px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin: 4px 0;
+            cursor: pointer;
+            color: #1f2937;
+        }
+
+        .ielts-option input {
+            margin-top: 3px;
+            accent-color: #6366f1;
+        }
+
+        .ielts-letter-input-row {
+            display: grid;
+            grid-template-columns: 34px 1fr 150px;
+            align-items: center;
+            gap: 12px;
+            margin: 8px 0;
+        }
+
+        .ielts-letter-input-row input,
+        .ielts-answer-line {
+            border: none;
+            border-bottom: 1px dotted #6b7280;
+            background: transparent;
+            color: #111827;
+            outline: none;
+            padding: 4px;
+            font: inherit;
+        }
+
+        .ielts-choice-box {
+            width: fit-content;
+            min-width: 260px;
+            border: 1px solid #9ca3af;
+            padding: 14px 22px;
+            margin: 16px auto;
+            background: #ffffff;
+        }
+
+        .ielts-choice-box-title {
+            text-align: center;
+            font-weight: 800;
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+
+        .ielts-map-placeholder {
+            background: #f1f5f9;
+            border: 2px solid #9ca3af;
+            border-radius: 6px;
+            padding: 18px;
+            margin: 18px auto;
+            max-width: 620px;
+            text-align: center;
+        }
+
+        .ielts-map-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 18px auto;
+            max-width: 420px;
+        }
+
+        .ielts-map-cell {
+            min-height: 58px;
+            border: 1px solid #94a3b8;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #475569;
+            background: #ffffff;
+        }
+
+        .ielts-map-note {
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .ielts-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        @media (max-width: 800px) {
+            .ielts-paper {
+                padding: 16px;
+            }
+
+            .ielts-two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .ielts-letter-input-row {
+                grid-template-columns: 30px 1fr;
+            }
+
+            .ielts-letter-input-row input {
+                grid-column: 2;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1201,11 +1193,11 @@
     </div>
 
 <script>
-// ===== ORIGINAL CODE =====
 const ytData = {
     lessons: { listening:"QhVrqQFUfY8", reading:"nLmDYfe2FGA", writing:"sIp55MoKmeg", speaking:"YRKxrDz4hzA" },
     mocks: { listening:"WO9lCJiPt58", speaking:"IevmdO16GuE" }
 };
+
 const quizData = {
     listening: [
         {q:"How many sections in Listening?",a:["3","4","5"],correct:1},
@@ -1248,11 +1240,14 @@ const quizData = {
         {q:"Part 1 is about...",a:["History","Familiar topics","Science"],correct:1}
     ]
 };
+
 let completed = new Set();
+
 function checkQuiz(btn, isCorrect) {
     btn.style.background = isCorrect ? "#16a34a" : "#dc2626";
     btn.style.color = "white";
 }
+
 function showModule(name) {
     const key = name.toLowerCase();
     completed.add(key);
@@ -1273,6 +1268,7 @@ function showModule(name) {
         <button class="mock-btn" onclick="loadMockTest('${name}')">🔥 START FULL MOCK TEST</button>`;
     window.scrollTo(0,0);
 }
+
 function loadMockTest(section) {
     const key = section.toLowerCase();
     const media = (section==='Listening'||section==='Speaking') ?
@@ -1284,11 +1280,10 @@ function loadMockTest(section) {
         <button onclick="showModule('${section}')" style="margin-top:20px;color:#94a3b8;background:none;border:none;cursor:pointer;">← Back to Lesson</button>`;
     window.scrollTo(0,0);
 }
-    // ===== EXAM DATA =====
+
 let examTimer = null;
 let examSeconds = 0;
 
-// --- READING FULL PASSAGES ---
 const readingExams = {
     1: {
         time: 3600,
@@ -1379,7 +1374,6 @@ Many experts advocate for a focus on education and retraining. The World Economi
     }
 };
 
-// Copy exam 1 as template for exams 2-5 (in real app you'd have unique passages)
 for (let i = 2; i <= 5; i++) {
     readingExams[i] = JSON.parse(JSON.stringify(readingExams[1]));
     readingExams[i].passages[0].title = `Reading ${i} — Passage 1: Modern Agriculture`;
@@ -1387,10 +1381,9 @@ for (let i = 2; i <= 5; i++) {
     readingExams[i].passages[2].title = `Reading ${i} — Passage 3: Psychology of Learning`;
 }
 
-// --- LISTENING EXAM DATA ---
 const listeningExams = {
     1: {
-        title: 'Listening Mock Test 1', time: 1800, video: 'oVgMcGFmEFI',
+        title: 'Listening Mock Test 1', time: 1800, video: 'oVgMcGFmEFI', audio: 'audio/listening-test-1.mp3',
         sections: [
             { title: 'Section 1 — Everyday Conversation', questions: [
                 {q:'1. The woman wants to book for how many nights?', type:'fill', answer:'3'},
@@ -1443,7 +1436,7 @@ const listeningExams = {
         ]
     },
     2: {
-        title: 'Listening Mock Test 2', time: 1800, video: 'TjPFKTfOd_M',
+        title: 'Listening Mock Test 2', time: 1800, video: 'TjPFKTfOd_M', audio: 'audio/listening-test-2.mp3',
         sections: [
             { title: 'Section 1 — Course Registration', questions: [
                 {q:'1. Register for ___ course', type:'fill', answer:'photography'},
@@ -1496,7 +1489,7 @@ const listeningExams = {
         ]
     },
     3: {
-        title: 'Listening Mock Test 3', time: 1800, video: 'QKj0l0YTEBU',
+        title: 'Listening Mock Test 3', time: 1800, video: 'QKj0l0YTEBU', audio: 'audio/listening-test-3.mp3',
         sections: [
             { title: 'Section 1 — Renting Property', questions: [
                 {q:'1. Apartment on ___ Road', type:'fill', answer:'Victoria'},
@@ -1549,7 +1542,7 @@ const listeningExams = {
         ]
     },
     4: {
-        title: 'Listening Mock Test 4', time: 1800, video: 'n0wDCx2wEME',
+        title: 'Listening Mock Test 4', time: 1800, video: 'n0wDCx2wEME', audio: 'audio/listening-test-4.mp3',
         sections: [
             { title: 'Section 1 — Gym Membership', questions: [
                 {q:'1. Annual cost £___', type:'fill', answer:'450'},
@@ -1602,7 +1595,7 @@ const listeningExams = {
         ]
     },
     5: {
-        title: 'Listening Mock Test 5', time: 1800, video: 'LJz55rJYDTk',
+        title: 'Listening Mock Test 5', time: 1800, video: 'LJz55rJYDTk', audio: 'audio/listening-test-5.mp3',
         sections: [
             { title: 'Section 1 — Travel Booking', questions: [
                 {q:'1. Destination: ___', type:'fill', answer:'Barcelona'},
@@ -1656,7 +1649,6 @@ const listeningExams = {
     }
 };
 
-// --- WRITING EXAM DATA ---
 const writingExams = {
     1: {
         time: 3600,
@@ -1796,7 +1788,6 @@ const writingExams = {
     }
 };
 
-// --- SPEAKING EXAM DATA ---
 const speakingExams = {
     1: { video:"IevmdO16GuE", parts:[
         {title:"Part 1 — Introduction (4-5 min)", prompts:["What is your full name?","Where are you from?","Do you work or study?","What do you enjoy doing in your free time?","How often do you read books?","Do you prefer reading paper books or e-books?"]},
@@ -1813,7 +1804,6 @@ const speakingExams = {
     5: { video:null, parts:[{title:"Part 1",prompts:["Do you play any sports?","Tell me about your childhood.","How do you travel to work/school?"]},{title:"Part 2",prompts:["Describe an achievement you are proud of.\n\n• What was it?\n• When did it happen?\n• How did you achieve it?\n• Why are you proud?"]},{title:"Part 3",prompts:["What motivates people to succeed?","Is failure important for success?","Is modern society too competitive?"]}]}
 };
 
-// ===== MOCK TESTS LIST =====
 const mockTestsData = [
     {id:1,title:"Listening Test 1",type:"listening",diff:"easy",time:"30 min",qs:40},
     {id:2,title:"Listening Test 2",type:"listening",diff:"medium",time:"30 min",qs:40},
@@ -1860,7 +1850,6 @@ function renderMockHub() {
     window.scrollTo(0,0);
 }
 
-// ===== ROUTER =====
 function openExam(id) {
     const t = mockTestsData.find(m=>m.id===id);
     if(t.type==='reading') openReadingExam(id);
@@ -1869,7 +1858,6 @@ function openExam(id) {
     else if(t.type==='speaking') openSpeakingExam(id);
 }
 
-// ===== TIMER =====
 function startTimer(seconds, onEnd) {
     clearInterval(examTimer);
     examSeconds = seconds;
@@ -1889,7 +1877,6 @@ function updateTimerDisplay() {
     el.style.color = examSeconds < 300 ? '#f43f5e' : examSeconds < 600 ? '#fbbf24' : '#10b981';
 }
 
-// ===== BAND SCORE CALC =====
 function getBand(correct, total) {
     const pct = correct/total*100;
     if(pct>=90) return 9; if(pct>=80) return 8.5; if(pct>=70) return 8;
@@ -1897,12 +1884,12 @@ function getBand(correct, total) {
     if(pct>=40) return 6; if(pct>=33) return 5.5; if(pct>=27) return 5;
     if(pct>=20) return 4.5; if(pct>=13) return 4; return 3.5;
 }
-    // ===== READING EXAM =====
+
 function openReadingExam(id) {
-    const idx = id - 5; // reading IDs 6-10 → index 1-5
+    const idx = id - 5;
     const exam = readingExams[idx] || readingExams[1];
 
-    let passagesTabs = exam.passages.map((p,i) => 
+    let passagesTabs = exam.passages.map((p,i) =>
         `<div class="filter-tab ${i===0?'active':''}" onclick="switchPassage(${i})" id="ptab-${i}">Passage ${i+1}</div>`
     ).join('');
 
@@ -1961,19 +1948,18 @@ function openReadingExam(id) {
 }
 
 function switchPassage(idx) {
-    // Скрываем только пассажи внутри панели
     const passagePanel = document.getElementById('passage-panel');
     const questionPanel = document.getElementById('question-panel');
-    
+
     if(passagePanel) {
         passagePanel.querySelectorAll('[id^="passage-"]').forEach(el => el.style.display = 'none');
     }
     if(questionPanel) {
         questionPanel.querySelectorAll('[id^="qs-"]').forEach(el => el.style.display = 'none');
     }
-    
+
     document.querySelectorAll('[id^="ptab-"]').forEach(el => el.classList.remove('active'));
-    
+
     const p = document.getElementById('passage-'+idx);
     const q = document.getElementById('qs-'+idx);
     const t = document.getElementById('ptab-'+idx);
@@ -1981,7 +1967,6 @@ function switchPassage(idx) {
     if(q) q.style.display = 'block';
     if(t) t.classList.add('active');
 }
-
 
 function submitReading(idx) {
     clearInterval(examTimer);
@@ -1993,6 +1978,7 @@ function submitReading(idx) {
     exam.passages.forEach(p => {
         p.questions.forEach(q => {
             total++;
+
             const qNum = q.q.substring(0,3).trim();
             let userAnswer = '';
 
@@ -2014,10 +2000,10 @@ function submitReading(idx) {
     showResults('Reading', correct, total, band, details);
 }
 
-// ===== LISTENING EXAM =====
 function openListeningExam(id) {
     const exam = listeningExams[id] || listeningExams[1];
-    const videoId = exam.video;
+    const audioSrc = exam.audio || '';
+    const videoId = exam.video || '';
 
     document.getElementById('main-content').innerHTML = `
         <button onclick="renderMockHub()" style="color:#94a3b8;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:600;margin-bottom:15px;">← Back</button>
@@ -2037,12 +2023,28 @@ function openListeningExam(id) {
         <div class="audio-player-box">
             <h3>🎧 IELTS Listening Audio</h3>
             <p class="subtitle">Listen carefully — audio plays ONCE in real exam!</p>
-            <div class="yt-fallback">
-                <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;"></iframe>
-            </div>
-            <p style="margin-top:15px;">
-                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" style="color:#60a5fa;font-weight:600;font-size:15px;">▶ Не загружается? Открыть на YouTube</a>
-            </p>
+
+            ${audioSrc ? `
+                <audio controls preload="metadata" class="custom-audio">
+                    <source src="${audioSrc}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p style="margin-top:10px;color:#94a3b8;font-size:13px;">
+                    Audio file: ${audioSrc}
+                </p>
+            ` : ''}
+
+            ${videoId ? `
+                <details style="margin-top:20px;">
+                    <summary style="cursor:pointer;color:#c4b5fd;font-weight:700;">▶ YouTube backup</summary>
+                    <div class="yt-fallback" style="margin-top:15px;">
+                        <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+                    </div>
+                    <p style="margin-top:15px;">
+                        <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" style="color:#60a5fa;font-weight:600;font-size:15px;">Open on YouTube</a>
+                    </p>
+                </details>
+            ` : ''}
         </div>
 
         <div class="ielts-paper">
@@ -2057,7 +2059,8 @@ function openListeningExam(id) {
     startTimer(exam.time, () => submitListening(id));
     window.scrollTo(0, 0);
 }
-    function blank(num, size = '') {
+
+function blank(num, size = '') {
     return `<span class="ielts-blank ${size}">
         <span class="qno">${num}</span>
         <input type="text" id="linp-${num}" autocomplete="off">
@@ -2114,7 +2117,8 @@ function renderListeningPaper(id) {
 
     return renderGenericListeningPaper(id);
 }
-    function renderListeningPaper4() {
+
+function renderListeningPaper4() {
     return `
         <div class="ielts-test-title">Test 4</div>
         <div style="text-align:center;"><div class="ielts-listening-badge">LISTENING</div></div>
@@ -2280,7 +2284,8 @@ function renderListeningPaper(id) {
         </section>
     `;
 }
-    function renderGenericListeningPaper(id) {
+
+function renderGenericListeningPaper(id) {
     const exam = listeningExams[id] || listeningExams[1];
 
     let html = `
@@ -2325,7 +2330,7 @@ function renderListeningPaper(id) {
 
     return html;
 }
-// Audio tab switcher
+
 function switchAudioTab(idx) {
     document.querySelectorAll('.audio-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.audio-source').forEach(s => s.classList.remove('active'));
@@ -2333,6 +2338,7 @@ function switchAudioTab(idx) {
     const src = document.getElementById('audio-src-' + idx);
     if (src) src.classList.add('active');
 }
+
 function normalizeAnswer(value) {
     return String(value || '')
         .trim()
@@ -2403,7 +2409,7 @@ function submitListening(id) {
     const band = getBand(correct, total);
     showResults('Listening', correct, total, band, details);
 }
-// ===== CHART GENERATORS =====
+
 function generateBarChart(data) {
     const maxVal = Math.max(...data.datasets.flatMap(d => d.values));
     const gridLines = [0, 20, 40, 60, 80, 100];
@@ -2544,9 +2550,7 @@ function generateMap(data) {
         return `<div class="map-box">
             <h4>${map.label}</h4>
             <svg class="map-svg" viewBox="0 0 380 300">
-                <!-- Background -->
                 <rect x="10" y="10" width="360" height="280" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
-                
                 ${map.elements.map(el => {
                     if(el.type === 'road') {
                         return `<line x1="${el.x1}" y1="${el.y1}" x2="${el.x2}" y2="${el.y2}" stroke="#94a3b8" stroke-width="${el.width || 3}"/>
@@ -2578,12 +2582,11 @@ function generateMap(data) {
         <div class="map-container">${mapsHtml}</div>
     </div>`;
 }
-// ===== WRITING EXAM =====
+
 function openWritingExam(id) {
     const idx = id - 10;
     const exam = writingExams[idx] || writingExams[1];
 
-    // Generate chart HTML
     let chartHtml = '';
     if (exam.task1.chartType === 'bar') {
         chartHtml = generateBarChart(exam.task1.chartData);
@@ -2644,10 +2647,8 @@ function submitWriting(idx) {
     const wc1 = t1.split(/\s+/).filter(w=>w.length>0).length;
     const wc2 = t2.split(/\s+/).filter(w=>w.length>0).length;
 
-    // AI-style scoring
     let t1band = 5, t2band = 5;
 
-    // Task 1 scoring
     if(wc1 >= exam.task1.min) t1band += 1;
     if(wc1 >= exam.task1.min + 30) t1band += 0.5;
     if(t1.includes(',') && t1.includes('.')) t1band += 0.5;
@@ -2656,7 +2657,6 @@ function submitWriting(idx) {
     if(/significant|considerable|dramatic|substantial|approximately|respectively/i.test(t1)) t1band += 0.5;
     t1band = Math.min(t1band, 9);
 
-    // Task 2 scoring
     if(wc2 >= exam.task2.min) t2band += 1;
     if(wc2 >= exam.task2.min + 50) t2band += 0.5;
     if(t2.split('.').length > 8) t2band += 0.5;
@@ -2668,7 +2668,6 @@ function submitWriting(idx) {
 
     const overall = Math.round((t1band/3 + t2band*2/3) * 2) / 2;
 
-    // Generate feedback
     let t1feedback = [], t2feedback = [];
 
     if(wc1 < exam.task1.min) t1feedback.push(`⚠️ Word count too low: ${wc1}/${exam.task1.min}. You will lose marks.`);
@@ -2718,9 +2717,8 @@ function submitWriting(idx) {
     window.scrollTo(0,0);
 }
 
-// ===== SPEAKING EXAM =====
 function openSpeakingExam(id) {
-    const idx = id - 15; // speaking IDs 16-20 → index 1-5
+    const idx = id - 15;
     const exam = speakingExams[idx] || speakingExams[1];
 
     let videoHtml = '';
@@ -2787,7 +2785,7 @@ function openSpeakingExam(id) {
             <button onclick="calcSpeakingScore()" style="width:100%;padding:15px;background:linear-gradient(135deg,#6366f1,#a855f7);border:none;border-radius:12px;color:white;font-weight:800;font-size:16px;cursor:pointer;margin-top:15px;">📊 Calculate My Score</button>
         </div>`;
 
-    startTimer(840, () => {}); // 14 minutes
+    startTimer(840, () => {});
     window.scrollTo(0,0);
 }
 
@@ -2807,7 +2805,6 @@ function startSpeakingTimer(btn) {
             span.style.fontSize = '22px';
             btn.textContent = '✅ Done';
 
-            // Now start 2-min speaking timer
             let speak = 120;
             speakingPrepTimer = setInterval(() => {
                 speak--;
@@ -2859,7 +2856,6 @@ function finishSpeaking() {
     alert('Speaking test finished! Scroll down to self-assess your performance.');
 }
 
-// ===== RESULTS DISPLAY (Reading + Listening) =====
 function showResults(type, correct, total, band, details) {
     let detailsHtml = details.map(d => `
         <div class="${d.ok ? 'res-correct' : 'res-wrong'}">
@@ -2893,7 +2889,7 @@ function showResults(type, correct, total, band, details) {
         <button onclick="renderMockHub()" class="mock-btn" style="background:linear-gradient(135deg,#6366f1,#a855f7);">🔄 Try Another Test</button>`;
     window.scrollTo(0,0);
 }
-// ===== AI CHATBOT =====
+
 function toggleChat() {
     const box = document.getElementById('chatbox');
     box.classList.toggle('open');
@@ -2927,7 +2923,6 @@ function addMsg(text, cls) {
 function getAIReply(msg) {
     const m = msg.toLowerCase();
 
-    // Band score
     if (m.includes('band') && (m.includes('score') || m.includes('7') || m.includes('8') || m.includes('9'))) {
         return `🎯 <b>Band Score Tips:</b><br>
         • Band 6: Good user — some errors but communicates well<br>
@@ -2937,7 +2932,6 @@ function getAIReply(msg) {
         Focus on: consistency across all 4 sections. Your weakest skill pulls down your overall score!`;
     }
 
-    // Listening
     if (m.includes('listening') || m.includes('listen')) {
         return `🎧 <b>Listening Tips:</b><br>
         • Audio plays ONCE only — focus hard!<br>
@@ -2948,7 +2942,6 @@ function getAIReply(msg) {
         • Transfer answers carefully in paper test (10 min extra time)`;
     }
 
-    // Reading
     if (m.includes('reading') || m.includes('read') || m.includes('passage')) {
         return `📖 <b>Reading Tips:</b><br>
         • 60 minutes for 3 passages, 40 questions<br>
@@ -2959,7 +2952,6 @@ function getAIReply(msg) {
         • If stuck, move on and come back later`;
     }
 
-    // Writing Task 1
     if (m.includes('task 1') || m.includes('graph') || m.includes('chart') || m.includes('diagram')) {
         return `📊 <b>Writing Task 1 Tips:</b><br>
         • Minimum 150 words, spend ~20 minutes<br>
@@ -2970,7 +2962,6 @@ function getAIReply(msg) {
         • Compare data: "while X rose, Y declined"`;
     }
 
-    // Writing Task 2
     if (m.includes('task 2') || m.includes('essay')) {
         return `✍️ <b>Writing Task 2 Tips:</b><br>
         • Minimum 250 words, spend ~40 minutes<br>
@@ -2981,7 +2972,6 @@ function getAIReply(msg) {
         • Plan for 3-5 minutes before writing!`;
     }
 
-    // Writing general
     if (m.includes('writing') || m.includes('write')) {
         return `✍️ <b>Writing Tips:</b><br>
         • Task 1: 150+ words (20 min) — describe data/process<br>
@@ -2992,7 +2982,6 @@ function getAIReply(msg) {
         • Always proofread in last 2-3 minutes`;
     }
 
-    // Speaking
     if (m.includes('speaking') || m.includes('speak') || m.includes('pronunciation')) {
         return `🗣️ <b>Speaking Tips:</b><br>
         • 3 parts: Intro (4-5 min), Long turn (3-4 min), Discussion (4-5 min)<br>
@@ -3003,7 +2992,6 @@ function getAIReply(msg) {
         • Record yourself and listen back — it helps a lot!`;
     }
 
-    // Vocabulary
     if (m.includes('vocab') || m.includes('word') || m.includes('synonym')) {
         return `📚 <b>Vocabulary Tips:</b><br>
         • Learn words in CONTEXT, not just lists<br>
@@ -3014,7 +3002,6 @@ function getAIReply(msg) {
         • Topics: environment, education, technology, health, crime`;
     }
 
-    // Grammar
     if (m.includes('grammar') || m.includes('tense') || m.includes('sentence')) {
         return `📝 <b>Grammar Tips:</b><br>
         • Mix simple and complex sentences<br>
@@ -3025,7 +3012,6 @@ function getAIReply(msg) {
         • Practice: write one paragraph daily and check grammar`;
     }
 
-    // Time / strategy
     if (m.includes('time') || m.includes('strategy') || m.includes('manage') || m.includes('plan')) {
         return `⏱️ <b>Time Management:</b><br>
         • Listening: 30 min + 10 min transfer (paper only)<br>
@@ -3035,7 +3021,6 @@ function getAIReply(msg) {
         🎯 <b>Strategy:</b> Never spend too long on one question. Skip and return. Easy marks first!`;
     }
 
-    // Greetings
     if (m.includes('hello') || m.includes('hi') || m.includes('hey') || m.includes('привет') || m.includes('салем')) {
         return `👋 Hello! I'm your IELTS assistant. Ask me about:<br>
         • 🎧 Listening / 📖 Reading / ✍️ Writing / 🗣️ Speaking<br>
@@ -3045,12 +3030,10 @@ function getAIReply(msg) {
         • 💡 Any IELTS question!`;
     }
 
-    // Thanks
     if (m.includes('thank') || m.includes('спасибо') || m.includes('рахмет')) {
         return `😊 You're welcome! Keep practicing — consistency is the key to a high band score. You've got this! 💪`;
     }
 
-    // Check my essay / writing
     if (m.includes('check') || m.includes('correct') || m.includes('review')) {
         return `📝 To check your writing, try the <b>Writing Mock Tests</b> — they have built-in AI scoring!<br><br>
         Quick self-check:<br>
@@ -3062,7 +3045,6 @@ function getAIReply(msg) {
         ✅ Mix of simple + complex sentences?`;
     }
 
-    // IELTS general
     if (m.includes('ielts') || m.includes('exam') || m.includes('test')) {
         return `📋 <b>IELTS Overview:</b><br>
         • 4 sections: Listening, Reading, Writing, Speaking<br>
@@ -3073,7 +3055,6 @@ function getAIReply(msg) {
         What section would you like tips for?`;
     }
 
-    // Default
     return `🤔 Great question! Here are some general IELTS tips:<br><br>
     • Practice all 4 skills equally<br>
     • Take full mock tests under timed conditions<br>
@@ -3082,7 +3063,7 @@ function getAIReply(msg) {
     Try asking about: <b>listening, reading, writing, speaking, vocabulary, grammar, band scores, or time management</b>!`;
 }
 </script>
-<!-- AI CHATBOT -->
+
 <button class="chat-toggle" onclick="toggleChat()" id="chatToggleBtn">💬</button>
 <div class="chatbox" id="chatbox">
     <div class="chat-header">
@@ -3099,4 +3080,3 @@ function getAIReply(msg) {
 </div>
 </body>
 </html>
-            
