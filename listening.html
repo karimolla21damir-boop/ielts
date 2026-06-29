@@ -1625,7 +1625,14 @@ function startTimer(seconds, onEnd) {
     timerInterval = setInterval(update, 1000);
 }
 
-renderHome();
+const urlParams = new URLSearchParams(window.location.search);
+const testFromUrl = parseInt(urlParams.get('test'), 10);
+
+if (testFromUrl && listeningExams[testFromUrl]) {
+    openTest(testFromUrl);
+} else {
+    renderHome();
+}
 </script>
 </body>
 </html>
