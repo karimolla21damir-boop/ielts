@@ -862,7 +862,6 @@
 @media (max-width: 500px) {
     .chatbox { width: calc(100% - 20px); right: 10px; bottom: 100px; }
 }
-        ```css
 /* ===== IELTS PAPER STYLE LISTENING ===== */
 .ielts-paper {
     background: #f8fafc;
@@ -1863,11 +1862,76 @@ function renderMockHub() {
 
 // ===== ROUTER =====
 function openExam(id) {
-    const t = mockTestsData.find(m=>m.id===id);
-    if(t.type==='reading') openReadingExam(id);
-    else if(t.type==='listening') openListeningExam(id);
-    else if(t.type==='writing') openWritingExam(id);
-    else if(t.type==='speaking') openSpeakingExam(id);
+    const t = mockTestsData.find(m => m.id === id);
+
+    if (!t) return;
+
+    if (t.type === 'reading') {
+        openReadingExam(id);
+    } else if (t.type === 'listening') {
+        openListeningMockInside(id);
+    } else if (t.type === 'writing') {
+        openWritingExam(id);
+    } else if (t.type === 'speaking') {
+        openSpeakingExam(id);
+    }
+}
+    function openListeningMockInside(testId = 1) {
+    clearInterval(examTimer);
+
+    document.getElementById('main-content').innerHTML = `
+        <button onclick="renderMockHub()" style="
+            color:#94a3b8;
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.1);
+            padding:10px 20px;
+            border-radius:12px;
+            cursor:pointer;
+            font-weight:600;
+            margin-bottom:15px;
+        ">
+            ← Back to Mock Tests
+        </button>
+
+        <h1 style="
+            background:linear-gradient(135deg,#6366f1,#a855f7,#f43f5e);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            text-align:center;
+            margin-bottom:20px;
+        ">
+            🎧 Listening Test ${testId}
+        </h1>
+
+        <div style="
+            width:100%;
+            background:#0f172a;
+            border:1px solid rgba(255,255,255,0.1);
+            border-radius:24px;
+            overflow:hidden;
+        ">
+            <iframe 
+                src="listening.html?test=${testId}"
+                style="
+                    width:100%;
+                    height:1600px;
+                    border:none;
+                    display:block;
+                    background:#0f172a;
+                "
+                onload="
+                    try {
+                        const h = this.contentWindow.document.documentElement.scrollHeight;
+                        this.style.height = Math.max(1600, h + 80) + 'px';
+                    } catch(e) {
+                        this.style.height = '1800px';
+                    }
+                "
+            ></iframe>
+        </div>
+    `;
+
+    window.scrollTo(0, 0);
 }
 
 // ===== TIMER =====
