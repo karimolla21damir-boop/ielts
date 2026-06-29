@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Listening Mock Tests</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+        }
+
+        .app {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e293b, #111827);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+        }
+
+        .test-card {
+            background: #111827;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 22px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .test-card:hover {
+            transform: translateY(-4px);
+            border-color: #38bdf8;
+            box-shadow: 0 14px 40px rgba(56,189,248,0.12);
+        }
+
+        .test-card h2 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background: #38bdf8;
+            color: #082f49;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 18px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .btn.secondary {
+            background: rgba(255,255,255,0.06);
+            color: #cbd5e1;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .timer {
+            background: #020617;
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 14px 18px;
+            border-radius: 16px;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .audio-box {
+            background: #111827;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 22px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        .ielts-paper {
+            background: #fff;
+            color: #111827;
+            border-radius: 6px;
+            padding: 34px;
+            max-width: 980px;
+            margin: 0 auto 30px;
+            line-height: 1.45;
+            box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+        }
+
+        .ielts-test-title {
+            text-align: center;
+            background: #6b7280;
+            color: #fff;
+            width: fit-content;
+            margin: 0 auto 22px;
+            padding: 5px 16px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .ielts-listening-badge {
+            display: inline-block;
+            color: #6b7280;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 26px;
+        }
+
+        .ielts-part {
+            margin: 34px 0;
+            page-break-inside: avoid;
+        }
+
+        .ielts-part-header {
+            display: flex;
+            gap: 22px;
+            align-items: baseline;
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 8px;
+            margin-bottom: 18px;
+        }
+
+        .ielts-part-header strong {
+            font-size: 18px;
+        }
+
+        .ielts-part-header em {
+            color: #4b5563;
+            font-weight: 700;
+        }
+
+        .ielts-instruction {
+            margin: 8px 0;
+            font-style: italic;
+        }
+
+        .ielts-word-limit {
+            margin: 8px 0 18px;
+            font-weight: 800;
+            font-style: italic;
+        }
+
+        .ielts-box {
+            border: 1px solid #6b7280;
+            padding: 18px;
+            margin: 18px 0;
+        }
+
+        .ielts-box-title {
+            text-align: center;
+            font-weight: 900;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .ielts-subtitle {
+            font-weight: 900;
+            margin-top: 16px;
+        }
+
+        .ielts-list li {
+            margin-bottom: 8px;
+        }
+
+        .blank {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            margin: 0 4px;
+        }
+
+        .blank-num {
+            font-weight: 900;
+        }
+
+        .blank input,
+        .letter-row input {
+            border: none;
+            border-bottom: 1px dotted #111827;
+            outline: none;
+            min-width: 150px;
+            font-size: 15px;
+            padding: 2px 4px;
+            text-align: center;
+        }
+
+        .letter-row {
+            display: grid;
+            grid-template-columns: 38px 1fr 90px;
+            gap: 10px;
+            align-items: center;
+            margin: 8px 0;
+        }
+
+        .letter-row input {
+            min-width: 70px;
+            text-transform: uppercase;
+        }
+
+        .mcq {
+            margin: 16px 0;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .mcq-title {
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .mcq label {
+            display: block;
+            margin: 7px 0;
+            cursor: pointer;
+        }
+
+        .choice-box {
+            border: 1px solid #9ca3af;
+            max-width: 560px;
+            margin: 15px auto;
+            padding: 14px 20px;
+        }
+
+        .choice-box-title {
+            text-align: center;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .choice-line {
+            display: grid;
+            grid-template-columns: 34px 1fr;
+            margin: 6px 0;
+        }
+
+        table.ielts-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            font-size: 14px;
+        }
+
+        table.ielts-table th,
+        table.ielts-table td {
+            border: 1px solid #4b5563;
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        table.ielts-table th {
+            background: #f3f4f6;
+            font-weight: 900;
+        }
+
+        .map-placeholder {
+            border: 2px solid #6b7280;
+            background: #f8fafc;
+            padding: 14px;
+            margin: 18px auto;
+            max-width: 620px;
+            text-align: center;
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            margin-top: 12px;
+        }
+
+        .map-cell {
+            border: 1px solid #9ca3af;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            background: white;
+        }
+
+        .results {
+            background: #fff;
+            color: #111827;
+            border-radius: 18px;
+            padding: 28px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .score {
+            font-size: 42px;
+            font-weight: 900;
+            color: #0284c7;
+        }
+
+        .detail {
+            display: grid;
+            grid-template-columns: 70px 1fr 1fr 80px;
+            gap: 8px;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .ok {
+            color: #16a34a;
+            font-weight: 900;
+        }
+
+        .bad {
+            color: #dc2626;
+            font-weight: 900;
+        }
+
+        @media (max-width: 700px) {
+            .ielts-paper {
+                padding: 18px;
+            }
+
+            .letter-row {
+                grid-template-columns: 32px 1fr;
+            }
+
+            .letter-row input {
+                grid-column: 2;
+            }
+
+            .detail {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="app" id="app"></div>
+
+<script>
+const listeningExams = {
+    1: {
+        title: 'Listening Mock Test 1',
+        audio: 'materials/audio/listening-test-1.mp3',
+        time: 1800,
+        sections: [
+            {
+                title: 'Bankside Recruitment Agency',
+                questions: [
+                    { q: 1, answer: 'Jamieson' },
+                    { q: 2, answer: 'afternoon' },
+                    { q: 3, answer: 'communication' },
+                    { q: 4, answer: 'week' },
+                    { q: 5, answer: '10' },
+                    { q: 6, answer: 'suit' },
+                    { q: 7, answer: 'passport' },
+                    { q: 8, answer: 'personality' },
+                    { q: 9, answer: 'feedback' },
+                    { q: 10, answer: 'time' }
+                ]
+            },
+            {
+                title: 'Matthews Island Holidays',
+                questions: [
+                    { q: 11, answer: 'C' },
+                    { q: 12, answer: 'B' },
+                    { q: 13, answer: 'A' },
+                    { q: 14, answer: 'C' },
+                    { q: 15, answer: 'river' },
+                    { q: 16, answer: '1422' },
+                    { q: 17, answer: 'top' },
+                    { q: 18, answer: 'pass' },
+                    { q: 19, answer: 'steam' },
+                    { q: 20, answer: 'capital' }
+                ]
+            },
+            {
+                title: 'Birth Order and Personality',
+                questions: [
+                    { q: 21, answer: 'G' },
+                    { q: 22, answer: 'F' },
+                    { q: 23, answer: 'A' },
+                    { q: 24, answer: 'E' },
+                    { q: 25, answer: 'B' },
+                    { q: 26, answer: 'C' },
+                    { q: 27, answer: 'C' },
+                    { q: 28, answer: 'A' },
+                    { q: 29, answer: ['B', 'D'] },
+                    { q: 30, answer: ['B', 'D'] }
+                ]
+            },
+            {
+                title: 'The Eucalyptus Tree in Australia',
+                questions: [
+                    { q: 31, answer: 'shelter' },
+                    { q: 32, answer: 'oil' },
+                    { q: 33, answer: 'roads' },
+                    { q: 34, answer: 'insects' },
+                    { q: 35, answer: ['grass', 'grasses'] },
+                    { q: 36, answer: 'water' },
+                    { q: 37, answer: 'soil' },
+                    { q: 38, answer: 'dry' },
+                    { q: 39, answer: 'simple' },
+                    { q: 40, answer: ['nest', 'nests'] }
+                ]
+            }
+        ]
+    },
+
+    2: {
+        title: 'Listening Mock Test 2',
+        audio: 'materials/audio/listening-test-2.mp3',
+        time: 1800,
+        sections: [
+            {
+                title: 'Festival Information',
+                questions: [
+                    { q: 1, answer: 'Eustatis' },
+                    { q: 2, answer: 'review' },
+                    { q: 3, answer: 'dance' },
+                    { q: 4, answer: 'Chat' },
+                    { q: 5, answer: 'healthy' },
+                    { q: 6, answer: 'posters' },
+                    { q: 7, answer: 'wood' },
+                    { q: 8, answer: 'lake' },
+                    { q: 9, answer: 'insects' },
+                    { q: 10, answer: 'blog' }
+                ]
+            },
+            {
+                title: 'Minster Park',
+                questions: [
+                    { q: 11, answer: 'C' },
+                    { q: 12, answer: 'A' },
+                    { q: 13, answer: 'B' },
+                    { q: 14, answer: 'C' },
+                    { q: 15, answer: 'E' },
+                    { q: 16, answer: 'C' },
+                    { q: 17, answer: 'B' },
+                    { q: 18, answer: 'A' },
+                    { q: 19, answer: 'G' },
+                    { q: 20, answer: 'D' }
+                ]
+            },
+            {
+                title: 'Charles Dickens Display',
+                questions: [
+                    { q: 21, answer: ['B', 'D'] },
+                    { q: 22, answer: ['B', 'D'] },
+                    { q: 23, answer: ['B', 'C'] },
+                    { q: 24, answer: ['B', 'C'] },
+                    { q: 25, answer: 'G' },
+                    { q: 26, answer: 'B' },
+                    { q: 27, answer: 'D' },
+                    { q: 28, answer: 'C' },
+                    { q: 29, answer: 'H' },
+                    { q: 30, answer: 'F' }
+                ]
+            },
+            {
+                title: 'Agricultural Programme in Mozambique',
+                questions: [
+                    { q: 31, answer: 'irrigation' },
+                    { q: 32, answer: 'women' },
+                    { q: 33, answer: ['wire', 'wires'] },
+                    { q: 34, answer: ['seed', 'seeds'] },
+                    { q: 35, answer: 'posts' },
+                    { q: 36, answer: 'transport' },
+                    { q: 37, answer: 'preservation' },
+                    { q: 38, answer: ['fish', 'fishes'] },
+                    { q: 39, answer: 'bees' },
+                    { q: 40, answer: 'design' }
+                ]
+            }
+        ]
+    },
+
+    3: {
+        title: 'Listening Mock Test 3',
+        audio: 'materials/audio/listening-test-3.mp3',
+        time: 1800,
+        sections: [
+            {
+                title: 'Employment Agency: Possible Jobs',
+                questions: [
+                    { q: 1, answer: 'furniture' },
+                    { q: 2, answer: ['meetings', 'meeting'] },
+                    { q: 3, answer: 'diary' },
+                    { q: 4, answer: ['detail', 'details'] },
+                    { q: 5, answer: ['1 year', 'one year'] },
+                    { q: 6, answer: 'deliveries' },
+                    { q: 7, answer: 'tidy' },
+                    { q: 8, answer: 'team' },
+                    { q: 9, answer: 'heavy' },
+                    { q: 10, answer: 'customer' }
+                ]
+            },
+            {
+                title: 'Street Play Scheme',
+                questions: [
+                    { q: 11, answer: 'B' },
+                    { q: 12, answer: 'A' },
+                    { q: 13, answer: 'C' },
+                    { q: 14, answer: 'B' },
+                    { q: 15, answer: 'C' },
+                    { q: 16, answer: 'B' },
+                    { q: 17, answer: ['B', 'D'] },
+                    { q: 18, answer: ['B', 'D'] },
+                    { q: 19, answer: ['A', 'E'] },
+                    { q: 20, answer: ['A', 'E'] }
+                ]
+            },
+            {
+                title: 'Analysing Newspaper Items',
+                questions: [
+                    { q: 21, answer: 'page' },
+                    { q: 22, answer: 'size' },
+                    { q: 23, answer: ['graphic', 'graphics'] },
+                    { q: 24, answer: 'structure' },
+                    { q: 25, answer: 'purpose' },
+                    { q: 26, answer: ['assumption', 'assumptions'] },
+                    { q: 27, answer: 'A' },
+                    { q: 28, answer: 'C' },
+                    { q: 29, answer: 'C' },
+                    { q: 30, answer: 'B' }
+                ]
+            },
+            {
+                title: 'Early History of Keeping Clean',
+                questions: [
+                    { q: 31, answer: 'mud' },
+                    { q: 32, answer: 'clay' },
+                    { q: 33, answer: 'metal' },
+                    { q: 34, answer: 'hair' },
+                    { q: 35, answer: ['bath', 'baths'] },
+                    { q: 36, answer: ['disease', 'diseases'] },
+                    { q: 37, answer: 'perfume' },
+                    { q: 38, answer: 'salt' },
+                    { q: 39, answer: 'science' },
+                    { q: 40, answer: 'tax' }
+                ]
+            }
+        ]
+    },
+
+    4: {
+        title: 'Listening Mock Test 4',
+        audio: 'materials/audio/listening-test-4.mp3',
+        time: 1800,
+        sections: [
+            {
+                title: 'Customer Satisfaction Survey',
+                questions: [
+                    { q: 1, answer: 'journalist' },
+                    { q: 2, answer: 'shopping' },
+                    { q: 3, answer: 'Staunfirth' },
+                    { q: 4, answer: 'return' },
+                    { q: 5, answer: '23.70' },
+                    { q: 6, answer: 'online' },
+                    { q: 7, answer: 'delay' },
+                    { q: 8, answer: 'information' },
+                    { q: 9, answer: ['platform', 'platforms'] },
+                    { q: 10, answer: 'parking' }
+                ]
+            },
+            {
+                title: 'Croft Valley Park',
+                questions: [
+                    { q: 11, answer: 'D' },
+                    { q: 12, answer: 'C' },
+                    { q: 13, answer: 'G' },
+                    { q: 14, answer: 'H' },
+                    { q: 15, answer: 'A' },
+                    { q: 16, answer: 'E' },
+                    { q: 17, answer: ['A', 'D'] },
+                    { q: 18, answer: ['A', 'D'] },
+                    { q: 19, answer: ['A', 'C'] },
+                    { q: 20, answer: ['A', 'C'] }
+                ]
+            },
+            {
+                title: 'Presentation about Refrigeration',
+                questions: [
+                    { q: 21, answer: 'B' },
+                    { q: 22, answer: 'A' },
+                    { q: 23, answer: 'B' },
+                    { q: 24, answer: 'A' },
+                    { q: 25, answer: 'A' },
+                    { q: 26, answer: 'A' },
+                    { q: 27, answer: 'B' },
+                    { q: 28, answer: 'B' },
+                    { q: 29, answer: 'A' },
+                    { q: 30, answer: 'C' }
+                ]
+            },
+            {
+                title: 'Industrial Revolution',
+                questions: [
+                    { q: 31, answer: 'wealth' },
+                    { q: 32, answer: 'technology' },
+                    { q: 33, answer: 'power' },
+                    { q: 34, answer: ['textile', 'textiles'] },
+                    { q: 35, answer: ['machine', 'machines'] },
+                    { q: 36, answer: ['newspaper', 'newspapers'] },
+                    { q: 37, answer: 'local' },
+                    { q: 38, answer: 'lighting' },
+                    { q: 39, answer: ['window', 'windows'] },
+                    { q: 40, answer: ['advertising', 'Advertising'] }
+                ]
+            }
+        ]
+    },
+
+    5: {
+        title: 'Listening Mock Test 5',
+        audio: 'materials/audio/listening-test-5.mp3',
+        time: 1800,
+        sections: [
+            {
+                title: 'Children’s Engineering Workshops',
+                questions: [
+                    { q: 1, answer: 'egg' },
+                    { q: 2, answer: 'tower' },
+                    { q: 3, answer: 'car' },
+                    { q: 4, answer: 'animals' },
+                    { q: 5, answer: 'bridge' },
+                    { q: 6, answer: ['movie', 'film'] },
+                    { q: 7, answer: 'decorate' },
+                    { q: 8, answer: 'Wednesdays' },
+                    { q: 9, answer: 'Fradstone' },
+                    { q: 10, answer: 'parking' }
+                ]
+            },
+            {
+                title: 'Stevenson’s Site',
+                questions: [
+                    { q: 11, answer: 'C' },
+                    { q: 12, answer: 'A' },
+                    { q: 13, answer: 'B' },
+                    { q: 14, answer: 'C' },
+                    { q: 15, answer: 'H' },
+                    { q: 16, answer: 'C' },
+                    { q: 17, answer: 'G' },
+                    { q: 18, answer: 'B' },
+                    { q: 19, answer: 'I' },
+                    { q: 20, answer: 'A' }
+                ]
+            },
+            {
+                title: 'Art Projects',
+                questions: [
+                    { q: 21, answer: ['C', 'E'] },
+                    { q: 22, answer: ['C', 'E'] },
+                    { q: 23, answer: ['A', 'B'] },
+                    { q: 24, answer: ['A', 'B'] },
+                    { q: 25, answer: 'D' },
+                    { q: 26, answer: 'C' },
+                    { q: 27, answer: 'A' },
+                    { q: 28, answer: 'H' },
+                    { q: 29, answer: 'F' },
+                    { q: 30, answer: 'G' }
+                ]
+            },
+            {
+                title: 'Stoicism',
+                questions: [
+                    { q: 31, answer: 'practical' },
+                    { q: 32, answer: 'publication' },
+                    { q: 33, answer: 'choices' },
+                    { q: 34, answer: 'negative' },
+                    { q: 35, answer: 'play' },
+                    { q: 36, answer: 'capitalism' },
+                    { q: 37, answer: 'depression' },
+                    { q: 38, answer: 'logic' },
+                    { q: 39, answer: 'opportunity' },
+                    { q: 40, answer: ['practice', 'practise'] }
+                ]
+            }
+        ]
+    }
+};
+
+let timerInterval = null;
+
+function renderHome() {
+    clearInterval(timerInterval);
+
+    document.getElementById('app').innerHTML = `
+        <div class="hero">
+            <h1>IELTS Listening Mock Tests</h1>
+            <div class="subtitle">
+                Готовые Listening Tests 1–5 в формате IELTS paper.  
+                В каждом тесте есть аудио, 40 вопросов, таймер и автоматическая проверка.
+            </div>
+        </div>
+
+        <div class="test-grid">
+            ${Object.keys(listeningExams).map(id => `
+                <div class="test-card" onclick="openTest(${id})">
+                    <h2>Test ${id}</h2>
+                    <div class="subtitle">${listeningExams[id].title}</div>
+                    <br>
+                    <button class="btn">Open Listening</button>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function openTest(id) {
+    const exam = listeningExams[id];
+
+    document.getElementById('app').innerHTML = `
+        <div class="top-bar">
+            <button class="btn secondary" onclick="renderHome()">← Back</button>
+            <div class="timer" id="timer">30:00</div>
+            <button class="btn" onclick="submitTest(${id})">Submit</button>
+        </div>
+
+        <div class="audio-box">
+            <h2>🎧 Listening Test ${id}</h2>
+            <div class="subtitle">Audio path: ${exam.audio}</div>
+            <audio controls preload="metadata">
+                <source src="${exam.audio}" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </div>
+
+        <div class="ielts-paper">
+            ${renderPaper(id)}
+        </div>
+
+        <div style="text-align:center;margin-bottom:40px;">
+            <button class="btn" style="font-size:18px;padding:16px 42px;" onclick="submitTest(${id})">Submit All Answers</button>
+        </div>
+    `;
+
+    startTimer(exam.time, () => submitTest(id));
+    window.scrollTo(0, 0);
+}
+
+function blank(num, width = 150) {
+    return `
+        <span class="blank">
+            <span class="blank-num">${num}</span>
+            <input id="q${num}" style="min-width:${width}px;" autocomplete="off">
+        </span>
+    `;
+}
+
+function letterInput(num, text) {
+    return `
+        <div class="letter-row">
+            <strong>${num}</strong>
+            <span>${text}</span>
+            <input id="q${num}" maxlength="30" autocomplete="off">
+        </div>
+    `;
+}
+
+function mcq(num, question, options) {
+    return `
+        <div class="mcq">
+            <div class="mcq-title">${num}. ${question}</div>
+            ${options.map(opt => `
+                <label>
+                    <input type="radio" name="q${num}" value="${opt[0]}">
+                    ${opt}
+                </label>
+            `).join('')}
+        </div>
+    `;
+}
+
+function choiceBox(title, items) {
+    return `
+        <div class="choice-box">
+            <div class="choice-box-title">${title}</div>
+            ${items.map(item => `
+                <div class="choice-line">
+                    <strong>${item[0]}</strong>
+                    <span>${item[1]}</span>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function mapLetters() {
+    return `
+        <div class="map-placeholder">
+            <strong>Map / Plan</strong>
+            <div class="map-grid">
+                ${['A','B','C','D','E','F','G','H','I','J'].map(x => `<div class="map-cell">${x}</div>`).join('')}
+            </div>
+        </div>
+    `;
+}
+
+function renderPaper(id) {
+    if (id === 1) return renderTest1();
+    if (id === 2) return renderTest2();
+    if (id === 3) return renderTest3();
+    if (id === 4) return renderTest4();
+    if (id === 5) return renderTest5();
+}
+
+function paperHeader(id) {
+    return `
+        <div class="ielts-test-title">TEST ${id}</div>
+        <div style="text-align:center;"><div class="ielts-listening-badge">LISTENING</div></div>
+    `;
+}
+
+function renderTest1() {
+    return `
+        ${paperHeader(1)}
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 1</strong><em>Questions 1–10</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD AND/OR A NUMBER for each answer.</p>
+
+            <div class="ielts-box">
+                <div class="ielts-box-title">Bankside Recruitment Agency</div>
+                <ul class="ielts-list">
+                    <li>Name of agent: Becky ${blank(1)}</li>
+                    <li>Best to call her in the ${blank(2)}</li>
+                    <li>Must have good ${blank(3)} skills</li>
+                    <li>Jobs are usually for at least one ${blank(4)}</li>
+                    <li>Pay is usually £ ${blank(5, 80)} per hour</li>
+                    <li>Wear a ${blank(6)} to the interview</li>
+                    <li>Must bring your ${blank(7)}</li>
+                    <li>Questions about each applicant’s ${blank(8)}</li>
+                    <li>The ${blank(9)} you receive will benefit you</li>
+                    <li>Less ${blank(10)} is involved in applying for jobs</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 2</strong><em>Questions 11–20</em></div>
+            <p class="ielts-instruction">Questions 11–14</p>
+            <p class="ielts-word-limit">Choose the correct letter, A, B or C.</p>
+
+            ${mcq(11, 'According to the speaker, the company', [
+                'A has been in business for longer than most competitors.',
+                'B arranges holidays to more destinations than competitors.',
+                'C has more customers than competitors.'
+            ])}
+
+            ${mcq(12, 'Where can customers meet the tour manager before travelling?', [
+                'A Liverpool',
+                'B Heysham',
+                'C Luton'
+            ])}
+
+            ${mcq(13, 'How many lunches are included in the price?', [
+                'A three',
+                'B four',
+                'C five'
+            ])}
+
+            ${mcq(14, 'Customers have to pay extra for', [
+                'A guaranteeing a larger room.',
+                'B booking at short notice.',
+                'C transferring to another date.'
+            ])}
+
+            <p class="ielts-instruction">Questions 15–20</p>
+            <p class="ielts-instruction">Complete the table below.</p>
+            <p class="ielts-word-limit">Write ONE WORD AND/OR A NUMBER for each answer.</p>
+
+            <table class="ielts-table">
+                <tr><th colspan="3">Timetable for Isle of Man holiday</th></tr>
+                <tr><th></th><th>Activity</th><th>Notes</th></tr>
+                <tr><td>Day 1</td><td>Arrive</td><td>Hotel dining room has view of the ${blank(15)}</td></tr>
+                <tr><td>Day 2</td><td>Tynwald Exhibition and Peel</td><td>Tynwald may have been founded in ${blank(16)} not 979.</td></tr>
+                <tr><td>Day 3</td><td>Trip to Snaefell</td><td>Train to the ${blank(17)} of Snaefell</td></tr>
+                <tr><td>Day 4</td><td>Free day</td><td>Company provides a ${blank(18)} for local transport and heritage sites.</td></tr>
+                <tr><td>Day 5</td><td>Take the ${blank(19)} railway train</td><td>Former ${blank(20)} has old castle.</td></tr>
+                <tr><td>Day 6</td><td>Leave</td><td>Leave the island by ferry or plane</td></tr>
+            </table>
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 3</strong><em>Questions 21–30</em></div>
+
+            <p class="ielts-instruction">Questions 21–26</p>
+            <p>Choose SIX answers from the box and write the correct letter, A–H.</p>
+
+            ${choiceBox('Personality Traits', [
+                ['A', 'outgoing'],
+                ['B', 'selfish'],
+                ['C', 'independent'],
+                ['D', 'attention-seeking'],
+                ['E', 'introverted'],
+                ['F', 'co-operative'],
+                ['G', 'caring'],
+                ['H', 'competitive']
+            ])}
+
+            ${letterInput(21, 'the eldest child')}
+            ${letterInput(22, 'a middle child')}
+            ${letterInput(23, 'the youngest child')}
+            ${letterInput(24, 'a twin')}
+            ${letterInput(25, 'an only child')}
+            ${letterInput(26, 'a child with much older siblings')}
+
+            <p class="ielts-instruction">Questions 27 and 28</p>
+            <p class="ielts-word-limit">Choose the correct letter, A, B or C.</p>
+
+            ${mcq(27, 'What do the speakers say about the evidence?', [
+                'A There is conflicting evidence.',
+                'B Birth order has less influence than status.',
+                'C Some studies neglected important factors.'
+            ])}
+
+            ${mcq(28, 'What does Ruth think is surprising?', [
+                'A It is mainly thanks to their role as teachers.',
+                'B Advantages only lead to a slightly higher achievement.',
+                'C Extra parental attention makes little difference.'
+            ])}
+
+            <p class="ielts-instruction">Questions 29 and 30</p>
+            <p class="ielts-word-limit">Choose TWO letters, A–E.</p>
+
+            ${choiceBox('Experiences', [
+                ['A', 'learning to share'],
+                ['B', 'learning to stand up for oneself'],
+                ['C', 'learning to be a good loser'],
+                ['D', 'learning to be tolerant'],
+                ['E', 'learning to say sorry']
+            ])}
+
+            ${letterInput(29, 'Answer')}
+            ${letterInput(30, 'Answer')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 4</strong><em>Questions 31–40</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD ONLY for each answer.</p>
+
+            <div class="ielts-box">
+                <div class="ielts-box-title">The Eucalyptus Tree in Australia</div>
+                <ul class="ielts-list">
+                    <li>Provides ${blank(31)} and food for many species</li>
+                    <li>Leaves provide ${blank(32)}</li>
+                    <li>Cause of Mundulla Yellows: lime used for making ${blank(33)}</li>
+                    <li>${blank(34)} feed on eucalyptus leaves</li>
+                    <li>High-frequency bushfires result in growth of ${blank(35)}</li>
+                    <li>Mid-frequency bushfires make more ${blank(36)} available</li>
+                    <li>They maintain quality of the ${blank(37)}</li>
+                    <li>Low-frequency bushfires result in growth of ${blank(38)} rainforest</li>
+                    <li>This is a ${blank(39)} ecosystem</li>
+                    <li>Ideal environment for the ${blank(40)} of the bell-miner</li>
+                </ul>
+            </div>
+        </section>
+    `;
+}
+
+function renderTest2() {
+    return `
+        ${paperHeader(2)}
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 1</strong><em>Questions 1–10</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD ONLY for each answer.</p>
+            <div class="ielts-box">
+                <div class="ielts-box-title">Festival Information</div>
+                <ul class="ielts-list">
+                    <li>Ballet company called ${blank(1)}</li>
+                    <li>Play has had a good ${blank(2)}</li>
+                    <li>Type of event on 20th evening: ${blank(3)}</li>
+                    <li>Show is called ${blank(4)}</li>
+                    <li>Making food ${blank(5)}</li>
+                    <li>Children only making ${blank(6)}</li>
+                    <li>Adults only making toys from ${blank(7)}</li>
+                    <li>Swimming in the ${blank(8)}</li>
+                    <li>Walking in the woods led by expert on ${blank(9)}</li>
+                    <li>See organiser’s ${blank(10)}</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 2</strong><em>Questions 11–20</em></div>
+            <p class="ielts-word-limit">Choose the correct letter, A, B or C.</p>
+            ${mcq(11, 'The park was originally established', ['A recently.', 'B in the nineteenth century.', 'C long ago.'])}
+            ${mcq(12, 'Why is there a statue of Diane Gosforth?', ['A She was important to the park.', 'B She designed the park.', 'C She owned the land.'])}
+            ${mcq(13, 'During the First World War, the park was mainly used for', ['A farming.', 'B military purposes.', 'C public events.'])}
+            ${mcq(14, 'When did the physical transformation of the park begin?', ['A immediately.', 'B after consultation.', 'C later.'])}
+
+            <p class="ielts-instruction">Questions 15–20</p>
+            <p>Label the map below. Write the correct letter, A–G.</p>
+            ${mapLetters()}
+            ${letterInput(15, 'Statue of Diane Gosforth')}
+            ${letterInput(16, 'Wooden sculptures')}
+            ${letterInput(17, 'Playground')}
+            ${letterInput(18, 'Maze')}
+            ${letterInput(19, 'Tennis courts')}
+            ${letterInput(20, 'Fitness area')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 3</strong><em>Questions 21–30</em></div>
+            <p class="ielts-word-limit">Choose TWO letters for Questions 21–22 and 23–24.</p>
+
+            ${choiceBox('Options for 21–22', [
+                ['A', 'children'],
+                ['B', 'students'],
+                ['C', 'tourists'],
+                ['D', 'families'],
+                ['E', 'specialists']
+            ])}
+            ${letterInput(21, 'Answer')}
+            ${letterInput(22, 'Answer')}
+
+            ${choiceBox('Options for 23–24', [
+                ['A', 'his childhood'],
+                ['B', 'his popularity'],
+                ['C', 'his variety of work'],
+                ['D', 'his birthplace'],
+                ['E', 'his later life']
+            ])}
+            ${letterInput(23, 'Answer')}
+            ${letterInput(24, 'Answer')}
+
+            <p>Match each book with the correct feature.</p>
+            ${choiceBox('Features', [
+                ['A', 'social criticism'],
+                ['B', 'poverty'],
+                ['C', 'America'],
+                ['D', 'education'],
+                ['E', 'crime'],
+                ['F', 'prison'],
+                ['G', 'humour'],
+                ['H', 'law']
+            ])}
+
+            ${letterInput(25, 'The Pickwick Papers')}
+            ${letterInput(26, 'Oliver Twist')}
+            ${letterInput(27, 'Nicholas Nickleby')}
+            ${letterInput(28, 'Martin Chuzzlewit')}
+            ${letterInput(29, 'Bleak House')}
+            ${letterInput(30, 'Little Dorrit')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 4</strong><em>Questions 31–40</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD ONLY for each answer.</p>
+
+            <div class="ielts-box">
+                <div class="ielts-box-title">Agricultural Programme in Mozambique</div>
+                <ul class="ielts-list">
+                    <li>Main priority: ${blank(31)}</li>
+                    <li>Farmers’ associations were run by ${blank(32)}</li>
+                    <li>Provided for fences: ${blank(33)}</li>
+                    <li>Provided for suitable crops: ${blank(34)}</li>
+                    <li>Farmers provided ${blank(35)} for fences</li>
+                    <li>Marketing difficult due to lack of ${blank(36)}</li>
+                    <li>Training in methods of food ${blank(37)}</li>
+                    <li>Special places where ${blank(38)} could be kept</li>
+                    <li>Suggested keeping ${blank(39)}</li>
+                    <li>Enough time for phase of programme: ${blank(40)}</li>
+                </ul>
+            </div>
+        </section>
+    `;
+}
+
+function renderTest3() {
+    return `
+        ${paperHeader(3)}
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 1</strong><em>Questions 1–10</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD AND/OR A NUMBER for each answer.</p>
+            <div class="ielts-box">
+                <div class="ielts-box-title">Employment Agency: Possible Jobs</div>
+                <ul class="ielts-list">
+                    <li>Company produces ${blank(1)}</li>
+                    <li>Go to ${blank(2)}</li>
+                    <li>Management of ${blank(3)}</li>
+                    <li>Attention to ${blank(4)}</li>
+                    <li>Minimum experience: ${blank(5)}</li>
+                    <li>Managing ${blank(6)}</li>
+                    <li>Very organised and ${blank(7)}</li>
+                    <li>Used to working in a ${blank(8)}</li>
+                    <li>Able to cope with ${blank(9)} items</li>
+                    <li>Experience of ${blank(10)} service</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 2</strong><em>Questions 11–20</em></div>
+            <p class="ielts-word-limit">Choose the correct letter, A, B or C.</p>
+            ${mcq(11, 'When did the scheme first take place?', ['A recently', 'B several years ago', 'C last month'])}
+            ${mcq(12, 'How often is Beechwood Road closed?', ['A once a week', 'B once a month', 'C every day'])}
+            ${mcq(13, 'Who is responsible for closing the road?', ['A police', 'B council', 'C residents'])}
+            ${mcq(14, 'Residents who want to use their cars', ['A cannot use them.', 'B can still use them carefully.', 'C must park elsewhere.'])}
+            ${mcq(15, 'Street Play Schemes are most needed in', ['A villages.', 'B shopping areas.', 'C crowded urban areas.'])}
+            ${mcq(16, 'Reaction of residents who are not parents', ['A mostly negative.', 'B generally positive.', 'C unknown.'])}
+
+            <p class="ielts-word-limit">Choose TWO letters for Questions 17–18 and 19–20.</p>
+            ${choiceBox('Benefits for children', [
+                ['A', 'improved school results'],
+                ['B', 'more physical activity'],
+                ['C', 'better diet'],
+                ['D', 'new friendships'],
+                ['E', 'more discipline']
+            ])}
+            ${letterInput(17, 'Answer')}
+            ${letterInput(18, 'Answer')}
+
+            ${choiceBox('Results of experiment', [
+                ['A', 'less traffic'],
+                ['B', 'more complaints'],
+                ['C', 'more accidents'],
+                ['D', 'higher costs'],
+                ['E', 'stronger community']
+            ])}
+            ${letterInput(19, 'Answer')}
+            ${letterInput(20, 'Answer')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 3</strong><em>Questions 21–30</em></div>
+
+            <p class="ielts-instruction">Questions 21–26</p>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD ONLY for each answer.</p>
+
+            <div class="ielts-box">
+                <div class="ielts-box-title">What Hazel should analyse about items in newspapers:</div>
+                <ul class="ielts-list">
+                    <li>what ${blank(21)} the item is on</li>
+                    <li>the ${blank(22)} of the item, including the headline</li>
+                    <li>any ${blank(23)} accompanying the item</li>
+                    <li>the ${blank(24)} of the item, e.g. what’s made prominent</li>
+                    <li>the writer’s main ${blank(25)}</li>
+                    <li>the ${blank(26)} the writer may make about the reader</li>
+                </ul>
+            </div>
+
+            <p class="ielts-instruction">Questions 27–30</p>
+            <p>What does Hazel decide to do about each type of article?</p>
+            <p class="ielts-word-limit">Write the correct letter, A, B or C.</p>
+
+            ${choiceBox('Options', [
+                ['A', 'She will definitely look for a suitable article.'],
+                ['B', 'She may look for a suitable article.'],
+                ['C', 'She definitely won’t look for an article.']
+            ])}
+
+            ${letterInput(27, 'national news item')}
+            ${letterInput(28, 'editorial')}
+            ${letterInput(29, 'human interest')}
+            ${letterInput(30, 'arts')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 4</strong><em>Questions 31–40</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD ONLY for each answer.</p>
+            <div class="ielts-box">
+                <div class="ielts-box-title">Early History of Keeping Clean</div>
+                <ul class="ielts-list">
+                    <li>Water was used to wash off ${blank(31)}</li>
+                    <li>Soap-like material found in cylinders made of ${blank(32)}</li>
+                    <li>Scraper made of ${blank(33)}</li>
+                    <li>Used soap to colour ${blank(34)}</li>
+                    <li>Water carried to Roman ${blank(35)}</li>
+                    <li>Decline in bathing contributed to ${blank(36)}</li>
+                    <li>${blank(37)} began to be added to soap</li>
+                    <li>Soda ash from ${blank(38)}</li>
+                    <li>Chevreul turned soapmaking into ${blank(39)}</li>
+                    <li>No longer a ${blank(40)} on soap</li>
+                </ul>
+            </div>
+        </section>
+    `;
+}
+
+function renderTest4() {
+    return `
+        ${paperHeader(4)}
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 1</strong><em>Questions 1–10</em></div>
+            <p class="ielts-instruction">Complete the form below.</p>
+            <p class="ielts-word-limit">Write ONE WORD AND/OR A NUMBER for each answer.</p>
+            <div class="ielts-box">
+                <div class="ielts-box-title">Customer Satisfaction Survey</div>
+                <ul class="ielts-list">
+                    <li>Occupation: ${blank(1)}</li>
+                    <li>Reason for travel today: ${blank(2)}</li>
+                    <li>Name of station returning to: ${blank(3)}</li>
+                    <li>Type of ticket purchased: ${blank(4)}</li>
+                    <li>Cost of ticket: £${blank(5)}</li>
+                    <li>Where ticket was bought: ${blank(6)}</li>
+                    <li>Least satisfied with journey: ${blank(7)}</li>
+                    <li>Most satisfied with station: ${blank(8)}</li>
+                    <li>Least satisfied with station: ${blank(9)}</li>
+                    <li>Neither satisfied nor dissatisfied with: ${blank(10)}</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 2</strong><em>Questions 11–20</em></div>
+            <p>Label the map below. Write the correct letter, A–H.</p>
+            ${mapLetters()}
+            ${letterInput(11, 'Café')}
+            ${letterInput(12, 'Toilets')}
+            ${letterInput(13, 'Formal gardens')}
+            ${letterInput(14, 'Outdoor gym')}
+            ${letterInput(15, 'Skateboard ramp')}
+            ${letterInput(16, 'Wild flowers')}
+
+            <p class="ielts-word-limit">Choose TWO letters for each question group.</p>
+            ${letterInput(17, 'Adventure playground answer')}
+            ${letterInput(18, 'Adventure playground answer')}
+            ${letterInput(19, 'Glass houses answer')}
+            ${letterInput(20, 'Glass houses answer')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 3</strong><em>Questions 21–30</em></div>
+            <p class="ielts-word-limit">Choose the correct letter or write the matching letter.</p>
+            ${mcq(21, 'Icehouses', ['A were expensive.', 'B were used before modern refrigeration.', 'C were only used in cities.'])}
+            ${mcq(22, 'Refrigeration in ancient Rome', ['A used snow.', 'B used electricity.', 'C used chemicals.'])}
+            ${mcq(23, 'Modern refrigerators concern', ['A cost.', 'B environment.', 'C size.'])}
+            ${mcq(24, 'Domestic fridges', ['A changed eating habits.', 'B were unpopular.', 'C were too small.'])}
+
+            ${letterInput(25, 'Goods refrigerated')}
+            ${letterInput(26, 'Effects on health')}
+            ${letterInput(27, 'Impact on food producers')}
+            ${letterInput(28, 'Impact on cities')}
+            ${letterInput(29, 'Refrigerated transport')}
+            ${letterInput(30, 'Domestic fridges')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 4</strong><em>Questions 31–40</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD ONLY for each answer.</p>
+            <div class="ielts-box">
+                <div class="ielts-box-title">Industrial Revolution</div>
+                <ul class="ielts-list">
+                    <li>Britain’s ${blank(31)}</li>
+                    <li>Production and ${blank(32)}</li>
+                    <li>New types of ${blank(33)}</li>
+                    <li>Leading industry: ${blank(34)}</li>
+                    <li>New ${blank(35)}</li>
+                    <li>Access to ${blank(36)}</li>
+                    <li>Goods were ${blank(37)}</li>
+                    <li>Better ${blank(38)}</li>
+                    <li>Bigger ${blank(39)}</li>
+                    <li>Persuasive ${blank(40)}</li>
+                </ul>
+            </div>
+        </section>
+    `;
+}
+
+function renderTest5() {
+    return `
+        ${paperHeader(5)}
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 1</strong><em>Questions 1–10</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD AND/OR A NUMBER for each answer.</p>
+
+            <div class="ielts-box">
+                <div class="ielts-box-title">Children’s Engineering Workshops</div>
+
+                <p><strong>Tiny Engineers ages 4–5</strong></p>
+                <ul class="ielts-list">
+                    <li>Create a cover for an ${blank(1)} so they can drop it from a height without breaking it.</li>
+                    <li>Take part in a competition to build the tallest ${blank(2)}.</li>
+                    <li>Make a ${blank(3)} powered by a balloon.</li>
+                </ul>
+
+                <p><strong>Junior Engineers ages 6–8</strong></p>
+                <ul class="ielts-list">
+                    <li>Build model cars, trucks and ${blank(4)} and learn how to program them.</li>
+                    <li>Build the longest ${blank(5)} using card and wood.</li>
+                    <li>Create a short ${blank(6)} with special software.</li>
+                    <li>Build, ${blank(7)} and program a humanoid robot.</li>
+                </ul>
+
+                <p>Held on ${blank(8)} from 10 am to 11 am</p>
+                <p>Building 10A, ${blank(9)} Industrial Estate</p>
+                <p>Plenty of ${blank(10)} is available.</p>
+            </div>
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 2</strong><em>Questions 11–20</em></div>
+            <p class="ielts-word-limit">Choose the correct letter, A, B or C.</p>
+
+            ${mcq(11, 'Stevenson’s was founded in', ['A 1923.', 'B 1924.', 'C 1926.'])}
+            ${mcq(12, 'Originally, Stevenson’s manufactured goods for', ['A the healthcare industry.', 'B the automotive industry.', 'C the machine tools industry.'])}
+            ${mcq(13, 'What does the speaker say about the company premises?', ['A The company has recently moved.', 'B The company has no plans to move.', 'C The company is going to move shortly.'])}
+            ${mcq(14, 'The programme for the work experience group includes', ['A time to do research.', 'B meetings with a teacher.', 'C talks by staff.'])}
+
+            <p>Label the map below.</p>
+            ${mapLetters()}
+            ${letterInput(15, 'coffee room')}
+            ${letterInput(16, 'warehouse')}
+            ${letterInput(17, 'staff canteen')}
+            ${letterInput(18, 'meeting room')}
+            ${letterInput(19, 'human resources')}
+            ${letterInput(20, 'boardroom')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 3</strong><em>Questions 21–30</em></div>
+
+            <p class="ielts-word-limit">Choose TWO letters, A–E.</p>
+            <p>Which TWO parts of the introductory stage were useful?</p>
+            ${choiceBox('Options', [
+                ['A', 'the Bird Park visit'],
+                ['B', 'the workshop sessions'],
+                ['C', 'the Natural History Museum visit'],
+                ['D', 'the projects done in previous years'],
+                ['E', 'the handouts with research sources']
+            ])}
+            ${letterInput(21, 'Answer')}
+            ${letterInput(22, 'Answer')}
+
+            <p>In which TWO ways do both students decide to change their proposals?</p>
+            ${choiceBox('Options', [
+                ['A', 'by giving a rationale for their action plans'],
+                ['B', 'by being less specific about the outcome'],
+                ['C', 'by adding a video diary presentation'],
+                ['D', 'by providing a timeline and a mind map'],
+                ['E', 'by making their notes more evaluative']
+            ])}
+            ${letterInput(23, 'Answer')}
+            ${letterInput(24, 'Answer')}
+
+            <p>Which personal meaning do the students give to each picture?</p>
+            ${choiceBox('Personal meanings', [
+                ['A', 'a childhood memory'],
+                ['B', 'hope for the future'],
+                ['C', 'fast movement'],
+                ['D', 'a potential threat'],
+                ['E', 'the power of colour'],
+                ['F', 'the continuity of life'],
+                ['G', 'protection of nature'],
+                ['H', 'a confused attitude to nature']
+            ])}
+
+            ${letterInput(25, 'Falcon')}
+            ${letterInput(26, 'Fish hawk')}
+            ${letterInput(27, 'Kingfisher')}
+            ${letterInput(28, 'Portrait of William Wells')}
+            ${letterInput(29, 'Vairumati')}
+            ${letterInput(30, 'Portrait of Giovanni de Medici')}
+        </section>
+
+        <section class="ielts-part">
+            <div class="ielts-part-header"><strong>PART 4</strong><em>Questions 31–40</em></div>
+            <p class="ielts-instruction">Complete the notes below.</p>
+            <p class="ielts-word-limit">Write ONE WORD ONLY for each answer.</p>
+
+            <div class="ielts-box">
+                <div class="ielts-box-title">Stoicism</div>
+                <ul class="ielts-list">
+                    <li>Stoicism is relevant because of its ${blank(31)} appeal.</li>
+                    <li>Ideas were not intended for ${blank(32)}</li>
+                    <li>People make ${blank(33)} in response to events.</li>
+                    <li>Some experiences are considered ${blank(34)} by others.</li>
+                    <li>George Washington organised a ${blank(35)} about Cato.</li>
+                    <li>Adam Smith’s ideas on ${blank(36)} were influenced by Stoicism.</li>
+                    <li>Treatment for ${blank(37)} is based on Stoic ideas.</li>
+                    <li>People learn to base thinking on ${blank(38)}</li>
+                    <li>In business, obstacles can be seen as ${blank(39)}</li>
+                    <li>Stoicism requires a lot of ${blank(40)}</li>
+                </ul>
+            </div>
+        </section>
+    `;
+}
+
+function normalizeAnswer(value) {
+    return String(value || '')
+        .trim()
+        .toLowerCase()
+        .replace(/[’']/g, '')
+        .replace(/\s+/g, ' ');
+}
+
+function getUserAnswer(qNum) {
+    const textInput = document.getElementById(`q${qNum}`);
+    if (textInput) {
+        return textInput.value.trim();
+    }
+
+    const radio = document.querySelector(`input[name="q${qNum}"]:checked`);
+    if (radio) {
+        return radio.value;
+    }
+
+    return '';
+}
+
+function getSpecialGroups(testId) {
+    const groups = {
+        1: [
+            { questions: [29, 30], answers: ['B', 'D'] }
+        ],
+        2: [
+            { questions: [21, 22], answers: ['B', 'D'] },
+            { questions: [23, 24], answers: ['B', 'C'] }
+        ],
+        3: [
+            { questions: [17, 18], answers: ['B', 'D'] },
+            { questions: [19, 20], answers: ['A', 'E'] }
+        ],
+        4: [
+            { questions: [17, 18], answers: ['A', 'D'] },
+            { questions: [19, 20], answers: ['A', 'C'] }
+        ],
+        5: [
+            { questions: [21, 22], answers: ['C', 'E'] },
+            { questions: [23, 24], answers: ['A', 'B'] }
+        ]
+    };
+
+    return groups[testId] || [];
+}
+
+function isCorrect(user, expected) {
+    const u = normalizeAnswer(user);
+
+    if (Array.isArray(expected)) {
+        return expected.map(normalizeAnswer).includes(u);
+    }
+
+    return u === normalizeAnswer(expected);
+}
+
+function getBand(score) {
+    if (score >= 39) return '9.0';
+    if (score >= 37) return '8.5';
+    if (score >= 35) return '8.0';
+    if (score >= 32) return '7.5';
+    if (score >= 30) return '7.0';
+    if (score >= 26) return '6.5';
+    if (score >= 23) return '6.0';
+    if (score >= 18) return '5.5';
+    if (score >= 16) return '5.0';
+    if (score >= 13) return '4.5';
+    if (score >= 10) return '4.0';
+    return '3.5';
+}
+
+function submitTest(id) {
+    clearInterval(timerInterval);
+
+    const exam = listeningExams[id];
+    const specialGroups = getSpecialGroups(id);
+    const grouped = new Set();
+
+    specialGroups.forEach(group => {
+        group.questions.forEach(q => grouped.add(q));
+    });
+
+    let correct = 0;
+    let total = 40;
+    const details = [];
+
+    exam.sections.forEach(section => {
+        section.questions.forEach(item => {
+            if (grouped.has(item.q)) return;
+
+            const user = getUserAnswer(item.q);
+            const ok = isCorrect(user, item.answer);
+
+            if (ok) correct++;
+
+            details.push({
+                q: item.q,
+                user,
+                correct: Array.isArray(item.answer) ? item.answer.join(' / ') : item.answer,
+                ok
+            });
+        });
+    });
+
+    specialGroups.forEach(group => {
+        const userAnswers = group.questions.map(q => normalizeAnswer(getUserAnswer(q)));
+        const expectedAnswers = group.answers.map(normalizeAnswer);
+
+        const noEmpty = userAnswers.every(Boolean);
+        const noDuplicates = new Set(userAnswers).size === userAnswers.length;
+        const allCorrect = userAnswers.every(ans => expectedAnswers.includes(ans));
+        const groupOk = noEmpty && noDuplicates && allCorrect;
+
+        group.questions.forEach(q => {
+            if (groupOk) correct++;
+
+            details.push({
+                q,
+                user: getUserAnswer(q),
+                correct: group.answers.join(' / '),
+                ok: groupOk
+            });
+        });
+    });
+
+    details.sort((a, b) => a.q - b.q);
+
+    document.getElementById('app').innerHTML = `
+        <button class="btn secondary" onclick="renderHome()">← Back to tests</button>
+
+        <div class="results">
+            <h1>Listening Test ${id} Results</h1>
+            <div class="score">${correct}/40</div>
+            <h2>Band: ${getBand(correct)}</h2>
+
+            <div style="margin-top:24px;">
+                <div class="detail" style="font-weight:900;">
+                    <div>№</div>
+                    <div>Your answer</div>
+                    <div>Correct answer</div>
+                    <div>Status</div>
+                </div>
+
+                ${details.map(d => `
+                    <div class="detail">
+                        <div><strong>${d.q}</strong></div>
+                        <div>${d.user || '<em>empty</em>'}</div>
+                        <div>${d.correct}</div>
+                        <div class="${d.ok ? 'ok' : 'bad'}">${d.ok ? '✓' : '✗'}</div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+
+    window.scrollTo(0, 0);
+}
+
+function startTimer(seconds, onEnd) {
+    clearInterval(timerInterval);
+
+    let left = seconds;
+
+    function update() {
+        const min = Math.floor(left / 60);
+        const sec = left % 60;
+        const el = document.getElementById('timer');
+
+        if (el) {
+            el.textContent = `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+        }
+
+        if (left <= 0) {
+            clearInterval(timerInterval);
+            onEnd();
+        }
+
+        left--;
+    }
+
+    update();
+    timerInterval = setInterval(update, 1000);
+}
+
+renderHome();
+</script>
+</body>
+</html>
